@@ -1,0 +1,14 @@
+.a-category {
+  background-image: url('../../../../assets/category.jpg');
+}
+
+.a-category > h1 {
+  margin: 0 0 40px 0;
+  padding: 40px 0;
+  color: #1ca9fe;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'ua2018-font', Impact, sans-serif;
+  letter-spacing: 2px;
+  font-size: 36px;
+}
