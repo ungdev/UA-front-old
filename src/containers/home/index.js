@@ -2,6 +2,11 @@ import React from 'react'
 import { push } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+
+import Header from './components/header'
+import Intro from './components/intro'
+import Social from './components/social'
+
 import {
   increment,
   incrementAsync,
@@ -11,6 +16,11 @@ import {
 
 const Home = props => (
   <div>
+    <Header />
+
+    <Intro />
+
+    <Social />
     <h1>Home</h1>
     <p>Count: {props.count}</p>
 

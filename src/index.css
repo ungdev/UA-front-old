@@ -1,5 +1,17 @@
+html {
+  background-color: #444;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+@font-face {
+  font-family: 'ua2018-font';
+  src: url('./assets/ua_2018.woff2') format('woff2'),
+       url('./assets/ua_2018.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }

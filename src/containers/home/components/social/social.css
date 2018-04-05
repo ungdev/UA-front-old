@@ -1,0 +1,12 @@
+.a-social {
+  position: fixed;
+  bottom: 12px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.a-social__icon:not(:first-child) {
+  margin-left: 12px;
+}
