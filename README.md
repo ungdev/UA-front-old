@@ -41,3 +41,27 @@ yarn start
 ```
 yarn build
 ```
+
+## Structure
+
+```
+arena.utt.fr-2018/
+├── public/                       # public assets that will be served directly (should not be used for fonts, images nor css)
+├── src/                          # base directory
+│   ├── assets/                      # assets (eg. fonts, images, css)
+│   ├── components/                  # widely used components
+│   │   └── button/
+│   ├── containers/                  # pages that handle routes
+│   │   └── home/
+│   ├── modules/                     # store / actions / reducers
+│   │   └── user/
+│   ├── index.css                    # common css
+│   ├── index.js                     # entry point
+│   ├── registerServiceWorker.js     # generated file for PWA
+│   └── store.js                     # store entry point
+├── .editorconfig                 # define your editor options
+├── .env                          # global configuration
+├── .env.local                    # override global configuration (not pushed to repository)
+├── .env.development              # development-only configuration
+└── .env.development.local        # override development-only configuration (not pushed to repository)
+```
