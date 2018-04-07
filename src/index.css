@@ -12,6 +12,11 @@ body {
   font-family: sans-serif;
 }
 
+h1, h2, h3 {
+  font-family: 'ua2018-font';
+  color: #1ca9fe;
+}
+
 @font-face {
   font-family: 'ua2018-font';
   src: url('./assets/ua_2018.woff2') format('woff2'),

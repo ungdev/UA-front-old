@@ -20,8 +20,8 @@ const Home = props => (
     <Header />
     <Intro />
 
-    <main class="b-home">
-      <div className="b-home__content">
+    <main className="a-home">
+      <div className="a-home__content">
         <Category>Informations</Category>
         <Informations />
       </div>

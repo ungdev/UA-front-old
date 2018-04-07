@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './informations.css'
+
 const Informations = () => (
   <div className="a-informations">
     <h2>VENEZ RETROUVER L'AMBIANCE D'UNE LAN PARTY AUTHENTIQUE AVEC VOTRE ÉQUIPE.</h2>
@@ -8,16 +10,34 @@ const Informations = () => (
     </p>
 
     <h2>EN CLAIR :</h2>
-    <p>
-      Ouverture : 02/12 2018 - 18h
-      Fermeture : 04/12/2018 - 18h
-      24h/24h
-      Nourriture : sur place à prix étudiants
-      Places : 400
-      Tarif : 15€
-      4 Tournois
-      Bring Your Own Computer (casque, multiprise et RJ45 à amener)
-    </p>
+    <table>
+      <tbody>
+        <tr>
+          <td>Format</td><td>Bring Your Own Computer (casque, multiprise et RJ45 à amener)</td>
+        </tr>
+        <tr>
+          <td>Ouverture</td><td>02/12 2018 - 18h</td>
+        </tr>
+        <tr>
+          <td>Fermeture</td><td>04/12/2018 - 18h</td>
+        </tr>
+        <tr>
+          <td>Nourriture</td><td>sur place à prix minis</td>
+        </tr>
+        <tr>
+          <td>24h/24h</td><td>Oui (nourriture aussi)</td>
+        </tr>
+        <tr>
+          <td>Places</td><td>400</td>
+        </tr>
+        <tr>
+          <td>Tarif</td><td>15€</td>
+        </tr>
+        <tr>
+          <td>Tournois</td><td>4</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 )
 
