@@ -1,0 +1,25 @@
+.a-partners {
+  background-color: #222;
+  padding: 24px 0;
+  overflow: hidden;
+}
+
+.a-partners > h2 {
+  text-align: center;
+  color: #fff;
+  margin: 0 0 20px 0;
+}
+
+.a-partners__images {
+  display: flex;
+  justify-content: center;
+}
+
+.a-partners__images > img {
+  height: 100px;
+  width: 100px;
+}
+
+.a-partners__images > img:not(:first-child) {
+  margin-left: 12px;
+}

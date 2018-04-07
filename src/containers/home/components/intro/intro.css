@@ -1,3 +1,7 @@
+.a-intro {
+  position: relative;
+}
+
 .a-intro__logo {
   position: absolute;
   top: 40%;

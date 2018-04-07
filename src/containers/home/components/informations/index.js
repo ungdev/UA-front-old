@@ -10,34 +10,72 @@ const Informations = () => (
     </p>
 
     <h2>EN CLAIR :</h2>
-    <table>
-      <tbody>
-        <tr>
-          <td>Format</td><td>Bring Your Own Computer (casque, multiprise et RJ45 à amener)</td>
-        </tr>
-        <tr>
-          <td>Ouverture</td><td>02/12 2018 - 18h</td>
-        </tr>
-        <tr>
-          <td>Fermeture</td><td>04/12/2018 - 18h</td>
-        </tr>
-        <tr>
-          <td>Nourriture</td><td>sur place à prix minis</td>
-        </tr>
-        <tr>
-          <td>24h/24h</td><td>Oui (nourriture aussi)</td>
-        </tr>
-        <tr>
-          <td>Places</td><td>400</td>
-        </tr>
-        <tr>
-          <td>Tarif</td><td>15€</td>
-        </tr>
-        <tr>
-          <td>Tournois</td><td>4</td>
-        </tr>
-      </tbody>
-    </table>
+    <div className="a-informations__table">
+      <div className="a-informations__table__row">
+        <div className="a-informations__table__row__cell">
+          Format
+        </div>
+        <div className="a-informations__table__row__cell">
+          Bring Your Own Computer (casque, multiprise et RJ45 à amener)
+        </div>
+      </div>
+      <div className="a-informations__table__row">
+        <div className="a-informations__table__row__cell">
+          Ouverture
+        </div>
+        <div className="a-informations__table__row__cell">
+          02/12 2018 - 18h
+        </div>
+      </div>
+      <div className="a-informations__table__row">
+        <div className="a-informations__table__row__cell">
+          Fermeture
+        </div>
+        <div className="a-informations__table__row__cell">
+          04/12/2018 - 18h
+        </div>
+      </div>
+      <div className="a-informations__table__row">
+        <div className="a-informations__table__row__cell">
+          Nourriture
+        </div>
+        <div className="a-informations__table__row__cell">
+          sur place à prix minis
+        </div>
+      </div>
+      <div className="a-informations__table__row">
+        <div className="a-informations__table__row__cell">
+          24h/24h
+        </div>
+        <div className="a-informations__table__row__cell">
+          Oui (nourriture aussi)
+        </div>
+      </div>
+      <div className="a-informations__table__row">
+        <div className="a-informations__table__row__cell">
+          Places
+        </div>
+        <div className="a-informations__table__row__cell">
+          400
+        </div>
+      </div>
+      <div className="a-informations__table__row">
+        <div className="a-informations__table__row__cell">
+          Tarif
+        </div>
+        <div className="a-informations__table__row__cell">
+          15€
+        </div>
+      </div>
+      <div className="a-informations__table__row">
+        <div className="a-informations__table__row__cell">
+          Tournois
+        </div>
+        <div className="a-informations__table__row__cell">
+          4
+        </div>
+      </div>
+    </div>
   </div>
 )
 

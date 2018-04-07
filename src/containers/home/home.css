@@ -10,6 +10,25 @@
   box-shadow: 0 4px 8px rgba(0,0,0,.5);
 }
 
+.a-category:not(:first-of-type) {
+  margin-top: 40px;
+}
+
+.a-home__footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 110px;
+  padding: 20px;
+  color: #222;
+}
+
+.a-home__footer a {
+  margin-left: 12px;
+  color: #1ca9fe;
+  text-decoration: none;
+}
+
 @media (min-width: 768px) {
   .a-home__content {
     padding: 60px 0;

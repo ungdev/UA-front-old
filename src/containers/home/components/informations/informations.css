@@ -13,21 +13,16 @@
   margin: 24px 0;
 }
 
-.a-informations > table {
-  margin-top: 12px;
+.a-informations__table {
+  margin-top: 24px;
 }
 
-.a-informations > table > tbody > tr > td {
-  padding-bottom: 8px;
+.a-informations__table__row {
+  display: flex;
+  align-items: flex-start;
 }
 
-.a-informations > table > tbody > tr > td:first-child {
+.a-informations__table__row__cell:first-child {
   font-weight: bold;
-  vertical-align: top;
-  text-align: right;
-  padding-right: 12px;
-}
-
-.a-informations > table > tbody > tr > td:last-child {
-  padding-left: 12px;
+  min-width: 100px;
 }
