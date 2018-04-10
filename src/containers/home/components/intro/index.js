@@ -6,10 +6,10 @@ import logo from '../../../../assets/ua2018.png'
 import csgo from '../../../../assets/csgo.jpg'
 import hearthstone from '../../../../assets/hearthstone.jpg'
 import lol from '../../../../assets/lol.jpg'
-import overwatch from '../../../../assets/overwatch.jpg'
+import pubg from '../../../../assets/pubg.jpg'
 
 const Intro = (props) => {
-  const imgs = [ hearthstone, lol, csgo, overwatch ].map(img => (
+  const imgs = [ hearthstone, lol, csgo, pubg ].map(img => (
       {
         backgroundImage: `url(${img})`,
         backgroundPosition: 'center'
