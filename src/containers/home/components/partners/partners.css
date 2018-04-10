@@ -1,6 +1,6 @@
 .a-partners {
   background-color: #222;
-  padding: 24px 0;
+  padding: 22px 0 24px 0;
   overflow: hidden;
 }
 
@@ -12,7 +12,9 @@
 
 .a-partners__images {
   display: flex;
-  justify-content: center;
+  overflow-x: overlay;
+  max-width: 100%;
+  padding: 0 12px;
 }
 
 .a-partners__images > img {
@@ -22,4 +24,16 @@
 
 .a-partners__images > img:not(:first-child) {
   margin-left: 12px;
+}
+
+@media (min-width: 768px) {
+  .a-partners__images {
+    justify-content: center;
+    flex-wrap: wrap;
+    line-height: 112px;
+  }
+
+  .a-partners__images > img:not(:first-child) {
+    margin-left: 12px;
+  }
 }

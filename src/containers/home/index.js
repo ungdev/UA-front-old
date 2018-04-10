@@ -35,7 +35,7 @@ class Home extends React.Component {
   scrollCapture() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
-    const bottom = window.innerHeight + 50 - 12
+    const bottom = window.innerHeight + 90 - 12
 
     document.body.className = (scrollTop >= document.body.scrollHeight - bottom)
       ? 'a-social-fixed'
@@ -57,8 +57,16 @@ class Home extends React.Component {
           </div>
           <Partners />
           <div className="a-home__content a-home__footer">
-            © UTT Net Group
-            <a href="/mentions">Mentions légales</a>
+            <div>
+              © UTT Net Group
+              <a href="/mentions">Mentions légales</a>
+            </div>
+            <div>
+              <a href={`mailto:${process.env.REACT_APP_CONTACT_MAIL}`}>{process.env.REACT_APP_CONTACT_MAIL}</a>
+            </div>
+            <div>
+              <a href={`tel:${process.env.REACT_APP_CONTACT_PHONE}`}>{process.env.REACT_APP_CONTACT_PHONE}</a>
+            </div>
           </div>
         </main>
 
