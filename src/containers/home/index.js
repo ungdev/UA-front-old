@@ -50,9 +50,9 @@ class Home extends React.Component {
 
         <main className="a-home">
           <div className="a-home__content">
-            <Category>Informations</Category>
+            <Category id="informations">Informations</Category>
             <Informations />
-            <Category>Tournois</Category>
+            <Category id="spotlights">Tournois</Category>
             <Spotlights />
           </div>
           <Partners />
