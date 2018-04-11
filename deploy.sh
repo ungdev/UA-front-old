@@ -9,6 +9,7 @@ echo "Deploying to github-pages..."
 yarn build
 git add --force build
 git commit -m "chore: deploy"
+git push origin --delete gh-pages
 git subtree push --prefix build origin gh-pages
 
 # clean
