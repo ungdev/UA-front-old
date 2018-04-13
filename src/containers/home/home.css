@@ -1,14 +1,13 @@
 .a-home {
   width: 100%;
-  background-image: url('../../assets/background.jpg');
+  background-color: #202020;
   background-size: 100% 100%;
 }
 
 .a-home__content {
   margin: 0 auto;
   padding: 40px 20px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0,0,0,.5);
+  color: #fff;
 }
 
 .a-home__content > .a-category {
@@ -25,7 +24,7 @@
   justify-content: flex-end;
   height: 150px;
   padding: 20px;
-  color: #222;
+  color: #fff;
 }
 
 .a-home__content.a-home__footer > div {
@@ -36,39 +35,24 @@
 
 .a-home__footer a {
   margin: 0 12px;
-  color: #1ca9fe;
+  color: #58ebdf;
   text-decoration: none;
 }
 
 @media (min-width: 768px) {
   .a-home__content {
-    padding: 60px 50px;
     width: 600px;
-  }
-
-  .a-home__content > .a-category {
-    margin: 60px -50px 50px -50px;
   }
 }
 
 @media (min-width: 992px) {
   .a-home__content {
-    padding: 70px 60px;
     width: 750px;
-  }
-
-  .a-home__content > .a-category {
-    margin: 70px -60px 60px -60px;
   }
 }
 
 @media (min-width: 1200px) {
   .a-home__content {
-    padding: 80px 100px;
     width: 970px;
-  }
-
-  .a-home__content > .a-category {
-    margin: 80px -100px 70px -100px;
   }
 }

@@ -1,12 +1,13 @@
 .a-partners {
-  background-color: #222;
   padding: 22px 0 24px 0;
   overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,.3);
 }
 
 .a-partners > h2 {
   text-align: center;
-  color: #fff;
+  color: #222;
   margin: 0 0 20px 0;
 }
 

@@ -1,14 +1,29 @@
 .a-category {
-  background-image: url('../../../../assets/category.jpg');
+  position: relative;
+  text-align: center;
+}
+
+.a-category:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  height: 2px;
+  width: 90%;
+  background-color: #fff;
 }
 
 .a-category > h1 {
-  margin: 0 0 40px 0;
-  padding: 40px 0;
-  color: #1ca9fe;
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: #58ebdf;
+  background-color: #202020;
   text-align: center;
   text-transform: uppercase;
   font-family: 'ua2018-font', Impact, sans-serif;
   letter-spacing: 2px;
   font-size: 36px;
+  z-index: 2;
 }

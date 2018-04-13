@@ -9,7 +9,7 @@ import lol from '../../../../assets/lol.jpg'
 import pubg from '../../../../assets/pubg.jpg'
 
 const Intro = (props) => {
-  const imgs = [ hearthstone, lol, csgo, pubg ].map(img => (
+  const imgs = [ hearthstone, pubg, csgo, lol ].map(img => (
       {
         backgroundImage: `url(${img})`,
         backgroundPosition: 'center'
@@ -20,6 +20,7 @@ const Intro = (props) => {
 
   return (
     <div className="a-intro">
+      <div className="a-intro__shadow"/>
       <div className="a-intro__images">
         <div className="a-intro__images__image" style={ imgs[0] }></div>
         <div className="a-intro__images__image" style={ imgs[1] }></div>
