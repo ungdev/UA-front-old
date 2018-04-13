@@ -18,6 +18,11 @@
   margin-top: 0;
 }
 
+.a-home__content > .a-informations + .a-button {
+  display: block;
+  margin: 24px auto 0 auto;
+}
+
 .a-home__content.a-home__footer {
   display: flex;
   flex-direction: column;

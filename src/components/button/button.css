@@ -1,6 +1,6 @@
 .a-button {
-  background-color: #380096;
   border: 0;
+  background-color: transparent;
   color: #fff;
   cursor: pointer;
   font-size: 24px;
@@ -8,4 +8,9 @@
   text-transform: uppercase;
   font-family: 'ua2018-font', Impact, sans-serif;
   letter-spacing: .5px;
+}
+
+.a-button.raised {
+  color: #202020;
+  background-color: #58ebdf;
 }

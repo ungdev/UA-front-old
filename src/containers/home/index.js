@@ -9,6 +9,7 @@ import Category from './components/category'
 import Social from './components/social'
 import Spotlights from './components/spotlights'
 import Partners from './components/partners'
+import Button from '../../components/button'
 
 import {
   increment,
@@ -52,6 +53,7 @@ class Home extends React.Component {
           <div className="a-home__content">
             <Category id="informations">Informations</Category>
             <Informations />
+            <Button raised={true}>C'est parti !</Button>
             <Category id="spotlights">Tournois</Category>
             <Spotlights />
           </div>

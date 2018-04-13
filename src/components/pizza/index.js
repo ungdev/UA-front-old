@@ -25,7 +25,6 @@ class Pizza extends React.Component {
   }
 
   render() {
-    console.log('trigger', this.state.show)
     return (
       <div className="a-pizza">
         <Konami easterEgg={this.trigger} resetDelay={1000} />
