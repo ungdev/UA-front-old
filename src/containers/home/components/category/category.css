@@ -7,9 +7,9 @@
   content: '';
   position: absolute;
   top: 50%;
-  left: 5%;
+  left: 20px;
   height: 2px;
-  width: 100%;
+  width: calc(100% - 40px);
   background-color: #fff;
 }
 
@@ -24,6 +24,12 @@
   text-transform: uppercase;
   font-family: 'ua2018-font', Impact, sans-serif;
   letter-spacing: 2px;
-  font-size: 36px;
+  font-size: 28px;
   z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .a-category > h1 {
+    font-size: 36px;
+  }
 }

@@ -4,7 +4,7 @@
 }
 
 .a-informations h2 {
-  font-size: 28px;
+  font-size: 24px;
   margin: 0;
 }
 
@@ -25,4 +25,10 @@
 .a-informations__table__row__cell:first-child {
   font-weight: bold;
   min-width: 100px;
+}
+
+@media (min-width: 768px) {
+  .a-informations h2 {
+    font-size: 28px;
+  }
 }
