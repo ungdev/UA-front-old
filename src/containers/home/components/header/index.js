@@ -23,8 +23,8 @@ class Header extends React.Component {
     this.scroll.animateScroll(document.querySelector('#spotlights'))
   }
 
-  render () {
-    let loginText = (this.props.hasUser) ? 'Dashboard' : 'Connexion'
+  render() {
+    let loginText = this.props.hasUser ? 'Dashboard' : 'Connexion'
 
     return (
       <header className="a-intro-header">

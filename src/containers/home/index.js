@@ -11,12 +11,7 @@ import Spotlights from './components/spotlights'
 import Partners from './components/partners'
 import Button from '../../components/button'
 
-import {
-  increment,
-  incrementAsync,
-  decrement,
-  decrementAsync
-} from '../../modules/counter'
+import { increment, incrementAsync, decrement, decrementAsync } from '../../modules/counter'
 
 class Home extends React.Component {
   constructor() {
@@ -34,13 +29,13 @@ class Home extends React.Component {
   }
 
   scrollCapture() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    const scrollTop =
+      window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
 
     const bottom = window.innerHeight + 90 - 12
 
-    document.body.className = (scrollTop >= document.body.scrollHeight - bottom)
-      ? 'a-social-fixed'
-      : ''
+    document.body.className =
+      scrollTop >= document.body.scrollHeight - bottom ? 'a-social-fixed' : ''
   }
 
   render() {
@@ -64,10 +59,14 @@ class Home extends React.Component {
               <a href="/mentions">Mentions légales</a>
             </div>
             <div>
-              <a href={`mailto:${process.env.REACT_APP_CONTACT_MAIL}`}>{process.env.REACT_APP_CONTACT_MAIL}</a>
+              <a href={`mailto:${process.env.REACT_APP_CONTACT_MAIL}`}>
+                {process.env.REACT_APP_CONTACT_MAIL}
+              </a>
             </div>
             <div>
-              <a href={`tel:${process.env.REACT_APP_CONTACT_PHONE}`}>{process.env.REACT_APP_CONTACT_PHONE}</a>
+              <a href={`tel:${process.env.REACT_APP_CONTACT_PHONE}`}>
+                {process.env.REACT_APP_CONTACT_PHONE}
+              </a>
             </div>
           </div>
         </main>

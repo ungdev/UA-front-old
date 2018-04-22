@@ -3,11 +3,13 @@ import classnames from 'classnames'
 
 import './button.css'
 
-const Button = (props) => {
-  const classes = classnames('a-button', { 'raised': props.raised })
+const Button = props => {
+  const classes = classnames('a-button', { raised: props.raised })
 
   return (
-    <button className={classes} onClick={props.onClick}>{props.children}</button>
+    <button className={classes} onClick={props.onClick}>
+      {props.children}
+    </button>
   )
 }
 

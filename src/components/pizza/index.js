@@ -19,9 +19,13 @@ class Pizza extends React.Component {
       show: true
     })
 
-    setTimeout(() => this.setState({
-      show: false
-    }), 2000)
+    setTimeout(
+      () =>
+        this.setState({
+          show: false
+        }),
+      2000
+    )
   }
 
   render() {
