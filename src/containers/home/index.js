@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 import './home.css'
 
@@ -9,23 +10,43 @@ import Category from './components/category'
 import Social from './components/social'
 import Spotlights from './components/spotlights'
 import Partners from './components/partners'
+import LoginModal from './components/loginModal'
 import Button from '../../components/button'
 
-import { increment, incrementAsync, decrement, decrementAsync } from '../../modules/counter'
+import { fetchCanLogin } from '../../modules/canLogin'
 
 class Home extends React.Component {
   constructor() {
     super()
 
+    this.state = {
+      loginModalOpened: false
+    }
+
+    this.openLoginModal = this.openLoginModal.bind(this)
+    this.closeLoginModal = this.closeLoginModal.bind(this)
     this.scrollCapture = this.scrollCapture.bind(this)
   }
 
   componentWillMount() {
+    this.props.fetchCanLogin()
     document.addEventListener('scroll', this.scrollCapture, { passive: true })
   }
 
   componentWillUnmount() {
     document.removeEventListener('scroll', this.scrollCapture)
+  }
+
+  openLoginModal() {
+    this.setState({
+      loginModalOpened: true
+    })
+  }
+
+  closeLoginModal() {
+    this.setState({
+      loginModalOpened: false
+    })
   }
 
   scrollCapture() {
@@ -41,8 +62,11 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header openLoginModal={this.openLoginModal} />
         <Intro />
+        <LoginModal isOpen={this.state.loginModalOpened} onClose={this.closeLoginModal}>
+          Salut
+        </LoginModal>
 
         <main className="a-home">
           <div className="a-home__content">
@@ -77,4 +101,12 @@ class Home extends React.Component {
   }
 }
 
-export default Home
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchCanLogin: () => {
+      dispatch(fetchCanLogin())
+    }
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Home)

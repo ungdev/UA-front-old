@@ -13,24 +13,15 @@ const Social = () => {
 
   return (
     <div className="a-social">
-      <a
-        target="_blank"
-        href={process.env.REACT_APP_DISCORD}
-        className="a-social__icon"
-        style={d}
-      />
-      <a
-        target="_blank"
-        href={process.env.REACT_APP_DISCORD}
-        className="a-social__icon"
-        style={f}
-      />
-      <a
-        target="_blank"
-        href={process.env.REACT_APP_YOUTUBE}
-        className="a-social__icon"
-        style={y}
-      />
+      <a target="_blank" href={process.env.REACT_APP_DISCORD} className="a-social__icon" style={d}>
+        &nbsp;
+      </a>
+      <a target="_blank" href={process.env.REACT_APP_DISCORD} className="a-social__icon" style={f}>
+        &nbsp;
+      </a>
+      <a target="_blank" href={process.env.REACT_APP_YOUTUBE} className="a-social__icon" style={y}>
+        &nbsp;
+      </a>
     </div>
   )
 }

@@ -20,6 +20,19 @@ if (process.env.NODE_ENV === 'development') {
 
 const composedEnhancers = compose(applyMiddleware(...middleware), ...enhancers)
 
-const store = createStore(rootReducer, initialState, composedEnhancers)
+const setupStore = () => {
+  const store = createStore(rootReducer, initialState, composedEnhancers)
 
-export default store
+  if (process.env.NODE_ENV !== 'production') {
+    if (module.hot) {
+      module.hot.accept('./modules', () => {
+        const nextRootReducer = require('./modules')
+        store.replaceReducer(nextRootReducer, store.state)
+      })
+    }
+  }
+
+  return store
+}
+
+export default setupStore

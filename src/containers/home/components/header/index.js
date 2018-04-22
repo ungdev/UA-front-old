@@ -33,7 +33,9 @@ class Header extends React.Component {
             <Button onClick={this.scrollToInformations}>Informations</Button>
           </div>
           <div>
-            <Button raised={true}>{loginText}</Button>
+            <Button onClick={this.props.openLoginModal} raised={true}>
+              {loginText}
+            </Button>
           </div>
           <div>
             <Button onClick={this.scrollToSpotlights}>Tournois</Button>

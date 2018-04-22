@@ -19,6 +19,12 @@ h1, h2, h3 {
   color: #fff;
 }
 
+@media (min-width: 768px) {
+  .ReactModal__Content {
+    width: 360px !important;
+  }
+}
+
 @font-face {
   font-family: 'ua2018-font';
   src: url('./assets/ua_2018.woff2') format('woff2'),
