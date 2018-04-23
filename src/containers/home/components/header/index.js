@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { push } from 'react-router-redux'
 import SmoothScroll from 'smooth-scroll'
 
 import Button from '../../../../components/button'
@@ -13,6 +15,7 @@ class Header extends React.Component {
 
     this.scrollToInformations = this.scrollToInformations.bind(this)
     this.scrollToSpotlights = this.scrollToSpotlights.bind(this)
+    this.mainButon = this.mainButon.bind(this)
   }
 
   scrollToInformations() {
@@ -23,8 +26,16 @@ class Header extends React.Component {
     this.scroll.animateScroll(document.querySelector('#spotlights'))
   }
 
+  mainButon() {
+    if (this.props.isLoggedIn) {
+      this.props.gotoDashboard()
+    } else {
+      this.props.openLoginModal()
+    }
+  }
+
   render() {
-    let loginText = this.props.hasUser ? 'Dashboard' : 'Connexion'
+    let loginText = this.props.isLoggedIn ? 'Dashboard' : 'Connexion'
 
     return (
       <header className="a-intro-header">
@@ -33,7 +44,7 @@ class Header extends React.Component {
             <Button onClick={this.scrollToInformations}>Informations</Button>
           </div>
           <div>
-            <Button onClick={this.props.openLoginModal} raised={true}>
+            <Button onClick={this.mainButon} raised={true}>
               {loginText}
             </Button>
           </div>
@@ -46,4 +57,12 @@ class Header extends React.Component {
   }
 }
 
-export default Header
+const mapStateToProps = state => ({
+  isLoggedIn: state.login.token.length > 0
+})
+
+const mapDispatchToProps = dispatch => ({
+  gotoDashboard: () => dispatch(push('/dashboard'))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header)

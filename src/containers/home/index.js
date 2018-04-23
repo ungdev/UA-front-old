@@ -14,6 +14,7 @@ import LoginModal from './components/loginModal'
 import Button from '../../components/button'
 
 import { fetchCanLogin } from '../../modules/canLogin'
+import { autoLogin } from '../../modules/login'
 
 class Home extends React.Component {
   constructor() {
@@ -30,6 +31,7 @@ class Home extends React.Component {
 
   componentWillMount() {
     this.props.fetchCanLogin()
+    this.props.autoLogin()
     document.addEventListener('scroll', this.scrollCapture, { passive: true })
   }
 
@@ -64,9 +66,7 @@ class Home extends React.Component {
       <div>
         <Header openLoginModal={this.openLoginModal} />
         <Intro />
-        <LoginModal isOpen={this.state.loginModalOpened} onClose={this.closeLoginModal}>
-          Salut
-        </LoginModal>
+        <LoginModal isOpen={this.state.loginModalOpened} onClose={this.closeLoginModal}/>
 
         <main className="a-home">
           <div className="a-home__content">
@@ -101,12 +101,9 @@ class Home extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchCanLogin: () => {
-      dispatch(fetchCanLogin())
-    }
-  }
-}
+const mapDispatchToProps = dispatch => ({
+  fetchCanLogin: () => dispatch(fetchCanLogin()),
+  autoLogin: () => dispatch(autoLogin())
+})
 
 export default connect(null, mapDispatchToProps)(Home)

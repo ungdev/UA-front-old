@@ -2,10 +2,14 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Form, Text } from 'react-form'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
-import Modal from '../../../../components/modal'
-import Button from '../../../../components/button'
 
 import './loginModal.css'
+
+import Modal from '../../../../components/modal'
+import Button from '../../../../components/button'
+import errorToString from '../../../../lib/errorToString'
+
+import { register } from '../../../../modules/register'
 
 const LoginModal = props => {
   return (
@@ -35,14 +39,36 @@ const LoginModal = props => {
             </TabPanel>
             <TabPanel>
               <Form
-                onSubmit={values => console.log(values)}
+                onSubmit={props.register}
                 render={({ submitForm }) => (
                   <form onSubmit={submitForm} className="a-register-form">
-                    <Text field="username" placeholder="Nom d'utilisateur" />
-                    <Text field="fullname" placeholder="Prénom Nom" />
-                    <Text field="mail" type="email" placeholder="Mail" />
-                    <Text field="password" type="password" placeholder="Mot de passe" />
-                    <Text field="password2" type="password" placeholder="Confirmation" />
+                    <Text
+                      field="name"
+                      placeholder="Nom d'utilisateur"
+                      pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěíňóřšťúůýž]+"
+                      minLength="3"
+                      maxLength="90" />
+                    <Text
+                      field="fullname"
+                      placeholder="Prénom Nom"
+                      pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěíňóřšťúůýž \-]+"
+                      minLength="3"
+                      maxLength="200" />
+                    <Text
+                      field="email"
+                      type="email"
+                      placeholder="Mail" />
+                    <Text
+                      field="password"
+                      type="password"
+                      placeholder="Mot de passe"
+                      minLength="6" />
+                    <Text
+                      field="password2"
+                      type="password"
+                      placeholder="Confirmation"
+                      minLength="6" />
+                    {props.registerError && <strong className="error">{errorToString(props.registerError)}</strong>}
                     <br />
                     <Button type="submit" raised>
                       Connexion
@@ -62,7 +88,12 @@ const LoginModal = props => {
 }
 
 const mapStateToProps = state => ({
-  canLogin: state.canLogin.canLogin
+  canLogin: state.canLogin.canLogin,
+  registerError: state.register.errorMessage
 })
 
-export default connect(mapStateToProps)(LoginModal)
+const mapDispatchToProps = dispatch => ({
+  register: user => dispatch(register(user))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginModal)
