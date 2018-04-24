@@ -15,7 +15,6 @@ class Partners extends React.Component {
         <h2 className="a-partners__partner">PARTENAIRES</h2>
         <div className="a-partners__images">
           {partners.map((partner, i) => <img src={partner.image} key={i} alt={partner.name} />)}
-          {partners.map((partner, i) => <img src={partner.image} key={i} alt={partner.name} />)}
         </div>
       </div>
     )
