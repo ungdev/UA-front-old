@@ -73,16 +73,16 @@ class Home extends React.Component {
             <Category id="informations">Informations</Category>
             <Informations />
             <Button raised={true}>C'est parti !</Button>
-            <div class="mapouter">
+            <div className="a-home__map">
               <iframe
                 width="600"
                 height="320"
-                id="gmap_canvas"
+                title="Google Maps"
                 src="https://maps.google.com/maps?q=UTT Arena&t=&z=17&ie=UTF8&iwloc=&output=embed"
-                frameborder="0"
+                frameBorder="0"
                 scrolling="no"
-                marginheight="0"
-                marginwidth="0"
+                marginHeight="0"
+                marginWidth="0"
               />
             </div>
             <Category id="spotlights">Tournois</Category>
