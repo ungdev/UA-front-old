@@ -1,10 +1,14 @@
 import axios from '../lib/axios'
-import { logout } from './login'
+import { logout, SET_TOKEN } from './login'
 
 export const SET_USER = 'user/SET_USER'
+export const SET_SPOTLIGHTS = 'user/SET_SPOTLIGHTS'
+export const SET_TEAMS = 'user/SET_TEAMS'
 
 const initialState = {
-  user: null
+  user: null,
+  spotlights: null,
+  teams: null
 }
 
 export default (state = initialState, action) => {
@@ -20,16 +24,34 @@ export default (state = initialState, action) => {
 
 export const updateUser = () => {
   return async (dispatch, getState) => {
-    const token = getState().login.token
+    const authToken = getState().login.token
 
-    if (!token || token.length === 0) {
+    if (!authToken || authToken.length === 0) {
       return
     }
 
     try {
-      const { user, token, spotlights, teams, teamfinders } = await axios.get('user')
+      const res = await axios.get('user', { headers: { 'X-Token': authToken }})
 
-      console.log(user, token, spotlights, teams, teamfinders)
+      dispatch({
+        type: SET_USER,
+        payload: res.data.user
+      })
+
+      dispatch({
+        type: SET_TOKEN,
+        payload: res.data.token
+      })
+
+      dispatch({
+        type: SET_SPOTLIGHTS,
+        payload: res.data.spotlights
+      })
+
+      dispatch({
+        type: SET_TEAMS,
+        payload: res.data.teams
+      })
     } catch (err) {
       dispatch(logout())
     }

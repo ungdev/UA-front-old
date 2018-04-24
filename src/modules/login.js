@@ -1,5 +1,6 @@
 import axios from '../lib/axios'
 import { push } from 'react-router-redux'
+import { updateUser } from './user'
 
 export const SET_TOKEN = 'login/SET_TOKEN'
 export const SET_SUCCESS = 'login/SET_SUCCESS'
@@ -61,6 +62,8 @@ export const autoLogin = () => {
         type: SET_TOKEN,
         payload: localStorage.getItem('arena-2018-token')
       })
+
+      return dispatch(updateUser())
     }
   }
 }

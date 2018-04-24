@@ -32,6 +32,7 @@ class Home extends React.Component {
   componentWillMount() {
     this.props.fetchCanLogin()
     this.props.autoLogin()
+
     document.addEventListener('scroll', this.scrollCapture, { passive: true })
   }
 

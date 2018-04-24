@@ -11,6 +11,7 @@ import errorToString from '../../../../lib/errorToString'
 
 import { register } from '../../../../modules/register'
 import { tryLogin } from '../../../../modules/login'
+import { updateUser } from '../../../../modules/user'
 
 const LoginModal = props => {
   return (
@@ -28,7 +29,7 @@ const LoginModal = props => {
                 onSubmit={props.login}
                 render={({ submitForm }) => (
                   <form onSubmit={submitForm} className="a-login-form">
-                    <Text field="name" placeholder="Nom d'utilisateur" />
+                    <Text field="name" placeholder="Nom d'utilisateur" autoFocus />
                     <Text field="password" type="password" placeholder="Mot de passe" />
                     {props.loginError && (
                       <strong className="error">{errorToString(props.loginError)}</strong>
@@ -52,6 +53,7 @@ const LoginModal = props => {
                       pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěíňóřšťúůýž]+"
                       minLength="3"
                       maxLength="90"
+                      autoFocus
                     />
                     <Text
                       field="fullname"
@@ -101,7 +103,11 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  login: user => dispatch(tryLogin(user)),
+  login: user => {
+    dispatch(tryLogin(user)).then(() => {
+      dispatch(updateUser())
+    })
+  },
   register: user => dispatch(register(user))
 })
 
