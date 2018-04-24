@@ -6,6 +6,7 @@
     "axios": "^0.18.0",
     "classnames": "^2.2.5",
     "history": "^4.7.2",
+    "pm2": "^2.10.2",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-form": "^3.5.3",
@@ -17,6 +18,7 @@
     "react-scripts": "1.1.4",
     "react-tabs": "^2.2.2",
     "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "smooth-scroll": "^12.1.5"
   },
@@ -25,11 +27,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "serve": "pm2 serve build -i max --name arena.utt.fr-2018",
+    "reload": "pm2 reload arena.utt.fr-2018 --update-env",
     "lint": "prettier --single-quote --print-width 100 --tab-width 2 --no-semi --write \"src/**/*.js\""
   },
   "proxy": "http://localhost:3000",
   "devDependencies": {
-    "prettier": "^1.12.1",
-    "redux-logger": "^3.0.6"
+    "prettier": "^1.12.1"
   }
 }
