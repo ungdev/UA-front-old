@@ -10,6 +10,7 @@ import Button from '../../../../components/button'
 import errorToString from '../../../../lib/errorToString'
 
 import { register } from '../../../../modules/register'
+import { tryLogin } from '../../../../modules/login'
 
 const LoginModal = props => {
   return (
@@ -24,11 +25,14 @@ const LoginModal = props => {
 
             <TabPanel>
               <Form
-                onSubmit={values => console.log(values)}
+                onSubmit={props.login}
                 render={({ submitForm }) => (
                   <form onSubmit={submitForm} className="a-login-form">
-                    <Text field="username" placeholder="Nom d'utilisateur" />
-                    <Text field="password" placeholder="Mot de passe" />
+                    <Text field="name" placeholder="Nom d'utilisateur" />
+                    <Text field="password" type="password" placeholder="Mot de passe" />
+                    {props.loginError && (
+                      <strong className="error">{errorToString(props.loginError)}</strong>
+                    )}
                     <br />
                     <Button type="submit" raised>
                       Connexion
@@ -92,10 +96,12 @@ const LoginModal = props => {
 
 const mapStateToProps = state => ({
   canLogin: state.canLogin.canLogin,
+  loginError: state.login.errorMessage,
   registerError: state.register.errorMessage
 })
 
 const mapDispatchToProps = dispatch => ({
+  login: user => dispatch(tryLogin(user)),
   register: user => dispatch(register(user))
 })
 

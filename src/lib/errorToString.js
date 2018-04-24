@@ -6,6 +6,10 @@ export default error => {
       return 'Formulaire incomplet'
     case 'PASSWORD_MISMATCH':
       return 'Les mots de passe ne correspondent pas'
+    case 'INVALID_USERNAME':
+      return 'Nom d\'utilisateur invalide'
+    case 'INVALID_PASSWORD':
+      return 'Mot de passe invalide'
     default:
       return error
   }
