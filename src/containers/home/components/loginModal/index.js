@@ -47,28 +47,31 @@ const LoginModal = props => {
                       placeholder="Nom d'utilisateur"
                       pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěíňóřšťúůýž]+"
                       minLength="3"
-                      maxLength="90" />
+                      maxLength="90"
+                    />
                     <Text
                       field="fullname"
                       placeholder="Prénom Nom"
                       pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěíňóřšťúůýž \-]+"
                       minLength="3"
-                      maxLength="200" />
-                    <Text
-                      field="email"
-                      type="email"
-                      placeholder="Mail" />
+                      maxLength="200"
+                    />
+                    <Text field="email" type="email" placeholder="Mail" />
                     <Text
                       field="password"
                       type="password"
                       placeholder="Mot de passe"
-                      minLength="6" />
+                      minLength="6"
+                    />
                     <Text
                       field="password2"
                       type="password"
                       placeholder="Confirmation"
-                      minLength="6" />
-                    {props.registerError && <strong className="error">{errorToString(props.registerError)}</strong>}
+                      minLength="6"
+                    />
+                    {props.registerError && (
+                      <strong className="error">{errorToString(props.registerError)}</strong>
+                    )}
                     <br />
                     <Button type="submit" raised>
                       Connexion

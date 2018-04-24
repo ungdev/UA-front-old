@@ -12,7 +12,7 @@ const App = () => (
     <Switch>
       <Route path={process.env.REACT_APP_BASEURL} exact component={Home} />
       <Route path={process.env.REACT_APP_BASEURL + 'dashboard'} component={Dashboard} />
-      <Redirect from='*' to='/' />
+      <Redirect from="*" to="/" />
     </Switch>
   </div>
 )

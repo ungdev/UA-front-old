@@ -26,7 +26,7 @@ export const autoLogin = () => {
   }
 }
 
-export const login = (token) => {
+export const login = token => {
   return async dispatch => {
     dispatch({
       type: SET_TOKEN,

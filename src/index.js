@@ -33,4 +33,3 @@ window.store = store
 if (module.hot) {
   module.hot.accept('./containers/app', rerender)
 }
-

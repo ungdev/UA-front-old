@@ -38,13 +38,17 @@ const fail = (dispatch, err) => {
     payload: err
   })
 
-  setTimeout(() => dispatch({
-    type: SET_ERROR,
-    payload: ''
-  }), 2000)
+  setTimeout(
+    () =>
+      dispatch({
+        type: SET_ERROR,
+        payload: ''
+      }),
+    2000
+  )
 }
 
-export const register = (user) => {
+export const register = user => {
   return async dispatch => {
     if (user.password !== user.password2) {
       return fail(dispatch, 'PASSWORD_MISMATCH')

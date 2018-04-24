@@ -66,7 +66,7 @@ class Home extends React.Component {
       <div>
         <Header openLoginModal={this.openLoginModal} />
         <Intro />
-        <LoginModal isOpen={this.state.loginModalOpened} onClose={this.closeLoginModal}/>
+        <LoginModal isOpen={this.state.loginModalOpened} onClose={this.closeLoginModal} />
 
         <main className="a-home">
           <div className="a-home__content">
@@ -74,7 +74,16 @@ class Home extends React.Component {
             <Informations />
             <Button raised={true}>C'est parti !</Button>
             <div class="mapouter">
-              <iframe width="600" height="320" id="gmap_canvas" src="https://maps.google.com/maps?q=UTT Arena&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+              <iframe
+                width="600"
+                height="320"
+                id="gmap_canvas"
+                src="https://maps.google.com/maps?q=UTT Arena&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+              />
             </div>
             <Category id="spotlights">Tournois</Category>
             <Spotlights />
