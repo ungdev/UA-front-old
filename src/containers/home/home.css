@@ -18,6 +18,16 @@
   margin-top: 0;
 }
 
+.a-home__content .mapouter {
+  text-align: center;
+}
+
+.a-home__content iframe {
+  display: inline-block;
+  margin-top: 40px;
+  max-width: 100%;
+}
+
 .a-home__content > .a-informations + .a-button {
   display: block;
   margin: 24px auto 0 auto;
