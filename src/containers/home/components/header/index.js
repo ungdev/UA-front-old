@@ -58,7 +58,7 @@ class Header extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  isLoggedIn: state.login.token.length > 0
+  isLoggedIn: state.login.token && state.login.token.length > 0
 })
 
 const mapDispatchToProps = dispatch => ({
