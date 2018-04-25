@@ -6,7 +6,7 @@ import List from '../../components/list'
 import ListItem from '../../components/list-item'
 
 import { fetchCanLogin } from '../../modules/canLogin'
-import { autoLogin } from '../../modules/login'
+import { autoLogin, logout } from '../../modules/login'
 
 import './dashboard.css'
 
@@ -50,7 +50,7 @@ class Dashboard extends React.Component {
               <h3>Éditer mes infos</h3>
               <span>Accède à ton profil et modifie tes informations si besoin</span>
             </ListItem>
-            <ListItem onClick={() => {}}>
+            <ListItem onClick={this.props.logout}>
               <h3>Déconnexion</h3>
             </ListItem>
           </List>
@@ -66,7 +66,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchCanLogin: () => dispatch(fetchCanLogin()),
-  autoLogin: () => dispatch(autoLogin())
+  autoLogin: () => dispatch(autoLogin()),
+  logout: () => dispatch(logout())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)

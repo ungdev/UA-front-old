@@ -1,6 +1,7 @@
 .a-list-item {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 20px 25px;
   min-height: 80px;
   font-size: 24px;
@@ -20,6 +21,11 @@
   color: #58ebdf;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+
+/* if no span, no margin bottom to h3 */
+.a-list-item > h3:last-child {
+  margin-bottom: 0;
 }
 
 .a-list-item > span {
