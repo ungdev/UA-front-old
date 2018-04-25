@@ -15,20 +15,32 @@
 
 .a-list-item > h3 {
   margin: 0 0 12px 0;
-  max-width: calc(100% - 60px);
   font-size: 24px;
   font-family: 'ua2018-font', Impact, sans-serif;
+  color: #58ebdf;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 .a-list-item > span {
   display: inline-block;
-  max-width: calc(100% - 60px);
   font-size: 16px;
+  text-align: justify;
 }
 
 .a-list-item:hover,
 .a-list-item.selected {
   border: 2px solid #58ebdf;
+}
+
+@media (min-width: 768px) {
+  .a-list-item > h3 {
+    max-width: calc(100% - 60px);
+    text-align: left;
+  }
+
+  .a-list-item > span {
+    max-width: calc(100% - 60px);
+    text-align: left;
+  }
 }
