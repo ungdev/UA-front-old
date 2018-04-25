@@ -12,15 +12,15 @@ const App = props => (
     <AsyncPizza />
     <Switch>
       <Route path={process.env.REACT_APP_BASEURL} exact component={Home} />
-      {props.auth &&
-        <Route path={process.env.REACT_APP_BASEURL + 'dashboard'} component={Dashboard} />
-      }
+      <Route path={process.env.REACT_APP_BASEURL + 'dashboard'} component={Dashboard} />
       <Redirect from="*" to="/" />
     </Switch>
   </div>
 )
 
 const mapStateToProps = state => ({
+  // map location to rerender <App> when location changes
+  location: state.routing.location.pathname,
   auth: state.user.user
 })
 

@@ -64,6 +64,8 @@ export const autoLogin = () => {
       })
 
       return dispatch(updateUser())
+    } else {
+      return dispatch(logout())
     }
   }
 }
@@ -100,5 +102,7 @@ export const logout = () => {
     })
 
     localStorage.removeItem('arena-2018-token')
+
+    return dispatch(push('/'))
   }
 }

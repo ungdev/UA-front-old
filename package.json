@@ -23,16 +23,16 @@
     "smooth-scroll": "^12.1.5"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
+    "start": "static build --host-address 0.0.0.0 --port 8080",
     "serve": "pm2 serve build -i max --name arena.utt.fr-2018",
     "reload": "pm2 reload arena.utt.fr-2018 --update-env",
     "lint": "prettier --single-quote --print-width 100 --tab-width 2 --no-semi --write \"src/**/*.js\""
   },
   "proxy": "http://localhost:3000",
   "devDependencies": {
+    "node-static": "^0.7.10",
     "prettier": "^1.12.1"
   }
 }

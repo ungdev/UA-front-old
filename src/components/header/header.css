@@ -1,5 +1,6 @@
 .a-header {
   height: 70px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,6 +37,16 @@
   width: 10px;
 }
 
+.a-header__logo {
+  height: 60px;
+  width: 60px;
+}
+
+.a-header__logo > img {
+  height: 100%;
+  width: 100%;
+}
+
 @media (min-width: 768px) {
   .a-header {
     height: 200px;
@@ -44,5 +55,10 @@
   .a-header__arrow-container {
     left: 30px;
     transform: translateY(-50%) scale(1.2);
+  }
+
+  .a-header__logo {
+    height: 150px;
+    width: 150px;
   }
 }
