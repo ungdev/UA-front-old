@@ -11,8 +11,21 @@ import { autoLogin } from '../../modules/login'
 import './dashboard.css'
 
 class Dashboard extends React.Component {
+  constructor() {
+    super()
+
+    this.state = {
+      render: false
+    }
+  }
+
   componentWillMount() {
     this.props.autoLogin()
+      .then(() => {
+        this.setState({
+          render: true
+        })
+      })
 
     this.arrow = this.arrow.bind(this)
   }
@@ -33,8 +46,8 @@ class Dashboard extends React.Component {
         <main className="a-dashboard">
           <h1>Dashboard</h1>
 
-          <Route path={process.env.REACT_APP_BASEURL + 'dashboard'} exact component={DashboardHome} />
-          <Route path={process.env.REACT_APP_BASEURL + 'dashboard/user'} component={DashboardEditInfos} />
+          {this.state.render && <Route path={process.env.REACT_APP_BASEURL + 'dashboard'} exact component={DashboardHome} />}
+          {this.state.render && <Route path={process.env.REACT_APP_BASEURL + 'dashboard/user'} component={DashboardEditInfos} />}
         </main>
       </div>
     )

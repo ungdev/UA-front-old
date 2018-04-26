@@ -1,6 +1,5 @@
 import axios from '../lib/axios'
-import { login } from './login'
-import { push } from 'react-router-redux'
+import { saveToken } from './login'
 
 export const SET_SUCCESS = 'register/SET_SUCCESS'
 export const SET_ERROR = 'register/SET_ERROR'
@@ -57,8 +56,9 @@ export const register = user => {
     try {
       const res = await axios.post('user', user)
 
-      dispatch(login(res.data.token))
-      dispatch(push('/dashboard'))
+      dispatch(saveToken(res.data.token)).then(() => {
+        location.href = '/dashboard' // eslint-disable-line no-restricted-globals
+      })
     } catch (err) {
       fail(dispatch, err.response.data.error)
     }

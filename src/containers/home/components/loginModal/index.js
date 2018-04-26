@@ -11,7 +11,7 @@ import errorToString from '../../../../lib/errorToString'
 
 import { register } from '../../../../modules/register'
 import { tryLogin } from '../../../../modules/login'
-import { updateUser } from '../../../../modules/user'
+import { fetchUser } from '../../../../modules/user'
 
 const LoginModal = props => {
   return (
@@ -105,7 +105,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   login: user => {
     dispatch(tryLogin(user)).then(() => {
-      dispatch(updateUser())
+      dispatch(fetchUser())
     })
   },
   register: user => dispatch(register(user))

@@ -1,6 +1,6 @@
 import axios from '../lib/axios'
 import { push } from 'react-router-redux'
-import { updateUser } from './user'
+import { fetchUser } from './user'
 
 export const SET_TOKEN = 'login/SET_TOKEN'
 export const SET_SUCCESS = 'login/SET_SUCCESS'
@@ -63,7 +63,7 @@ export const autoLogin = () => {
         payload: localStorage.getItem('arena-2018-token')
       })
 
-      return dispatch(updateUser())
+      return dispatch(fetchUser())
     } else {
       return dispatch(logout())
     }
@@ -75,7 +75,7 @@ export const tryLogin = user => {
     try {
       const res = await axios.put('user/login', user)
 
-      dispatch(login(res.data.token))
+      dispatch(saveToken(res.data.token))
       dispatch(push('/dashboard'))
     } catch (err) {
       fail(dispatch, err.response.data.error)
@@ -83,7 +83,7 @@ export const tryLogin = user => {
   }
 }
 
-export const login = token => {
+export const saveToken = token => {
   return async dispatch => {
     dispatch({
       type: SET_TOKEN,
