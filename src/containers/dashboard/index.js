@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import Header from '../../components/header'
 import DashboardHome from './home'
 import DashboardEditInfos from './editInfos'
+import DashboardPayment from './payment'
 
 import { autoLogin } from '../../modules/login'
 
@@ -23,7 +24,7 @@ class Dashboard extends React.Component {
     this.props.autoLogin()
       .then(() => {
         this.setState({
-          render: true
+          render: (this.props.user && this.props.user.name)
         })
       })
 
@@ -31,12 +32,9 @@ class Dashboard extends React.Component {
   }
 
   arrow() {
-    switch (this.props.location) {
-      case '/dashboard/user':
-        return '/dashboard'
-      default:
-        return '/'
-    }
+    return (this.props.location && this.props.location.indexOf('/dashboard') > -1)
+      ? '/dashboard'
+      : '/'
   }
 
   render() {
@@ -48,6 +46,7 @@ class Dashboard extends React.Component {
 
           {this.state.render && <Route path={process.env.REACT_APP_BASEURL + 'dashboard'} exact component={DashboardHome} />}
           {this.state.render && <Route path={process.env.REACT_APP_BASEURL + 'dashboard/user'} component={DashboardEditInfos} />}
+          {this.state.render && <Route path={process.env.REACT_APP_BASEURL + 'dashboard/payment'} component={DashboardPayment} />}
         </main>
       </div>
     )
@@ -55,8 +54,8 @@ class Dashboard extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  // map location to rerender <Dashboard> when location changes
   location: state.routing.location.pathname,
+  user: state.user.user
 })
 
 const mapDispatchToProps = dispatch => ({

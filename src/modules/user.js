@@ -4,12 +4,14 @@ import { logout, SET_TOKEN } from './login'
 export const SET_USER = 'user/SET_USER'
 export const SET_SPOTLIGHTS = 'user/SET_SPOTLIGHTS'
 export const SET_TEAMS = 'user/SET_TEAMS'
+export const SET_PRICES = 'user/SET_PRICES'
 export const SET_EDIT_ERROR = 'user/SET_EDIT_ERROR'
 
 const initialState = {
   user: null,
   spotlights: null,
   teams: null,
+  prices: null,
   editError: ''
 }
 
@@ -24,6 +26,33 @@ export default (state = initialState, action) => {
       return {
         ...state,
         editError: action.payload
+      }
+    case SET_SPOTLIGHTS:
+      return {
+        ...state,
+        spotlights: action.payload
+      }
+    case SET_TEAMS:
+      return {
+        ...state,
+        teams: action.payload
+      }
+    case SET_PRICES:
+      if (!action.payload) {
+        return state
+      }
+
+      const prices = {}
+
+      for (let [key, value] of Object.entries(action.payload)){
+        prices[key] = parseFloat(value)
+      }
+
+      prices.partners = action.payload.partners.split(',')
+
+      return {
+        ...state,
+        prices
       }
     default:
       return state
@@ -41,25 +70,11 @@ export const fetchUser = () => {
     try {
       const res = await axios.get('user', { headers: { 'X-Token': authToken }})
 
-      dispatch({
-        type: SET_USER,
-        payload: res.data.user
-      })
-
-      dispatch({
-        type: SET_TOKEN,
-        payload: res.data.token
-      })
-
-      dispatch({
-        type: SET_SPOTLIGHTS,
-        payload: res.data.spotlights
-      })
-
-      dispatch({
-        type: SET_TEAMS,
-        payload: res.data.teams
-      })
+      dispatch({ type: SET_USER, payload: res.data.user })
+      dispatch({ type: SET_TOKEN, payload: res.data.token })
+      dispatch({ type: SET_SPOTLIGHTS, payload: res.data.spotlights })
+      dispatch({ type: SET_TEAMS, payload: res.data.teams })
+      dispatch({ type: SET_PRICES, payload: res.data.prices })
     } catch (err) {
       dispatch(logout())
     }

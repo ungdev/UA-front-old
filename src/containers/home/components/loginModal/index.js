@@ -58,7 +58,7 @@ const LoginModal = props => {
                     <Text
                       field="fullname"
                       placeholder="Prénom Nom"
-                      pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěíňóřšťúůýž \-]+"
+                      pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěíňóřšťúůýž \-]+ [0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěíňóřšťúůýž \-]+"
                       minLength="3"
                       maxLength="200"
                     />

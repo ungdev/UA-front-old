@@ -1,21 +1,3 @@
-.a-dashboard-edit {
-  max-width: 400px;
-  margin: 0 auto;
-  background-color: #fff;
-  border-radius: 3px;
-  box-shadow: 0 3px 6px rgba(0,0,0,.24);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.a-dashboard-edit > h2 {
-  margin-top: 0;
-  color: #000;
-  text-transform: uppercase;
-  text-align: center;
-}
-
 .a-dashboard-edit > p {
   margin-top: 0;
   text-align: justify;

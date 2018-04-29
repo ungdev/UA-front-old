@@ -37,8 +37,7 @@ class EditInfos extends React.Component {
           })
         }, 2000)
       })
-      // will be done with user/SET_EDIT_ERROR
-      .catch(Function.noop)
+      // catch is done with user/SET_EDIT_ERROR
   }
 
   render() {
@@ -49,7 +48,7 @@ class EditInfos extends React.Component {
           ...this.props.user
         })}
         render={({ submitForm }) => (
-          <form onSubmit={submitForm} className="a-dashboard-edit">
+          <form onSubmit={submitForm} className="a-dashboard-page a-dashboard-edit">
             <h2>Gestion de compte</h2>
             <p>
               Changez ici vos informations personnelles. Vous recevrez votre place par e-mail. Si vous êtes membres d'une école partenaire, pensez à mettre votre e-mail associée pour profiter des tarifs préférentiels.<br/>

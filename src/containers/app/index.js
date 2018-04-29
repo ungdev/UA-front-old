@@ -19,8 +19,6 @@ const App = props => (
 )
 
 const mapStateToProps = state => ({
-  // map location to rerender <App> when location changes
-  location: state.routing.location.pathname,
   auth: state.user.user
 })
 

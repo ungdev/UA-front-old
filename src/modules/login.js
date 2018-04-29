@@ -1,6 +1,6 @@
 import axios from '../lib/axios'
 import { push } from 'react-router-redux'
-import { fetchUser } from './user'
+import { fetchUser, SET_USER, SET_SPOTLIGHTS, SET_TEAMS, SET_PRICES } from './user'
 
 export const SET_TOKEN = 'login/SET_TOKEN'
 export const SET_SUCCESS = 'login/SET_SUCCESS'
@@ -96,10 +96,11 @@ export const saveToken = token => {
 
 export const logout = () => {
   return async dispatch => {
-    dispatch({
-      type: SET_TOKEN,
-      payload: null
-    })
+    dispatch({ type: SET_TOKEN, payload: null })
+    dispatch({ type: SET_USER, payload: null })
+    dispatch({ type: SET_SPOTLIGHTS, payload: null })
+    dispatch({ type: SET_TEAMS, payload: null })
+    dispatch({ type: SET_PRICES, payload: null })
 
     localStorage.removeItem('arena-2018-token')
 

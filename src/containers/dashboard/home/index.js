@@ -29,7 +29,7 @@ const Home = props => [
   </List>,
   <h2 key="3">Mon compte</h2>,
   <List key="4">
-    <ListItem onClick={() => {}}>
+    <ListItem onClick={props.payment}>
       <h3>Payer ma place</h3>
       <span>Paye ta place et récupère ton billet d'entrée ! Obligatoire pour les tournois</span>
     </ListItem>
@@ -45,6 +45,7 @@ const Home = props => [
 
 const mapDispatchToProps = dispatch => ({
   editUser: () => dispatch(push('/dashboard/user')),
+  payment: () => dispatch(push('/dashboard/payment')),
   logout: () => dispatch(logout())
 })
 

@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === 'development') {
     enhancers.push(devToolsExtension())
   }
 
-  middleware.push(createLogger())
+  middleware.push(createLogger({ collapsed: true }))
 }
 
 const composedEnhancers = compose(applyMiddleware(...middleware), ...enhancers)

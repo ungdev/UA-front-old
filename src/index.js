@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
+import { Route } from 'react-router'
 import { ConnectedRouter } from 'react-router-redux'
 import configureStore, { history } from './store'
 import registerServiceWorker from './registerServiceWorker'
@@ -19,9 +20,7 @@ const rerender = () =>
   render(
     <Provider store={store}>
       <ConnectedRouter history={history}>
-        <div>
-          <App />
-        </div>
+        <Route component={App} />
       </ConnectedRouter>
     </Provider>,
     target

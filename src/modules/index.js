@@ -4,11 +4,13 @@ import canLogin from './canLogin'
 import login from './login'
 import register from './register'
 import user from './user'
+import payment from './payment'
 
 export default combineReducers({
   routing: routerReducer,
   canLogin,
   login,
   register,
-  user
+  user,
+  payment
 })
