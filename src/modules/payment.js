@@ -57,7 +57,7 @@ export const payment = basket => {
     console.log(basket)
 
     try {
-      const res = await axios.post('user/pay', basket, { headers: { 'X-Token': authToken }})
+      const res = await axios.post('user/pay', basket, { headers: { 'X-Token': authToken } })
 
       if (res.status === 200 && !res.body.error) {
         location.href = res.body.url // eslint-disable-line no-restricted-globals

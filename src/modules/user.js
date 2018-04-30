@@ -44,7 +44,7 @@ export default (state = initialState, action) => {
 
       const prices = {}
 
-      for (let [key, value] of Object.entries(action.payload)){
+      for (let [key, value] of Object.entries(action.payload)) {
         prices[key] = parseFloat(value)
       }
 
@@ -68,7 +68,7 @@ export const fetchUser = () => {
     }
 
     try {
-      const res = await axios.get('user', { headers: { 'X-Token': authToken }})
+      const res = await axios.get('user', { headers: { 'X-Token': authToken } })
 
       dispatch({ type: SET_USER, payload: res.data.user })
       dispatch({ type: SET_TOKEN, payload: res.data.token })
@@ -81,7 +81,7 @@ export const fetchUser = () => {
   }
 }
 
-export const editUser = (newUserData) => {
+export const editUser = newUserData => {
   return async (dispatch, getState) => {
     const authToken = getState().login.token
 
@@ -90,7 +90,7 @@ export const editUser = (newUserData) => {
     }
 
     try {
-      const res = await axios.put('user', newUserData, { headers: { 'X-Token': authToken }})
+      const res = await axios.put('user', newUserData, { headers: { 'X-Token': authToken } })
 
       dispatch({
         type: SET_USER,

@@ -5,6 +5,7 @@ import login from './login'
 import register from './register'
 import user from './user'
 import payment from './payment'
+import team from './team'
 
 export default combineReducers({
   routing: routerReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
   login,
   register,
   user,
-  payment
+  payment,
+  team
 })

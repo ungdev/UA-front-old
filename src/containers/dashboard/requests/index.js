@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import errorToString from '../../../lib/errorToString'
+
 import { cancelRequest } from '../../../modules/team'
 
 import './requests.css'
@@ -13,7 +15,7 @@ class Requests extends React.Component {
   }
 
   cancelRequest(id) {
-    return (e) => {
+    return e => {
       e.preventDefault()
       this.props.cancelRequest(id)
     }
@@ -25,13 +27,18 @@ class Requests extends React.Component {
         <h2>Mes demandes</h2>
         <div className="a-requests">
           {this.props.requests.length === 0 && <p>Aucune demande en cours.</p>}
+          {this.props.cancelRequestError && (
+            <strong className="error">{errorToString(this.props.cancelRequestError)}</strong>
+          )}
           {this.props.requests.map((request, i) => (
             <div className="a-request" key={i}>
               <div className="a-request__content">
                 <strong>{request.name}</strong>
                 <em>{request.message}</em>
               </div>
-              <span className="a-request__cancel" href="#" onClick={this.cancelRequest(request.id)}>Annuler</span>
+              <span className="a-request__cancel" href="#" onClick={this.cancelRequest(request.id)}>
+                Annuler
+              </span>
             </div>
           ))}
         </div>
@@ -55,11 +62,12 @@ const mapStateToProps = state => ({
         message: asking.askingMessage
       }
     })
-    .filter(request => !!request)
+    .filter(request => !!request),
+  cancelRequestError: state.team.cancelRequestError
 })
 
 const mapDispatchToProps = dispatch => ({
-  cancelRequest: (teamId) => dispatch(cancelRequest(teamId))
+  cancelRequest: teamId => dispatch(cancelRequest(teamId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Requests)

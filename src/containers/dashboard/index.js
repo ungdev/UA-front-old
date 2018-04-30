@@ -22,18 +22,17 @@ class Dashboard extends React.Component {
   }
 
   componentWillMount() {
-    this.props.autoLogin()
-      .then(() => {
-        this.setState({
-          render: (this.props.user && this.props.user.name)
-        })
+    this.props.autoLogin().then(() => {
+      this.setState({
+        render: this.props.user && this.props.user.name
       })
+    })
 
     this.arrow = this.arrow.bind(this)
   }
 
   arrow() {
-    return (this.props.location && this.props.location.indexOf('/dashboard') > -1)
+    return this.props.location && this.props.location.indexOf('/dashboard') > -1
       ? '/dashboard'
       : '/'
   }
@@ -45,10 +44,31 @@ class Dashboard extends React.Component {
         <main className="a-dashboard">
           <h1>Dashboard</h1>
 
-          {this.state.render && <Route path={process.env.REACT_APP_BASEURL + 'dashboard'} exact component={DashboardHome} />}
-          {this.state.render && <Route path={process.env.REACT_APP_BASEURL + 'dashboard/user'} component={DashboardEditInfos} />}
-          {this.state.render && <Route path={process.env.REACT_APP_BASEURL + 'dashboard/payment'} component={DashboardPayment} />}
-          {this.state.render && <Route path={process.env.REACT_APP_BASEURL + 'dashboard/requests'} component={DashboardRequests} />}
+          {this.state.render && (
+            <Route
+              path={process.env.REACT_APP_BASEURL + 'dashboard'}
+              exact
+              component={DashboardHome}
+            />
+          )}
+          {this.state.render && (
+            <Route
+              path={process.env.REACT_APP_BASEURL + 'dashboard/user'}
+              component={DashboardEditInfos}
+            />
+          )}
+          {this.state.render && (
+            <Route
+              path={process.env.REACT_APP_BASEURL + 'dashboard/payment'}
+              component={DashboardPayment}
+            />
+          )}
+          {this.state.render && (
+            <Route
+              path={process.env.REACT_APP_BASEURL + 'dashboard/requests'}
+              component={DashboardRequests}
+            />
+          )}
         </main>
       </div>
     )

@@ -2,21 +2,21 @@ module.exports = {
   option: (base, { isSelected }) => ({
     ...base,
     fontSize: '16px',
-    color: isSelected ? '#fff': '#222'
+    color: isSelected ? '#fff' : '#222'
   }),
-  indicatorSeparator: (base) => ({
+  indicatorSeparator: base => ({
     display: 'none'
   }),
-  menu: (base) => ({
+  menu: base => ({
     ...base,
     maxWidth: '200px'
   }),
-  control: (base) => ({
+  control: base => ({
     ...base,
     maxWidth: '200px',
     fontSize: '16px'
   }),
-  container: (base) => ({
+  container: base => ({
     ...base,
     margin: '12px 0'
   })

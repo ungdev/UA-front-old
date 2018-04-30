@@ -22,37 +22,39 @@ class EditInfos extends React.Component {
   }
 
   editUser(newUser) {
-    this.props
-      .editUser(newUser)
-      .then(() => {
-        this.setState({
-          success: true
-        })
-
-        clearTimeout(this.timeout)
-
-        this.timeout = setTimeout(() => {
-          this.setState({
-            success: false
-          })
-        }, 2000)
+    this.props.editUser(newUser).then(() => {
+      this.setState({
+        success: true
       })
-      // catch is done with user/SET_EDIT_ERROR
+
+      clearTimeout(this.timeout)
+
+      this.timeout = setTimeout(() => {
+        this.setState({
+          success: false
+        })
+      }, 2000)
+    })
+    // catch is done with user/SET_EDIT_ERROR
   }
 
   render() {
     return (
       <Form
         onSubmit={this.editUser}
-        defaultValues={({
+        defaultValues={{
           ...this.props.user
-        })}
+        }}
         render={({ submitForm }) => (
           <form onSubmit={submitForm} className="a-dashboard-page a-dashboard-edit">
             <h2>Gestion de compte</h2>
             <p>
-              Changez ici vos informations personnelles. Vous recevrez votre place par e-mail. Si vous êtes membres d'une école partenaire, pensez à mettre votre e-mail associée pour profiter des tarifs préférentiels.<br/>
-              <strong>Si vous ne souhaitez pas changer votre mot de passe, laissez les champs vides.</strong>
+              Changez ici vos informations personnelles. Vous recevrez votre place par e-mail. Si
+              vous êtes membres d'une école partenaire, pensez à mettre votre e-mail associée pour
+              profiter des tarifs préférentiels.<br />
+              <strong>
+                Si vous ne souhaitez pas changer votre mot de passe, laissez les champs vides.
+              </strong>
             </p>
             <Text
               field="name"
@@ -70,21 +72,9 @@ class EditInfos extends React.Component {
               maxLength="200"
             />
             <Text field="email" type="email" placeholder="Mail" />
-            <Text
-              field="password"
-              type="password"
-              placeholder="Mot de passe"
-              minLength="6"
-            />
-            <Text
-              field="password2"
-              type="password"
-              placeholder="Confirmation"
-              minLength="6"
-            />
-            {this.state.success && (
-              <strong className="success">Modifications validées</strong>
-            )}
+            <Text field="password" type="password" placeholder="Mot de passe" minLength="6" />
+            <Text field="password2" type="password" placeholder="Confirmation" minLength="6" />
+            {this.state.success && <strong className="success">Modifications validées</strong>}
             {this.props.editError && (
               <strong className="error">{errorToString(this.props.editError)}</strong>
             )}

@@ -8,7 +8,19 @@ const initialState = {
   cancelRequestError: null
 }
 
-export const cancelRequest = (id) => {
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case SET_CANCELREQUEST_ERROR:
+      return {
+        ...state,
+        cancelRequestError: action.payload
+      }
+    default:
+      return state
+  }
+}
+
+export const cancelRequest = id => {
   return async (dispatch, getState) => {
     const authToken = getState().login.token
 
@@ -17,7 +29,7 @@ export const cancelRequest = (id) => {
     }
 
     try {
-      const res = await axios.delete(`/team/${id}/cancelRequest`, { headers: { 'X-Token': authToken }})
+      await axios.delete(`/team/${id}/cancelRequest`, { headers: { 'X-Token': authToken } })
 
       dispatch(fetchUser())
     } catch (err) {
