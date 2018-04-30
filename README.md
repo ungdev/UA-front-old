@@ -30,16 +30,15 @@ cp .env.development .env.development.local
 nano .env.development.local
 ```
 
-## Development
+## Commands
 
 ```
-yarn start
-```
-
-## Production build
-
-```
-yarn build
+yarn dev    # development server
+yarn build  # build production assets
+yarn start  # static server
+yarn serve  # pm2 static server (load balancing)
+yarn reload # pm2 hot reload
+yarn lint   # prettier lint
 ```
 
 ## Structure

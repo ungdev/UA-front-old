@@ -87,7 +87,6 @@ class EditInfos extends React.Component {
   }
 
   render() {
-    console.log(this.props.paymentError)
     const playerPrice = this.isPartner ? this.props.prices.partner : this.props.prices.default
 
     const price = (this.state.plusone ? this.props.prices.plusone : playerPrice) +

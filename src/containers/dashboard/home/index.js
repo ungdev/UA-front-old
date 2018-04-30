@@ -22,7 +22,7 @@ const Home = props => [
       <h3>Mon équipe</h3>
       <span>Gère ton équipe, ses membres et vérifie son status d'inscription !</span>
     </ListItem>
-    <ListItem onClick={() => {}}>
+    <ListItem onClick={props.requests}>
       <h3>Mes demandes</h3>
       <span>La liste des demandes d'équipe que tu as faite</span>
     </ListItem>
@@ -46,6 +46,7 @@ const Home = props => [
 const mapDispatchToProps = dispatch => ({
   editUser: () => dispatch(push('/dashboard/user')),
   payment: () => dispatch(push('/dashboard/payment')),
+  requests: () => dispatch(push('/dashboard/requests')),
   logout: () => dispatch(logout())
 })
 

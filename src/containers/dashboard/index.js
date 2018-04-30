@@ -6,6 +6,7 @@ import Header from '../../components/header'
 import DashboardHome from './home'
 import DashboardEditInfos from './editInfos'
 import DashboardPayment from './payment'
+import DashboardRequests from './requests'
 
 import { autoLogin } from '../../modules/login'
 
@@ -47,6 +48,7 @@ class Dashboard extends React.Component {
           {this.state.render && <Route path={process.env.REACT_APP_BASEURL + 'dashboard'} exact component={DashboardHome} />}
           {this.state.render && <Route path={process.env.REACT_APP_BASEURL + 'dashboard/user'} component={DashboardEditInfos} />}
           {this.state.render && <Route path={process.env.REACT_APP_BASEURL + 'dashboard/payment'} component={DashboardPayment} />}
+          {this.state.render && <Route path={process.env.REACT_APP_BASEURL + 'dashboard/requests'} component={DashboardRequests} />}
         </main>
       </div>
     )
