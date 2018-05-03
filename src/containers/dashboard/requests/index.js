@@ -7,45 +7,28 @@ import { cancelRequest } from '../../../modules/team'
 
 import './requests.css'
 
-class Requests extends React.Component {
-  constructor() {
-    super()
-
-    this.cancelRequest = this.cancelRequest.bind(this)
-  }
-
-  cancelRequest(id) {
-    return e => {
-      e.preventDefault()
-      this.props.cancelRequest(id)
-    }
-  }
-
-  render() {
-    return (
-      <div className="a-dashboard-page a-dashboard-requests">
-        <h2>Mes demandes</h2>
-        <div className="a-requests">
-          {this.props.requests.length === 0 && <p>Aucune demande en cours.</p>}
-          {this.props.cancelRequestError && (
-            <strong className="error">{errorToString(this.props.cancelRequestError)}</strong>
-          )}
-          {this.props.requests.map((request, i) => (
-            <div className="a-request" key={i}>
-              <div className="a-request__content">
-                <strong>{request.name}</strong>
-                <em>{request.message}</em>
-              </div>
-              <span className="a-request__cancel" href="#" onClick={this.cancelRequest(request.id)}>
-                Annuler
-              </span>
-            </div>
-          ))}
+const Requests = props => (
+  <div className="a-dashboard-page a-dashboard-requests">
+    <h2>Mes demandes</h2>
+    <div className="a-requests">
+      {props.requests.length === 0 && <p>Aucune demande en cours.</p>}
+      {props.cancelRequestError && (
+        <strong className="error">{errorToString(props.cancelRequestError)}</strong>
+      )}
+      {props.requests.map((request, i) => (
+        <div className="a-request" key={i}>
+          <div className="a-request__content">
+            <strong>{request.name}</strong>
+            <em>{request.message}</em>
+          </div>
+          <span className="a-request__cancel" href="#" onClick={this.cancelRequest(request.id)}>
+            Annuler
+          </span>
         </div>
-      </div>
-    )
-  }
-}
+      ))}
+    </div>
+  </div>
+)
 
 const mapStateToProps = state => ({
   requests: state.user.teams
@@ -67,7 +50,9 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  cancelRequest: teamId => dispatch(cancelRequest(teamId))
+  cancelRequest: teamId => () => {
+    dispatch(cancelRequest(teamId))
+  }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Requests)

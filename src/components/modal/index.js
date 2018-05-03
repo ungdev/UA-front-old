@@ -31,12 +31,10 @@ const styles = {
   }
 }
 
-const Modal = props => {
-  return (
-    <ReactModal isOpen={props.isOpen} onRequestClose={props.onClose} style={styles}>
-      {props.children}
-    </ReactModal>
-  )
-}
+const Modal = props => (
+  <ReactModal isOpen={props.isOpen} onRequestClose={props.onClose} style={styles}>
+    {props.children}
+  </ReactModal>
+)
 
 export default Modal

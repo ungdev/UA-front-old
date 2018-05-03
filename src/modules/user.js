@@ -6,12 +6,14 @@ export const SET_SPOTLIGHTS = 'user/SET_SPOTLIGHTS'
 export const SET_TEAMS = 'user/SET_TEAMS'
 export const SET_PRICES = 'user/SET_PRICES'
 export const SET_EDIT_ERROR = 'user/SET_EDIT_ERROR'
+export const SET_EDIT_SUCCESS = 'user/SET_EDIT_SUCCESS'
 
 const initialState = {
   user: null,
   spotlights: null,
   teams: null,
   prices: null,
+  editSuccess: false,
   editError: ''
 }
 
@@ -26,6 +28,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         editError: action.payload
+      }
+    case SET_EDIT_SUCCESS:
+      return {
+        ...state,
+        editSuccess: action.payload
       }
     case SET_SPOTLIGHTS:
       return {
@@ -96,6 +103,18 @@ export const editUser = newUserData => {
         type: SET_USER,
         payload: res.data.user
       })
+
+      dispatch({
+        type: SET_EDIT_SUCCESS,
+        payload: true
+      })
+
+      setTimeout(() => {
+        dispatch({
+          type: SET_EDIT_SUCCESS,
+          payload: false
+        })
+      }, 2000)
     } catch (err) {
       dispatch({
         type: SET_EDIT_ERROR,
