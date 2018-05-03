@@ -7,8 +7,10 @@ import DashboardHome from './home'
 import DashboardEditInfos from './editInfos'
 import DashboardPayment from './payment'
 import DashboardRequests from './requests'
+import DashboardCreateTeam from './createTeam'
 
 import { autoLogin } from '../../modules/login'
+import { fetchSpotlights } from '../../modules/spotlights'
 
 import './dashboard.css'
 
@@ -27,6 +29,8 @@ class Dashboard extends React.Component {
         render: this.props.user && this.props.user.name
       })
     })
+
+    this.props.fetchSpotlights()
 
     this.arrow = this.arrow.bind(this)
   }
@@ -69,6 +73,12 @@ class Dashboard extends React.Component {
               component={DashboardRequests}
             />
           )}
+          {this.state.render && (
+            <Route
+              path={process.env.REACT_APP_BASEURL + 'dashboard/createTeam'}
+              component={DashboardCreateTeam}
+            />
+          )}
         </main>
       </div>
     )
@@ -81,6 +91,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
+  fetchSpotlights: () => dispatch(fetchSpotlights()),
   autoLogin: () => dispatch(autoLogin())
 })
 

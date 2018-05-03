@@ -10,6 +10,8 @@ export default error => {
       return "Nom d'utilisateur invalide"
     case 'INVALID_PASSWORD':
       return 'Mot de passe invalide'
+    case 'ALREADY_IN_TEAM':
+      return 'Déjà dans une équipe'
     case 'UNKNOWN':
       return 'Une erreur est survenue'
     default:

@@ -1,6 +1,6 @@
 import axios from '../lib/axios'
 
-export const SET_CANLOGIN = 'counter/SET_CANLOGIN'
+export const SET_CANLOGIN = 'canLogin/SET_CANLOGIN'
 
 const initialState = {
   canLogin: false
