@@ -5,7 +5,7 @@ import login from './login'
 import register from './register'
 import user from './user'
 import payment from './payment'
-import team from './team'
+import teams from './teams'
 import spotlights from './spotlights'
 
 export default combineReducers({
@@ -15,6 +15,6 @@ export default combineReducers({
   register,
   user,
   payment,
-  team,
+  teams,
   spotlights
 })

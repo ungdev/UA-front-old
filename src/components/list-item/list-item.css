@@ -11,8 +11,11 @@
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.12);
   border-radius: 2px;
   color: #fff;
-  cursor: pointer;
   transition: .1s border ease-out;
+}
+
+.a-list-item:not([nomouse]):hover {
+  cursor: pointer;
 }
 
 .a-list-item > h3 {
@@ -35,7 +38,7 @@
   text-align: justify;
 }
 
-.a-list-item:hover,
+.a-list-item:not([nomouse]):hover,
 .a-list-item.active {
   border: 2px solid #58ebdf;
 }

@@ -6,7 +6,7 @@ import Select from 'react-select'
 import Button from '../../../components/button'
 import errorToString from '../../../lib/errorToString'
 
-import { createTeam } from '../../../modules/team'
+import { createTeam } from '../../../modules/teams'
 
 import './createTeam.css'
 
@@ -14,7 +14,7 @@ const CreateTeam = props => (
   <Form
     onSubmit={props.createTeam}
     render={({ submitForm }) => (
-      <form onSubmit={submitForm} className="a-dashboard-page a-dashboard-edit">
+      <form onSubmit={submitForm} className="a-dashboard-page">
         <h2>Création d'équipe</h2>
         <p>
           Vous pouvez créer votre équipe ci-dessous.<br/>
@@ -40,11 +40,11 @@ const CreateTeam = props => (
 )
 
 const mapStateToProps = state => ({
-  createTeamError: state.team.createTeamError
+  createTeamError: state.teams.createTeamError
 })
 
 const mapDispatchToProps = dispatch => ({
-  createTeam: newUser => dispatch(createTeam(newUser))
+  createTeam: newTeam => dispatch(createTeam(newTeam))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateTeam)

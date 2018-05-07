@@ -1,17 +1,15 @@
 import axios from '../lib/axios'
 import { logout, SET_TOKEN } from './login'
+import { SET_TEAMS } from './teams'
+import { SET_SPOTLIGHTS } from './spotlights'
 
 export const SET_USER = 'user/SET_USER'
-export const SET_SPOTLIGHTS = 'user/SET_SPOTLIGHTS'
-export const SET_TEAMS = 'user/SET_TEAMS'
 export const SET_PRICES = 'user/SET_PRICES'
 export const SET_EDIT_ERROR = 'user/SET_EDIT_ERROR'
 export const SET_EDIT_SUCCESS = 'user/SET_EDIT_SUCCESS'
 
 const initialState = {
   user: null,
-  spotlights: null,
-  teams: null,
   prices: null,
   editSuccess: false,
   editError: ''
@@ -33,16 +31,6 @@ export default (state = initialState, action) => {
       return {
         ...state,
         editSuccess: action.payload
-      }
-    case SET_SPOTLIGHTS:
-      return {
-        ...state,
-        spotlights: action.payload
-      }
-    case SET_TEAMS:
-      return {
-        ...state,
-        teams: action.payload
       }
     case SET_PRICES:
       if (!action.payload) {

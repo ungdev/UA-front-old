@@ -1,0 +1,55 @@
+.a-teammanagement.a-dashboard-page {
+  max-width: unset;
+  display: block;
+}
+
+.a-teammanagement h3 {
+  color: #222;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.a-teammanagement__badge {
+  margin: 24px 0;
+  text-align: center;
+}
+
+.a-teammanagement__warning,
+.a-no-asking-players {
+  margin: 0 auto 30px auto;
+  max-width: 600px;
+  text-align: justify;
+}
+
+.a-teammanagement__warning__sign {
+  color: #e74c3c;
+}
+
+.a-teammanagement__asking-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.a-teammanagement__asking-message {
+  font-style: italic;
+  padding-left: 10px;
+}
+
+.a-teammanagement__asking-link {
+  color: #58ebdf;
+  margin-top: 10px;
+}
+
+.a-teammanagement__asking-link > span {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.a-teammanagement__asking-link > span:last-child {
+  color: #e74c3c;
+}
+
+.a-team-management__asking-link > span:hover {
+  text-decoration: underline;
+}
+

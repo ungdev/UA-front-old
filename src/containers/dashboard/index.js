@@ -8,6 +8,8 @@ import DashboardEditInfos from './editInfos'
 import DashboardPayment from './payment'
 import DashboardRequests from './requests'
 import DashboardCreateTeam from './createTeam'
+import DashboardTeam from './teamManagement'
+import DashboardJoinTeam from './joinTeam'
 
 import { autoLogin } from '../../modules/login'
 import { fetchSpotlights } from '../../modules/spotlights'
@@ -77,6 +79,18 @@ class Dashboard extends React.Component {
             <Route
               path={process.env.REACT_APP_BASEURL + 'dashboard/createTeam'}
               component={DashboardCreateTeam}
+            />
+          )}
+          {this.state.render && (
+            <Route
+              path={process.env.REACT_APP_BASEURL + 'dashboard/team'}
+              component={DashboardTeam}
+            />
+          )}
+          {this.state.render && (
+            <Route
+              path={process.env.REACT_APP_BASEURL + 'dashboard/joinTeam'}
+              component={DashboardJoinTeam}
             />
           )}
         </main>

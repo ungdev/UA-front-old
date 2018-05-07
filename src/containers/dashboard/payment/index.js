@@ -5,11 +5,11 @@ import Select from 'react-select'
 
 import ListItem from '../../../components/list-item'
 import Button from '../../../components/button'
+import selectStyles from '../../../components/select/styles'
 import errorToString from '../../../lib/errorToString'
 
 import { payment } from '../../../modules/payment'
 
-import selectStyles from '../../../lib/select.styles'
 import './payment.css'
 
 const shirtGenders = [{ label: 'Homme', value: 'M' }, { label: 'Femme', value: 'F' }]

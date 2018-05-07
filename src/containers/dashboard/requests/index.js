@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import errorToString from '../../../lib/errorToString'
 
-import { cancelRequest } from '../../../modules/team'
+import { cancelRequest } from '../../../modules/teams'
 
 import './requests.css'
 
@@ -21,7 +21,7 @@ const Requests = props => (
             <strong>{request.name}</strong>
             <em>{request.message}</em>
           </div>
-          <span className="a-request__cancel" href="#" onClick={this.cancelRequest(request.id)}>
+          <span className="a-request__cancel" href="#" onClick={props.cancelRequest(request.id)}>
             Annuler
           </span>
         </div>
@@ -31,7 +31,7 @@ const Requests = props => (
 )
 
 const mapStateToProps = state => ({
-  requests: state.user.teams
+  requests: state.teams.teams
     .map(team => {
       const asking = team.askingUsers.find(askingUser => askingUser.id === state.user.user.id)
 
@@ -46,7 +46,7 @@ const mapStateToProps = state => ({
       }
     })
     .filter(request => !!request),
-  cancelRequestError: state.team.cancelRequestError
+  cancelRequestError: state.teams.cancelRequestError
 })
 
 const mapDispatchToProps = dispatch => ({

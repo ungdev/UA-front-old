@@ -8,36 +8,36 @@ import List from '../../../components/list'
 import ListItem from '../../../components/list-item'
 
 const Home = props => [
-  <h2 key="0">Mon équipe</h2>,
+  <h2 key="0">Équipe</h2>,
   <List key="1">
-    {!props.user.team && <ListItem onClick={props.createTeam}>
+    {!props.user.team && <ListItem clickable={true} onClick={props.createTeam}>
       <h3>Créer une équipe</h3>
       <span>Crée ton équipe et invite tes amis à te rejoindre pour participez aux tournois !</span>
     </ListItem>}
-    {!props.user.team && <ListItem onClick={() => {}}>
+    {!props.user.team && <ListItem clickable={true} onClick={props.joinTeam}>
       <h3>Rejoindre une équipe</h3>
       <span>Rejoins ton équipe de compétiteurs pour vous inscrire aux tournois !</span>
     </ListItem>}
-    {props.user.team && <ListItem onClick={() => {}}>
+    {props.user.team && <ListItem clickable={true} onClick={props.teamManagement}>
       <h3>{props.user.team.name}</h3>
       <span>Gère ton équipe, ses membres et vérifie son status d'inscription !</span>
     </ListItem>}
-    {!props.user.team && <ListItem onClick={props.requests}>
+    {!props.user.team && <ListItem clickable={true} onClick={props.requests}>
       <h3>Mes demandes</h3>
       <span>La liste des demandes d'équipe que tu as faite</span>
     </ListItem>}
   </List>,
-  <h2 key="3">Mon compte</h2>,
+  <h2 key="3">{props.user.name}</h2>,
   <List key="4">
-    <ListItem onClick={props.payment}>
+    <ListItem clickable={true} onClick={props.payment}>
       <h3>Payer ma place</h3>
       <span>Paye ta place et récupère ton billet d'entrée ! Obligatoire pour les tournois</span>
     </ListItem>
-    <ListItem onClick={props.editUser}>
+    <ListItem clickable={true} onClick={props.editUser}>
       <h3>Éditer mes infos</h3>
       <span>Accède à ton profil et modifie tes informations si besoin</span>
     </ListItem>
-    <ListItem onClick={props.logout}>
+    <ListItem clickable={true} onClick={props.logout}>
       <h3>Déconnexion</h3>
     </ListItem>
   </List>
@@ -52,6 +52,8 @@ const mapDispatchToProps = dispatch => ({
   payment: () => dispatch(push('/dashboard/payment')),
   requests: () => dispatch(push('/dashboard/requests')),
   createTeam: () => dispatch(push('/dashboard/createTeam')),
+  teamManagement: () => dispatch(push('/dashboard/team')),
+  joinTeam: () => dispatch(push('/dashboard/joinTeam')),
   logout: () => dispatch(logout())
 })
 

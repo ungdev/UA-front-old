@@ -1,6 +1,8 @@
 import axios from '../lib/axios'
 import { push } from 'react-router-redux'
-import { fetchUser, SET_USER, SET_SPOTLIGHTS, SET_TEAMS, SET_PRICES } from './user'
+import { fetchUser, SET_USER, SET_PRICES } from './user'
+import { SET_TEAMS } from './teams'
+import { SET_SPOTLIGHTS } from './spotlights'
 
 export const SET_TOKEN = 'login/SET_TOKEN'
 export const SET_SUCCESS = 'login/SET_SUCCESS'
