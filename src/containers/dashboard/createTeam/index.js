@@ -17,7 +17,7 @@ const CreateTeam = props => (
       <form onSubmit={submitForm} className="a-dashboard-page">
         <h2>Création d'équipe</h2>
         <p>
-          Vous pouvez créer votre équipe ci-dessous.<br/>
+          Vous pouvez créer votre équipe ci-dessous.<br />
         </p>
         <Text
           field="name"

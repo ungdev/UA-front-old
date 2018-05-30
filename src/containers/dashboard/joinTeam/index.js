@@ -29,19 +29,15 @@ class JoinTeam extends React.Component {
           <form onSubmit={submitForm} className="a-dashboard-page">
             <h2>Rejoindre une équipe</h2>
             <p>
-              Demandez à rejoindre une équipe ci-dessous.<br/>
+              Demandez à rejoindre une équipe ci-dessous.<br />
             </p>
             <Select
               field="team"
               placeholder="Nom de l'équipe"
               options={this.props.teams}
-              autoFocus />
-            <Text
-              field="message"
-              placeholder="Votre message"
-              minLength="3"
-              maxLength="255"
+              autoFocus
             />
+            <Text field="message" placeholder="Votre message" minLength="3" maxLength="255" />
             {this.props.joinTeamError && (
               <strong className="error">{errorToString(this.props.joinTeamError)}</strong>
             )}

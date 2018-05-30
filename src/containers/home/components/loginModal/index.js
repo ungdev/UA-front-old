@@ -31,6 +31,9 @@ const LoginModal = props => {
                   <form onSubmit={submitForm} className="a-login-form">
                     <Text field="name" placeholder="Nom d'utilisateur" autoFocus />
                     <Text field="password" type="password" placeholder="Mot de passe" />
+                    <span className="forgot" onClick={props.onForgot}>
+                      Mot de passe oublié ?
+                    </span>
                     {props.loginError && (
                       <strong className="error">{errorToString(props.loginError)}</strong>
                     )}

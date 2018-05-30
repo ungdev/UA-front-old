@@ -84,6 +84,22 @@ export const editUser = newUserData => {
       return
     }
 
+    if (newUserData.password !== newUserData.password2) {
+      dispatch({
+        type: SET_EDIT_ERROR,
+        payload: 'PASSWORD_MISSMATCH'
+      })
+
+      setTimeout(() => {
+        dispatch({
+          type: SET_EDIT_ERROR,
+          payload: null
+        })
+      }, 2000)
+
+      return Promise.reject()
+    }
+
     try {
       const res = await axios.put('user', newUserData, { headers: { 'X-Token': authToken } })
 

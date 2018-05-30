@@ -9,6 +9,7 @@ export const SET_CREATETEAM_ERROR = 'teams/SET_CREATETEAM_ERROR'
 export const SET_JOINTEAM_ERROR = 'teams/SET_JOINTEAM_ERROR'
 export const SET_ACCEPT_ERROR = 'teams/SET_ACCEPT_ERROR'
 export const SET_REFUSE_ERROR = 'teams/SET_REFUSE_ERROR'
+export const SET_KICK_ERROR = 'teams/SET_KICK_ERROR'
 
 const initialState = {
   teams: [],
@@ -16,7 +17,8 @@ const initialState = {
   createTeamError: null,
   joinTeamError: null,
   acceptError: null,
-  refuseError: null
+  refuseError: null,
+  kickError: null
 }
 
 export default (state = initialState, action) => {
@@ -44,12 +46,17 @@ export default (state = initialState, action) => {
     case SET_ACCEPT_ERROR:
       return {
         ...state,
-        joinTeamError: action.payload
+        acceptError: action.payload
       }
     case SET_REFUSE_ERROR:
       return {
         ...state,
-        joinTeamError: action.payload
+        refuseError: action.payload
+      }
+    case SET_KICK_ERROR:
+      return {
+        ...state,
+        kickError: action.payload
       }
     default:
       return state
@@ -140,7 +147,11 @@ export const joinTeam = ({ team, message }) => {
     }
 
     try {
-      await axios.post(`/team/${team.value}/join`, { message }, { headers: { 'X-Token': authToken } })
+      await axios.post(
+        `/team/${team.value}/join`,
+        { message },
+        { headers: { 'X-Token': authToken } }
+      )
 
       dispatch(fetchUser())
       dispatch(push('/dashboard/requests'))
@@ -162,7 +173,7 @@ export const joinTeam = ({ team, message }) => {
   }
 }
 
-export const allowPlayer = (user) => {
+export const allowPlayer = user => {
   return async (dispatch, getState) => {
     const authToken = getState().login.token
     const team = getState().user.user.team.id
@@ -193,7 +204,7 @@ export const allowPlayer = (user) => {
   }
 }
 
-export const refusePlayer = (user) => {
+export const refusePlayer = user => {
   return async (dispatch, getState) => {
     const authToken = getState().login.token
     const team = getState().user.user.team.id
@@ -215,6 +226,41 @@ export const refusePlayer = (user) => {
       setTimeout(() => {
         dispatch({
           type: SET_REFUSE_ERROR,
+          payload: null
+        })
+      }, 2000)
+
+      return Promise.reject()
+    }
+  }
+}
+
+export const kickPlayer = user => {
+  return async (dispatch, getState) => {
+    const authToken = getState().login.token
+    const team = getState().user.user.team.id
+
+    if (!authToken || authToken.length === 0) {
+      return
+    }
+
+    if (user === 'self') {
+      user = getState().user.user.id
+    }
+
+    try {
+      await axios.post(`/team/${team}/kick`, { user }, { headers: { 'X-Token': authToken } })
+
+      dispatch(fetchUser())
+    } catch (err) {
+      dispatch({
+        type: SET_KICK_ERROR,
+        payload: err.response.data.error
+      })
+
+      setTimeout(() => {
+        dispatch({
+          type: SET_KICK_ERROR,
           payload: null
         })
       }, 2000)

@@ -8,9 +8,7 @@ const ListItem = props => {
 
   const price = props.price ? `${props.price}€` : null
 
-  const mouse = (!props.clickable)
-    ? { nomouse: 'true' }
-    : { }
+  const mouse = !props.clickable ? { nomouse: 'true' } : {}
 
   return (
     <li className={classes} onClick={props.onClick} data-price={price} {...mouse}>

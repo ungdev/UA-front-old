@@ -38,7 +38,9 @@ class Dashboard extends React.Component {
   }
 
   arrow() {
-    return this.props.location && this.props.location.indexOf('/dashboard') > -1
+    return this.props.location &&
+      this.props.location.indexOf('/dashboard') > -1 &&
+      this.props.location !== '/dashboard'
       ? '/dashboard'
       : '/'
   }

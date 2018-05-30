@@ -7,12 +7,12 @@ const teamTableRow = (player, i) => (
     <div className="a-team-table__body__row__cell">{player.name}</div>
     {player.paid && (
       <div className="a-team-table__body__row__cell a-team-table__payment">
-        <span className="a-team-table__payment--yes"></span>
+        <span className="a-team-table__payment--yes" />
       </div>
     )}
     {!player.paid && (
       <div className="a-team-table__body__row__cell a-team-table__payment">
-        <span className="a-team-table__payment--no"></span> Non payé
+        <span className="a-team-table__payment--no" /> Non payé
       </div>
     )}
   </div>
@@ -24,23 +24,17 @@ const TeamTable = props => {
 
   return (
     <div className="a-team-table">
-        <div className="a-team-table__header">
-          <div className="a-team-table__header__row">
-            <div className="a-team-table__header__row__cell">Nom du joueur</div>
-            <div className="a-team-table__header__row__cell">Paiement</div>
-          </div>
+      <div className="a-team-table__header">
+        <div className="a-team-table__header__row">
+          <div className="a-team-table__header__row__cell">Nom du joueur</div>
+          <div className="a-team-table__header__row__cell">Paiement</div>
         </div>
-        <div className="a-team-table__body">
-          {props.players.map(teamTableRow)}
-        </div>
-        <div className="a-team-table__footer">
-          <div>
-            Joueurs : {playerCount}
-          </div>
-          <div>
-            Places payées : {playerPaidCount}
-          </div>
-        </div>
+      </div>
+      <div className="a-team-table__body">{props.players.map(teamTableRow)}</div>
+      <div className="a-team-table__footer">
+        <div>Joueurs : {playerCount}</div>
+        <div>Places payées : {playerPaidCount}</div>
+      </div>
     </div>
   )
 }

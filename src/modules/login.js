@@ -55,6 +55,8 @@ const fail = (dispatch, err) => {
       }),
     2000
   )
+
+  return Promise.reject(err)
 }
 
 export const autoLogin = () => {
@@ -80,7 +82,7 @@ export const tryLogin = user => {
       dispatch(saveToken(res.data.token))
       dispatch(push('/dashboard'))
     } catch (err) {
-      fail(dispatch, err.response.data.error)
+      return fail(dispatch, err.response.data.error)
     }
   }
 }

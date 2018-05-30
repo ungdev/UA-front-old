@@ -7,6 +7,7 @@ import user from './user'
 import payment from './payment'
 import teams from './teams'
 import spotlights from './spotlights'
+import forgot from './forgot'
 
 export default combineReducers({
   routing: routerReducer,
@@ -16,5 +17,6 @@ export default combineReducers({
   user,
   payment,
   teams,
-  spotlights
+  spotlights,
+  forgot
 })

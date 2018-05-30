@@ -11,6 +11,7 @@ import Social from './components/social'
 import Spotlights from './components/spotlights'
 import Partners from './components/partners'
 import LoginModal from './components/loginModal'
+import ForgotModal from './components/forgotModal'
 import Button from '../../components/button'
 
 import { fetchCanLogin } from '../../modules/canLogin'
@@ -21,11 +22,14 @@ class Home extends React.Component {
     super()
 
     this.state = {
-      loginModalOpened: false
+      loginModalOpened: false,
+      forgotModalOpened: false
     }
 
     this.openLoginModal = this.openLoginModal.bind(this)
+    this.openForgotModal = this.openForgotModal.bind(this)
     this.closeLoginModal = this.closeLoginModal.bind(this)
+    this.closeForgotModal = this.closeForgotModal.bind(this)
     this.scrollCapture = this.scrollCapture.bind(this)
   }
 
@@ -52,6 +56,20 @@ class Home extends React.Component {
     })
   }
 
+  openForgotModal() {
+    this.setState({
+      loginModalOpened: false,
+      forgotModalOpened: true
+    })
+  }
+
+  closeForgotModal() {
+    this.setState({
+      loginModalOpened: true,
+      forgotModalOpened: false
+    })
+  }
+
   scrollCapture() {
     const scrollTop =
       window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
@@ -67,7 +85,12 @@ class Home extends React.Component {
       <div>
         <Header openLoginModal={this.openLoginModal} />
         <Intro />
-        <LoginModal isOpen={this.state.loginModalOpened} onClose={this.closeLoginModal} />
+        <LoginModal
+          isOpen={this.state.loginModalOpened}
+          onClose={this.closeLoginModal}
+          onForgot={this.openForgotModal}
+        />
+        <ForgotModal isOpen={this.state.forgotModalOpened} onClose={this.closeForgotModal} />
 
         <main className="a-home">
           <div className="a-home__content">

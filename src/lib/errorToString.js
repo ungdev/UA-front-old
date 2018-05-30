@@ -12,6 +12,10 @@ export default error => {
       return 'Mot de passe invalide'
     case 'ALREADY_IN_TEAM':
       return 'Vous êtes déjà dans une équipe'
+    case 'INVALID_EMAIL':
+      return 'E-mail introuvable'
+    case 'INVALID_TOKEN':
+      return 'Jeton invalide'
     case 'UNKNOWN':
       return 'Une erreur est survenue'
     default:

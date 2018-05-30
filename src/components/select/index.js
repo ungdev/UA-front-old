@@ -27,7 +27,8 @@ const Select_ = props => (
             if (onBlur) {
               onBlur(e)
             }
-          }} />
+          }}
+        />
       )
     }}
   </Field>

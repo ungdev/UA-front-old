@@ -37,6 +37,11 @@
   margin-bottom: 16px;
 }
 
+.a-login-form .forgot {
+  color: #58ebdf;
+  cursor: pointer;
+}
+
 .a-cantlogin-modal {
   padding: 32px;
   font-size: 18px;

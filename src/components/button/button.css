@@ -10,6 +10,10 @@
   letter-spacing: .5px;
 }
 
+.a-button:focus {
+  outline: 0;
+}
+
 .a-button.raised {
   color: #202020;
   background-color: #58ebdf;

@@ -45,6 +45,8 @@ const fail = (dispatch, err) => {
       }),
     2000
   )
+
+  return Promise.reject(err)
 }
 
 export const register = user => {
@@ -60,7 +62,7 @@ export const register = user => {
         location.href = '/dashboard' // eslint-disable-line no-restricted-globals
       })
     } catch (err) {
-      fail(dispatch, err.response.data.error)
+      return fail(dispatch, err.response.data.error)
     }
   }
 }
