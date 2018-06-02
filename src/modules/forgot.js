@@ -1,4 +1,5 @@
 import axios from '../lib/axios'
+import fail from '../lib/store.fail'
 
 export const SET_SUCCESS = 'forgot/SET_SUCCESS'
 export const SET_ERROR = 'forgot/SET_ERROR'
@@ -25,29 +26,6 @@ export default (state = initialState, action) => {
   }
 }
 
-const fail = (dispatch, err) => {
-  dispatch({
-    type: SET_SUCCESS,
-    payload: false
-  })
-
-  dispatch({
-    type: SET_ERROR,
-    payload: err
-  })
-
-  setTimeout(
-    () =>
-      dispatch({
-        type: SET_ERROR,
-        payload: ''
-      }),
-    2000
-  )
-
-  return Promise.reject(err)
-}
-
 export const sendResetMail = ({ email }) => {
   return async dispatch => {
     try {
@@ -65,7 +43,12 @@ export const sendResetMail = ({ email }) => {
         })
       }, 2000)
     } catch (err) {
-      return fail(dispatch, err.response.data.error)
+      return fail({
+        dispatch,
+        mutationSuccess: SET_SUCCESS,
+        mutationError: SET_ERROR,
+        err: err.response.data.error
+      })
     }
   }
 }
@@ -91,7 +74,12 @@ export const resetPassword = resetInfos => {
         })
       }, 2000)
     } catch (err) {
-      return fail(dispatch, err.response.data.error)
+      return fail({
+        dispatch,
+        mutationSuccess: SET_SUCCESS,
+        mutationError: SET_ERROR,
+        err: err.response.data.error
+      })
     }
   }
 }

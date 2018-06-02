@@ -1,4 +1,5 @@
 import axios from '../lib/axios'
+import fail from '../lib/store.fail'
 import { push } from 'react-router-redux'
 import { fetchUser, SET_USER, SET_PRICES } from './user'
 import { SET_TEAMS } from './teams'
@@ -36,29 +37,6 @@ export default (state = initialState, action) => {
   }
 }
 
-const fail = (dispatch, err) => {
-  dispatch({
-    type: SET_SUCCESS,
-    payload: false
-  })
-
-  dispatch({
-    type: SET_ERROR,
-    payload: err
-  })
-
-  setTimeout(
-    () =>
-      dispatch({
-        type: SET_ERROR,
-        payload: ''
-      }),
-    2000
-  )
-
-  return Promise.reject(err)
-}
-
 export const autoLogin = () => {
   return async dispatch => {
     if (localStorage.hasOwnProperty('arena-2018-token')) {
@@ -82,7 +60,12 @@ export const tryLogin = user => {
       dispatch(saveToken(res.data.token))
       dispatch(push('/dashboard'))
     } catch (err) {
-      return fail(dispatch, err.response.data.error)
+      return fail({
+        dispatch,
+        mutationSuccess: SET_SUCCESS,
+        mutationError: SET_ERROR,
+        err: err.response.data.error
+      })
     }
   }
 }

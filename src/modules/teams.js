@@ -1,4 +1,5 @@
 import axios from '../lib/axios'
+import fail from '../lib/store.fail'
 import { push } from 'react-router-redux'
 
 import { fetchUser } from './user'
@@ -76,19 +77,11 @@ export const cancelRequest = id => {
 
       dispatch(fetchUser())
     } catch (err) {
-      dispatch({
-        type: SET_CANCELREQUEST_ERROR,
-        payload: err.response.data.error
+      return fail({
+        dispatch,
+        mutationError: SET_CANCELREQUEST_ERROR,
+        err: err.response.data.error
       })
-
-      setTimeout(() => {
-        dispatch({
-          type: SET_CANCELREQUEST_ERROR,
-          payload: null
-        })
-      }, 2000)
-
-      return Promise.reject()
     }
   }
 }
@@ -107,19 +100,11 @@ export const createTeam = ({ name }) => {
       dispatch(fetchUser())
       dispatch(push('/dashboard/team'))
     } catch (err) {
-      dispatch({
-        type: SET_CREATETEAM_ERROR,
-        payload: err.response.data.error
+      return fail({
+        dispatch,
+        mutationError: SET_CREATETEAM_ERROR,
+        err: err.response.data.error
       })
-
-      setTimeout(() => {
-        dispatch({
-          type: SET_CREATETEAM_ERROR,
-          payload: null
-        })
-      }, 2000)
-
-      return Promise.reject()
     }
   }
 }
@@ -133,16 +118,10 @@ export const joinTeam = ({ team, message }) => {
     }
 
     if (!team || !team.value) {
-      setTimeout(() => {
-        dispatch({
-          type: SET_JOINTEAM_ERROR,
-          payload: null
-        })
-      }, 2000)
-
-      return dispatch({
-        type: SET_JOINTEAM_ERROR,
-        payload: 'INVALID_FORM'
+      return fail({
+        dispatch,
+        mutationError: SET_JOINTEAM_ERROR,
+        err: 'INVALID_FORM'
       })
     }
 
@@ -156,19 +135,11 @@ export const joinTeam = ({ team, message }) => {
       dispatch(fetchUser())
       dispatch(push('/dashboard/requests'))
     } catch (err) {
-      dispatch({
-        type: SET_JOINTEAM_ERROR,
-        payload: err.response.data.error
+      return fail({
+        dispatch,
+        mutationError: SET_JOINTEAM_ERROR,
+        err: err.response.data.error
       })
-
-      setTimeout(() => {
-        dispatch({
-          type: SET_JOINTEAM_ERROR,
-          payload: null
-        })
-      }, 2000)
-
-      return Promise.reject()
     }
   }
 }
@@ -187,19 +158,11 @@ export const allowPlayer = user => {
 
       dispatch(fetchUser())
     } catch (err) {
-      dispatch({
-        type: SET_ACCEPT_ERROR,
-        payload: err.response.data.error
+      return fail({
+        dispatch,
+        mutationError: SET_ACCEPT_ERROR,
+        err: err.response.data.error
       })
-
-      setTimeout(() => {
-        dispatch({
-          type: SET_ACCEPT_ERROR,
-          payload: null
-        })
-      }, 2000)
-
-      return Promise.reject()
     }
   }
 }
@@ -218,19 +181,11 @@ export const refusePlayer = user => {
 
       dispatch(fetchUser())
     } catch (err) {
-      dispatch({
-        type: SET_REFUSE_ERROR,
-        payload: err.response.data.error
+      return fail({
+        dispatch,
+        mutationError: SET_REFUSE_ERROR,
+        err: err.response.data.error
       })
-
-      setTimeout(() => {
-        dispatch({
-          type: SET_REFUSE_ERROR,
-          payload: null
-        })
-      }, 2000)
-
-      return Promise.reject()
     }
   }
 }
@@ -253,19 +208,11 @@ export const kickPlayer = user => {
 
       dispatch(fetchUser())
     } catch (err) {
-      dispatch({
-        type: SET_KICK_ERROR,
-        payload: err.response.data.error
+      return fail({
+        dispatch,
+        mutationError: SET_KICK_ERROR,
+        err: err.response.data.error
       })
-
-      setTimeout(() => {
-        dispatch({
-          type: SET_KICK_ERROR,
-          payload: null
-        })
-      }, 2000)
-
-      return Promise.reject()
     }
   }
 }

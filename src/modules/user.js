@@ -1,4 +1,5 @@
 import axios from '../lib/axios'
+import fail from '../lib/store.fail'
 import { logout, SET_TOKEN } from './login'
 import { SET_TEAMS } from './teams'
 import { SET_SPOTLIGHTS } from './spotlights'
@@ -85,19 +86,11 @@ export const editUser = newUserData => {
     }
 
     if (newUserData.password !== newUserData.password2) {
-      dispatch({
-        type: SET_EDIT_ERROR,
-        payload: 'PASSWORD_MISSMATCH'
+      return fail({
+        dispatch,
+        mutationError: SET_EDIT_ERROR,
+        err: 'PASSWORD_MISSMATCH'
       })
-
-      setTimeout(() => {
-        dispatch({
-          type: SET_EDIT_ERROR,
-          payload: null
-        })
-      }, 2000)
-
-      return Promise.reject()
     }
 
     try {
@@ -120,19 +113,11 @@ export const editUser = newUserData => {
         })
       }, 2000)
     } catch (err) {
-      dispatch({
-        type: SET_EDIT_ERROR,
-        payload: err.response.data.error
+      return fail({
+        dispatch,
+        mutationError: SET_EDIT_ERROR,
+        err: err.response.data.error
       })
-
-      setTimeout(() => {
-        dispatch({
-          type: SET_EDIT_ERROR,
-          payload: null
-        })
-      }, 2000)
-
-      return Promise.reject()
     }
   }
 }

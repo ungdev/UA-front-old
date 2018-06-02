@@ -1,4 +1,5 @@
 import axios from '../lib/axios'
+import fail from '../lib/store.fail'
 import { saveToken } from './login'
 
 export const SET_SUCCESS = 'register/SET_SUCCESS'
@@ -26,29 +27,6 @@ export default (state = initialState, action) => {
   }
 }
 
-const fail = (dispatch, err) => {
-  dispatch({
-    type: SET_SUCCESS,
-    payload: false
-  })
-
-  dispatch({
-    type: SET_ERROR,
-    payload: err
-  })
-
-  setTimeout(
-    () =>
-      dispatch({
-        type: SET_ERROR,
-        payload: ''
-      }),
-    2000
-  )
-
-  return Promise.reject(err)
-}
-
 export const register = user => {
   return async dispatch => {
     if (user.password !== user.password2) {
@@ -62,7 +40,12 @@ export const register = user => {
         location.href = '/dashboard' // eslint-disable-line no-restricted-globals
       })
     } catch (err) {
-      return fail(dispatch, err.response.data.error)
+      return fail({
+        dispatch,
+        mutationSuccess: SET_SUCCESS,
+        mutationError: SET_ERROR,
+        err: err.response.data.error
+      })
     }
   }
 }
