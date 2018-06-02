@@ -2,9 +2,9 @@ import React from 'react'
 
 import './teamTable.css'
 
-const teamTableRow = (player, i) => (
+const teamTableRow = (player, i, captain) => (
   <div className="a-team-table__body__row" key={i}>
-    <div className="a-team-table__body__row__cell">{player.name}</div>
+    <div className="a-team-table__body__row__cell">{player.name} {(player.id === captain) ? '👑' : ''}</div>
     {player.paid && (
       <div className="a-team-table__body__row__cell a-team-table__payment">
         <span className="a-team-table__payment--yes" />
@@ -22,6 +22,8 @@ const TeamTable = props => {
   const playerCount = props.players.length
   const playerPaidCount = props.players.filter(player => player.paid).length
 
+  const teamTableRowWithCaptain = teamTableRow.bind('OKI')
+
   return (
     <div className="a-team-table">
       <div className="a-team-table__header">
@@ -30,7 +32,7 @@ const TeamTable = props => {
           <div className="a-team-table__header__row__cell">Paiement</div>
         </div>
       </div>
-      <div className="a-team-table__body">{props.players.map(teamTableRow)}</div>
+      <div className="a-team-table__body">{props.players.map((player, i) => teamTableRow(player, i, props.captain))}</div>
       <div className="a-team-table__footer">
         <div>Joueurs : {playerCount}</div>
         <div>Places payées : {playerPaidCount}</div>
