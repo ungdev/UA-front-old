@@ -2,4 +2,3 @@
 2. move spotlight chooser to teamManagement
 3. find a way to allow player to register to single-players tournaments
 4. view current teams / players
-5. uniformize `fail` in modules
