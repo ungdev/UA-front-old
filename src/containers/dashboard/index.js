@@ -10,9 +10,9 @@ import DashboardRequests from './requests'
 import DashboardCreateTeam from './createTeam'
 import DashboardTeam from './teamManagement'
 import DashboardJoinTeam from './joinTeam'
+import DashboardViewParticipants from './viewParticipants'
 
 import { autoLogin } from '../../modules/login'
-import { fetchSpotlights } from '../../modules/spotlights'
 
 import './dashboard.css'
 
@@ -32,7 +32,6 @@ class Dashboard extends React.Component {
       })
     })
 
-    this.props.fetchSpotlights()
 
     this.arrow = this.arrow.bind(this)
   }
@@ -95,6 +94,12 @@ class Dashboard extends React.Component {
               component={DashboardJoinTeam}
             />
           )}
+          {this.state.render && (
+            <Route
+              path={process.env.REACT_APP_BASEURL + 'dashboard/participants'}
+              component={DashboardViewParticipants}
+            />
+          )}
         </main>
       </div>
     )
@@ -107,7 +112,6 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  fetchSpotlights: () => dispatch(fetchSpotlights()),
   autoLogin: () => dispatch(autoLogin())
 })
 

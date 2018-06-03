@@ -24,18 +24,22 @@ const Home = props => [
         <span>Rejoins ton équipe de compétiteurs pour vous inscrire aux tournois !</span>
       </ListItem>
     )}
-    {props.user.team && (
-      <ListItem clickable={true} onClick={props.teamManagement}>
-        <h3>{props.user.team.name}</h3>
-        <span>Gère ton équipe, ses membres et vérifie son status d'inscription !</span>
-      </ListItem>
-    )}
     {!props.user.team && (
       <ListItem clickable={true} onClick={props.requests}>
         <h3>Mes demandes</h3>
         <span>La liste des demandes d'équipe que tu as faite</span>
       </ListItem>
     )}
+    {props.user.team && (
+      <ListItem clickable={true} onClick={props.teamManagement}>
+        <h3>{props.user.team.name}</h3>
+        <span>Gère ton équipe, ses membres et vérifie son status d'inscription !</span>
+      </ListItem>
+    )}
+    <ListItem clickable={true} onClick={props.viewParticipants}>
+      <h3>Liste des participants</h3>
+      <span>Tu veux voir qui est inscrit ? C'est possible ici !</span>
+    </ListItem>
   </List>,
   <h2 key="3">{props.user.name}</h2>,
   <List key="4">
@@ -64,6 +68,7 @@ const mapDispatchToProps = dispatch => ({
   createTeam: () => dispatch(push('/dashboard/createTeam')),
   teamManagement: () => dispatch(push('/dashboard/team')),
   joinTeam: () => dispatch(push('/dashboard/joinTeam')),
+  viewParticipants: () => dispatch(push('/dashboard/participants')),
   logout: () => dispatch(logout())
 })
 

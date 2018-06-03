@@ -11,42 +11,34 @@ import errorToString from '../../lib/errorToString'
 
 import { resetPassword } from '../../modules/forgot'
 
-class Reset extends React.Component {
-  constructor() {
-    super()
-  }
-
-  render() {
-    return (
-      <div>
-        <Header arrow="/" />
-        <Form
-          defaultValues={{
-            token: this.props.match.params.token
-          }}
-          onSubmit={this.props.resetPassword}
-          render={({ submitForm }) => (
-            <form onSubmit={submitForm} className="a-reset">
-              <h2>Changer mon mot de passe</h2>
-              <Text field="password" type="password" placeholder="Mot de passe" minLength="6" />
-              <Text field="password2" type="password" placeholder="Confirmation" minLength="6" />
-              {this.props.resetSuccess && (
-                <strong className="success">Modifications validées</strong>
-              )}
-              {this.props.resetError && (
-                <strong className="error">{errorToString(this.props.resetError)}</strong>
-              )}
-              <br />
-              <Button type="submit" raised>
-                Changer mon mot de passe
-              </Button>
-            </form>
+const Reset = props => (
+  <div>
+    <Header arrow="/" />
+    <Form
+      defaultValues={{
+        token: props.match.params.token
+      }}
+      onSubmit={props.resetPassword}
+      render={({ submitForm }) => (
+        <form onSubmit={submitForm} className="a-reset">
+          <h2>Changer mon mot de passe</h2>
+          <Text field="password" type="password" placeholder="Mot de passe" minLength="6" />
+          <Text field="password2" type="password" placeholder="Confirmation" minLength="6" />
+          {props.resetSuccess && (
+            <strong className="success">Modifications validées</strong>
           )}
-        />
-      </div>
-    )
-  }
-}
+          {props.resetError && (
+            <strong className="error">{errorToString(props.resetError)}</strong>
+          )}
+          <br />
+          <Button type="submit" raised>
+            Changer mon mot de passe
+          </Button>
+        </form>
+      )}
+    />
+  </div>
+)
 
 const mapStateToProps = state => ({
   resetSuccess: state.forgot.success,

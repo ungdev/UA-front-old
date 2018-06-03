@@ -60,7 +60,7 @@ export const resetPassword = resetInfos => {
     }
 
     try {
-      const res = await axios.put('user/reset', resetInfos)
+      await axios.put('user/reset', resetInfos)
 
       dispatch({
         type: SET_SUCCESS,

@@ -22,8 +22,6 @@ const TeamTable = props => {
   const playerCount = props.players.length
   const playerPaidCount = props.players.filter(player => player.paid).length
 
-  const teamTableRowWithCaptain = teamTableRow.bind('OKI')
-
   return (
     <div className="a-team-table">
       <div className="a-team-table__header">

@@ -39,7 +39,7 @@ const TeamManagement = props => (
     </div>
     {props.teamStatus.theme !== 'success' && (
       <p className="a-teammanagement__warning">
-        <span className="a-teammanagement__warning__sign">⚠️Attention</span>&nbsp;
+        <span className="a-teammanagement__warning__sign"><span role="img" aria-label="warning-sign">⚠️</span>Attention</span>&nbsp;
         <strong>Tous les membres de l'équipe</strong> doivent avoir payé leur place pour valider
         l'inscription au spotlight (5 personnes ayant payé leur place pour s'inscrire au tournoi
         LoL, etc.).
