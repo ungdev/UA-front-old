@@ -16,7 +16,15 @@ import { fetchUser } from '../../../../modules/user'
 const LoginModal = props => {
   return (
     <Modal isOpen={props.isOpen} onClose={props.onClose}>
-      {props.canLogin && (
+      {props.registerSuccess && (
+        <div className="a-register-success">
+          <h3>
+            Inscription réussie.
+          </h3>
+          <p>Validez votre compte en cliquant dans le lien reçu par mail.</p>
+        </div>
+      )}
+      {!props.registerSuccess && props.canLogin && (
         <div className="a-login-modal">
           <Tabs>
             <TabList>
@@ -83,7 +91,7 @@ const LoginModal = props => {
                     )}
                     <br />
                     <Button type="submit" raised>
-                      Connexion
+                      Inscription
                     </Button>
                   </form>
                 )}
@@ -102,7 +110,8 @@ const LoginModal = props => {
 const mapStateToProps = state => ({
   canLogin: state.canLogin.canLogin,
   loginError: state.login.errorMessage,
-  registerError: state.register.errorMessage
+  registerSuccess: state.register.registerSuccess,
+  registerError: state.register.registerErrorMessage
 })
 
 const mapDispatchToProps = dispatch => ({

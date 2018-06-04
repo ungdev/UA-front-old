@@ -16,6 +16,8 @@ export default error => {
       return 'E-mail introuvable'
     case 'INVALID_TOKEN':
       return 'Jeton invalide'
+    case 'USER_NOT_ACTIVATED':
+      return 'Compte non activé. Vérifiez votre boîte mail.'
     case 'UNKNOWN':
       return 'Une erreur est survenue'
     default:

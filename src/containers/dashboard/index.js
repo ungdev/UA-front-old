@@ -49,7 +49,7 @@ class Dashboard extends React.Component {
       <div>
         <Header arrow={this.arrow()} />
         <main className="a-dashboard">
-          <h1>Dashboard</h1>
+          <h1>Dashboard {this.props.user && this.props.user.name && `(${this.props.user.name})`}</h1>
 
           {this.state.render && (
             <Route

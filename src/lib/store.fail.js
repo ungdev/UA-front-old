@@ -1,15 +1,26 @@
 export default (opts) => {
+  console.log(opts)
+
   if (opts.mutationSuccess) {
-    opts.dispatch(opts.success, false)
+    opts.dispatch({
+      type: opts.mutationSuccess,
+      payload: false
+    })
   }
 
   if (opts.mutationError) {
-    opts.dispatch(opts.error, opts.err)
+    opts.dispatch({
+      type: opts.mutationError,
+      payload: opts.err
+    })
   }
 
   setTimeout(() => {
     if (opts.mutationError) {
-      opts.dispatch(opts.error, null)
+      opts.dispatch({
+        type: opts.mutationError,
+        payload: null
+      })
     }
   }, 2000);
 

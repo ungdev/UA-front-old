@@ -47,3 +47,13 @@
   font-size: 18px;
   font-weight: bold;
 }
+
+.a-register-success {
+  padding: 12px;
+}
+
+.a-register-success > h3 {
+  color: #222;
+  text-transform: uppercase;
+  text-align: center;
+}

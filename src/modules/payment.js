@@ -34,8 +34,6 @@ export const payment = basket => {
       return
     }
 
-    console.log(basket)
-
     try {
       const res = await axios.post('user/pay', basket, { headers: { 'X-Token': authToken } })
 
