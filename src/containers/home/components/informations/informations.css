@@ -12,19 +12,27 @@
   text-align: justify;
   margin: 24px 0;
 }
+.a-informations span {
+  text-align: justify;
+  margin: 24px 0;
+  color: #12d8fa;
+}
 
 .a-informations__table {
   margin-top: 24px;
 }
 
 .a-informations__table__row {
+  margin-top: 3px;
   display: flex;
   align-items: flex-start;
+  color: #7befe9;
 }
 
 .a-informations__table__row__cell:first-child {
   font-weight: bold;
   min-width: 100px;
+  color:#ffffff;
 }
 
 @media (min-width: 768px) {
