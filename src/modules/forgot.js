@@ -1,26 +1,13 @@
 import axios from '../lib/axios'
 import fail from '../lib/store.fail'
-
-export const SET_SUCCESS = 'forgot/SET_SUCCESS'
-export const SET_ERROR = 'forgot/SET_ERROR'
+import errorToString from '../lib/errorToString'
+import { actions as notifActions } from 'redux-notifications'
 
 const initialState = {
-  success: false,
-  error: null
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case SET_SUCCESS:
-      return {
-        ...state,
-        success: action.payload
-      }
-    case SET_ERROR:
-      return {
-        ...state,
-        error: action.payload
-      }
     default:
       return state
   }
@@ -31,24 +18,16 @@ export const sendResetMail = ({ email }) => {
     try {
       await axios.post('user/reset', { email })
 
-      dispatch({
-        type: SET_SUCCESS,
-        payload: true
-      })
-
-      setTimeout(() => {
-        dispatch({
-          type: SET_SUCCESS,
-          payload: false
-        })
-      }, 2000)
+      dispatch(notifActions.notifSend({
+        message: 'Mail envoyé avec succès',
+        dismissAfter: 2000
+      }))
     } catch (err) {
-      return fail({
-        dispatch,
-        mutationSuccess: SET_SUCCESS,
-        mutationError: SET_ERROR,
-        err: err.response.data.error
-      })
+      dispatch(notifActions.notifSend({
+        message: errorToString(err.response.data.error),
+        kind: 'danger',
+        dismissAfter: 2000
+      }))
     }
   }
 }
@@ -62,24 +41,16 @@ export const resetPassword = resetInfos => {
     try {
       await axios.put('user/reset', resetInfos)
 
-      dispatch({
-        type: SET_SUCCESS,
-        payload: true
-      })
-
-      setTimeout(() => {
-        dispatch({
-          type: SET_SUCCESS,
-          payload: false
-        })
-      }, 2000)
+      dispatch(notifActions.notifSend({
+        message: 'Mot de passe changé',
+        dismissAfter: 2000
+      }))
     } catch (err) {
-      return fail({
-        dispatch,
-        mutationSuccess: SET_SUCCESS,
-        mutationError: SET_ERROR,
-        err: err.response.data.error
-      })
+      dispatch(notifActions.notifSend({
+        message: errorToString(err.response.data.error),
+        kind: 'danger',
+        dismissAfter: 2000
+      }))
     }
   }
 }

@@ -5,7 +5,6 @@ import { Form, Text } from 'react-form'
 import Button from '../../../components/button'
 import Select from '../../../components/select'
 import selectStyles from '../../../components/select/styles'
-import errorToString from '../../../lib/errorToString'
 
 import { joinTeam } from '../../../modules/teams'
 
@@ -38,9 +37,6 @@ class JoinTeam extends React.Component {
               autoFocus
             />
             <Text field="message" placeholder="Votre message" minLength="3" maxLength="255" />
-            {this.props.joinTeamError && (
-              <strong className="error">{errorToString(this.props.joinTeamError)}</strong>
-            )}
             <br />
             <Button type="submit" raised>
               Rejoindre cette équipe
@@ -53,8 +49,7 @@ class JoinTeam extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  teams: state.teams.teams.map(team => ({ label: team.name, value: team.id })),
-  joinTeamError: state.teams.joinTeamError
+  teams: state.teams.teams.map(team => ({ label: team.name, value: team.id }))
 })
 
 const mapDispatchToProps = dispatch => ({

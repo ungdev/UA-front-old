@@ -32,7 +32,6 @@ class Dashboard extends React.Component {
       })
     })
 
-
     this.arrow = this.arrow.bind(this)
   }
 

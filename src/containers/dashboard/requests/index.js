@@ -1,8 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import errorToString from '../../../lib/errorToString'
-
 import { cancelRequest } from '../../../modules/teams'
 
 import './requests.css'
@@ -12,9 +10,6 @@ const Requests = props => (
     <h2>Mes demandes</h2>
     <div className="a-requests">
       {props.requests.length === 0 && <p>Aucune demande en cours.</p>}
-      {props.cancelRequestError && (
-        <strong className="error">{errorToString(props.cancelRequestError)}</strong>
-      )}
       {props.requests.map((request, i) => (
         <div className="a-request" key={i}>
           <div className="a-request__content">
@@ -45,8 +40,7 @@ const mapStateToProps = state => ({
         message: asking.askingMessage
       }
     })
-    .filter(request => !!request),
-  cancelRequestError: state.teams.cancelRequestError
+    .filter(request => !!request)
 })
 
 const mapDispatchToProps = dispatch => ({

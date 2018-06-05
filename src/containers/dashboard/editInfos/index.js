@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { Form, Text } from 'react-form'
 
 import Button from '../../../components/button'
-import errorToString from '../../../lib/errorToString'
 
 import { editUser } from '../../../modules/user'
 
@@ -44,8 +43,6 @@ const EditInfos = props => (
         <Text field="email" type="email" placeholder="Mail" />
         <Text field="password" type="password" placeholder="Mot de passe" minLength="6" />
         <Text field="password2" type="password" placeholder="Confirmation" minLength="6" />
-        {props.editSuccess && <strong className="success">Modifications validées</strong>}
-        {props.editError && <strong className="error">{errorToString(props.editError)}</strong>}
         <br />
         <Button type="submit" raised>
           Connexion
@@ -56,9 +53,7 @@ const EditInfos = props => (
 )
 
 const mapStateToProps = state => ({
-  user: state.user.user,
-  editSuccess: state.user.editSuccess,
-  editError: state.user.editError
+  user: state.user.user
 })
 
 const mapDispatchToProps = dispatch => ({

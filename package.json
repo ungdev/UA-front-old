@@ -20,6 +20,7 @@
     "react-tabs": "^2.2.2",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
+    "redux-notifications": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "smooth-scroll": "^14.2.0"
   },

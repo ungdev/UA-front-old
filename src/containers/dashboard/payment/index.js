@@ -6,7 +6,6 @@ import Select from 'react-select'
 import ListItem from '../../../components/list-item'
 import Button from '../../../components/button'
 import selectStyles from '../../../components/select/styles'
-import errorToString from '../../../lib/errorToString'
 
 import { payment } from '../../../modules/payment'
 
@@ -151,9 +150,6 @@ class EditInfos extends React.Component {
           </div>
         </ListItem>
         <div className="a-dashboard-payment__separator" />
-        {this.props.paymentError && (
-          <strong className="error">{errorToString(this.props.paymentError)}</strong>
-        )}
         <Button onClick={this.payment} raised>
           Payer {price}€
         </Button>
@@ -164,8 +160,7 @@ class EditInfos extends React.Component {
 
 const mapStateToProps = state => ({
   user: state.user.user,
-  prices: state.user.prices,
-  paymentError: state.payment.errorMessage
+  prices: state.user.prices
 })
 
 const mapDispatchToProps = dispatch => ({

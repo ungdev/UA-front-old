@@ -6,7 +6,6 @@ import './forgotModal.css'
 
 import Modal from '../../../../components/modal'
 import Button from '../../../../components/button'
-import errorToString from '../../../../lib/errorToString'
 
 import { sendResetMail } from '../../../../modules/forgot'
 
@@ -23,10 +22,6 @@ const ForgotModal = props => (
               changer votre mot de passe.
             </p>
             <Text field="email" placeholder="E-mail" autoFocus />
-            {props.forgotSuccess && <strong className="success">Mail envoyé</strong>}
-            {props.forgotError && (
-              <strong className="error">{errorToString(props.forgotError)}</strong>
-            )}
             <br />
             <Button type="submit" raised>
               Envoyer le code
@@ -38,15 +33,10 @@ const ForgotModal = props => (
   </Modal>
 )
 
-const mapStateToProps = state => ({
-  forgotSuccess: state.forgot.success,
-  forgotError: state.forgot.error
-})
-
 const mapDispatchToProps = dispatch => ({
   sendMail: user => {
     dispatch(sendResetMail(user))
   }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ForgotModal)
+export default connect(null, mapDispatchToProps)(ForgotModal)

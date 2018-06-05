@@ -7,7 +7,6 @@ import './reset.css'
 
 import Button from '../../components/button'
 import Header from '../../components/header'
-import errorToString from '../../lib/errorToString'
 
 import { resetPassword } from '../../modules/forgot'
 
@@ -24,12 +23,6 @@ const Reset = props => (
           <h2>Changer mon mot de passe</h2>
           <Text field="password" type="password" placeholder="Mot de passe" minLength="6" />
           <Text field="password2" type="password" placeholder="Confirmation" minLength="6" />
-          {props.resetSuccess && (
-            <strong className="success">Modifications validées</strong>
-          )}
-          {props.resetError && (
-            <strong className="error">{errorToString(props.resetError)}</strong>
-          )}
           <br />
           <Button type="submit" raised>
             Changer mon mot de passe
@@ -40,11 +33,6 @@ const Reset = props => (
   </div>
 )
 
-const mapStateToProps = state => ({
-  resetSuccess: state.forgot.success,
-  resetError: state.forgot.error
-})
-
 const mapDispatchToProps = dispatch => ({
   resetPassword: user =>
     dispatch(resetPassword(user)).then(() => {
@@ -54,4 +42,4 @@ const mapDispatchToProps = dispatch => ({
     })
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Reset)
+export default connect(null, mapDispatchToProps)(Reset)

@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Route, Switch, Redirect } from 'react-router-dom'
+import { Notifs as Notifications } from 'redux-notifications'
 import Home from '../home'
 import asyncComponent from '../../components/async'
 
@@ -12,6 +13,7 @@ const Validate = asyncComponent(() => import('../validate'))
 const App = props => (
   <div>
     <AsyncPizza />
+    <Notifications />
     <Switch>
       <Route path={process.env.REACT_APP_BASEURL} exact component={Home} />
       <Route path={process.env.REACT_APP_BASEURL + 'dashboard'} component={Dashboard} />

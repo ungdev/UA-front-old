@@ -7,7 +7,6 @@ import './loginModal.css'
 
 import Modal from '../../../../components/modal'
 import Button from '../../../../components/button'
-import errorToString from '../../../../lib/errorToString'
 
 import { register } from '../../../../modules/register'
 import { tryLogin } from '../../../../modules/login'
@@ -16,15 +15,7 @@ import { fetchUser } from '../../../../modules/user'
 const LoginModal = props => {
   return (
     <Modal isOpen={props.isOpen} onClose={props.onClose}>
-      {props.registerSuccess && (
-        <div className="a-register-success">
-          <h3>
-            Inscription réussie.
-          </h3>
-          <p>Validez votre compte en cliquant dans le lien reçu par mail.</p>
-        </div>
-      )}
-      {!props.registerSuccess && props.canLogin && (
+      {props.canLogin && (
         <div className="a-login-modal">
           <Tabs>
             <TabList>
@@ -42,9 +33,6 @@ const LoginModal = props => {
                     <span className="forgot" onClick={props.onForgot}>
                       Mot de passe oublié ?
                     </span>
-                    {props.loginError && (
-                      <strong className="error">{errorToString(props.loginError)}</strong>
-                    )}
                     <br />
                     <Button type="submit" raised>
                       Connexion
@@ -86,9 +74,6 @@ const LoginModal = props => {
                       placeholder="Confirmation"
                       minLength="6"
                     />
-                    {props.registerError && (
-                      <strong className="error">{errorToString(props.registerError)}</strong>
-                    )}
                     <br />
                     <Button type="submit" raised>
                       Inscription
@@ -108,10 +93,7 @@ const LoginModal = props => {
 }
 
 const mapStateToProps = state => ({
-  canLogin: state.canLogin.canLogin,
-  loginError: state.login.errorMessage,
-  registerSuccess: state.register.registerSuccess,
-  registerError: state.register.registerErrorMessage
+  canLogin: state.canLogin.canLogin
 })
 
 const mapDispatchToProps = dispatch => ({

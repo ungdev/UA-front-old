@@ -5,7 +5,6 @@ import { push } from 'react-router-redux'
 import './validate.css'
 
 import Header from '../../components/header'
-import errorToString from '../../lib/errorToString'
 
 import { validate } from '../../modules/register'
 
@@ -22,19 +21,10 @@ const Validate = props => {
       <Header arrow="/" />
       <div className="a-validate">
         Validation en cours
-        {props.validateSuccess && <strong className="success">Compte validé</strong>}
-        {props.validateError && (
-          <strong className="error">{errorToString(props.validateError)}</strong>
-        )}
       </div>
     </div>
   )
 }
-
-const mapStateToProps = state => ({
-  validateSuccess: state.register.validateSuccess,
-  validateError: state.register.validateErrorMessage
-})
 
 const mapDispatchToProps = dispatch => ({
   validate: token => {
@@ -47,4 +37,4 @@ const mapDispatchToProps = dispatch => ({
   }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Validate)
+export default connect(null, mapDispatchToProps)(Validate)
