@@ -142,4 +142,7 @@ const mapDispatchToProps = dispatch => ({
   autoLogin: () => dispatch(autoLogin())
 })
 
-export default connect(null, mapDispatchToProps)(Home)
+export default connect(
+  null,
+  mapDispatchToProps
+)(Home)

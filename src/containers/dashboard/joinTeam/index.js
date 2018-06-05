@@ -56,4 +56,7 @@ const mapDispatchToProps = dispatch => ({
   joinTeam: newUser => dispatch(joinTeam(newUser))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(JoinTeam)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(JoinTeam)

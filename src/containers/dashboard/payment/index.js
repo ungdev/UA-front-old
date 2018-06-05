@@ -167,4 +167,7 @@ const mapDispatchToProps = dispatch => ({
   payment: body => dispatch(payment(body))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditInfos)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(EditInfos)

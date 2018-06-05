@@ -105,4 +105,7 @@ const mapDispatchToProps = dispatch => ({
   register: user => dispatch(register(user))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginModal)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LoginModal)

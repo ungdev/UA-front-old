@@ -4,8 +4,7 @@ import errorToString from '../lib/errorToString'
 import { actions as notifActions } from 'redux-notifications'
 import { saveToken } from './login'
 
-const initialState = {
-}
+const initialState = {}
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -23,16 +22,20 @@ export const register = user => {
     try {
       await axios.post('user', user)
 
-      dispatch(notifActions.notifSend({
-        message: 'Inscription réussie',
-        dismissAfter: 2000
-      }))
+      dispatch(
+        notifActions.notifSend({
+          message: 'Inscription réussie',
+          dismissAfter: 2000
+        })
+      )
     } catch (err) {
-      dispatch(notifActions.notifSend({
-        message: errorToString(err.response.data.error),
-        kind: 'danger',
-        dismissAfter: 2000
-      }))
+      dispatch(
+        notifActions.notifSend({
+          message: errorToString(err.response.data.error),
+          kind: 'danger',
+          dismissAfter: 2000
+        })
+      )
     }
   }
 }
@@ -44,16 +47,20 @@ export const validate = token => {
 
       await dispatch(saveToken(res.data.token))
 
-      dispatch(notifActions.notifSend({
-        message: 'Inscription validée',
-        dismissAfter: 2000
-      }))
+      dispatch(
+        notifActions.notifSend({
+          message: 'Inscription validée',
+          dismissAfter: 2000
+        })
+      )
     } catch (err) {
-      dispatch(notifActions.notifSend({
-        message: errorToString(err.response.data.error),
-        kind: 'danger',
-        dismissAfter: 2000
-      }))
+      dispatch(
+        notifActions.notifSend({
+          message: errorToString(err.response.data.error),
+          kind: 'danger',
+          dismissAfter: 2000
+        })
+      )
     }
   }
 }

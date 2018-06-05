@@ -73,11 +73,13 @@ export const editUser = newUserData => {
     }
 
     if (newUserData.password !== newUserData.password2) {
-      return dispatch(notifActions.notifSend({
-        message: errorToString('PASSWORD_MISMATCH'),
-        kind: 'danger',
-        dismissAfter: 2000
-      }))
+      return dispatch(
+        notifActions.notifSend({
+          message: errorToString('PASSWORD_MISMATCH'),
+          kind: 'danger',
+          dismissAfter: 2000
+        })
+      )
     }
 
     try {
@@ -88,16 +90,20 @@ export const editUser = newUserData => {
         payload: res.data.user
       })
 
-      dispatch(notifActions.notifSend({
-        message: 'Compte édité avec succès',
-        dismissAfter: 2000
-      }))
+      dispatch(
+        notifActions.notifSend({
+          message: 'Compte édité avec succès',
+          dismissAfter: 2000
+        })
+      )
     } catch (err) {
-      dispatch(notifActions.notifSend({
-        message: errorToString(err.response.data.error),
-        kind: 'danger',
-        dismissAfter: 2000
-      }))
+      dispatch(
+        notifActions.notifSend({
+          message: errorToString(err.response.data.error),
+          kind: 'danger',
+          dismissAfter: 2000
+        })
+      )
     }
   }
 }

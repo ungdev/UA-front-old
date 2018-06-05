@@ -2,8 +2,7 @@ import axios from '../lib/axios'
 import errorToString from '../lib/errorToString'
 import { actions as notifActions } from 'redux-notifications'
 
-const initialState = {
-}
+const initialState = {}
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -27,11 +26,13 @@ export const payment = basket => {
         location.href = res.body.url // eslint-disable-line no-restricted-globals
       }
     } catch (err) {
-      dispatch(notifActions.notifSend({
-        message: errorToString(err.response.data.error),
-        kind: 'danger',
-        dismissAfter: 2000
-      }))
+      dispatch(
+        notifActions.notifSend({
+          message: errorToString(err.response.data.error),
+          kind: 'danger',
+          dismissAfter: 2000
+        })
+      )
     }
   }
 }

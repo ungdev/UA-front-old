@@ -39,4 +39,7 @@ const mapDispatchToProps = dispatch => ({
   }
 })
 
-export default connect(null, mapDispatchToProps)(ForgotModal)
+export default connect(
+  null,
+  mapDispatchToProps
+)(ForgotModal)

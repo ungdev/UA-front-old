@@ -60,4 +60,7 @@ const mapDispatchToProps = dispatch => ({
   editUser: newUser => dispatch(editUser(newUser))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditInfos)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(EditInfos)

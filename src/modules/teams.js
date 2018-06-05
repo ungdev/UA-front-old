@@ -8,7 +8,7 @@ import { fetchUser } from './user'
 export const SET_TEAMS = 'teams/SET_TEAMS'
 
 const initialState = {
-  teams: [],
+  teams: []
 }
 
 export default (state = initialState, action) => {
@@ -36,11 +36,13 @@ export const cancelRequest = id => {
 
       dispatch(fetchUser())
     } catch (err) {
-      dispatch(notifActions.notifSend({
-        message: errorToString(err.response.data.error),
-        kind: 'danger',
-        dismissAfter: 2000
-      }))
+      dispatch(
+        notifActions.notifSend({
+          message: errorToString(err.response.data.error),
+          kind: 'danger',
+          dismissAfter: 2000
+        })
+      )
     }
   }
 }
@@ -59,11 +61,13 @@ export const createTeam = ({ name }) => {
       dispatch(fetchUser())
       dispatch(push('/dashboard/team'))
     } catch (err) {
-      dispatch(notifActions.notifSend({
-        message: errorToString(err.response.data.error),
-        kind: 'danger',
-        dismissAfter: 2000
-      }))
+      dispatch(
+        notifActions.notifSend({
+          message: errorToString(err.response.data.error),
+          kind: 'danger',
+          dismissAfter: 2000
+        })
+      )
     }
   }
 }
@@ -77,11 +81,13 @@ export const joinTeam = ({ team, message }) => {
     }
 
     if (!team || !team.value) {
-      return dispatch(notifActions.notifSend({
-        message: errorToString('INVALID_FORM'),
-        kind: 'danger',
-        dismissAfter: 2000
-      }))
+      return dispatch(
+        notifActions.notifSend({
+          message: errorToString('INVALID_FORM'),
+          kind: 'danger',
+          dismissAfter: 2000
+        })
+      )
     }
 
     try {
@@ -94,11 +100,13 @@ export const joinTeam = ({ team, message }) => {
       dispatch(fetchUser())
       dispatch(push('/dashboard/requests'))
     } catch (err) {
-      dispatch(notifActions.notifSend({
-        message: errorToString(err.response.data.error),
-        kind: 'danger',
-        dismissAfter: 2000
-      }))
+      dispatch(
+        notifActions.notifSend({
+          message: errorToString(err.response.data.error),
+          kind: 'danger',
+          dismissAfter: 2000
+        })
+      )
     }
   }
 }
@@ -117,11 +125,13 @@ export const allowPlayer = user => {
 
       dispatch(fetchUser())
     } catch (err) {
-      dispatch(notifActions.notifSend({
-        message: errorToString(err.response.data.error),
-        kind: 'danger',
-        dismissAfter: 2000
-      }))
+      dispatch(
+        notifActions.notifSend({
+          message: errorToString(err.response.data.error),
+          kind: 'danger',
+          dismissAfter: 2000
+        })
+      )
     }
   }
 }
@@ -140,11 +150,13 @@ export const refusePlayer = user => {
 
       dispatch(fetchUser())
     } catch (err) {
-      dispatch(notifActions.notifSend({
-        message: errorToString(err.response.data.error),
-        kind: 'danger',
-        dismissAfter: 2000
-      }))
+      dispatch(
+        notifActions.notifSend({
+          message: errorToString(err.response.data.error),
+          kind: 'danger',
+          dismissAfter: 2000
+        })
+      )
     }
   }
 }
@@ -167,11 +179,13 @@ export const kickPlayer = user => {
 
       dispatch(fetchUser())
     } catch (err) {
-      dispatch(notifActions.notifSend({
-        message: errorToString(err.response.data.error),
-        kind: 'danger',
-        dismissAfter: 2000
-      }))
+      dispatch(
+        notifActions.notifSend({
+          message: errorToString(err.response.data.error),
+          kind: 'danger',
+          dismissAfter: 2000
+        })
+      )
     }
   }
 }

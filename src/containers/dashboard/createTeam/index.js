@@ -35,9 +35,11 @@ const CreateTeam = props => (
   />
 )
 
-
 const mapDispatchToProps = dispatch => ({
   createTeam: newTeam => dispatch(createTeam(newTeam))
 })
 
-export default connect(null, mapDispatchToProps)(CreateTeam)
+export default connect(
+  null,
+  mapDispatchToProps
+)(CreateTeam)

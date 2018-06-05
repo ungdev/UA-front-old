@@ -3,8 +3,7 @@ import fail from '../lib/store.fail'
 import errorToString from '../lib/errorToString'
 import { actions as notifActions } from 'redux-notifications'
 
-const initialState = {
-}
+const initialState = {}
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -18,16 +17,20 @@ export const sendResetMail = ({ email }) => {
     try {
       await axios.post('user/reset', { email })
 
-      dispatch(notifActions.notifSend({
-        message: 'Mail envoyé avec succès',
-        dismissAfter: 2000
-      }))
+      dispatch(
+        notifActions.notifSend({
+          message: 'Mail envoyé avec succès',
+          dismissAfter: 2000
+        })
+      )
     } catch (err) {
-      dispatch(notifActions.notifSend({
-        message: errorToString(err.response.data.error),
-        kind: 'danger',
-        dismissAfter: 2000
-      }))
+      dispatch(
+        notifActions.notifSend({
+          message: errorToString(err.response.data.error),
+          kind: 'danger',
+          dismissAfter: 2000
+        })
+      )
     }
   }
 }
@@ -41,16 +44,20 @@ export const resetPassword = resetInfos => {
     try {
       await axios.put('user/reset', resetInfos)
 
-      dispatch(notifActions.notifSend({
-        message: 'Mot de passe changé',
-        dismissAfter: 2000
-      }))
+      dispatch(
+        notifActions.notifSend({
+          message: 'Mot de passe changé',
+          dismissAfter: 2000
+        })
+      )
     } catch (err) {
-      dispatch(notifActions.notifSend({
-        message: errorToString(err.response.data.error),
-        kind: 'danger',
-        dismissAfter: 2000
-      }))
+      dispatch(
+        notifActions.notifSend({
+          message: errorToString(err.response.data.error),
+          kind: 'danger',
+          dismissAfter: 2000
+        })
+      )
     }
   }
 }

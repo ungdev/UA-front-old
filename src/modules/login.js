@@ -46,16 +46,20 @@ export const tryLogin = user => {
 
       dispatch(saveToken(res.data.token))
       dispatch(push('/dashboard'))
-      dispatch(notifActions.notifSend({
-        message: 'Connexion validée',
-        dismissAfter: 2000
-      }))
+      dispatch(
+        notifActions.notifSend({
+          message: 'Connexion validée',
+          dismissAfter: 2000
+        })
+      )
     } catch (err) {
-      dispatch(notifActions.notifSend({
-        message: errorToString(err.response.data.error),
-        kind: 'danger',
-        dismissAfter: 2000
-      }))
+      dispatch(
+        notifActions.notifSend({
+          message: errorToString(err.response.data.error),
+          kind: 'danger',
+          dismissAfter: 2000
+        })
+      )
     }
   }
 }
