@@ -4,7 +4,6 @@ import { Form, Text } from 'react-form'
 import Select from 'react-select'
 
 import Button from '../../../components/button'
-import errorToString from '../../../lib/errorToString'
 
 import { createTeam } from '../../../modules/teams'
 
@@ -27,9 +26,6 @@ const CreateTeam = props => (
           maxLength="90"
           autoFocus
         />
-        {props.createTeamError && (
-          <strong className="error">{errorToString(props.createTeamError)}</strong>
-        )}
         <br />
         <Button type="submit" raised>
           Créer mon équipe
@@ -39,12 +35,11 @@ const CreateTeam = props => (
   />
 )
 
-const mapStateToProps = state => ({
-  createTeamError: state.teams.createTeamError
-})
-
 const mapDispatchToProps = dispatch => ({
   createTeam: newTeam => dispatch(createTeam(newTeam))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateTeam)
+export default connect(
+  null,
+  mapDispatchToProps
+)(CreateTeam)

@@ -1,18 +1,15 @@
 import axios from '../lib/axios'
-import fail from '../lib/store.fail'
+import errorToString from '../lib/errorToString'
 import { push } from 'react-router-redux'
+import { actions as notifActions } from 'redux-notifications'
 import { fetchUser, SET_USER, SET_PRICES } from './user'
 import { SET_TEAMS } from './teams'
 import { SET_SPOTLIGHTS } from './spotlights'
 
 export const SET_TOKEN = 'login/SET_TOKEN'
-export const SET_SUCCESS = 'login/SET_SUCCESS'
-export const SET_ERROR = 'login/SET_ERROR'
 
 const initialState = {
-  token: null,
-  success: null,
-  errorMessage: ''
+  token: null
 }
 
 export default (state = initialState, action) => {
@@ -21,16 +18,6 @@ export default (state = initialState, action) => {
       return {
         ...state,
         token: action.payload
-      }
-    case SET_SUCCESS:
-      return {
-        ...state,
-        success: action.payload
-      }
-    case SET_ERROR:
-      return {
-        ...state,
-        errorMessage: action.payload
       }
     default:
       return state
@@ -59,13 +46,20 @@ export const tryLogin = user => {
 
       dispatch(saveToken(res.data.token))
       dispatch(push('/dashboard'))
+      dispatch(
+        notifActions.notifSend({
+          message: 'Connexion validée',
+          dismissAfter: 2000
+        })
+      )
     } catch (err) {
-      return fail({
-        dispatch,
-        mutationSuccess: SET_SUCCESS,
-        mutationError: SET_ERROR,
-        err: err.response.data.error
-      })
+      dispatch(
+        notifActions.notifSend({
+          message: errorToString(err.response.data.error),
+          kind: 'danger',
+          dismissAfter: 2000
+        })
+      )
     }
   }
 }

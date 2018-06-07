@@ -7,6 +7,7 @@ import configureStore, { history } from './store'
 import registerServiceWorker from './registerServiceWorker'
 import App from './containers/app'
 
+import 'redux-notifications/lib/styles.css'
 import './index.css'
 import './forms.css'
 

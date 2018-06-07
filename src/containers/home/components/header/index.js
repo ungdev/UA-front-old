@@ -65,4 +65,7 @@ const mapDispatchToProps = dispatch => ({
   gotoDashboard: () => dispatch(push('/dashboard'))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Header)

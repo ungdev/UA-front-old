@@ -27,6 +27,34 @@ strong.success {
   color: #27ae60;
 }
 
+.notif__container {
+  width: auto;
+  left: unset;
+  right: 10px;
+}
+
+.notif {
+  width: 260px;
+  padding: 16px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.12);
+  color: #222;
+}
+
+.notif--danger {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.notif-transition-enter {
+  transform: translateX(calc(100% + 10px + 10%));
+  transition: transform .2s ease-out;
+}
+
+.notif-transition-enter-active {
+  transform: translateX(0);
+}
+
 @media (min-width: 768px) {
   .ReactModal__Content {
     width: 360px !important;

@@ -1,19 +1,16 @@
 import axios from '../lib/axios'
-import fail from '../lib/store.fail'
+import errorToString from '../lib/errorToString'
+import { actions as notifActions } from 'redux-notifications'
 import { logout, SET_TOKEN } from './login'
 import { SET_TEAMS } from './teams'
 import { SET_SPOTLIGHTS } from './spotlights'
 
 export const SET_USER = 'user/SET_USER'
 export const SET_PRICES = 'user/SET_PRICES'
-export const SET_EDIT_ERROR = 'user/SET_EDIT_ERROR'
-export const SET_EDIT_SUCCESS = 'user/SET_EDIT_SUCCESS'
 
 const initialState = {
   user: null,
-  prices: null,
-  editSuccess: false,
-  editError: ''
+  prices: null
 }
 
 export default (state = initialState, action) => {
@@ -22,16 +19,6 @@ export default (state = initialState, action) => {
       return {
         ...state,
         user: action.payload
-      }
-    case SET_EDIT_ERROR:
-      return {
-        ...state,
-        editError: action.payload
-      }
-    case SET_EDIT_SUCCESS:
-      return {
-        ...state,
-        editSuccess: action.payload
       }
     case SET_PRICES:
       if (!action.payload) {
@@ -86,11 +73,13 @@ export const editUser = newUserData => {
     }
 
     if (newUserData.password !== newUserData.password2) {
-      return fail({
-        dispatch,
-        mutationError: SET_EDIT_ERROR,
-        err: 'PASSWORD_MISSMATCH'
-      })
+      return dispatch(
+        notifActions.notifSend({
+          message: errorToString('PASSWORD_MISMATCH'),
+          kind: 'danger',
+          dismissAfter: 2000
+        })
+      )
     }
 
     try {
@@ -101,23 +90,20 @@ export const editUser = newUserData => {
         payload: res.data.user
       })
 
-      dispatch({
-        type: SET_EDIT_SUCCESS,
-        payload: true
-      })
-
-      setTimeout(() => {
-        dispatch({
-          type: SET_EDIT_SUCCESS,
-          payload: false
+      dispatch(
+        notifActions.notifSend({
+          message: 'Compte édité avec succès',
+          dismissAfter: 2000
         })
-      }, 2000)
+      )
     } catch (err) {
-      return fail({
-        dispatch,
-        mutationError: SET_EDIT_ERROR,
-        err: err.response.data.error
-      })
+      dispatch(
+        notifActions.notifSend({
+          message: errorToString(err.response.data.error),
+          kind: 'danger',
+          dismissAfter: 2000
+        })
+      )
     }
   }
 }

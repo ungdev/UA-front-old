@@ -1,4 +1,4 @@
-export default (opts) => {
+export default opts => {
   console.log(opts)
 
   if (opts.mutationSuccess) {
@@ -22,7 +22,7 @@ export default (opts) => {
         payload: null
       })
     }
-  }, 2000);
+  }, 2000)
 
-  return Promise.reject(opts.err);
+  return Promise.reject(opts.err)
 }

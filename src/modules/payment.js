@@ -1,26 +1,11 @@
 import axios from '../lib/axios'
-import fail from '../lib/store.fail'
+import errorToString from '../lib/errorToString'
+import { actions as notifActions } from 'redux-notifications'
 
-export const SET_SUCCESS = 'payment/SET_SUCCESS'
-export const SET_ERROR = 'payment/SET_ERROR'
-
-const initialState = {
-  success: null,
-  errorMessage: ''
-}
+const initialState = {}
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case SET_SUCCESS:
-      return {
-        ...state,
-        success: action.payload
-      }
-    case SET_ERROR:
-      return {
-        ...state,
-        errorMessage: action.payload
-      }
     default:
       return state
   }
@@ -41,12 +26,13 @@ export const payment = basket => {
         location.href = res.body.url // eslint-disable-line no-restricted-globals
       }
     } catch (err) {
-      return fail({
-        dispatch,
-        mutationSuccess: SET_SUCCESS,
-        mutationError: SET_ERROR,
-        err: err.response.data.error
-      })
+      dispatch(
+        notifActions.notifSend({
+          message: errorToString(err.response.data.error),
+          kind: 'danger',
+          dismissAfter: 2000
+        })
+      )
     }
   }
 }

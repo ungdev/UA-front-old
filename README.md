@@ -52,6 +52,7 @@ arena.utt.fr-2018/
 │   │   └── button/
 │   ├── containers/                  # pages that handle routes
 │   │   └── home/
+|   │      └── components/           # components used by this container only
 │   ├── modules/                     # store / actions / reducers
 │   │   └── user/
 │   ├── index.css                    # common css

@@ -21,7 +21,10 @@ if (process.env.NODE_ENV === 'development') {
   middleware.push(createLogger({ collapsed: true }))
 }
 
-const composedEnhancers = compose(applyMiddleware(...middleware), ...enhancers)
+const composedEnhancers = compose(
+  applyMiddleware(...middleware),
+  ...enhancers
+)
 
 const setupStore = () => {
   const store = createStore(rootReducer, initialState, composedEnhancers)

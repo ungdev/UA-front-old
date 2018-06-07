@@ -42,17 +42,16 @@ class Participants extends React.Component {
                 field="spotliht"
                 onChange={this.changeSpotlight}
                 options={options}
-                searchable={false}/>
-              {teams.length > 0 && <div>
-                <strong>Liste des équipes :</strong>
-                <br/>
-                {teams.map((team, i) =>
-                  <span key={i}>{team.name}</span>
-                )}
-              </div>}
-              {teams.length === 0 && <div>
-                Aucune équipe dans ce tournoi pour le moment
-              </div>}
+                searchable={false}
+              />
+              {teams.length > 0 && (
+                <div>
+                  <strong>Liste des équipes :</strong>
+                  <br />
+                  {teams.map((team, i) => <span key={i}>{team.name}</span>)}
+                </div>
+              )}
+              {teams.length === 0 && <div>Aucune équipe dans ce tournoi pour le moment</div>}
             </form>
           )}
         />

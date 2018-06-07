@@ -39,13 +39,21 @@ const TeamManagement = props => (
     </div>
     {props.teamStatus.theme !== 'success' && (
       <p className="a-teammanagement__warning">
-        <span className="a-teammanagement__warning__sign"><span role="img" aria-label="warning-sign">⚠️</span>Attention</span>&nbsp;
+        <span className="a-teammanagement__warning__sign">
+          <span role="img" aria-label="warning-sign">
+            ⚠️
+          </span>Attention
+        </span>&nbsp;
         <strong>Tous les membres de l'équipe</strong> doivent avoir payé leur place pour valider
         l'inscription au spotlight (5 personnes ayant payé leur place pour s'inscrire au tournoi
         LoL, etc.).
       </p>
     )}
-    <TeamTable captain={props.user.team.captainId} players={props.user.team.users} spotlight={props.user.team.spotlight} />
+    <TeamTable
+      captain={props.user.team.captainId}
+      players={props.user.team.users}
+      spotlight={props.user.team.spotlight}
+    />
     <h3>Demandes</h3>
     {!props.askingPlayers.length && <p className="a-no-asking-players">Aucune demande en cours</p>}
     <List>{props.askingPlayers.map(askingPlayer.bind(props))}</List>
@@ -108,4 +116,7 @@ const mapDispatchToProps = dispatch => ({
   selfKick: () => dispatch(kickPlayer('self'))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(TeamManagement)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TeamManagement)
