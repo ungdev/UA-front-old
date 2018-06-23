@@ -4,18 +4,19 @@ import './spotlights.css'
 
 const Spotlights = () => (
   <div className="a-spotlights">
-    <h2>LES QUATRES JEUX MYTHIQUES DE RETOUR À L’UTT ARENA 2018.</h2>
+    <h2>LES QUATRES JEUX MYTHIQUES À L’UTT ARENA 2018.</h2>
     <p>
-      League of Legends, Counter-Strike: Global Offensive, Hearthstone et PUBG. Les quatres jeux
-      mythiques sont de retour pour cette édition 2018.<br />
+      <span>League of Legends</span>, <span>Counter-Strike: Global Offensive</span>, <span>Hearthstone
+        </span> et <span>PlayerUnknown's BattleGrounds</span>. Les quatres jeux
+      mythiques seront présents pour cette édition 2018.<br />
       <br />
-      <strong>Répartition des cashprizes</strong> : to be announced<br />
-      <strong>Nombre de places par tournoi :</strong>
+      <span>Répartition des cashprizes</span> : to be announced<br />
+      <span>Nombre de places par tournoi :</span>
       <br />
-      <strong>- Hearthstone :</strong> 32 slots<br />
-      <strong>- CS:GO :</strong> 8 slots<br />
-      <strong>- PUBG :</strong> 16 slots<br />
-      <strong>- League of Legends :</strong> 32 slots<br />
+      <span>- Hearthstone :</span> 32 slots (équipes solo)<br />
+      <span>- CS:GO :</span> 8 slots (équipes de 5)<br />
+      <span>- PUBG :</span> 15 slots (équipes de 4)<br />
+      <span>- League of Legends :</span> 16 slots Pro et 16 slots Amateurs (équipes de 5)<br />
     </p>
   </div>
 )
