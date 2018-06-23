@@ -1,7 +1,6 @@
 import React from 'react'
 
 import './partners.css'
-import Button from '../../../../components/button'
 
 class Partners extends React.Component {
   render() {
@@ -17,7 +16,6 @@ class Partners extends React.Component {
         <div className="a-partners__images">
           {partners.map((partner, i) => <img src={partner.image} key={i} alt={partner.name} />)}
         </div>
-        <Button raised={true}>Nous soutenir</Button>
       </div>
     )
   }

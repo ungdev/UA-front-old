@@ -13,10 +13,10 @@ const Spotlights = () => (
       <span>Répartition des cashprizes</span> : to be announced<br />
       <span>Nombre de places par tournoi :</span>
       <br />
-      <span>- Hearthstone :</span> 32 slots<br />
-      <span>- CS:GO :</span> 8 slots<br />
+      <span>- Hearthstone :</span> 32 slots (équipes solo)<br />
+      <span>- CS:GO :</span> 8 slots (équipes de 5)<br />
       <span>- PUBG :</span> 15 slots (équipes de 4)<br />
-      <span>- League of Legends :</span> 16 slots Pro et 16 slots Amateurs<br />
+      <span>- League of Legends :</span> 16 slots Pro et 16 slots Amateurs (équipes de 5)<br />
     </p>
   </div>
 )

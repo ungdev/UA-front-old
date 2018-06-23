@@ -12,6 +12,7 @@
   text-align: justify;
   margin: 24px 0;
 }
+
 .a-informations span {
   text-align: justify;
   margin: 24px 0;
@@ -26,7 +27,7 @@
   margin-top: 3px;
   display: flex;
   align-items: flex-start;
-  color: #7befe9;
+  line-height: 1.4rem;
 }
 
 .a-informations__table__row__cell:first-child {
