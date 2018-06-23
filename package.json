@@ -22,7 +22,8 @@
     "redux-logger": "^3.0.6",
     "redux-notifications": "^4.0.1",
     "redux-thunk": "^2.3.0",
-    "smooth-scroll": "^14.2.0"
+    "smooth-scroll": "^14.2.0",
+    "node-static": "^0.7.10"
   },
   "scripts": {
     "dev": "react-scripts start",
@@ -34,7 +35,6 @@
   },
   "proxy": "http://localhost:3000",
   "devDependencies": {
-    "node-static": "^0.7.10",
     "prettier": "^1.13.4"
   }
 }
