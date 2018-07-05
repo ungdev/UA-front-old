@@ -99,7 +99,6 @@ class Home extends React.Component {
             <Button raised={true}>C'est parti !</Button>
             <div className="a-home__map">
               <iframe
-                width="600"
                 height="320"
                 title="Google Maps"
                 src="https://maps.google.com/maps?q=UTT Arena&t=&z=17&ie=UTF8&iwloc=&output=embed"
@@ -108,6 +107,8 @@ class Home extends React.Component {
                 marginHeight="0"
                 marginWidth="0"
               />
+
+              <p>Vous pouvez vous rendre à Troyes par le train ou par l'A5.</p>
             </div>
             <Category id="spotlights">Tournois</Category>
             <Spotlights />

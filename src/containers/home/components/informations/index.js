@@ -50,7 +50,7 @@ const Informations = () => (
       </div>
       <div className="a-informations__table__row">
         <div className="a-informations__table__row__cell">Tournois</div>
-        <div className="a-informations__table__row__cell">4</div>
+        <div className="a-informations__table__row__cell">4 (les tournois commencent le Samedi à 10h précises)</div>
       </div>
     </div>
   </div>
