@@ -47,7 +47,9 @@ export const cancelRequest = id => {
   }
 }
 
-export const createTeam = ({ name }) => {
+export const createTeam = ({ name, spotlight }) => {
+  spotlight = spotlight.value
+
   return async (dispatch, getState) => {
     const authToken = getState().login.token
 
@@ -56,9 +58,9 @@ export const createTeam = ({ name }) => {
     }
 
     try {
-      await axios.post(`/team`, { name }, { headers: { 'X-Token': authToken } })
+      await axios.post(`/team`, { name, spotlight }, { headers: { 'X-Token': authToken } })
 
-      dispatch(fetchUser())
+      await dispatch(fetchUser())
       dispatch(push('/dashboard/team'))
     } catch (err) {
       dispatch(
@@ -97,7 +99,7 @@ export const joinTeam = ({ team, message }) => {
         { headers: { 'X-Token': authToken } }
       )
 
-      dispatch(fetchUser())
+      await dispatch(fetchUser())
       dispatch(push('/dashboard/requests'))
     } catch (err) {
       dispatch(
@@ -164,7 +166,6 @@ export const refusePlayer = user => {
 export const kickPlayer = user => {
   return async (dispatch, getState) => {
     const authToken = getState().login.token
-    const team = getState().user.user.team.id
 
     if (!authToken || authToken.length === 0) {
       return
@@ -175,9 +176,10 @@ export const kickPlayer = user => {
     }
 
     try {
-      await axios.post(`/team/${team}/kick`, { user }, { headers: { 'X-Token': authToken } })
+      await axios.post(`/team/kick/${user}`, null, { headers: { 'X-Token': authToken } })
 
-      dispatch(fetchUser())
+      dispatch(push('/dashboard'))
+      await dispatch(fetchUser())
     } catch (err) {
       dispatch(
         notifActions.notifSend({

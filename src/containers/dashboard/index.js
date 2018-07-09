@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route } from 'react-router'
+import { Route, Redirect } from 'react-router'
 import { connect } from 'react-redux'
 
 import Header from '../../components/header'
@@ -15,6 +15,8 @@ import DashboardViewParticipants from './viewParticipants'
 import { autoLogin } from '../../modules/login'
 
 import './dashboard.css'
+
+const baseUrl = process.env.REACT_APP_BASEURL
 
 class Dashboard extends React.Component {
   constructor() {
@@ -54,45 +56,21 @@ class Dashboard extends React.Component {
 
           {this.state.render && (
             <Route
-              path={process.env.REACT_APP_BASEURL + 'dashboard'}
+              path={baseUrl + 'dashboard'}
               exact
               component={DashboardHome}
             />
           )}
           {this.state.render && (
             <Route
-              path={process.env.REACT_APP_BASEURL + 'dashboard/user'}
+              path={baseUrl + 'dashboard/user'}
               component={DashboardEditInfos}
             />
           )}
           {this.state.render && (
             <Route
-              path={process.env.REACT_APP_BASEURL + 'dashboard/payment'}
+              path={baseUrl + 'dashboard/payment'}
               component={DashboardPayment}
-            />
-          )}
-          {this.state.render && (
-            <Route
-              path={process.env.REACT_APP_BASEURL + 'dashboard/requests'}
-              component={DashboardRequests}
-            />
-          )}
-          {this.state.render && (
-            <Route
-              path={process.env.REACT_APP_BASEURL + 'dashboard/createTeam'}
-              component={DashboardCreateTeam}
-            />
-          )}
-          {this.state.render && (
-            <Route
-              path={process.env.REACT_APP_BASEURL + 'dashboard/team'}
-              component={DashboardTeam}
-            />
-          )}
-          {this.state.render && (
-            <Route
-              path={process.env.REACT_APP_BASEURL + 'dashboard/joinTeam'}
-              component={DashboardJoinTeam}
             />
           )}
           {this.state.render && (
@@ -100,6 +78,40 @@ class Dashboard extends React.Component {
               path={process.env.REACT_APP_BASEURL + 'dashboard/participants'}
               component={DashboardViewParticipants}
             />
+          )}
+
+          {/* routes without team */}
+
+          {this.state.render && (
+            <Route path={baseUrl + 'dashboard/createTeam'} render={() => (
+              !this.props.user.team
+                ? <DashboardCreateTeam />
+                : <Redirect to={baseUrl + 'dashboard'} />
+            )} />
+          )}
+          {this.state.render && (
+            <Route path={baseUrl + 'dashboard/joinTeam'} render={() => (
+              !this.props.user.team
+                ? <DashboardJoinTeam />
+                : <Redirect to={baseUrl + 'dashboard'} />
+            )} />
+          )}
+          {this.state.render && (
+            <Route path={baseUrl + 'dashboard/requests'} render={() => (
+              !this.props.user.team
+                ? <DashboardRequests />
+                : <Redirect to={baseUrl + 'dashboard'} />
+            )} />
+          )}
+
+          {/* routes with team */}
+
+          {this.state.render && (
+            <Route path={baseUrl + 'dashboard/team'} render={() => (
+              this.props.user.team
+                ? <DashboardTeam/>
+                : <Redirect to={baseUrl + 'dashboard'} />
+            )}/>
           )}
         </main>
       </div>

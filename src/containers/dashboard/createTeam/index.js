@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Form, Text } from 'react-form'
-import Select from 'react-select'
+import Select from '../../../components/select'
 
 import Button from '../../../components/button'
 
@@ -26,6 +26,12 @@ const CreateTeam = props => (
           maxLength="90"
           autoFocus
         />
+        <Select
+          field="spotlight"
+          placeholder="Tournoi"
+          searchable={false}
+          options={props.spotlights}
+        />
         <br />
         <Button type="submit" raised>
           Créer mon équipe
@@ -35,11 +41,18 @@ const CreateTeam = props => (
   />
 )
 
+const mapStateToProps = state => ({
+  spotlights: state.spotlights.spotlights.map(spotlight => ({
+    label: spotlight.name,
+    value: spotlight.id
+  }))
+})
+
 const mapDispatchToProps = dispatch => ({
   createTeam: newTeam => dispatch(createTeam(newTeam))
 })
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(CreateTeam)

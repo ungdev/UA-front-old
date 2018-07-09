@@ -1,11 +1,12 @@
 export default state => {
   const team = state.user.user.team
-  const teamUsers = state.user.user.team
-  const spotlight = state.user.user.team.spotlight
 
   if (!team) {
     return { status: 'Aucune équipe — Libre', theme: 'warning' }
   }
+
+  const teamUsers = team.users
+  const spotlight = team.spotlight
 
   if (team && !spotlight) {
     return { status: 'Équipe non inscrite — Libre', theme: 'error' }

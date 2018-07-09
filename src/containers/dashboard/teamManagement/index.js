@@ -32,6 +32,7 @@ const askingPlayer = function(player, i) {
 const TeamManagement = props => (
   <div className="a-teammanagement a-dashboard-page">
     <h2>{props.user.team.name}</h2>
+    <h4>{props.user.team.spotlight.name}</h4>
     <h3>Membres</h3>
     {props.user.team.soloTeam && <span className="a-teammanagement__solo">Équipe mono-joueur</span>}
     <div className="a-teammanagement__badge">

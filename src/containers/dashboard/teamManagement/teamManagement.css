@@ -3,6 +3,11 @@
   display: block;
 }
 
+.a-teammanagement h4 {
+  color: #222;
+  text-align: center;
+}
+
 .a-teammanagement h3 {
   color: #222;
   text-transform: uppercase;

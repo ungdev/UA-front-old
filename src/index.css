@@ -55,6 +55,11 @@ strong.success {
   transform: translateX(0);
 }
 
+/* react-select native input */
+input[type="text"][role="combobox"] {
+  box-shadow: none;
+}
+
 @media (min-width: 768px) {
   .ReactModal__Content {
     width: 360px !important;
