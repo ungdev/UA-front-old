@@ -9,7 +9,7 @@ class Participants extends React.Component {
     super()
 
     this.state = {
-      spotlight: 'Hearthstone'
+      spotlight: 1
     }
 
     this.changeSpotlight = this.changeSpotlight.bind(this)
@@ -48,7 +48,7 @@ class Participants extends React.Component {
                 <div>
                   <strong>Liste des équipes :</strong>
                   <br />
-                  {teams.map((team, i) => <span key={i}>{team.name}</span>)}
+                  {teams.map((team, i) => <div style={{ margin: '4px 0' }} key={i}>{team.name}</div>)}
                 </div>
               )}
               {teams.length === 0 && <div>Aucune équipe dans ce tournoi pour le moment</div>}

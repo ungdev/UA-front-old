@@ -11,6 +11,7 @@ import DashboardCreateTeam from './createTeam'
 import DashboardTeam from './teamManagement'
 import DashboardJoinTeam from './joinTeam'
 import DashboardViewParticipants from './viewParticipants'
+import DashboardSolo from './solo'
 
 import { autoLogin } from '../../modules/login'
 
@@ -100,6 +101,13 @@ class Dashboard extends React.Component {
             <Route path={baseUrl + 'dashboard/requests'} render={() => (
               !this.props.user.team
                 ? <DashboardRequests />
+                : <Redirect to={baseUrl + 'dashboard'} />
+            )} />
+          )}
+          {this.state.render && (
+            <Route path={baseUrl + 'dashboard/solo'} render={() => (
+              !this.props.user.team
+                ? <DashboardSolo />
                 : <Redirect to={baseUrl + 'dashboard'} />
             )} />
           )}

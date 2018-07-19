@@ -18,6 +18,8 @@ export default error => {
       return 'Jeton invalide'
     case 'USER_NOT_ACTIVATED':
       return 'Compte non activé. Vérifiez votre boîte mail.'
+    case 'NOT_PAID':
+      return 'Vous devez avoir payé votre place.'
     case 'UNKNOWN':
       return 'Une erreur est survenue'
     default:

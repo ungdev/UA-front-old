@@ -15,8 +15,6 @@ const target = document.querySelector('#root')
 
 const store = configureStore()
 
-Function.noop = () => {}
-
 const rerender = () =>
   render(
     <Provider store={store}>

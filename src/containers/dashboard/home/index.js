@@ -25,6 +25,12 @@ const Home = props => [
       </ListItem>
     )}
     {!props.user.team && (
+      <ListItem clickable={true} onClick={props.solo}>
+        <h3>Rejoindre un tournoi solo</h3>
+        <span>Pour rejoindre le tournoi Hearthstone, c'est par ici !</span>
+      </ListItem>
+    )}
+    {!props.user.team && (
       <ListItem clickable={true} onClick={props.requests}>
         <h3>Mes demandes</h3>
         <span>La liste des demandes d'équipe que tu as faite</span>
@@ -65,6 +71,7 @@ const mapDispatchToProps = dispatch => ({
   editUser: () => dispatch(push('/dashboard/user')),
   payment: () => dispatch(push('/dashboard/payment')),
   requests: () => dispatch(push('/dashboard/requests')),
+  solo: () => dispatch(push('/dashboard/solo')),
   createTeam: () => dispatch(push('/dashboard/createTeam')),
   teamManagement: () => dispatch(push('/dashboard/team')),
   joinTeam: () => dispatch(push('/dashboard/joinTeam')),
