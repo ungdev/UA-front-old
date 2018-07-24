@@ -43,8 +43,9 @@ const CreateTeam = props => (
 
 const mapStateToProps = state => ({
   spotlights: state.spotlights.spotlights.map(spotlight => ({
-    label: spotlight.name,
-    value: spotlight.id
+    label: spotlight.isFull ? `${spotlight.name} (tournoi plein)` : spotlight.name,
+    value: spotlight.id,
+    isDisabled: spotlight.isFull
   }))
 })
 

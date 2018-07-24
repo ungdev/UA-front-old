@@ -20,6 +20,8 @@ export default error => {
       return 'Compte non activé. Vérifiez votre boîte mail.'
     case 'NOT_PAID':
       return 'Vous devez avoir payé votre place.'
+    case 'SPOTLIGHT_FULL':
+      return 'Le tournoi est plein'
     case 'UNKNOWN':
       return 'Une erreur est survenue'
     default:

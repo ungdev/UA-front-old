@@ -38,7 +38,17 @@ const TeamManagement = props => (
     <div className="a-teammanagement__badge">
       <StatusBadge theme={props.teamStatus.theme}>{props.teamStatus.status}</StatusBadge>
     </div>
-    {props.teamStatus.theme !== 'success' && (
+    {props.spotlightFull && (
+      <p className="a-teammanagement__warning">
+        <span className="a-teammanagement__warning__sign">
+          <span role="img" aria-label="warning-sign">
+            ⚠️
+          </span>Attention
+        </span>&nbsp;
+        <strong>Le tournoi dans lequel vous vous êtes inscrits est plein.</strong> D'autres équipes se sont complétées plus rapidement. À moins qu'une équipe se désiste, vous ne pouvez plus participer au tournoi.
+      </p>
+    )}
+    {props.teamStatus.theme !== 'success' && !props.spotlightFull && (
       <p className="a-teammanagement__warning">
         <span className="a-teammanagement__warning__sign">
           <span role="img" aria-label="warning-sign">
@@ -103,6 +113,7 @@ const mapStateToProps = state => ({
   user: state.user.user,
   teamStatus: teamStatus(state),
   isCaptain: state.user.user.team.captainId === state.user.user.id,
+  spotlightFull: (state.spotlights.spotlights.find(s => s.id === state.user.user.team.spotlightId) || {}).isFull,
   // allow refuse and kick error
   askingPlayers: state.teams.teams.find(team => team.id === state.user.user.team.id).askingUsers,
   kickablePlayers: state.user.user.team.users

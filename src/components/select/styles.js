@@ -1,9 +1,18 @@
 module.exports = {
-  option: (base, { isSelected }) => ({
-    ...base,
-    fontSize: '16px',
-    color: isSelected ? '#fff' : '#222'
-  }),
+  option: (base, { isSelected, isDisabled }) => {
+    const styles = Object.assign({}, base)
+
+    styles.fontSize = '16px'
+    styles.color = isSelected ? '#fff'
+      : isDisabled ? '#666'
+      : '#222'
+
+    if (isDisabled) {
+      styles.backgroundColor = '#f0f0f0'
+    }
+
+    return styles
+  },
   indicatorSeparator: base => ({
     display: 'none'
   }),

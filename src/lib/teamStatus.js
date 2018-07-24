@@ -12,6 +12,12 @@ export default state => {
     return { status: 'Équipe non inscrite — Libre', theme: 'error' }
   }
 
+  const { isFull } = (state.spotlights.spotlights.find(s => s.id === state.user.user.team.spotlightId) || {})
+
+  if (isFull) {
+    return { status: 'Équipe en retard — tournoi plein', theme: 'error' }
+  }
+
   const playerCount = teamUsers.size
   const playerPaidCount = teamUsers.filter(player => player.paid).length
   const maxPlayers = spotlight.perTeam
