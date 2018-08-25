@@ -115,7 +115,7 @@ class LoginModal extends React.Component {
           </div>
         )}
         {!this.props.canLogin && (
-          <div className="a-cantlogin-modal">Connection désactivée pour le moment.</div>
+          <div className="a-cantlogin-modal">Connexion désactivée pour le moment.</div>
         )}
       </Modal>
     )
