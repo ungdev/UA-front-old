@@ -42,11 +42,13 @@ const CreateTeam = props => (
 )
 
 const mapStateToProps = state => ({
-  spotlights: state.spotlights.spotlights.map(spotlight => ({
-    label: spotlight.isFull ? `${spotlight.name} (tournoi plein)` : spotlight.name,
-    value: spotlight.id,
-    isDisabled: spotlight.isFull
-  }))
+  spotlights: state.spotlights.spotlights
+    .filter(spotlight => spotlight.perTeam > 1)
+    .map(spotlight => ({
+      label: spotlight.isFull ? `${spotlight.name} (tournoi plein)` : spotlight.name,
+      value: spotlight.id,
+      isDisabled: spotlight.isFull
+    }))
 })
 
 const mapDispatchToProps = dispatch => ({
