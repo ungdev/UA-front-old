@@ -9,12 +9,16 @@ class Partners extends React.Component {
       image: `${process.env.PUBLIC_URL}/${partner}.png`,
       url: process.env[`REACT_APP_PARTNER_${partner.toUpperCase()}_LINK`]
     }))
-
+    
     return (
       <div className="a-partners">
         <h2 className="a-partners__partner">PARTENAIRES</h2>
-        <div className="a-partners__images">
-          {partners.map((partner, i) => <img src={partner.image} key={i} alt={partner.name} />)}
+        <div className="a-partners_logos">
+          {partners.map((partner, i) => 
+            <a className="a-partners__images" href={partner.url}>
+              <img src={partner.image} key={i} alt={partner.name} />
+            </a>
+          )}
         </div>
         <a className="a-partners__link" href="mailto:arena@utt.fr">Devenir partenaire</a>
       </div>
