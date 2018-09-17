@@ -14,6 +14,7 @@
 .a-partners__images {
   overflow-x: overlay;
   padding: 0 12px;
+  margin-bottom: 5px
 }
 
 .a-partners_logos {
@@ -21,6 +22,7 @@
   width: 100%;
   justify-content: center;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .a-partners__images > a {
