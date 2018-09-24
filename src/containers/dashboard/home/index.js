@@ -27,7 +27,7 @@ const Home = props => [
     {!props.user.team && (
       <ListItem clickable={true} onClick={props.solo}>
         <h3>Rejoindre un tournoi solo</h3>
-        <span>Pour rejoindre le tournoi Hearthstone, c'est par ici !</span>
+        <span>Pour rejoindre le tournoi Hearthstone ou Super Smash Bros Ultimate, c'est par ici !</span>
       </ListItem>
     )}
     {!props.user.team && (

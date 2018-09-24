@@ -5,14 +5,24 @@ import { Form, Text } from 'react-form'
 import Button from '../../../components/button'
 
 import { editUser } from '../../../modules/user'
+import Select from '../../../components/select'
 
 import './editInfos.css'
 
-const EditInfos = props => (
+
+const genderOptions = [{ label: '', value: 'N/A'}, { label: 'Homme', value: 'M' }, { label: 'Femme', value: 'F' }]
+
+const EditInfos = props => {
+  let gender = 'N/A'
+  if(props.user.gender){
+    if(props.user.gender == 'M') gender = { label: 'Homme', value: 'M' }
+    if(props.user.gender == 'F') gender = { label: 'Femme', value: 'F' }
+  }
+  return(
   <Form
     onSubmit={props.editUser}
     defaultValues={{
-      ...props.user
+      ...props.user, gender
     }}
     render={({ submitForm }) => (
       <form onSubmit={submitForm} className="a-dashboard-page a-dashboard-edit">
@@ -33,11 +43,26 @@ const EditInfos = props => (
           maxLength="90"
           autoFocus
         />
+        <Select
+          field="gender"
+          isClearable={false}
+          backspaceRemovesValue={false}
+          isSearchable={false}
+          options={genderOptions}
+          value="H"
+        />
         <Text
-          field="fullname"
-          placeholder="Prénom Nom"
+          field="firstname"
+          placeholder="Prénom"
           pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěíňóřšťúůýž \-]+"
-          minLength="3"
+          minLength="2"
+          maxLength="200"
+        />
+        <Text
+          field="lastname"
+          placeholder="Nom"
+          pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěíňóřšťúůýž \-]+"
+          minLength="2"
           maxLength="200"
         />
         <Text field="email" type="email" placeholder="Mail" />
@@ -45,12 +70,12 @@ const EditInfos = props => (
         <Text field="password2" type="password" placeholder="Confirmation" minLength="6" />
         <br />
         <Button type="submit" raised>
-          Connexion
+          Modifier mes informations
         </Button>
       </form>
     )}
   />
-)
+)}
 
 const mapStateToProps = state => ({
   user: state.user.user

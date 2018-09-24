@@ -118,7 +118,7 @@ const mapStateToProps = state => ({
   askingPlayers: state.teams.teams.find(team => team.id === state.user.user.team.id).askingUsers,
   kickablePlayers: state.user.user.team.users
     .filter(user => user.id !== state.user.user.id)
-    .map(user => ({ label: user.fullname, value: user.id }))
+    .map(user => ({ label: `${user.firstname} ${user.lastname} (${user.name})`, value: user.id }))
 })
 
 const mapDispatchToProps = dispatch => ({
