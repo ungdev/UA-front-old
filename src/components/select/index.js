@@ -15,7 +15,7 @@ const Select_ = props => (
           {...rest}
           styles={styles}
           value={value || null}
-          isSearchable={typeof props.searchable === 'boolean' ? props.searchable : false}
+          isSearchable={typeof props.searchable === 'boolean' ? props.searchable : true}
           onChange={e => {
             setValue(e)
             if (onChange) {
