@@ -12,10 +12,10 @@ import Spotlights from './components/spotlights'
 import Partners from './components/partners'
 import LoginModal from './components/loginModal'
 import ForgotModal from './components/forgotModal'
-import Button from '../../components/button'
 
 import { fetchCanLogin } from '../../modules/canLogin'
 import { autoLogin } from '../../modules/login'
+import Countdown from './components/countdown'
 
 class Home extends React.Component {
   constructor() {
@@ -94,9 +94,9 @@ class Home extends React.Component {
 
         <main className="a-home">
           <div className="a-home__content">
+            <Countdown date={new Date('December 7, 2018 18:00:00')}/>
             <Category id="informations">Informations</Category>
             <Informations />
-            <Button raised={true}>C'est parti !</Button>
             <div className="a-home__map">
               <iframe
                 height="320"

@@ -91,7 +91,7 @@ class LoginModal extends React.Component {
                         field="gender"
                         isClearable={false}
                         backspaceRemovesValue={false}
-                        isSearchable={false}
+                        searchable={false}
                         options={genderOptions}
                       />
                       <Text
