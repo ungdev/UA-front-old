@@ -83,8 +83,9 @@ export const editUser = newUserData => {
     }
 
     try {
+      if(!newUserData.gender) newUserData.gender = 'N/A'
+      else newUserData.gender = newUserData.gender.value
       const res = await axios.put('user', newUserData, { headers: { 'X-Token': authToken } })
-
       dispatch({
         type: SET_USER,
         payload: res.data.user

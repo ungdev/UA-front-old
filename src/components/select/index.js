@@ -10,13 +10,12 @@ const Select_ = props => (
       const { onChange, onBlur, field, ...rest } = props
 
       const { value, setValue, setTouched } = fieldApi
-
       return (
         <Select
           {...rest}
           styles={styles}
           value={value || null}
-          isSearchable={typeof props.searchable === 'boolean' ? props.searchable : true}
+          isSearchable={typeof props.searchable === 'boolean' ? props.searchable : false}
           onChange={e => {
             setValue(e)
             if (onChange) {

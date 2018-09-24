@@ -11,6 +11,7 @@ import Button from '../../../../components/button'
 import { register } from '../../../../modules/register'
 import { tryLogin } from '../../../../modules/login'
 import { fetchUser } from '../../../../modules/user'
+import Select from '../../../../components/select'
 
 class LoginModal extends React.Component {
   constructor() {
@@ -32,6 +33,8 @@ class LoginModal extends React.Component {
   }
 
   submit(user) {
+    if(!user.gender) user.gender = 'N/A'
+    else user.gender = user.gender.value
     this.setState({
       loading: true
     })
@@ -41,6 +44,7 @@ class LoginModal extends React.Component {
   }
 
   render() {
+    const genderOptions = [{ label: 'Homme', value: 'M' }, { label: 'Femme', value: 'F' }]
     return (
       <Modal isOpen={this.props.isOpen} onClose={this.props.onClose}>
         {this.props.canLogin && (
@@ -76,17 +80,34 @@ class LoginModal extends React.Component {
                     <form onSubmit={submitForm} className="a-register-form">
                       <Text
                         field="name"
+                        type="text"
                         placeholder="Nom d'utilisateur"
                         pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěíňóřšťúůýž]+"
                         minLength="3"
                         maxLength="90"
                         autoFocus
                       />
+                      <Select
+                        field="gender"
+                        isClearable={false}
+                        backspaceRemovesValue={false}
+                        isSearchable={false}
+                        options={genderOptions}
+                      />
                       <Text
-                        field="fullname"
-                        placeholder="Prénom Nom"
-                        pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěíňóřšťúůýž \-]+ [0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěíňóřšťúůýž \-]+"
-                        minLength="3"
+                        field="firstname"
+                        type="text"
+                        placeholder="Prénom"
+                        pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěíňóřšťúůýž]+"
+                        minLength="2"
+                        maxLength="200"
+                      />
+                      <Text
+                        field="lastname"
+                        type="text"
+                        placeholder="Nom"
+                        pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěíňóřšťúůýž]+"
+                        minLength="2"
                         maxLength="200"
                       />
                       <Text field="email" type="email" placeholder="Mail" />
