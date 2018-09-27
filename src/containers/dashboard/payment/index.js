@@ -29,6 +29,17 @@ class EditInfos extends React.Component {
       plusone: false,
       ethernet: false,
       shirt: false,
+      kaliento: false,
+      mouse: false,
+      keyboard: false,
+      headset: false,
+      screen24: false,
+      screen27: false,
+      chair: false,
+      gamingPC: false,
+      streamingPC: false,
+      laptop: false,
+      tombola: 0,
       shirtGender: { value: 'H', label: 'Homme' },
       shirtSize: { value: 'M', label: 'M' }
     }
@@ -49,6 +60,7 @@ class EditInfos extends React.Component {
     this.toggleGamingPC = this.toggleGamingPC.bind(this)
     this.toggleStreamingPC = this.toggleStreamingPC.bind(this)
     this.toggleLaptop = this.toggleLaptop.bind(this)
+    this.onTombolaChange = this.onTombolaChange.bind(this)
     this.changeGender = this.changeGender.bind(this)
     this.changeSize = this.changeSize.bind(this)
     this.payment = this.payment.bind(this)
@@ -118,6 +130,10 @@ class EditInfos extends React.Component {
     this.setState({ shirtSize: option, shirt: true })
   }
 
+  onTombolaChange(e){
+    if(e.target.value >= 0) this.setState({ tombola: parseInt(e.target.value)})
+  }
+
   payment() {
     const basket = {
       plusone: this.state.plusone,
@@ -139,14 +155,13 @@ class EditInfos extends React.Component {
     if (this.state.gamingPC) basket.gamingPC = this.state.gamingPC
     if (this.state.streamingPC) basket.streamingPC = this.state.streamingPC
     if (this.state.laptop) basket.laptop = this.state.laptop
-
+    if (this.state.tombola > 0) basket.tombola = this.state.tombola
 
     this.props.payment(basket) 
   }
 
   render() {
     const playerPrice = this.isPartner ? this.props.prices.partner : this.props.prices.default
-
     const price =
       (this.state.plusone ? this.props.prices.plusone : playerPrice) +
       (this.state.ethernet ? this.props.prices.ethernet : 0) +
@@ -160,7 +175,8 @@ class EditInfos extends React.Component {
       (this.state.chair ? this.props.prices.chair : 0) +
       (this.state.gamingPC ? this.props.prices.gamingPC : 0) +
       (this.state.streamingPC ? this.props.prices.streamingPC : 0) +
-      (this.state.laptop ? this.props.prices.laptop : 0)
+      (this.state.laptop ? this.props.prices.laptop : 0) +
+      (this.state.tombola > 0 ? this.state.tombola : 0)
 
     return (
       <form className="a-dashboard-page a-dashboard-payment">
@@ -176,7 +192,7 @@ class EditInfos extends React.Component {
         </p>
         <ListItem price={playerPrice} active={!this.state.plusone} onClick={this.switchToPlayer}>
           <h3>Place joueur</h3>
-          <span>Place joueur.euse (tournoi ou hors tournoi)</span>
+          <span>Place joueur.euse (tournoi spotlight ou libre). Permet d'avoir une place assise attitrée (sauf Super Smash Bros Ultimate)</span>
         </ListItem>
         <ListItem
           price={this.props.prices.plusone}
@@ -219,6 +235,17 @@ class EditInfos extends React.Component {
               isSearchable={false}
               styles={selectStyles}
             />
+          </div>
+        </ListItem>
+        <ListItem
+          price={`+${parseInt(this.state.tombola)}`}
+          active={this.state.tombola > 0}
+          onClick={() => this.setState({ tombola: this.state.tombola + 1 })}
+        >
+          <h3>Tombola</h3>
+          <span>Acheter des tickets de tombola à 1€ par ticket</span>
+          <div style={{ marginTop: '10px'}} onClick={e => e.stopPropagation()} >
+            <input type="number" name="tombola" value={`${this.state.tombola}`} onChange={this.onTombolaChange} />
           </div>
         </ListItem>
         <div className="a-dashboard-payment__separator" />
