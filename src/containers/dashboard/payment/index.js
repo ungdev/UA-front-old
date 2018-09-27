@@ -39,6 +39,16 @@ class EditInfos extends React.Component {
     this.switchToPlusone = this.switchToPlusone.bind(this)
     this.toggleEthernet = this.toggleEthernet.bind(this)
     this.toggleShirt = this.toggleShirt.bind(this)
+    this.toggleKaliento = this.toggleKaliento.bind(this)
+    this.toggleMouse = this.toggleMouse.bind(this)
+    this.toggleKeyboard = this.toggleKeyboard.bind(this)
+    this.toggleHeadset = this.toggleHeadset.bind(this)
+    this.toggleScreen24 = this.toggleScreen24.bind(this)
+    this.toggleScreen27 = this.toggleScreen27.bind(this)
+    this.toggleChair = this.toggleChair.bind(this)
+    this.toggleGamingPC = this.toggleGamingPC.bind(this)
+    this.toggleStreamingPC = this.toggleStreamingPC.bind(this)
+    this.toggleLaptop = this.toggleLaptop.bind(this)
     this.changeGender = this.changeGender.bind(this)
     this.changeSize = this.changeSize.bind(this)
     this.payment = this.payment.bind(this)
@@ -60,6 +70,46 @@ class EditInfos extends React.Component {
     this.setState({ shirt: !this.state.shirt })
   }
 
+  toggleKaliento() {
+    this.setState({ kaliento: !this.state.kaliento })
+  }
+
+  toggleMouse() {
+    this.setState({ mouse: !this.state.mouse })
+  }
+
+  toggleKeyboard() {
+    this.setState({ keyboard: !this.state.keyboard })
+  }
+
+  toggleHeadset() {
+    this.setState({ headset: !this.state.headset })
+  }
+
+  toggleScreen24() {
+    this.setState({ screen24: !this.state.screen24 })
+  }
+
+  toggleScreen27() {
+    this.setState({ screen27: !this.state.screen27 })
+  }
+
+  toggleChair() {
+    this.setState({ chair: !this.state.chair })
+  }
+
+  toggleGamingPC() {
+    this.setState({ gamingPC: !this.state.gamingPC })
+  }
+
+  toggleStreamingPC() {
+    this.setState({ streamingPC: !this.state.streamingPC })
+  }
+
+  toggleLaptop() {
+    this.setState({ laptop: !this.state.laptop })
+  }
+
   changeGender(option) {
     this.setState({ shirtGender: option, shirt: true })
   }
@@ -79,7 +129,19 @@ class EditInfos extends React.Component {
       basket.shirtSize = this.state.shirtSize.value
     }
 
-    this.props.payment(basket)
+    if (this.state.kaliento) basket.kaliento = this.state.kaliento
+    if (this.state.mouse) basket.mouse = this.state.mouse
+    if (this.state.keyboard) basket.keyboard = this.state.keyboard
+    if (this.state.headset) basket.headset = this.state.headset
+    if (this.state.screen24) basket.screen24 = this.state.screen24
+    if (this.state.screen27) basket.screen27 = this.state.screen27
+    if (this.state.chair) basket.chair = this.state.chair
+    if (this.state.gamingPC) basket.gamingPC = this.state.gamingPC
+    if (this.state.streamingPC) basket.streamingPC = this.state.streamingPC
+    if (this.state.laptop) basket.laptop = this.state.laptop
+
+
+    this.props.payment(basket) 
   }
 
   render() {
@@ -88,7 +150,17 @@ class EditInfos extends React.Component {
     const price =
       (this.state.plusone ? this.props.prices.plusone : playerPrice) +
       (this.state.ethernet ? this.props.prices.ethernet : 0) +
-      (this.state.shirt ? this.props.prices.shirt : 0)
+      (this.state.shirt ? this.props.prices.shirt : 0) +
+      (this.state.kaliento ? this.props.prices.kaliento : 0) +
+      (this.state.mouse ? this.props.prices.mouse : 0) +
+      (this.state.keyboard ? this.props.prices.keyboard : 0) +
+      (this.state.headset ? this.props.prices.headset : 0) +
+      (this.state.screen24 ? this.props.prices.screen24 : 0) +
+      (this.state.screen27 ? this.props.prices.screen27 : 0) +
+      (this.state.chair ? this.props.prices.chair : 0) +
+      (this.state.gamingPC ? this.props.prices.gamingPC : 0) +
+      (this.state.streamingPC ? this.props.prices.streamingPC : 0) +
+      (this.state.laptop ? this.props.prices.laptop : 0)
 
     return (
       <form className="a-dashboard-page a-dashboard-payment">
@@ -148,6 +220,108 @@ class EditInfos extends React.Component {
               styles={selectStyles}
             />
           </div>
+        </ListItem>
+        <div className="a-dashboard-payment__separator" />
+        <h2>Locations (via notre partenaire Scoup Esport)</h2>
+        <ListItem
+          price={`+${this.props.prices.kaliento}`}
+          active={this.state.kaliento}
+          onClick={this.toggleKaliento}
+        >
+          <h3>Kaliento</h3>
+          <span>
+            Louer un chauffeur de main électrique Kaliento
+          </span>
+        </ListItem>
+        <ListItem
+          price={`+${this.props.prices.mouse}`}
+          active={this.state.mouse}
+          onClick={this.toggleMouse}
+        >
+          <h3>Souris</h3>
+          <span>
+          Louer une souris gaming
+          </span>
+        </ListItem>
+        <ListItem
+          price={`+${this.props.prices.keyboard}`}
+          active={this.state.keyboard}
+          onClick={this.toggleKeyboard}
+        >
+          <h3>Clavier</h3>
+          <span>
+            Louer un clavier mécanique
+          </span>
+        </ListItem>
+        <ListItem
+          price={`+${this.props.prices.headset}`}
+          active={this.state.headset}
+          onClick={this.toggleHeadset}
+        >
+          <h3>Casque</h3>
+          <span>
+            Louer un casque gaming
+          </span>
+        </ListItem>
+        <ListItem
+          price={`+${this.props.prices.screen24}`}
+          active={this.state.screen24}
+          onClick={this.toggleScreen24}
+        >
+          <h3>Ecran 24"</h3>
+          <span>
+            Louer un écran 24" 144Hz
+          </span>
+        </ListItem>
+        <ListItem
+          price={`+${this.props.prices.screen27}`}
+          active={this.state.screen27}
+          onClick={this.toggleScreen27}
+        >
+          <h3>Ecran 27"</h3>
+          <span>
+            Louer un écran 27" 144Hz
+          </span>
+        </ListItem>
+        <ListItem
+          price={`+${this.props.prices.chair}`}
+          active={this.state.chair}
+          onClick={this.toggleChair}
+        >
+          <h3>Chaise Gaming</h3>
+          <span>
+            Louer une chaise gaming, confort assuré !
+          </span>
+        </ListItem>
+        <ListItem
+          price={`+${this.props.prices.gamingPC}`}
+          active={this.state.gamingPC}
+          onClick={this.toggleGamingPC}
+        >
+          <h3>Ordinateur Gaming</h3>
+          <span>
+            Louer une toure de gaming avec une configuration X
+          </span>
+        </ListItem>
+        <ListItem
+          price={`+${this.props.prices.streamingPC}`}
+          active={this.state.streamingPC}
+          onClick={this.toggleStreamingPC}
+        >
+          <h3>Ordinateur Streaming</h3>
+          <span>
+            Louer une tour de streamer avec une configuration X
+          </span>
+        </ListItem>
+        <ListItem
+          price={`+${this.props.prices.laptop}`}
+          active={this.state.laptop}
+          onClick={this.toggleLaptop}
+        >
+          <h3>PC Portable</h3>
+          <span>
+            Louer un PC portable avec une configuration X
+          </span>
         </ListItem>
         <div className="a-dashboard-payment__separator" />
         <Button onClick={this.payment} raised>
