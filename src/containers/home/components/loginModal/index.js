@@ -87,6 +87,7 @@ class LoginModal extends React.Component {
                         maxLength="90"
                         autoFocus
                       />
+                      <p style={{ marginTop: 0, marginBottom: 0, color: '#888888' }}>Pour LoL le nom d'utilisateur doit être le nom d'invocateur</p>
                       <Select
                         field="gender"
                         isClearable={false}
