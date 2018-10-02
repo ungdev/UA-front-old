@@ -8,7 +8,6 @@ import List from '../../../components/list'
 import ListItem from '../../../components/list-item'
 
 const Home = props => {
-  console.log(props.user)
   return [
   <h2 key="0">Équipe</h2>,
   <List key="1">
@@ -54,7 +53,11 @@ const Home = props => {
     {!props.user.paid ? <ListItem clickable={true} onClick={props.payment}>
       <h3>Payer ma place</h3>
       <span>Paye ta place et récupère ton billet d'entrée ! Obligatoire pour les tournois</span>
-    </ListItem> : null}
+    </ListItem> : 
+  <ListItem clickable={false}>
+    <h3>Payer ma place</h3>
+    <span>Tu as déjà payé ta place ;)</span>
+  </ListItem>}
     <ListItem clickable={true} onClick={props.editUser}>
       <h3>Éditer mes infos</h3>
       <span>Accède à ton profil et modifie tes informations si besoin</span>
