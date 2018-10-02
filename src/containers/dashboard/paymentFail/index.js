@@ -15,7 +15,7 @@ class PayementFail extends React.Component {
     if(this.props.user && this.props.user.paid) this.props.redirect()
     return (<div className="errorframe">
       <h1>Paiement refusé :/</h1>
-      <p>Veuillez réessauer.</p>
+      <p>Veuillez réessayer.</p>
     </div>)
   }
 }

@@ -5,8 +5,8 @@ import './social.css'
 import discord from '../../../../assets/discord.svg'
 import facebook from '../../../../assets/facebook.svg'
 import youtube from '../../../../assets/youtube.svg'
-import twitch from '../../../../assets/youtube.svg'
-import twitter from '../../../../assets/youtube.svg'
+import twitch from '../../../../assets/twitch.svg'
+import twitter from '../../../../assets/twitter.svg'
 
 const Social = () => {
   const d = { backgroundImage: `url(${discord})` }
