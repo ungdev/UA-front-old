@@ -1,0 +1,13 @@
+.errorframe > p {
+  color: white;
+  text-align: center;
+}
+.errorframe > h1 {
+  color: #fa1414;
+}
+.errorframe {
+  text-align: center;
+  padding: 20px 10px 20px 10px;
+  margin-top: 100px;
+  background-color: #222;
+}

@@ -1,0 +1,13 @@
+.successframe > p {
+  color: white;
+  text-align: center;
+}
+.successframe > h1 {
+  color: #14d9fa;
+}
+.successframe {
+  text-align: center;
+  padding: 20px 10px 20px 10px;
+  margin-top: 100px;
+  background-color: #222;
+}
