@@ -7,7 +7,9 @@ import { logout } from '../../../modules/login'
 import List from '../../../components/list'
 import ListItem from '../../../components/list-item'
 
-const Home = props => [
+const Home = props => {
+  console.log(props.user)
+  return [
   <h2 key="0">Équipe</h2>,
   <List key="1">
     {!props.user.team && (
@@ -61,7 +63,7 @@ const Home = props => [
       <h3>Déconnexion</h3>
     </ListItem>
   </List>
-]
+]}
 
 const mapStateToProps = state => ({
   user: state.user.user
