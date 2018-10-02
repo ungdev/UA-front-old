@@ -49,10 +49,10 @@ const Home = props => [
   </List>,
   <h2 key="3">{props.user.name}</h2>,
   <List key="4">
-    <ListItem clickable={true} onClick={props.payment}>
+    {!props.user.paid ? <ListItem clickable={true} onClick={props.payment}>
       <h3>Payer ma place</h3>
       <span>Paye ta place et récupère ton billet d'entrée ! Obligatoire pour les tournois</span>
-    </ListItem>
+    </ListItem> : null}
     <ListItem clickable={true} onClick={props.editUser}>
       <h3>Éditer mes infos</h3>
       <span>Accède à ton profil et modifie tes informations si besoin</span>
