@@ -65,7 +65,6 @@ export const tryLogin = user => {
 }
 
 export const saveToken = token => {
-  console.log(token)
   return async dispatch => {
     dispatch({
       type: SET_TOKEN,
@@ -85,7 +84,6 @@ export const logout = () => {
     dispatch({ type: SET_PRICES, payload: null })
 
     localStorage.removeItem('arena-2018-token')
-    console.log('LOGOUT')
     return dispatch(push('/'))
   }
 }
