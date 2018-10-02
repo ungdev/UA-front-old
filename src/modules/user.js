@@ -59,6 +59,7 @@ export const fetchUser = () => {
       dispatch({ type: SET_TEAMS, payload: res.data.teams })
       dispatch({ type: SET_PRICES, payload: res.data.prices })
     } catch (err) {
+      console.log(err)
       dispatch(logout())
     }
   }

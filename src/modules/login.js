@@ -84,7 +84,6 @@ export const logout = () => {
     dispatch({ type: SET_PRICES, payload: null })
 
     localStorage.removeItem('arena-2018-token')
-
     return dispatch(push('/'))
   }
 }

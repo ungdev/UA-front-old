@@ -6,6 +6,8 @@ import Header from '../../components/header'
 import DashboardHome from './home'
 import DashboardEditInfos from './editInfos'
 import DashboardPayment from './payment'
+import DashboardPaymentSuccess from './paymentSuccess'
+import DashboardPaymentError from './paymentFail'
 import DashboardRequests from './requests'
 import DashboardCreateTeam from './createTeam'
 import DashboardTeam from './teamManagement'
@@ -70,13 +72,28 @@ class Dashboard extends React.Component {
           )}
           {this.state.render && (
             <Route
+              exact
+              path={baseUrl + 'dashboard/payment/success'}
+              component={DashboardPaymentSuccess}
+            />
+          )}
+          {this.state.render && (
+            <Route
+              exact
+              path={baseUrl + 'dashboard/payment/error'}
+              component={DashboardPaymentError}
+            />
+          )}
+          {this.state.render && (
+            <Route
+              exact
               path={baseUrl + 'dashboard/payment'}
               component={DashboardPayment}
             />
           )}
           {this.state.render && (
             <Route
-              path={process.env.REACT_APP_BASEURL + 'dashboard/participants'}
+              path={baseUrl + 'dashboard/participants'}
               component={DashboardViewParticipants}
             />
           )}

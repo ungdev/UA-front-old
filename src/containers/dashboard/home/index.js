@@ -7,7 +7,8 @@ import { logout } from '../../../modules/login'
 import List from '../../../components/list'
 import ListItem from '../../../components/list-item'
 
-const Home = props => [
+const Home = props => {
+  return [
   <h2 key="0">Équipe</h2>,
   <List key="1">
     {!props.user.team && (
@@ -49,10 +50,14 @@ const Home = props => [
   </List>,
   <h2 key="3">{props.user.name}</h2>,
   <List key="4">
-    <ListItem clickable={true} onClick={props.payment}>
+    {!props.user.paid ? <ListItem clickable={true} onClick={props.payment}>
       <h3>Payer ma place</h3>
       <span>Paye ta place et récupère ton billet d'entrée ! Obligatoire pour les tournois</span>
-    </ListItem>
+    </ListItem> : 
+  <ListItem clickable={false}>
+    <h3>Payer ma place</h3>
+    <span>Tu as déjà payé ta place ;)</span>
+  </ListItem>}
     <ListItem clickable={true} onClick={props.editUser}>
       <h3>Éditer mes infos</h3>
       <span>Accède à ton profil et modifie tes informations si besoin</span>
@@ -61,7 +66,7 @@ const Home = props => [
       <h3>Déconnexion</h3>
     </ListItem>
   </List>
-]
+]}
 
 const mapStateToProps = state => ({
   user: state.user.user

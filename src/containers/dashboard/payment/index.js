@@ -24,21 +24,21 @@ const shirtSizes = [
 class EditInfos extends React.Component {
   constructor(props) {
     super()
-
+    const { user } = props
     this.state = {
-      plusone: false,
-      ethernet: false,
-      shirt: false,
-      kaliento: false,
-      mouse: false,
-      keyboard: false,
-      headset: false,
-      screen24: false,
-      screen27: false,
-      chair: false,
-      gamingPC: false,
-      streamingPC: false,
-      laptop: false,
+      plusone: user? user.plusone : false,
+      ethernet: user? user.ethernet : false,
+      shirt: user? (user.shirt && user.shirt !== 'none') : false,
+      kaliento: user? user.kaliento : false,
+      mouse: user? user.mouse : false,
+      keyboard: user? user.keyboard : false,
+      headset: user? user.headset : false,
+      screen24: user? user.screen24 : false,
+      screen27: user? user.screen27 : false,
+      chair: user? user.chair : false,
+      gamingPC: user? user.gamingPC : false,
+      streamingPC: user? user.streamingPC : false,
+      laptop: user? user.laptop : false,
       tombola: 0,
       shirtGender: { value: 'H', label: 'Homme' },
       shirtSize: { value: 'M', label: 'M' }
