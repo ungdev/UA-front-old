@@ -28,7 +28,7 @@ class EditInfos extends React.Component {
     this.state = {
       plusone: user? user.plusone : false,
       ethernet: user? user.ethernet : false,
-      shirt: user? user.shirt : false,
+      shirt: user? (user.shirt && user.shirt !== 'none') : false,
       kaliento: user? user.kaliento : false,
       mouse: user? user.mouse : false,
       keyboard: user? user.keyboard : false,
