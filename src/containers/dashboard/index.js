@@ -70,12 +70,23 @@ class Dashboard extends React.Component {
               component={DashboardEditInfos}
             />
           )}
-          {this.props.location === `${baseUrl}dashboard/payment/success` ? <DashboardPaymentSuccess/> : null}
-          {this.props.location === `${baseUrl}dashboard/payment/error` ? <DashboardPaymentError/> : null}
-          {this.props.location !== `${baseUrl}dashboard/payment/success` &&
-          this.props.location !== `${baseUrl}dashboard/payment/error`
-           && this.state.render && (
+          {this.state.render && (
             <Route
+              exact
+              path={baseUrl + 'dashboard/payment/success'}
+              component={DashboardPaymentSuccess}
+            />
+          )}
+          {this.state.render && (
+            <Route
+              exact
+              path={baseUrl + 'dashboard/payment/error'}
+              component={DashboardPaymentError}
+            />
+          )}
+          {this.state.render && (
+            <Route
+              exact
               path={baseUrl + 'dashboard/payment'}
               component={DashboardPayment}
             />
