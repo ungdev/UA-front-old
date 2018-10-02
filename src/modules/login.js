@@ -65,6 +65,7 @@ export const tryLogin = user => {
 }
 
 export const saveToken = token => {
+  console.log(token)
   return async dispatch => {
     dispatch({
       type: SET_TOKEN,
