@@ -16,10 +16,9 @@ class ContactModal extends React.Component {
     this.submit = this.submit.bind(this)
   }
 
-
   submit(user) {
-    console.log(user)
     this.props.sendMessage(user)
+    this.props.onClose()
   }
 
   render() {
@@ -52,6 +51,7 @@ class ContactModal extends React.Component {
                         minLength="2"
                         maxLength="200"
                         autoFocus
+                        value=""
                       />
                       <Text
                         field="lastname"
