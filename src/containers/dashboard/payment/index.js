@@ -137,24 +137,23 @@ class EditInfos extends React.Component {
   payment() {
     const basket = {
       plusone: this.state.plusone,
-      ethernet: this.state.ethernet
+      ethernet: this.state.ethernet,
+      kaliento: this.state.kaliento,
+      mouse: this.state.mouse,
+      keyboard: this.state.keyboard,
+      headset: this.state.headset,
+      screen24: this.state.screen24,
+      screen27: this.state.screen27,
+      chair: this.state.chair,
+      gamingPC: this.state.gamingPC,
+      streamingPC: this.state.streamingPC,
+      laptop: this.state.laptop,
     }
 
     if (this.state.shirt) {
       basket.shirtGender = this.state.shirtGender.value
       basket.shirtSize = this.state.shirtSize.value
     }
-
-    if (this.state.kaliento) basket.kaliento = this.state.kaliento
-    if (this.state.mouse) basket.mouse = this.state.mouse
-    if (this.state.keyboard) basket.keyboard = this.state.keyboard
-    if (this.state.headset) basket.headset = this.state.headset
-    if (this.state.screen24) basket.screen24 = this.state.screen24
-    if (this.state.screen27) basket.screen27 = this.state.screen27
-    if (this.state.chair) basket.chair = this.state.chair
-    if (this.state.gamingPC) basket.gamingPC = this.state.gamingPC
-    if (this.state.streamingPC) basket.streamingPC = this.state.streamingPC
-    if (this.state.laptop) basket.laptop = this.state.laptop
     if (this.state.tombola > 0) basket.tombola = this.state.tombola
 
     this.props.payment(basket) 

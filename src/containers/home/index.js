@@ -5,12 +5,14 @@ import './home.css'
 
 import Header from './components/header'
 import Intro from './components/intro'
+import Button from '../../components/button'
 import Informations from './components/informations'
 import Category from './components/category'
 import Social from './components/social'
 import Spotlights from './components/spotlights'
 import Partners from './components/partners'
 import LoginModal from './components/loginModal'
+import ContactModal from './components/contactModal'
 import ForgotModal from './components/forgotModal'
 
 import { fetchCanLogin } from '../../modules/canLogin'
@@ -23,12 +25,15 @@ class Home extends React.Component {
 
     this.state = {
       loginModalOpened: false,
-      forgotModalOpened: false
+      forgotModalOpened: false,
+      contactModalOpened: false
     }
 
     this.openLoginModal = this.openLoginModal.bind(this)
     this.openForgotModal = this.openForgotModal.bind(this)
+    this.openContactModal = this.openContactModal.bind(this)
     this.closeLoginModal = this.closeLoginModal.bind(this)
+    this.closeContactModal = this.closeContactModal.bind(this)
     this.closeForgotModal = this.closeForgotModal.bind(this)
     this.scrollCapture = this.scrollCapture.bind(this)
   }
@@ -56,6 +61,18 @@ class Home extends React.Component {
     })
   }
 
+  openContactModal() {
+    this.setState({
+      contactModalOpened: true
+    })
+  }
+
+  closeContactModal() {
+    this.setState({
+      contactModalOpened: false
+    })
+  }
+
   openForgotModal() {
     this.setState({
       loginModalOpened: false,
@@ -74,7 +91,7 @@ class Home extends React.Component {
     const scrollTop =
       window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
 
-    const bottom = window.innerHeight + 90 - 12
+    const bottom = window.innerHeight + 125 - 12
 
     document.body.className =
       scrollTop >= document.body.scrollHeight - bottom ? 'a-social-fixed' : ''
@@ -89,6 +106,10 @@ class Home extends React.Component {
           isOpen={this.state.loginModalOpened}
           onClose={this.closeLoginModal}
           onForgot={this.openForgotModal}
+        />
+        <ContactModal
+          isOpen={this.state.contactModalOpened}
+          onClose={this.closeContactModal}
         />
         <ForgotModal isOpen={this.state.forgotModalOpened} onClose={this.closeForgotModal} />
 
@@ -128,6 +149,9 @@ class Home extends React.Component {
               <a href={`tel:${process.env.REACT_APP_CONTACT_PHONE}`}>
                 {process.env.REACT_APP_CONTACT_PHONE}
               </a>
+            </div>
+            <div style={{ marginTop: '5px' }}>
+              <Button raised={true} onClick={this.openContactModal}>Nous contacter</Button>
             </div>
           </div>
         </main>
