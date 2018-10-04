@@ -33,6 +33,7 @@ class ContactModal extends React.Component {
       { label: 'J\'ai une question sur le tournoi SSBU', value: '7' },
       { label: 'Je rencontre un problème pour payer', value: '8' },
       { label: 'J\'ai eu une erreur sur le site', value: '9' },
+      { label: 'Signaler un bug', value: '10' },
       { label: 'Autre', value: 'other' }]
     return (
       <Modal isOpen={this.props.isOpen} onClose={this.props.onClose}>
