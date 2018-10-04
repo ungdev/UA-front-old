@@ -15,7 +15,7 @@ export default (state = initialState, action) => {
 
 export const sendMessage = user => {
   return async dispatch => {
-    if(user.message.length < 50) {
+    if(!user.message || user.message.length < 50) {
       return dispatch(
         notifActions.notifSend({
           message: 'Votre message doit comporter au moins 50 caractères',
