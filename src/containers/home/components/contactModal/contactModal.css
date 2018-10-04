@@ -1,0 +1,33 @@
+.a-contact-modal > .a-contact-form {
+  padding: 10px 10px 10px 10px;
+}
+
+.a-contact-form > * {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.a-contact-modal > div {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #222;
+}
+
+.a-contact-modal > div > h1 {
+  color: aqua;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.css-1f5eahx {
+  max-width: 400px;
+}
+
+.a-contact-form > textarea {
+  padding: 8px 8px 8px 8px;
+  font-size: 14px;
+
+}
