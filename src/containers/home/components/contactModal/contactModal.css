@@ -22,7 +22,10 @@
   margin-bottom: 0px;
 }
 
-.css-1f5eahx {
+.contact-select > div {
+  max-width: 400px;
+}
+.contact-select > div > div {
   max-width: 400px;
 }
 

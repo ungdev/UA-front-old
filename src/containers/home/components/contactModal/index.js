@@ -6,7 +6,7 @@ import './contactModal.css'
 
 import Modal from '../../../../components/modal'
 import Button from '../../../../components/button'
-import Select from '../../../../components/big_select'
+import Select from '../../../../components/select'
 
 import { sendMessage } from '../../../../modules/message'
 
@@ -61,6 +61,7 @@ class ContactModal extends React.Component {
                         maxLength="200"
                       />
                       <Select
+                        className="contact-select"
                         field="topic"
                         isClearable={false}
                         backspaceRemovesValue={false}
