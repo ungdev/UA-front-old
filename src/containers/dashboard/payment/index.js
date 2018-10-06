@@ -181,8 +181,8 @@ class EditInfos extends React.Component {
       <form className="a-dashboard-page a-dashboard-payment">
         <h2>Paiement de la place</h2>
         <p>
-          Toutes les places vous donne accès à l’ensemble du Festival des Jeux et de la LAN, et
-          permet de rester à l'UTT Arena et ce même en dehors des horaires d'ouverture du Festival.
+          Toutes les places vous donnent accès à l’ensemble du Festival des Jeux et de la LAN, et
+          permettent de rester à l'UTT Arena même en dehors des horaires d'ouverture du Festival.
           Vous êtes d'une école partenaire et le prix n'est pas réduit ? Vérifiez votre e-mail dans{' '}
           <Link to="/dashboard/user">vos infos</Link>.
           <br />
@@ -209,7 +209,7 @@ class EditInfos extends React.Component {
         >
           <h3>Câble ethernet</h3>
           <span>
-            Un câble (<strong>5m</strong>) est requis pour se brancher au switchs de tables
+            Un câble (<strong>5m</strong>) est requis pour se brancher aux switchs des tables
           </span>
         </ListItem>
         <ListItem
@@ -326,7 +326,7 @@ class EditInfos extends React.Component {
         >
           <h3>Ordinateur Gaming</h3>
           <span>
-            Louer une toure de gaming avec une configuration X
+            Louer une tour de gaming avec une configuration X
           </span>
         </ListItem>
         <ListItem
