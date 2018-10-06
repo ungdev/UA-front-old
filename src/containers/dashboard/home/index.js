@@ -15,7 +15,7 @@ const Home = props => {
       <ListItem clickable={true} onClick={props.createTeam}>
         <h3>Créer une équipe</h3>
         <span>
-          Crée ton équipe et invite tes amis à te rejoindre pour participez aux tournois !
+          Crée ton équipe et invite tes amis à te rejoindre pour participer aux tournois !
         </span>
       </ListItem>
     )}
@@ -34,13 +34,13 @@ const Home = props => {
     {props.user && !props.user.team && (
       <ListItem clickable={true} onClick={props.requests}>
         <h3>Mes demandes</h3>
-        <span>La liste des demandes d'équipe que tu as faite</span>
+        <span>La liste des demandes d'équipe que tu as faites</span>
       </ListItem>
     )}
     {props.user && props.user.team && (
       <ListItem clickable={true} onClick={props.teamManagement}>
         <h3>{props.user.team.name}</h3>
-        <span>Gère ton équipe, ses membres et vérifie son status d'inscription !</span>
+        <span>Gère ton équipe, ses membres et vérifie son statut d'inscription !</span>
       </ListItem>
     )}
     <ListItem clickable={true} onClick={props.viewParticipants}>
