@@ -29,37 +29,65 @@ const askingPlayer = function(player, i) {
   )
 }
 
-const TeamManagement = props => (
+const TeamManagement = props => {
+  const spotlight = props.spotlights.find(s => s.id === props.user.team.spotlightId)
+  return (
   <div className="a-teammanagement a-dashboard-page">
     <h2>{props.user.team.name}</h2>
     <h4>{props.user.team.spotlight.name}</h4>
-    <h3>Membres</h3>
     {props.user.team.soloTeam && <span className="a-teammanagement__solo">Équipe mono-joueur</span>}
     <div className="a-teammanagement__badge">
       <StatusBadge theme={props.teamStatus.theme}>{props.teamStatus.status}</StatusBadge>
     </div>
-    {props.spotlightFull && (
+    {!props.user.team.isInSpotlight && props.teamStatus.complete === 1 && props.spotlightFull && (
       <p className="a-teammanagement__warning">
         <span className="a-teammanagement__warning__sign">
           <span role="img" aria-label="warning-sign">
             ⚠️
           </span>Attention
         </span>&nbsp;
-        <strong>Le tournoi dans lequel vous vous êtes inscrits est plein.</strong> D'autres équipes se sont complétées plus rapidement. À moins qu'une équipe se désiste, vous ne pouvez plus participer au tournoi.
+        <strong>Le tournoi dans lequel vous vous êtes inscrits est plein. </strong>
+        D'autres équipes se sont complétées plus rapidement. À moins qu'une équipe se désiste,
+        vous ne pouvez plus participer au tournoi. Vous êtes donc concidéré comme membre du tournoi libre.
+        Vous pouvez aussi recréer une autre équipe dans un autre spotlight s'il reste des places dans ceux-ci.
       </p>
     )}
-    {props.teamStatus.theme !== 'success' && !props.spotlightFull && (
+    {props.user.team.isInSpotlight && (
+      <p className="a-teammanagement__warning">
+      Vous n'avez plus rien à faire à part venir avec votre matériel le 7 décembre (ou le 8 si vous ne pouvez pas avant). <br/>
+      Restez informez via <a href="https://www.facebook.com/UTTArena/">la page facebook de l'UTT Arena</a>.
+      </p>
+    )}
+    {props.teamStatus.complete === 0 && props.spotlightFull && (
       <p className="a-teammanagement__warning">
         <span className="a-teammanagement__warning__sign">
           <span role="img" aria-label="warning-sign">
             ⚠️
           </span>Attention
         </span>&nbsp;
-        <strong>Tous les membres de l'équipe</strong> doivent avoir payé leur place pour valider
-        l'inscription au spotlight (5 personnes ayant payé leur place pour s'inscrire au tournoi
-        LoL, etc.).
+        <strong>Le tournoi est plein</strong> et <strong>l'équipe est incomplète</strong>. <br/>
+        Pour que l'équipe soit complète, il faut que les {spotlight.perTeam} membres aient rejoint l'équipe
+        <strong> et</strong> aient payé leur place. Vous serez alors mis sur liste d'attente, au cas où une équipe se désiste.
+        Vous pouvez rejoindre un autre tournoi en créant une nouvelle équipe dans le tournoi choisit, en attendant, vous êtes
+        concidérés comme membre du tournoi libre.
       </p>
     )}
+    {props.teamStatus.complete === 0 && !props.spotlightFull && (
+      <p className="a-teammanagement__warning">
+        <span className="a-teammanagement__warning__sign">
+          <span role="img" aria-label="warning-sign">
+            ⚠️
+          </span>Attention
+        </span>&nbsp;
+        <strong>Tous les membres de l'équipe</strong> doivent avoir rejoint <strong>et</strong> payé leur place pour valider
+        l'inscription au spotlight ({spotlight.perTeam} personnes pour le tournoi {spotlight.name}
+        ). <br/><br/>Si vous validez votre inscription trop tard, vous serez mis sur liste d'attente.
+        Une équipe en liste d'attente est concidérée comme participant au tournoi libre, sauf si une
+        place pour elle se libère dans le tournoi spotlight. Alors dépêchez vous ;)
+      </p>
+    )}
+
+    <h3>Membres</h3>
     <TeamTable
       captain={props.user.team.captainId}
       players={props.user.team.users}
@@ -108,10 +136,12 @@ const TeamManagement = props => (
     </div>
   </div>
 )
+}
 
 const mapStateToProps = state => ({
   user: state.user.user,
   teamStatus: teamStatus(state),
+  spotlights: state.spotlights.spotlights,
   isCaptain: state.user.user.team.captainId === state.user.user.id,
   spotlightFull: (state.spotlights.spotlights.find(s => s.id === state.user.user.team.spotlightId) || {}).isFull,
   // allow refuse and kick error
@@ -124,8 +154,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   allowPlayer: player => dispatch(allowPlayer(player)),
   refusePlayer: player => dispatch(refusePlayer(player)),
-  kickPlayer: ({ player }) => dispatch(kickPlayer(player.value)),
-  selfKick: () => dispatch(kickPlayer('self'))
+  kickPlayer: ({ player }) => window.confirm(`Virrer le joueur de l'équipe ?`) && dispatch(kickPlayer(player.value)),
+  selfKick: () => window.confirm(`Quitter l'équipe ?`) && dispatch(kickPlayer('self'))
 })
 
 export default connect(

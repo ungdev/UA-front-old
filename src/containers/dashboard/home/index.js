@@ -11,7 +11,7 @@ const Home = props => {
   return [
   <h2 key="0">Équipe</h2>,
   <List key="1">
-    {!props.user.team && (
+    {props.user && !props.user.team && (
       <ListItem clickable={true} onClick={props.createTeam}>
         <h3>Créer une équipe</h3>
         <span>
@@ -19,25 +19,25 @@ const Home = props => {
         </span>
       </ListItem>
     )}
-    {!props.user.team && (
+    {props.user && !props.user.team && (
       <ListItem clickable={true} onClick={props.joinTeam}>
         <h3>Rejoindre une équipe</h3>
         <span>Rejoins ton équipe de compétiteurs pour vous inscrire aux tournois !</span>
       </ListItem>
     )}
-    {!props.user.team && (
+    {props.user && !props.user.team && (
       <ListItem clickable={true} onClick={props.solo}>
         <h3>Rejoindre un tournoi solo</h3>
         <span>Pour rejoindre le tournoi Hearthstone ou Super Smash Bros Ultimate, c'est par ici !</span>
       </ListItem>
     )}
-    {!props.user.team && (
+    {props.user && !props.user.team && (
       <ListItem clickable={true} onClick={props.requests}>
         <h3>Mes demandes</h3>
         <span>La liste des demandes d'équipe que tu as faite</span>
       </ListItem>
     )}
-    {props.user.team && (
+    {props.user && props.user.team && (
       <ListItem clickable={true} onClick={props.teamManagement}>
         <h3>{props.user.team.name}</h3>
         <span>Gère ton équipe, ses membres et vérifie son status d'inscription !</span>
@@ -50,7 +50,7 @@ const Home = props => {
   </List>,
   <h2 key="3">{props.user.name}</h2>,
   <List key="4">
-    {!props.user.paid ? <ListItem clickable={true} onClick={props.payment}>
+    {props.user && !props.user.paid ? <ListItem clickable={true} onClick={props.payment}>
       <h3>Payer ma place</h3>
       <span>Paye ta place et récupère ton billet d'entrée ! Obligatoire pour les tournois</span>
     </ListItem> : 
