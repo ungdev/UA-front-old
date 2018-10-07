@@ -265,6 +265,22 @@ class Informations extends React.Component {
               <p>Une prise électrique et un port RJ45.</p>
               <p>Et vu qu'on t'aime bien, on t'offre aussi une place sur une table avec une chaise et l'accès aux loges, mais ça c'est juste pour toi !</p>
             </div>
+            
+            <Category id="faq">FAQ</Category>
+            <div>
+              <p>Voici des questions souvent posées, en espérant que cela pourra t'aider dans ta recherche jeune padawan !</p>
+              <h3 className="a-info__title">Inscription</h3>
+              <p className="faq-question">Je me suis inscrit et je n'ai pas reçu mon mail de confirmation</p>
+              <p className="faq-answer">Si lors de votre inscription votre adresse e-mail est rejetée, cela peut être dû à trois choses :
+                <ul>
+                  <li>On ne peut pas avoir plus d'un compte par mail</li>
+                  <li>Cet e-mail a été banni. Contactez les organisateurs afin d'expliciter le problème.</li>
+                  <li>Vous vous êtes trompé lors de la saisie de votre adresse mail. Contactez les organisateurs grâce au formulaire de contact.</li>
+                </ul>
+              </p>
+              <p className="faq-question">J'ai payé et je ne reçois pas mon billet</p>
+              <p className="faq-answer"></p>
+            </div>
           </div>
 
           <Partners />
