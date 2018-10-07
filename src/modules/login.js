@@ -75,7 +75,7 @@ export const saveToken = token => {
   }
 }
 
-export const logout = (redirect) => {
+export const logout = (redirect = '/') => {
   return async dispatch => {
     dispatch({ type: SET_TOKEN, payload: null })
     dispatch({ type: SET_USER, payload: null })

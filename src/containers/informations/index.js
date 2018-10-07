@@ -158,21 +158,20 @@ class Informations extends React.Component {
 
             <Category id="tickets">Billetterie</Category>
             <div>
-              <p>Astuce : en achetant vos billets en prévente :
-                <ul>
-                  <li>Bénéficiez de tarifs réduits</li>
-                  <li>Assurez une place pour votre équipe</li>
-                </ul>
-              </p>
+              <p>Astuce : en achetant vos billets en prévente :</p>
+              <ul>
+                <li>Bénéficiez de tarifs réduits</li>
+                <li>Assurez une place pour votre équipe</li>
+              </ul>
               <br />
               <p>
-                <strong>Inscris-toi sur le site pour accéder à la billeterie !</strong><br />
-                <ul>
-                  <li>Joueur : 15€</li>
-                  <li>&Eacute;tudiant du réseau UT : 10€</li>
-                  <li>Visiteur : 10€ (limité à 40 places)</li>
-                </ul>
-              </p>
+                <strong>Inscris-toi sur le site pour accéder à la billeterie !</strong>
+              </p><br />
+              <ul>
+                <li>Joueur : 15€</li>
+                <li>&Eacute;tudiant du réseau UT : 10€</li>
+                <li>Visiteur : 10€ (limité à 40 places)</li>
+              </ul>
             </div>
 
             <Category id="access">Accès</Category>
@@ -184,32 +183,32 @@ class Informations extends React.Component {
               <p>Un parking gratuit sera mis à disposition juste devant le Cube.</p>
               <p>
                 Depuis Paris :
-                <ul>
-                  <li>Autoroute : A5 (2h30, 180km)</li>
-                  <li>Nationale : N4 (2h50, 165km)</li>
-                </ul>
               </p>
+              <ul>
+                <li>Autoroute : A5 (2h30, 180km)</li>
+                <li>Nationale : N4 (2h50, 165km)</li>
+              </ul>
               <p>
                 Depuis Reims :
-                <ul>
-                  <li>Autoroute : A26 (1h25, 127km)</li>
-                  <li>Départementale : D877 (1h55, 128km)</li>
-                </ul>
               </p>
+              <ul>
+                <li>Autoroute : A26 (1h25, 127km)</li>
+                <li>Départementale : D877 (1h55, 128km)</li>
+              </ul>
               <p>
                 Depuis Lyon :
-                <ul>
-                  <li>Autoroute : A6, A3 et A5 (3h30, 375km)</li>
-                  <li>Nationale : N6, D906 (5h27, 354km)</li>
-                </ul>
               </p>
+              <ul>
+                <li>Autoroute : A6, A3 et A5 (3h30, 375km)</li>
+                <li>Nationale : N6, D906 (5h27, 354km)</li>
+              </ul>
               <p>
                 Depuis Strasbourg :
-                <ul>
-                  <li>Autoroute : A31 (4h10, 384km)</li>
-                  <li>Nationale : N4 (4h15, 338km)</li>
-                </ul>
               </p>
+              <ul>
+                <li>Autoroute : A31 (4h10, 384km)</li>
+                <li>Nationale : N4 (4h15, 338km)</li>
+              </ul>
               <h3 className="a-info__title">En train</h3>
               <p>&Agrave; 1h30 de Paris (TER depuis Paris-Est, départ toutes les heures).</p>
               <h3 className="a-info__title">En bus</h3>
@@ -246,11 +245,11 @@ class Informations extends React.Component {
             <div>
               <h3 className="a-info__title">Cashprize et lots</h3>
               <p>La répartition entre les 3 premières places est la suivante :
-                <ul>
-                  <li>1ère place : Cashprize</li>
-                  <li>2è et 3è places : Lots</li>
-                </ul>
               </p>
+              <ul>
+                <li>1ère place : Cashprize</li>
+                <li>2è et 3è places : Lots</li>
+              </ul>
               <p>
                 Cette année l'<span>UTT Arena</span> s'est associée avec de nombreux partenaires pour vous offrir des lots de qualité !
               </p>
