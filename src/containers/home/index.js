@@ -3,21 +3,22 @@ import { connect } from 'react-redux'
 
 import './home.css'
 
+import ScrollToTopOnMount from '../../components/scrollToTopOnMount'
 import Header from './components/header'
-import Intro from './components/intro'
-import Button from '../../components/button'
-import Informations from './components/informations'
-import Category from './components/category'
-import Social from './components/social'
-import Spotlights from './components/spotlights'
-import Partners from './components/partners'
-import LoginModal from './components/loginModal'
-import ContactModal from './components/contactModal'
-import ForgotModal from './components/forgotModal'
+import Intro from '../components/intro'
+import Countdown from '../components/countdown'
+import Informations from '../components/informations'
+import Category from '../components/category'
+import Footer from '../components/footer'
+import Social from '../components/social'
+import Spotlights from '../components/spotlights'
+import Partners from '../components/partners'
+import LoginModal from '../components/loginModal'
+import ContactModal from '../components/contactModal'
+import ForgotModal from '../components/forgotModal'
 
 import { fetchCanLogin } from '../../modules/canLogin'
 import { autoLogin } from '../../modules/login'
-import Countdown from './components/countdown'
 
 class Home extends React.Component {
   constructor() {
@@ -100,6 +101,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
+        <ScrollToTopOnMount />
         <Header openLoginModal={this.openLoginModal} />
         <Intro />
         <LoginModal
@@ -135,25 +137,7 @@ class Home extends React.Component {
             <Spotlights />
           </div>
           <Partners />
-          <div className="a-home__content a-home__footer">
-            <div>
-              © UTT Net Group
-              <a href="/mentions">Mentions légales</a>
-            </div>
-            <div>
-              <a href={`mailto:${process.env.REACT_APP_CONTACT_MAIL}`}>
-                {process.env.REACT_APP_CONTACT_MAIL}
-              </a>
-            </div>
-            <div>
-              <a href={`tel:${process.env.REACT_APP_CONTACT_PHONE}`}>
-                {process.env.REACT_APP_CONTACT_PHONE}
-              </a>
-            </div>
-            <div style={{ marginTop: '5px' }}>
-              <Button raised={true} onClick={this.openContactModal}>Nous contacter</Button>
-            </div>
-          </div>
+          <Footer />
         </main>
 
         <Social />

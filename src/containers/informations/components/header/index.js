@@ -13,17 +13,17 @@ class Header extends React.Component {
 
     this.scroll = new SmoothScroll()
 
-    this.scrollToInformations = this.scrollToInformations.bind(this)
-    this.scrollToSpotlights = this.scrollToSpotlights.bind(this)
+    this.scrollToAccess = this.scrollToAccess.bind(this)
+    this.homeButton = this.homeButton.bind(this)
     this.mainButton = this.mainButton.bind(this)
   }
 
-  scrollToInformations() {
-    this.scroll.animateScroll(document.querySelector('#informations'))
+  scrollToAccess() {
+    this.scroll.animateScroll(document.querySelector('#access'))
   }
 
-  scrollToSpotlights() {
-    this.scroll.animateScroll(document.querySelector('#spotlights'))
+  homeButton() {
+    this.props.gotoHome()
   }
 
   mainButton() {
@@ -41,7 +41,7 @@ class Header extends React.Component {
       <header className="a-intro-header">
         <nav className="a-intro-header__nav">
           <div>
-            <Button onClick={this.scrollToInformations}>Informations</Button>
+            <Button onClick={this.homeButton}>Accueil</Button>
           </div>
           <div>
             <Button onClick={this.mainButton} raised={true}>
@@ -49,7 +49,7 @@ class Header extends React.Component {
             </Button>
           </div>
           <div>
-            <Button onClick={this.scrollToSpotlights}>Tournois</Button>
+            <Button onClick={this.scrollToAccess}>Accès</Button>
           </div>
         </nav>
       </header>
@@ -62,7 +62,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  gotoDashboard: () => dispatch(push('/dashboard'))
+  gotoDashboard: () => dispatch(push('/dashboard')),
+  gotoHome: () => dispatch(push('/'))
 })
 
 export default connect(

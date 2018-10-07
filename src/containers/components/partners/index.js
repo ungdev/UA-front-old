@@ -26,7 +26,7 @@ class Partners extends React.Component {
             </a>
           )}
         </div>
-        <a className="a-partners__link" href="mailto:arena@utt.fr">Devenir partenaire</a>
+        <a className="a-partners__link" href={`mailto:UTT%20Arena<${process.env.REACT_APP_CONTACT_MAIL}>`}>Devenir partenaire</a>
       </div>
     )
   }
