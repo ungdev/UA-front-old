@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 
 import './home.css'
 
+import logo from '../../assets/ua2018.png'
+
 import ScrollToTopOnMount from '../../components/scrollToTopOnMount'
 import Header from './components/header'
 import Category from '../components/category'
@@ -110,16 +112,18 @@ class Informations extends React.Component {
         />
         <ForgotModal isOpen={this.state.forgotModalOpened} onClose={this.closeForgotModal} />
 
-        <main className="a-home">
-          <div className="a-home__content">
+        <main className="a-infos">
+          <div className="a-infos__content">
+            <img className="a-infos__logo" src={logo} alt="UTT Arena" />
+
             <p>Retouvez toutes les informations de l'<span>UTT Arena</span> sur cette page : rendez-vous du 7 au 9 décembre pour 48 heures de folie et d'évasion au parc des expositions de Troyes !</p>
 
             <Category id="schedule">Horaires</Category>
-            <div>
+            <div className="a-infos__center">
               <table>
                 <thead>
                   <tr>
-                    <th></th>
+                    <th className="a-infos__table__void"></th>
                     <th>Vendredi 7</th>
                     <th>Samedi 8</th>
                     <th>Dimanche 9</th>
@@ -151,7 +155,7 @@ class Informations extends React.Component {
             </p>
             <br />
             <p>
-              Inscris-toi sur le site pour accéder à la billeterie !<br />
+              <strong>Inscris-toi sur le site pour accéder à la billeterie !</strong><br />
               <ul>
                 <li>Joueur : 15€</li>
                 <li>&Eacute;tudiants du réseau UT : 10€</li>
@@ -163,7 +167,7 @@ class Informations extends React.Component {
             <p>
               Adresse de l'événement : 20 rue des Gayettes, 10000 Troyes
             </p>
-            <h3>En voiture</h3>
+            <h3 className="a-info__title">En voiture</h3>
             <p>Un parking gratuit sera mis à disposition juste devant le Cube.</p>
             <p>
               Depuis Paris :
@@ -172,26 +176,12 @@ class Informations extends React.Component {
                 <li>Nationale : N4 (2h50, 165km)</li>
               </ul>
             </p>
-            <h3>En train</h3>
+            <h3 className="a-info__title">En train</h3>
             <p>&Agrave; 1h30 de Paris (TER depuis Paris-Est, départ toutes les heures).</p>
-            <h3>En bus</h3>
+            <h3 className="a-info__title">En bus</h3>
             <p>Ligne régulière 2, 6, 8 : arrêt Terrasses</p>
 
-            
-            <Category id="program">Programme</Category>
-            <small>(Programme des animations et de la scène prochainement)</small>
-            <p><strong>Début des tournois :</strong> samedi 8 décembre à 10h</p>
-
-            <Category id="services">Services</Category>
-            <h3>Nourriture</h3>
-            <p>On sait qu'un weekend de 48h non-stop ça creuse, nous te proposerons donc sur place : croques-monsieur, crêpes, pizzas, canettes, snack, tout pour te sustenter au mieux !</p>
-            <h3>Couchage</h3>
-            <p>Nous mettons à disposition des joueurs des loges communes avec un accès à l'eau (et même aux douches :D). Pensez à ramener vos matelas si vous souhaitez en profiter !</p>
-
-            <Category id="players">Infos joueurs</Category>
-
-
-            <div className="a-home__map">
+            <div className="a-infos__map">
               <iframe
                 height="320"
                 title="Google Maps"
@@ -202,6 +192,53 @@ class Informations extends React.Component {
                 marginWidth="0"
               />
             </div>
+
+            
+            <Category id="program">Programme</Category>
+            <small>(Programme des animations et de la scène prochainement)</small>
+            <p><strong>Début des tournois :</strong> samedi 8 décembre à 10h</p>
+
+            <Category id="services">Services</Category>
+            <h3 className="a-info__title">Nourriture</h3>
+            <p>On sait qu'un weekend de 48h non-stop ça creuse, nous te proposerons donc sur place : croques-monsieur, crêpes, pizzas, canettes, snack, tout pour te sustenter au mieux !</p>
+            <h3 className="a-info__title">Couchage</h3>
+            <p>Nous mettons à disposition des joueurs des loges communes avec un accès à l'eau (et même des douches !). Pensez à ramener vos matelas si vous souhaitez en profiter !</p>
+
+            <Category id="players">Infos joueurs</Category>
+            <h3 className="a-info__title">Cashprize et lots</h3>
+            <p>La répartition entre les 3 premières places est la suivante :
+              <ul>
+                <li>1ère place : Cashprize</li>
+                <li>2è et 3è places : Lots</li>
+              </ul>
+            </p>
+            <p>
+              Cette année l'<span>UTT Arena</span> s'est associée avec de nombreux partenaires pour vous offrir des lots de qualité !
+            </p>
+            <h3 className="a-info__title">Ce qu'il faut apporter</h3>
+            <ul>
+              <li>Ton PC avec tous ces magnifiques périphériques</li>
+              <li>Une multiprise</li>
+              <li>Un câble RJ45</li>
+            </ul>
+            <p>Si tu ne souhaites pas ramener tout ça, nous te proposons de louer un PC avec notre partenaire Scoup E-sport et nous vendons dans multiprises et des câbles RJ45.</p>
+            <h3 className="a-info__title">Ce qui est fourni</h3>
+            <p>Une prise électrique et un port RJ45.</p>
+            <p>Et vu qu'on t'aime bien, on t'offre aussi une place sur une table avec une chaise et l'accès aux loges, mais ça c'est juste pour toi !</p>
+
+            <Category id="faq">FAQ</Category>
+            <p>Voici des questions souvent posées, en espérant que cela pourra t'aider dans ta recherche jeune padawan !</p>
+            <h3 className="a-info__title">Inscription</h3>
+            <p className="faq-question">Je me suis inscrit et je n'ai pas reçu mon mail de confirmation</p>
+            <p className="faq-answer">Si lors de votre inscription votre adresse e-mail est rejetée, cela peut être dû à trois choses :
+              <ul>
+                <li>On ne peut pas avoir plus d'un compte par mail</li>
+                <li>Cet e-mail a été banni. Contactez les organisateurs afin d'expliciter le problème.</li>
+                <li>Vous vous êtes trompé lors de la saisie de votre adresse mail. Contactez les organisateurs grâce au formulaire de contact.</li>
+              </ul>
+            </p>
+            <p className="faq-question">J'ai payé et je ne reçois pas mon billet</p>
+            <p className="faq-answer"></p>
           </div>
           <Partners />
           <Footer />
