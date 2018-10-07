@@ -3,8 +3,7 @@ import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 import SmoothScroll from 'smooth-scroll'
 
-import logo from '../../../assets/ua2018.small.png'
-import Button from '../../../components/button'
+import Button from '../../../../components/button'
 
 import './header.css'
 
@@ -42,23 +41,15 @@ class Header extends React.Component {
       <header className="a-intro-header">
         <nav className="a-intro-header__nav">
           <div>
-            <Button onClick={this.gotoHome}><img src={logo} height="50" /> Accueil</Button>
+            <Button onClick={this.scrollToInformations}>Informations</Button>
           </div>
           <div>
-            <Button onClick={this.gotoInformations}>Informations</Button>
+            <Button onClick={this.mainButton} raised={true}>
+              {loginText}
+            </Button>
           </div>
           <div>
-            <Button onClick={this.gotoTournaments}>Tournois</Button>
-          </div>
-          <div>
-            <Button onClick={this.gotoPartners}>Partenaires</Button>
-          </div>
-          <div>
-            <Button onClick={this.openContactModal}>Contact</Button>
-          </div>
-
-          <div>
-            <Button onClick={this.mainButton}>{loginText}</Button>
+            <Button onClick={this.scrollToSpotlights}>Tournois</Button>
           </div>
         </nav>
       </header>
