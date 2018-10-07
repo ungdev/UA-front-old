@@ -29,7 +29,7 @@ const EditInfos = props => {
         <h2>Gestion de compte</h2>
         <p>
           Changez ici vos informations personnelles. Vous recevrez votre place par e-mail. Si vous
-          êtes membres d'une école partenaire, pensez à mettre votre e-mail associée pour profiter
+          êtes membre d'une école partenaire, pensez à mettre votre e-mail associée pour profiter
           des tarifs préférentiels.<br />
           <strong>
             Si vous ne souhaitez pas changer votre mot de passe, laissez les champs vides.
