@@ -3,20 +3,17 @@ import { connect } from 'react-redux'
 
 import './home.css'
 
-import Header from './components/header'
-import Intro from './components/intro'
-import Button from '../../components/button'
-import Category from './components/category'
-import Social from './components/social'
-import Spotlights from './components/spotlights'
-import Partners from './components/partners'
-import LoginModal from './components/loginModal'
-import ContactModal from './components/contactModal'
-import ForgotModal from './components/forgotModal'
+import Header from '../components/header'
+import Category from '../components/category'
+import Footer from '../components/footer'
+import Social from '../components/social'
+import Partners from '../components/partners'
+import LoginModal from '../components/loginModal'
+import ContactModal from '../components/contactModal'
+import ForgotModal from '../components/forgotModal'
 
 import { fetchCanLogin } from '../../modules/canLogin'
 import { autoLogin } from '../../modules/login'
-import Countdown from './components/countdown'
 
 class Informations extends React.Component {
   constructor() {
@@ -100,7 +97,6 @@ class Informations extends React.Component {
     return (
       <div>
         <Header openLoginModal={this.openLoginModal} />
-        <Intro />
         <LoginModal
           isOpen={this.state.loginModalOpened}
           onClose={this.closeLoginModal}
@@ -114,7 +110,6 @@ class Informations extends React.Component {
 
         <main className="a-home">
           <div className="a-home__content">
-            <Countdown date={new Date('December 7, 2018 18:00:00')}/>
             <Category id="informations">Informations</Category>
             <div className="a-home__map">
               <iframe
@@ -129,29 +124,9 @@ class Informations extends React.Component {
 
               <p>Vous pouvez vous rendre à Troyes par le train ou par l'A5.</p>
             </div>
-            <Category id="spotlights">Tournois</Category>
-            <Spotlights />
           </div>
           <Partners />
-          <div className="a-home__content a-home__footer">
-            <div>
-              © UTT Net Group
-              <a href="/mentions">Mentions légales</a>
-            </div>
-            <div>
-              <a href={`mailto:${process.env.REACT_APP_CONTACT_MAIL}`}>
-                {process.env.REACT_APP_CONTACT_MAIL}
-              </a>
-            </div>
-            <div>
-              <a href={`tel:${process.env.REACT_APP_CONTACT_PHONE}`}>
-                {process.env.REACT_APP_CONTACT_PHONE}
-              </a>
-            </div>
-            <div style={{ marginTop: '5px' }}>
-              <Button raised={true} onClick={this.openContactModal}>Nous contacter</Button>
-            </div>
-          </div>
+          <Footer />
         </main>
 
         <Social />

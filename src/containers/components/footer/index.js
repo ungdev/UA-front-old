@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../../../../components/button'
+import Button from '../../../components/button'
 
 const Footer = () => {
     return (
@@ -9,7 +9,7 @@ const Footer = () => {
               <a href="/mentions">Mentions légales</a>
             </div>
             <div>
-              <a href={`mailto:${process.env.REACT_APP_CONTACT_MAIL}`}>
+              <a href={`mailto:UTT%20Arena<${process.env.REACT_APP_CONTACT_MAIL}>`}>
                 {process.env.REACT_APP_CONTACT_MAIL}
               </a>
             </div>

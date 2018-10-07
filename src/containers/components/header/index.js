@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 import SmoothScroll from 'smooth-scroll'
 
-import Button from '../../../../components/button'
+import Button from '../../../components/button'
 
 import './header.css'
 
