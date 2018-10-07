@@ -61,6 +61,11 @@
   font-weight: bold;
 }
 
+.a-infos__important {
+  font-weight: bold;
+  color: #14d9fa;
+}
+
 .a-infos__logo {
   margin: 0 auto;
   display: block;
@@ -84,7 +89,7 @@
 }
 
 .a-infos__content table tbody tr:nth-child(1) {
-  background: rgba(50, 50, 50, 0.5);
+  background: rgba(50, 50, 50, 0.7);
 }
 
 @media (min-width: 768px) {

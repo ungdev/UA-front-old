@@ -118,6 +118,16 @@ class Informations extends React.Component {
 
             <p>Retouvez toutes les informations de l'<span>UTT Arena</span> sur cette page : rendez-vous du 7 au 9 décembre pour 48 heures de folie et d'évasion au parc des expositions de Troyes !</p>
 
+            <Category id="presentation">Présentation</Category>
+            <p>
+              L’<span className="a-infos__important">UTT Arena</span> c’est le plus gros événement de l’association <span className="a-infos__important">UTT Net Group</span> en matière d’e-sport. L’association a été créée en 1998 et avait pour vocation de réunir les passionnés d’informatique et des nouvelles technologies de l’Université de Technologie de Troyes (UTT).<br />
+              L’UA réalise sa <span className="a-infos__important">16ème édition</span> cette année ! 17 ans auparavant, au commencement, nous étions dans une salle d’examen de l’UTT avec une centaine de joueurs.<br />
+              Puis l'événement a grandi, évolué. L’organisation a augmenté à 200 joueurs avec une scène dans la halle sportive de l’UTT.<br />
+              2015 arriva, une opportunité unique nous a été offerte par la ville avec la création du Festival des Jeux. Nous avons donc déménagé au Cube et nous sommes depuis dans le format que vous connaissez !<br />
+              &Agrave; présent l’UTT Arena c’est <span className="a-infos__important">460 joueurs</span>, <span className="a-infos__important">5 tournois spotlights</span>, une scène de 70 m² et une centaine de bénévoles.<br />
+              Et tout cela, c’est grâce à vous, les joueurs, qui nous font confiance chaque année pour vous organiser un événement de folie !
+            </p>
+
             <Category id="schedule">Horaires</Category>
             <div className="a-infos__center">
               <table>
@@ -147,99 +157,116 @@ class Informations extends React.Component {
             </div>
 
             <Category id="tickets">Billetterie</Category>
-            <p>Astuce : en achetant vos billets en prévente :
-              <ul>
-                <li>Bénéficiez de tarifs réduits</li>
-                <li>Assurez une place pour votre équipe</li>
-              </ul>
-            </p>
-            <br />
-            <p>
-              <strong>Inscris-toi sur le site pour accéder à la billeterie !</strong><br />
-              <ul>
-                <li>Joueur : 15€</li>
-                <li>&Eacute;tudiants du réseau UT : 10€</li>
-                <li>Visiteurs : 10€ (limité à 40 places)</li>
-              </ul>
-            </p>
-
-            <Category id="access">Accès</Category>
-            <p>
-              Adresse de l'événement : 20 rue des Gayettes, 10000 Troyes
-            </p>
-            <h3 className="a-info__title">En voiture</h3>
-            <p>Un parking gratuit sera mis à disposition juste devant le Cube.</p>
-            <p>
-              Depuis Paris :
-              <ul>
-                <li>Autoroute : A5 (2h30, 180km)</li>
-                <li>Nationale : N4 (2h50, 165km)</li>
-              </ul>
-            </p>
-            <h3 className="a-info__title">En train</h3>
-            <p>&Agrave; 1h30 de Paris (TER depuis Paris-Est, départ toutes les heures).</p>
-            <h3 className="a-info__title">En bus</h3>
-            <p>Ligne régulière 2, 6, 8 : arrêt Terrasses</p>
-
-            <div className="a-infos__map">
-              <iframe
-                height="320"
-                title="Google Maps"
-                src="https://maps.google.com/maps?q=UTT Arena&t=&z=17&ie=UTF8&iwloc=&output=embed"
-                frameBorder="0"
-                scrolling="no"
-                marginHeight="0"
-                marginWidth="0"
-              />
+            <div>
+              <p>Astuce : en achetant vos billets en prévente :
+                <ul>
+                  <li>Bénéficiez de tarifs réduits</li>
+                  <li>Assurez une place pour votre équipe</li>
+                </ul>
+              </p>
+              <br />
+              <p>
+                <strong>Inscris-toi sur le site pour accéder à la billeterie !</strong><br />
+                <ul>
+                  <li>Joueur : 15€</li>
+                  <li>&Eacute;tudiant du réseau UT : 10€</li>
+                  <li>Visiteur : 10€ (limité à 40 places)</li>
+                </ul>
+              </p>
             </div>
 
-            
+            <Category id="access">Accès</Category>
+            <div>
+              <p>
+                Adresse de l'événement : 20 rue des Gayettes, 10000 Troyes
+              </p>
+              <h3 className="a-info__title">En voiture</h3>
+              <p>Un parking gratuit sera mis à disposition juste devant le Cube.</p>
+              <p>
+                Depuis Paris :
+                <ul>
+                  <li>Autoroute : A5 (2h30, 180km)</li>
+                  <li>Nationale : N4 (2h50, 165km)</li>
+                </ul>
+              </p>
+              <p>
+                Depuis Reims :
+                <ul>
+                  <li>Autoroute : A26 (1h25, 127km)</li>
+                  <li>Départementale : D877 (1h55, 128km)</li>
+                </ul>
+              </p>
+              <p>
+                Depuis Lyon :
+                <ul>
+                  <li>Autoroute : A6, A3 et A5 (3h30, 375km)</li>
+                  <li>Nationale : N6, D906 (5h27, 354km)</li>
+                </ul>
+              </p>
+              <p>
+                Depuis Strasbourg :
+                <ul>
+                  <li>Autoroute : A31 (4h10, 384km)</li>
+                  <li>Nationale : N4 (4h15, 338km)</li>
+                </ul>
+              </p>
+              <h3 className="a-info__title">En train</h3>
+              <p>&Agrave; 1h30 de Paris (TER depuis Paris-Est, départ toutes les heures).</p>
+              <h3 className="a-info__title">En bus</h3>
+              <p>Ligne régulière 2, 6, 8 : arrêt Terrasses</p>
+
+              <div className="a-infos__map">
+                <iframe
+                  height="320"
+                  title="Google Maps"
+                  src="https://maps.google.com/maps?q=UTT Arena&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                  frameBorder="0"
+                  scrolling="no"
+                  marginHeight="0"
+                  marginWidth="0"
+                />
+              </div>
+            </div>
+
             <Category id="program">Programme</Category>
-            <small>(Programme des animations et de la scène prochainement)</small>
-            <p><strong>Début des tournois :</strong> samedi 8 décembre à 10h</p>
+            <div>
+              <p>(Programme des animations et de la scène prochainement)</p>
+              <p><strong>Début des tournois :</strong> samedi 8 décembre à 10h</p>
+            </div>
 
             <Category id="services">Services</Category>
-            <h3 className="a-info__title">Nourriture</h3>
-            <p>On sait qu'un weekend de 48h non-stop ça creuse, nous te proposerons donc sur place : croques-monsieur, crêpes, pizzas, canettes, snack, tout pour te sustenter au mieux !</p>
-            <h3 className="a-info__title">Couchage</h3>
-            <p>Nous mettons à disposition des joueurs des loges communes avec un accès à l'eau (et même des douches !). Pensez à ramener vos matelas si vous souhaitez en profiter !</p>
+            <div>
+              <h3 className="a-info__title">Nourriture</h3>
+              <p>On sait qu'un weekend de 48h non-stop ça creuse, nous te proposerons donc sur place : croques-monsieur, crêpes, pizzas, canettes, snack, tout pour te sustenter au mieux !</p>
+              <h3 className="a-info__title">Couchage</h3>
+              <p>Nous mettons à disposition des joueurs des loges communes avec un accès à l'eau et aux douches ! Pensez à ramener vos matelas si vous souhaitez en profiter !</p>
+            </div>
 
             <Category id="players">Infos joueurs</Category>
-            <h3 className="a-info__title">Cashprize et lots</h3>
-            <p>La répartition entre les 3 premières places est la suivante :
+            <div>
+              <h3 className="a-info__title">Cashprize et lots</h3>
+              <p>La répartition entre les 3 premières places est la suivante :
+                <ul>
+                  <li>1ère place : Cashprize</li>
+                  <li>2è et 3è places : Lots</li>
+                </ul>
+              </p>
+              <p>
+                Cette année l'<span>UTT Arena</span> s'est associée avec de nombreux partenaires pour vous offrir des lots de qualité !
+              </p>
+              <h3 className="a-info__title">Ce qu'il faut apporter</h3>
               <ul>
-                <li>1ère place : Cashprize</li>
-                <li>2è et 3è places : Lots</li>
+                <li>Ton PC avec tous ces magnifiques périphériques</li>
+                <li>Une multiprise</li>
+                <li>Un câble RJ45</li>
               </ul>
-            </p>
-            <p>
-              Cette année l'<span>UTT Arena</span> s'est associée avec de nombreux partenaires pour vous offrir des lots de qualité !
-            </p>
-            <h3 className="a-info__title">Ce qu'il faut apporter</h3>
-            <ul>
-              <li>Ton PC avec tous ces magnifiques périphériques</li>
-              <li>Une multiprise</li>
-              <li>Un câble RJ45</li>
-            </ul>
-            <p>Si tu ne souhaites pas ramener tout ça, nous te proposons de louer un PC avec notre partenaire Scoup E-sport et nous vendons dans multiprises et des câbles RJ45.</p>
-            <h3 className="a-info__title">Ce qui est fourni</h3>
-            <p>Une prise électrique et un port RJ45.</p>
-            <p>Et vu qu'on t'aime bien, on t'offre aussi une place sur une table avec une chaise et l'accès aux loges, mais ça c'est juste pour toi !</p>
-
-            <Category id="faq">FAQ</Category>
-            <p>Voici des questions souvent posées, en espérant que cela pourra t'aider dans ta recherche jeune padawan !</p>
-            <h3 className="a-info__title">Inscription</h3>
-            <p className="faq-question">Je me suis inscrit et je n'ai pas reçu mon mail de confirmation</p>
-            <p className="faq-answer">Si lors de votre inscription votre adresse e-mail est rejetée, cela peut être dû à trois choses :
-              <ul>
-                <li>On ne peut pas avoir plus d'un compte par mail</li>
-                <li>Cet e-mail a été banni. Contactez les organisateurs afin d'expliciter le problème.</li>
-                <li>Vous vous êtes trompé lors de la saisie de votre adresse mail. Contactez les organisateurs grâce au formulaire de contact.</li>
-              </ul>
-            </p>
-            <p className="faq-question">J'ai payé et je ne reçois pas mon billet</p>
-            <p className="faq-answer"></p>
+              <p>Si tu ne souhaites pas ramener tout ça, nous te proposons de louer un PC avec notre partenaire Scoup E-sport et nous vendons dans multiprises et des câbles RJ45.</p>
+              <h3 className="a-info__title">Ce qui est fourni</h3>
+              <p>Une prise électrique et un port RJ45.</p>
+              <p>Et vu qu'on t'aime bien, on t'offre aussi une place sur une table avec une chaise et l'accès aux loges, mais ça c'est juste pour toi !</p>
+            </div>
           </div>
+
           <Partners />
           <Footer />
         </main>
