@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import './home.css'
 
+import ScrollToTopOnMount from '../../components/scrollToTopOnMount'
 import Header from './components/header'
 import Intro from '../components/intro'
 import Countdown from '../components/countdown'
@@ -100,6 +101,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
+        <ScrollToTopOnMount />
         <Header openLoginModal={this.openLoginModal} />
         <Intro />
         <LoginModal
