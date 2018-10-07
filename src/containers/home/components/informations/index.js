@@ -1,4 +1,6 @@
 import React from 'react'
+import Button from '../../../../components/button'
+import { Link } from 'react-router-dom'
 
 import './informations.css'
 
@@ -52,6 +54,12 @@ const Informations = () => (
         <div className="a-informations__table__row__cell">Tournois</div>
         <div className="a-informations__table__row__cell">5 (les tournois commencent le Samedi à 10h précises)</div>
       </div>
+    </div>
+
+    <div className="a-informations__more">
+      <Link to={'/informations'}>
+        <Button raised={true}>Plus d'infos</Button>
+      </Link>
     </div>
   </div>
 )
