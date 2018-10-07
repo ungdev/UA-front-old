@@ -129,7 +129,7 @@ class Informations extends React.Component {
             </p>
 
             <Category id="schedule">Horaires</Category>
-            <div className="a-infos__center">
+            <div className="a-infos__table__container">
               <table>
                 <thead>
                   <tr>
@@ -260,7 +260,7 @@ class Informations extends React.Component {
                 <li>Une multiprise</li>
                 <li>Un câble RJ45</li>
               </ul>
-              <p>Si tu ne souhaites pas ramener tout ça, nous te proposons de louer un PC avec notre partenaire Scoup E-sport et nous vendons dans multiprises et des câbles RJ45.</p>
+              <p>Si tu ne souhaites pas ramener tout ça, nous te proposons de louer un PC avec notre partenaire Scoup E-sport et nous vendons des multiprises et des câbles RJ45.</p>
               <h3 className="a-info__title">Ce qui est fourni</h3>
               <p>Une prise électrique et un port RJ45.</p>
               <p>Et vu qu'on t'aime bien, on t'offre aussi une place sur une table avec une chaise et l'accès aux loges, mais ça c'est juste pour toi !</p>
@@ -283,7 +283,6 @@ class Informations extends React.Component {
             </div>
           </div>
 
-          <Partners />
           <Footer />
         </main>
 

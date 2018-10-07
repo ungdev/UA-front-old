@@ -72,6 +72,11 @@
   height: 300px;
 }
 
+.a-infos__content .a-infos__table__container {
+  width: 100%;
+  overflow-x: auto;
+}
+
 .a-infos__content table {
   margin: 0 auto;
 }
