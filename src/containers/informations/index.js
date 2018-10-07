@@ -116,17 +116,17 @@ class Informations extends React.Component {
           <div className="a-infos__content">
             <img className="a-infos__logo" src={logo} alt="UTT Arena" />
 
-            <p>Retrouvez toutes les informations de l'<span>UTT Arena</span> sur cette page : rendez-vous du 7 au 9 décembre pour 48 heures de folie et d'évasion au parc des expositions de Troyes !</p>
+            <p style={{ textAlign: 'justify'}}>Retrouvez toutes les informations de l'<span>UTT Arena</span> sur cette page : rendez-vous du 7 au 9 décembre pour 48 heures de folie et d'évasion au parc des expositions de Troyes !</p>
 
             <Category id="presentation">Présentation</Category>
-            <p>
+            <p style={{ textAlign: 'justify'}}>
               L’<span className="a-infos__important">UTT Arena</span> c’est le plus gros événement de l’association <span className="a-infos__important">UTT Net Group</span> en matière d’e-sport. L’association a été créée en 1998 et avait pour vocation de réunir les passionnés d’informatique et des nouvelles technologies de l’Université de Technologie de Troyes (UTT).<br />
-              L’UA réalise sa <span className="a-infos__important">16ème édition</span> cette année ! 17 ans auparavant, au commencement, nous étions dans une salle d’examen de l’UTT avec une centaine de joueurs.<br />
+              L’UA réalise sa <span className="a-infos__important">16ème édition</span> cette année ! Au commencement, lors de la première édition, nous étions dans une salle d’examen de l’UTT avec une centaine de joueurs.<br />
               Puis l'événement a grandi, l’organisation a augmenté à 200 joueurs avec une scène dans la halle sportive de l’UTT.<br />
               2015 arriva, une opportunité unique nous a été offerte par la ville avec la création du Festival des Jeux. Nous avons donc déménagé au Cube et nous sommes depuis dans le format que vous connaissez !<br />
               &Agrave; présent l’UTT Arena c’est <span className="a-infos__important">460 joueurs</span>, <span className="a-infos__important">5 tournois spotlights</span>, une scène de 70 m² et une centaine de bénévoles.<br />
-              Et tout cela, c’est grâce à vous, les joueurs, qui nous font confiance chaque année pour vous organiser un événement de folie !
             </p>
+            <p style={{ textAlign: 'justify'}}>Et tout cela, c’est grâce à vous, les joueurs, qui nous font confiance chaque année pour vous organiser un événement de folie, et à nos partenaires qui nous soutiennent chaque année dans l'organisation de la LAN !</p>
 
             <Category id="schedule">Horaires</Category>
             <div className="a-infos__table__container">
@@ -158,21 +158,19 @@ class Informations extends React.Component {
 
             <Category id="tickets">Billetterie</Category>
             <div>
-              <p>Astuce : en achetant vos billets en prévente :
-                <ul>
-                  <li>Bénéficiez de tarifs réduits</li>
-                  <li>Assurez une place pour votre équipe</li>
-                </ul>
-              </p>
+              <p>Astuce : en achetant vos billets en prévente :</p>
+              <ul>
+                <li>Bénéficiez de tarifs réduits</li>
+                <li>Assurez une place pour votre équipe</li>
+              </ul>
               <br />
               <p>
-                <strong>Inscris-toi sur le site pour accéder à la billeterie !</strong><br />
-                <ul>
-                  <li>Joueur : 15€</li>
-                  <li>&Eacute;tudiant du réseau UT : 10€</li>
-                  <li>Visiteur : 10€ (limité à 40 places)</li>
-                </ul>
-              </p>
+                <strong>Inscris-toi sur le site pour accéder à la billeterie !</strong>
+              </p><br />
+              <ul>
+                <li>Joueur : 15€ (10€ pour les écoles partenaires)</li>
+                <li>Accompagnateur : 6€ (limité à 40 places)</li>
+              </ul>
             </div>
 
             <Category id="access">Accès</Category>
@@ -181,37 +179,38 @@ class Informations extends React.Component {
                 Adresse de l'événement : 20 rue des Gayettes, 10000 Troyes
               </p>
               <h3 className="a-info__title">En voiture</h3>
-              <p>Un parking gratuit sera mis à disposition juste devant le Cube.</p>
+              <p style={{ textAlign: 'justify'}}>Un parking gratuit sera mis à disposition juste devant le Cube. Attention, utilisez le parking en face du Cube de 
+              l'autre côté de la route, celui proche de l'entrée est réservé aux visiteurs du festival</p>
               <p>
                 Depuis Paris :
-                <ul>
-                  <li>Autoroute : A5 (2h30, 180km)</li>
-                  <li>Nationale : N4 (2h50, 165km)</li>
-                </ul>
               </p>
+              <ul>
+                <li>Autoroute : A5 (2h30, 180km)</li>
+                <li>Nationale : N4 (2h50, 165km)</li>
+              </ul>
               <p>
                 Depuis Reims :
-                <ul>
-                  <li>Autoroute : A26 (1h25, 127km)</li>
-                  <li>Départementale : D877 (1h55, 128km)</li>
-                </ul>
               </p>
+              <ul>
+                <li>Autoroute : A26 (1h25, 127km)</li>
+                <li>Départementale : D877 (1h55, 128km)</li>
+              </ul>
               <p>
                 Depuis Lyon :
-                <ul>
-                  <li>Autoroute : A6, A3 et A5 (3h30, 375km)</li>
-                  <li>Nationale : N6, D906 (5h27, 354km)</li>
-                </ul>
               </p>
+              <ul>
+                <li>Autoroute : A6, A3 et A5 (3h30, 375km)</li>
+                <li>Nationale : N6, D906 (5h27, 354km)</li>
+              </ul>
               <p>
                 Depuis Strasbourg :
-                <ul>
-                  <li>Autoroute : A31 (4h10, 384km)</li>
-                  <li>Nationale : N4 (4h15, 338km)</li>
-                </ul>
               </p>
+              <ul>
+                <li>Autoroute : A31 (4h10, 384km)</li>
+                <li>Nationale : N4 (4h15, 338km)</li>
+              </ul>
               <h3 className="a-info__title">En train</h3>
-              <p>&Agrave; 1h30 de Paris (TER depuis Paris-Est, départ toutes les heures).</p>
+              <p>&Agrave; 1h30 de Paris (TER depuis Paris-Est, départ toutes les heures). Le Cube est à 10 minutes à pied de la gare.</p>
               <h3 className="a-info__title">En bus</h3>
               <p>Ligne régulière 2, 6, 8 : arrêt Terrasses</p>
 
@@ -231,36 +230,39 @@ class Informations extends React.Component {
             <Category id="program">Programme</Category>
             <div>
               <p>(Programme des animations et de la scène prochainement)</p>
+              <p><strong>Accueil des équipes :</strong> vendredi 7 décembre à partir de 17h</p>
               <p><strong>Début des tournois :</strong> samedi 8 décembre à 10h</p>
             </div>
 
             <Category id="services">Services</Category>
             <div>
               <h3 className="a-info__title">Nourriture</h3>
-              <p>On sait qu'un weekend de 48h non-stop ça creuse, nous te proposerons donc sur place : croques-monsieur, crêpes, pizzas, canettes, snack, tout pour te sustenter au mieux !</p>
+              <p style={{ textAlign: 'justify'}}>On sait qu'un weekend de 48h non-stop ça creuse, nous te proposerons donc sur place : croques-monsieur, crêpes, pizzas, canettes, snack, tout
+               pour te sustenter au mieux ! Et tout cela à un prix abordable.</p>
               <h3 className="a-info__title">Couchage</h3>
-              <p>Nous mettons à disposition des joueurs des loges communes avec un accès à l'eau et aux douches ! Pensez à ramener vos matelas si vous souhaitez en profiter !</p>
+              <p style={{ textAlign: 'justify'}}>Nous mettons à disposition des joueurs des loges communes avec un accès à l'eau et aux douches ! 
+              Pensez à ramener vos duvets si vous souhaitez en profiter ! Nous metterons à disposition des tapis pour plus de confort.</p>
             </div>
 
             <Category id="players">Infos joueurs</Category>
             <div>
               <h3 className="a-info__title">Cashprize et lots</h3>
-              <p>La répartition entre les 3 premières places est la suivante :
-                <ul>
-                  <li>1ère place : Cashprize</li>
-                  <li>2è et 3è places : Lots</li>
-                </ul>
+              <p>La répartition des récompenses entre les 3 premières places est la suivante :
               </p>
+              <ul>
+                <li>1ère place : Cashprize et lots</li>
+                <li>2è et 3è places : Lots</li>
+              </ul>
               <p>
                 Cette année l'<span>UTT Arena</span> s'est associée avec de nombreux partenaires pour vous offrir des lots de qualité !
               </p>
               <h3 className="a-info__title">Ce qu'il faut apporter</h3>
               <ul>
                 <li>Ton PC avec tous ces magnifiques périphériques</li>
-                <li>Une multiprise</li>
+                <li>Une multiprise si besoin (chaque joueur dispose d'une prise)</li>
                 <li>Un câble RJ45</li>
               </ul>
-              <p>Si tu ne souhaites pas ramener tout ça, nous te proposons de louer un PC avec notre partenaire Scoup E-sport et nous vendons des multiprises et des câbles RJ45.</p>
+              <p>Si tu ne souhaites pas ramener tout ça, nous te proposons de louer un PC avec notre partenaire Scoup E-sport et nous vendons des multiprises et des câbles RJ45 de 5 et 7m.</p>
               <h3 className="a-info__title">Ce qui est fourni</h3>
               <p>Une prise électrique et un port RJ45.</p>
               <p>Et vu qu'on t'aime bien, on t'offre aussi une place sur une table avec une chaise et l'accès aux loges, mais ça c'est juste pour toi !</p>

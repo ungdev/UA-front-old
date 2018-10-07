@@ -48,7 +48,7 @@ const Home = props => {
       <span>Tu veux voir qui est inscrit ? C'est possible ici !</span>
     </ListItem>
   </List>,
-  <h2 key="3">{props.user.name}</h2>,
+  <h2 key="3">{props.user ? props.user.name : ''}</h2>,
   <List key="4">
     {props.user && !props.user.paid ? <ListItem clickable={true} onClick={props.payment}>
       <h3>Payer ma place</h3>
