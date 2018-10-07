@@ -100,6 +100,7 @@ class Informations extends React.Component {
     return (
       <div>
         <Header openLoginModal={this.openLoginModal} />
+        <Intro />
         <LoginModal
           isOpen={this.state.loginModalOpened}
           onClose={this.closeLoginModal}
@@ -113,6 +114,7 @@ class Informations extends React.Component {
 
         <main className="a-home">
           <div className="a-home__content">
+            <Countdown date={new Date('December 7, 2018 18:00:00')}/>
             <Category id="informations">Informations</Category>
             <div className="a-home__map">
               <iframe
