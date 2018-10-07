@@ -116,13 +116,13 @@ class Informations extends React.Component {
           <div className="a-infos__content">
             <img className="a-infos__logo" src={logo} alt="UTT Arena" />
 
-            <p>Retouvez toutes les informations de l'<span>UTT Arena</span> sur cette page : rendez-vous du 7 au 9 décembre pour 48 heures de folie et d'évasion au parc des expositions de Troyes !</p>
+            <p>Retrouvez toutes les informations de l'<span>UTT Arena</span> sur cette page : rendez-vous du 7 au 9 décembre pour 48 heures de folie et d'évasion au parc des expositions de Troyes !</p>
 
             <Category id="presentation">Présentation</Category>
             <p>
               L’<span className="a-infos__important">UTT Arena</span> c’est le plus gros événement de l’association <span className="a-infos__important">UTT Net Group</span> en matière d’e-sport. L’association a été créée en 1998 et avait pour vocation de réunir les passionnés d’informatique et des nouvelles technologies de l’Université de Technologie de Troyes (UTT).<br />
               L’UA réalise sa <span className="a-infos__important">16ème édition</span> cette année ! 17 ans auparavant, au commencement, nous étions dans une salle d’examen de l’UTT avec une centaine de joueurs.<br />
-              Puis l'événement a grandi, évolué. L’organisation a augmenté à 200 joueurs avec une scène dans la halle sportive de l’UTT.<br />
+              Puis l'événement a grandi, l’organisation a augmenté à 200 joueurs avec une scène dans la halle sportive de l’UTT.<br />
               2015 arriva, une opportunité unique nous a été offerte par la ville avec la création du Festival des Jeux. Nous avons donc déménagé au Cube et nous sommes depuis dans le format que vous connaissez !<br />
               &Agrave; présent l’UTT Arena c’est <span className="a-infos__important">460 joueurs</span>, <span className="a-infos__important">5 tournois spotlights</span>, une scène de 70 m² et une centaine de bénévoles.<br />
               Et tout cela, c’est grâce à vous, les joueurs, qui nous font confiance chaque année pour vous organiser un événement de folie !
