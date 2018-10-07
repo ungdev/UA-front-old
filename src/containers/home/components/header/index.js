@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 import SmoothScroll from 'smooth-scroll'
 
-import Button from '../../../components/button'
+import Button from '../../../../components/button'
 
 import './header.css'
 
@@ -15,7 +15,7 @@ class Header extends React.Component {
 
     this.scrollToInformations = this.scrollToInformations.bind(this)
     this.scrollToSpotlights = this.scrollToSpotlights.bind(this)
-    this.mainButon = this.mainButon.bind(this)
+    this.mainButton = this.mainButton.bind(this)
   }
 
   scrollToInformations() {
@@ -26,7 +26,7 @@ class Header extends React.Component {
     this.scroll.animateScroll(document.querySelector('#spotlights'))
   }
 
-  mainButon() {
+  mainButton() {
     if (this.props.isLoggedIn) {
       this.props.gotoDashboard()
     } else {
@@ -44,7 +44,7 @@ class Header extends React.Component {
             <Button onClick={this.scrollToInformations}>Informations</Button>
           </div>
           <div>
-            <Button onClick={this.mainButon} raised={true}>
+            <Button onClick={this.mainButton} raised={true}>
               {loginText}
             </Button>
           </div>

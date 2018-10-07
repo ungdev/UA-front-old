@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import './home.css'
 
-import Header from '../components/header'
+import Header from './components/header'
 import Category from '../components/category'
 import Footer from '../components/footer'
 import Social from '../components/social'
@@ -111,6 +111,10 @@ class Informations extends React.Component {
         <main className="a-home">
           <div className="a-home__content">
             <Category id="informations">Informations</Category>
+            <p>Retouvez toutes les informations de l'<span>UTT Arena</span> sur cette page : rendez-vous du 7 au 9 décembre pour 48 heures de folie et d'évasion au parc des expositions de Troyes !</p>
+
+            <h1></h1>
+
             <div className="a-home__map">
               <iframe
                 height="320"
@@ -121,8 +125,6 @@ class Informations extends React.Component {
                 marginHeight="0"
                 marginWidth="0"
               />
-
-              <p>Vous pouvez vous rendre à Troyes par le train ou par l'A5.</p>
             </div>
           </div>
           <Partners />
