@@ -102,7 +102,7 @@ class Home extends React.Component {
     return (
       <div>
         <ScrollToTopOnMount />
-        <Header openLoginModal={this.openLoginModal} />
+        <Header openLoginModal={this.openLoginModal} openContactModal={this.openContactModal} />
         <Intro />
         <LoginModal
           isOpen={this.state.loginModalOpened}

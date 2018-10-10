@@ -99,7 +99,7 @@ class Informations extends React.Component {
     return (
       <div>
         <ScrollToTopOnMount />
-        <Header openLoginModal={this.openLoginModal} />
+        <Header openLoginModal={this.openLoginModal} openContactModal={this.openContactModal} />
         <LoginModal
           isOpen={this.state.loginModalOpened}
           onClose={this.closeLoginModal}

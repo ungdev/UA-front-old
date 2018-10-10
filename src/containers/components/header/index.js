@@ -14,12 +14,25 @@ class Header extends React.Component {
 
     this.scroll = new SmoothScroll()
 
-    this.gotoHome = this.gotoHome.bind(this)
+    this.state = {
+      mobileMenu: false
+    }
+
+    this.toggleMobileMenu = this.toggleMobileMenu.bind(this)
+    this.closeMobileMenu = this.closeMobileMenu.bind(this)
     this.mainButton = this.mainButton.bind(this)
   }
 
-  gotoHome() {
-    this.props.gotoHome()
+  toggleMobileMenu() {
+    this.setState({
+      mobileMenu: !this.state.mobileMenu
+    })
+  }
+
+  closeMobileMenu() {
+    this.setState({
+      mobileMenu: false
+    })
   }
 
   mainButton() {
@@ -35,13 +48,60 @@ class Header extends React.Component {
 
     return (
       <header className="a-intro-header">
-        <nav className="a-intro-header__nav">
+        <nav className="a-intro-header__nav__desktop">
           <div>
-            <Button onClick={this.gotoHome}><img src={logo} height="50" /> Accueil</Button>
+            <Button onClick={this.props.gotoHome}><img className="a-intro-header__logo" src={logo} height="45" /></Button>
           </div>
           <div>
-            <Button onClick={this.mainButton}>{mainButtonText}</Button>
+            <Button onClick={this.props.gotoHome}>Accueil</Button>
           </div>
+          <div>
+            <Button onClick={this.props.gotoInformations}>Informations</Button>
+          </div>
+          <div>
+            <Button onClick={this.props.gotoTournaments}>Tournois</Button>
+          </div>
+          <div>
+            <Button onClick={this.props.gotoPartners}>Partenaires</Button>
+          </div>
+          <div>
+            <Button onClick={this.props.openContactModal}>Contact</Button>
+          </div>
+          <div className="a-intro-header__mainButton">
+            <Button onClick={this.mainButton} raised>{mainButtonText}</Button>
+          </div>
+        </nav>
+        
+        <nav className="a-intro-header__nav__mobile">
+          <div className="a-intro-header__nav__mobile__topbar">
+            <div>
+              <Button onClick={this.toggleMobileMenu}><img className="a-intro-header__logo" src={logo} height="45" /></Button>
+            </div>
+            <div className="a-intro-header__mainButton">
+              <Button onClick={this.mainButton} raised>{mainButtonText}</Button>
+            </div>
+            <div></div>
+          </div>
+
+          <div className={"a-intro-header__nav__mobile__content" + (this.state.mobileMenu ? " active" : "")}>
+            <div>
+              <Button onClick={this.props.gotoHome}>Accueil</Button>
+            </div>
+            <div>
+              <Button onClick={this.props.gotoInformations}>Informations</Button>
+            </div>
+            <div>
+              <Button onClick={this.props.gotoTournaments}>Tournois</Button>
+            </div>
+            <div>
+              <Button onClick={this.props.gotoPartners}>Partenaires</Button>
+            </div>
+            <div>
+              <Button onClick={this.props.openContactModal}>Contact</Button>
+            </div>
+          </div>
+
+          <div onClick={this.closeMobileMenu} className={"a-intro-header__nav__mobile__overlay" + (this.state.mobileMenu ? " active" : "")}></div>
         </nav>
       </header>
     )
@@ -53,8 +113,11 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  gotoDashboard: () => dispatch(push('/dashboard')),
-  gotoHome: () => dispatch(push('/'))
+  gotoHome: () => dispatch(push('/')),
+  gotoInformations: () => dispatch(push('/informations')),
+  gotoTournaments: () => dispatch(push('/tournaments')),
+  gotoPartners: () => dispatch(push('/partners')),
+  gotoDashboard: () => dispatch(push('/dashboard'))
 })
 
 export default connect(
