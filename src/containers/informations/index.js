@@ -284,7 +284,7 @@ class Informations extends React.Component {
             </div>
           </div>
 
-          <Footer />
+          <Footer openContactModal={this.openContactModal} />
         </main>
 
         <Social />

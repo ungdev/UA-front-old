@@ -1,7 +1,8 @@
 import React from 'react'
 import Button from '../../../components/button'
 
-const Footer = () => {
+class Footer extends React.Component {
+  render() {
     return (
         <div className="a-home__content a-home__footer">
             <div>
@@ -19,10 +20,11 @@ const Footer = () => {
               </a>
             </div>
             <div style={{ marginTop: '5px' }}>
-              <Button raised={true} onClick={this.openContactModal}>Nous contacter</Button>
+              <Button raised={true} onClick={this.props.openContactModal}>Nous contacter</Button>
             </div>
           </div>
     )
+  }
 }
 
 export default Footer

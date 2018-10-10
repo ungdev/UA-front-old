@@ -137,7 +137,7 @@ class Home extends React.Component {
             <Spotlights />
           </div>
           <Partners />
-          <Footer />
+          <Footer openContactModal={this.openContactModal} />
         </main>
 
         <Social />
