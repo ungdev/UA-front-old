@@ -49,12 +49,14 @@ class Dashboard extends React.Component {
   }
 
   render() {
+    console.log(this.props.user)
     return (
       <div>
         <Header arrow={this.arrow()} />
         <main className="a-dashboard">
           <h1>
-            Dashboard {this.props.user && this.props.user.name && `(${this.props.user.name})`}
+            Dashboard {this.props.user && this.props.user.name && `de ${this.props.user.name}`}
+            {this.props.user.team ? ` (joueur ${this.props.user.team.spotlight.shortName})` : ' (joueur libre)'}
           </h1>
 
           {this.state.render && (
