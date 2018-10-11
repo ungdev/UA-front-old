@@ -39,6 +39,10 @@
 
 .a-login-form .forgot {
   cursor: pointer;
+  font-size: 0.9em;
+  color: #444444;
+  margin-bottom: 15px;
+  display: table;
 }
 
 .a-cantlogin-modal {

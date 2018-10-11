@@ -24,7 +24,7 @@ export default (state = initialState, action) => {
   }
 }
 
-export const autoLogin = () => {
+export const autoLogin = (redirect = '/') => {
   return async dispatch => {
     if (localStorage.hasOwnProperty('arena-2018-token')) {
       dispatch({
@@ -34,7 +34,7 @@ export const autoLogin = () => {
 
       return dispatch(fetchUser())
     } else {
-      return dispatch(logout())
+      return dispatch(logout(redirect))
     }
   }
 }
@@ -75,7 +75,7 @@ export const saveToken = token => {
   }
 }
 
-export const logout = () => {
+export const logout = (redirect = '/') => {
   return async dispatch => {
     dispatch({ type: SET_TOKEN, payload: null })
     dispatch({ type: SET_USER, payload: null })
@@ -84,6 +84,6 @@ export const logout = () => {
     dispatch({ type: SET_PRICES, payload: null })
 
     localStorage.removeItem('arena-2018-token')
-    return dispatch(push('/'))
+    return dispatch(push(redirect))
   }
 }
