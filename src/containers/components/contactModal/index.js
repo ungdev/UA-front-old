@@ -4,11 +4,11 @@ import { Form, Text, TextArea } from 'react-form'
 
 import './contactModal.css'
 
-import Modal from '../../../../components/modal'
-import Button from '../../../../components/button'
-import Select from '../../../../components/select'
+import Modal from '../../../components/modal'
+import Button from '../../../components/button'
+import Select from '../../../components/select'
 
-import { sendMessage } from '../../../../modules/message'
+import { sendMessage } from '../../../modules/message'
 
 class ContactModal extends React.Component {
   constructor() {

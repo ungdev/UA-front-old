@@ -5,13 +5,13 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 
 import './loginModal.css'
 
-import Modal from '../../../../components/modal'
-import Button from '../../../../components/button'
+import Modal from '../../../components/modal'
+import Button from '../../../components/button'
 
-import { register } from '../../../../modules/register'
-import { tryLogin } from '../../../../modules/login'
-import { fetchUser } from '../../../../modules/user'
-import Select from '../../../../components/select'
+import { register } from '../../../modules/register'
+import { tryLogin } from '../../../modules/login'
+import { fetchUser } from '../../../modules/user'
+import Select from '../../../components/select'
 
 class LoginModal extends React.Component {
   constructor() {

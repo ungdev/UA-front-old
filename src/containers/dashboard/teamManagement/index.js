@@ -55,7 +55,7 @@ const TeamManagement = props => {
     {props.user.team.isInSpotlight && (
       <p className="a-teammanagement__warning">
       Vous n'avez plus rien à faire à part venir avec votre matériel le 7 décembre (ou le 8 si vous ne pouvez pas avant). <br/>
-      Restez informez via <a href="https://www.facebook.com/UTTArena/">la page facebook de l'UTT Arena</a>.
+      Restez informé via <a href="https://www.facebook.com/UTTArena/">la page facebook de l'UTT Arena</a>.
       </p>
     )}
     {props.teamStatus.complete === 0 && props.spotlightFull && (
@@ -68,7 +68,7 @@ const TeamManagement = props => {
         <strong>Le tournoi est plein</strong> et <strong>l'équipe est incomplète</strong>. <br/>
         Pour que l'équipe soit complète, il faut que les {spotlight.perTeam} membres aient rejoint l'équipe
         <strong> et</strong> aient payé leur place. Vous serez alors mis sur liste d'attente, au cas où une équipe se désiste.
-        Vous pouvez rejoindre un autre tournoi en créant une nouvelle équipe dans le tournoi choisit, en attendant, vous êtes
+        Vous pouvez rejoindre un autre tournoi en créant une nouvelle équipe dans le tournoi choisi, en attendant, vous êtes
         concidérés comme membre du tournoi libre.
       </p>
     )}

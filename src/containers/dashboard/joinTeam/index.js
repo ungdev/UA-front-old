@@ -35,6 +35,7 @@ class JoinTeam extends React.Component {
               placeholder="Nom de l'équipe"
               options={this.props.teams}
               autoFocus
+              searchable
             />
             <Text field="message" placeholder="Votre message" minLength="3" maxLength="255" />
             <br />

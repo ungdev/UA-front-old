@@ -1,4 +1,6 @@
 import React from 'react'
+import Button from '../../../components/button'
+import { Link } from 'react-router-dom'
 
 import './informations.css'
 
@@ -12,7 +14,7 @@ const Informations = () => (
       rencontres, de nombreuses animations, des <span>lots</span> et du <span>cashprize</span> à gagner, qui rendront cette édition plus intense
       et vibrante que jamais. Pas fan des jeux proposés ? Pas envie d’être dans un cadre compétitif
       ? L’UTT Arena propose un <span>tournoi libre</span>, composé des jeux que vous choisissez ! Alors récupère ta
-      souris, ton casque et ton câble réseau, branche ton écran et <span>vient imposer la domination de
+      souris, ton casque et ton câble réseau, branche ton écran et <span>viens imposer la domination de
       ton équipe dans le Cube</span>.
     </p>
 
@@ -52,6 +54,12 @@ const Informations = () => (
         <div className="a-informations__table__row__cell">Tournois</div>
         <div className="a-informations__table__row__cell">5 (les tournois commencent le Samedi à 10h précises)</div>
       </div>
+    </div>
+
+    <div className="a-informations__more">
+      <Link to={'/informations'}>
+        <Button raised={true}>Plus d'infos</Button>
+      </Link>
     </div>
   </div>
 )

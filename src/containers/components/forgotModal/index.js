@@ -4,10 +4,10 @@ import { Form, Text } from 'react-form'
 
 import './forgotModal.css'
 
-import Modal from '../../../../components/modal'
-import Button from '../../../../components/button'
+import Modal from '../../../components/modal'
+import Button from '../../../components/button'
 
-import { sendResetMail } from '../../../../modules/forgot'
+import { sendResetMail } from '../../../modules/forgot'
 
 class ForgotModal extends React.Component {
   constructor() {

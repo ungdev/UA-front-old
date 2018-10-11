@@ -1,0 +1,101 @@
+.a-intro-header {
+  position: fixed;
+  height: 60px;
+  width: 100vw;
+  max-width: 100%;
+  top: 0;
+  background-color: #202020;
+  border-bottom: 3px solid #fff;
+  z-index: 10;
+}
+
+.a-intro-header__nav__desktop {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.a-intro-header__nav__desktop div {
+  display: inline-block;
+}
+
+.a-intro-header__nav__desktop div:not(.a-intro-header__mainButton) > .a-button {
+  padding: 0 15px;
+  line-height: 57px;
+  height: 57px;
+}
+
+.a-intro-header__nav__desktop div.a-intro-header__mainButton > .a-button {
+  margin: 10px 0 10px 170px;
+}
+
+.a-intro-header__nav__desktop div:nth-child(1) > .a-button {
+  padding-right: 0;
+  display: flex;
+}
+
+.a-intro-header__nav__desktop .a-intro-header__logo {
+  height: 45px;
+}
+
+.a-intro-header__nav__mobile {
+  display: none;
+}
+
+@media screen and (max-width: 1150px) {
+  .a-intro-header__nav__desktop div.a-intro-header__mainButton > .a-button {
+    margin-left: 40px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .a-intro-header__nav__desktop {
+    display: none;
+  }
+
+  .a-intro-header__nav__mobile {
+    display: block;
+  }
+
+  .a-intro-header__nav__mobile .a-intro-header__nav__mobile__topbar {
+    display: flex;
+    align-items: center;
+  }
+
+  .a-intro-header__nav__mobile .a-intro-header__mainButton {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .a-intro-header__nav__mobile__content {
+    background: #202020;
+    box-shadow: 0 3px 0 transparent;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease-in-out, border-bottom .3s;
+  }
+
+  .a-intro-header__nav__mobile__content.active {
+    max-height: 1000px;
+    box-shadow: 0 3px 0 #fff;
+  }
+
+  .a-intro-header__nav__mobile__content > div > .a-button {
+    display: block;
+    padding: 8px 32px;
+  }
+
+  .a-intro-header__nav__mobile__overlay {
+    background: rgba(255,255,255,0.4);
+    position: absolute;
+    height: 0;
+    width: 100vw;
+    transition: height .3s;
+  }
+
+  .a-intro-header__nav__mobile__overlay.active {
+    height: 100vh;
+    transition: height .3s;
+  }
+}
