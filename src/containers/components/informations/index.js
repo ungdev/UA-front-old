@@ -28,7 +28,7 @@ const Informations = () => (
       </div>
       <div className="a-informations__table__row">
         <div className="a-informations__table__row__cell">Ouverture</div>
-        <div className="a-informations__table__row__cell">07/12 2018 - 18h</div>
+        <div className="a-informations__table__row__cell">07/12/2018 - 18h</div>
       </div>
       <div className="a-informations__table__row">
         <div className="a-informations__table__row__cell">Fermeture</div>

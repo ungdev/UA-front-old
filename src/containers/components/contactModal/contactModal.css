@@ -30,7 +30,16 @@
 }
 
 .a-contact-form > textarea {
-  padding: 8px 8px 8px 8px;
+  padding: 8px;
   font-size: 14px;
+  resize: vertical;
+  min-height: 70px;
+}
 
+.a-contact-form input, .a-contact-form textarea {
+  font-family: sans-serif;
+}
+
+.a-contact-form .contact-select {
+  margin-top: 0;
 }

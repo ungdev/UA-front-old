@@ -1,5 +1,4 @@
 import axios from '../lib/axios'
-import fail from '../lib/store.fail'
 import errorToString from '../lib/errorToString'
 import { actions as notifActions } from 'redux-notifications'
 import { saveToken } from './login'

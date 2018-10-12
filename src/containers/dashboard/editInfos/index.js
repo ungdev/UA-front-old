@@ -15,8 +15,8 @@ const genderOptions = [{ label: '', value: 'N/A'}, { label: 'Homme', value: 'M' 
 const EditInfos = props => {
   let gender = 'N/A'
   if(props.user.gender){
-    if(props.user.gender == 'M') gender = { label: 'Homme', value: 'M' }
-    if(props.user.gender == 'F') gender = { label: 'Femme', value: 'F' }
+    if(props.user.gender === 'M') gender = { label: 'Homme', value: 'M' }
+    if(props.user.gender === 'F') gender = { label: 'Femme', value: 'F' }
   }
   return(
   <Form

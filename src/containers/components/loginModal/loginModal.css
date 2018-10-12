@@ -32,6 +32,11 @@
   flex-direction: column;
 }
 
+.a-login-form input,
+.a-register-form input {
+  font-family: sans-serif;
+}
+
 .a-login-form > input,
 .a-register-form > input {
   margin-bottom: 16px;

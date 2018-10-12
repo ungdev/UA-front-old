@@ -75,7 +75,7 @@ class Cart extends React.Component {
   }
 
   onTombolaChange(e){
-    if(e.target.value >= 0) this.setState({ tombola: parseInt(e.target.value)})
+    if(e.target.value >= 0) this.setState({ tombola: parseInt(e.target.value, 10)})
   }
 
   openScoupModal() {
