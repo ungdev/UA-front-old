@@ -2,7 +2,7 @@ module.exports = {
   option: (base, { isSelected, isDisabled }) => {
     const styles = Object.assign({}, base)
 
-    styles.fontSize = '16px'
+    styles.fontSize = '14px'
     styles.color = isSelected ? '#fff'
       : isDisabled ? '#666'
       : '#222'
@@ -23,7 +23,7 @@ module.exports = {
   control: base => ({
     ...base,
     maxWidth: '200px',
-    fontSize: '16px'
+    fontSize: '14px'
   }),
   container: base => ({
     ...base,

@@ -24,15 +24,16 @@ class ContactModal extends React.Component {
   render() {
     const typeOptions = [
       { label: 'Je n\'arrive pas à me connecter', value: '1' },
-      { label: 'J\'ai une question sur le tournoi LoL (Pro)', value: '2' },
-      { label: 'J\'ai une question sur le tournoi LoL (Amateur)', value: '3' },
-      { label: 'J\'ai une question sur le tournoi Fortnite', value: '4' },
-      { label: 'J\'ai une question sur le tournoi Hearthstone', value: '5' },
-      { label: 'J\'ai une question sur le tournoi CS:GO', value: '6' },
-      { label: 'J\'ai une question sur le tournoi SSBU', value: '7' },
-      { label: 'Je rencontre un problème pour payer', value: '8' },
-      { label: 'J\'ai eu une erreur sur le site', value: '9' },
-      { label: 'Signaler un bug', value: '10' },
+      { label: 'Tournoi LoL (Pro)', value: '2' },
+      { label: 'Tournoi LoL (Amateur)', value: '3' },
+      { label: 'Tournoi Fortnite', value: '4' },
+      { label: 'Tournoi Hearthstone', value: '5' },
+      { label: 'Tournoi CS:GO', value: '6' },
+      { label: 'Tournoi SSBU', value: '7' },
+      { label: 'Tournoi libre', value: '8' },
+      { label: 'Je rencontre un problème pour payer', value: '9' },
+      { label: 'J\'ai eu une erreur sur le site', value: '10' },
+      { label: 'Signaler un bug', value: '11' },
       { label: 'Autre', value: 'other' }]
     return (
       <Modal isOpen={this.props.isOpen} onClose={this.props.onClose}>
@@ -69,6 +70,7 @@ class ContactModal extends React.Component {
                         searchable={true}
                         options={typeOptions}
                         style={{ maxWidth: '400px' }}
+                        placeholder="Sujet"
                       />
                       <Text field="email" type="email" placeholder="Mail" />
                       <Text field="phone" type="tel" placeholder="Téléphone" />

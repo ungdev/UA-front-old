@@ -87,13 +87,15 @@ class LoginModal extends React.Component {
                         maxLength="90"
                         autoFocus
                       />
-                      <p style={{ marginTop: 0, marginBottom: 0, color: '#888888' }}>Pour LoL le nom d'utilisateur doit être le nom d'invocateur</p>
+                      <p style={{ marginTop: 0, marginBottom: 0, color: '#888888', fontSize: '0.9em' }}>Pour LoL le nom d'utilisateur doit être le nom d'invocateur</p>
                       <Select
                         field="gender"
                         isClearable={false}
                         backspaceRemovesValue={false}
                         searchable={false}
                         options={genderOptions}
+                        placeholder="Sélectionner..."
+                        styles={{fontSize: '10px'}}
                       />
                       <Text
                         field="firstname"
@@ -111,7 +113,7 @@ class LoginModal extends React.Component {
                         minLength="2"
                         maxLength="200"
                       />
-                      <Text field="email" type="email" placeholder="Mail" />
+                      <Text field="email" type="email" placeholder="E-mail" />
                       <Text
                         field="password"
                         type="password"
