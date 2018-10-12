@@ -4,15 +4,15 @@ import './intro.css'
 
 import logo from '../../../assets/ua2018.png'
 import csgo from '../../../assets/csgo.jpg'
-import hearthstone from '../../../assets/hearthstone.jpg'
+import hearthstone from '../../../assets/hs.jpg'
 import lol from '../../../assets/lol.jpg'
 import fortnite from '../../../assets/fortnite.jpg'
 import smbu from '../../../assets/smbu.jpg'
 
 const Intro = props => {
-  const imgs = [fortnite, hearthstone, csgo, lol, smbu].map(img => ({
+  const imgs = [lol, smbu, csgo, fortnite, hearthstone].map(img => ({
     backgroundImage: `url(${img})`,
-    backgroundPosition: 'center 15%'
+    //backgroundPosition: 'center 15%'
   }))
 
   imgs[1].backgroundPosition = 'right'
