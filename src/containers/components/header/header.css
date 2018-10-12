@@ -103,4 +103,10 @@
   .a-intro-header__nav__mobile .a-intro-header__mainButton {
     left: 60%;
   }
+  .a-intro-header__nav__mobile__topbar > div > button > img {
+    height: 20px;
+  }
+  .a-intro-header__nav__mobile__topbar > div > button {
+    margin-top: 3px;
+  }
 }
