@@ -6,8 +6,8 @@ const Informations = () => (
   <div className="a-informations">
     <h2>VENEZ RETROUVER L'AMBIANCE D'UNE LAN PARTY AUTHENTIQUE AVEC VOTRE ÉQUIPE.</h2>
     <p>
-      L'UTT Arena revient pour sa 16ème édition les <span>7, 8 et 9 décembre 2018</span>. Cette édition aura
-      lieu comme l'année dernière dans le cadre du <span>Festival des Jeux</span> au Centre d'exposition de Troyes, le Cube. Au programme
+        L'UTT Arena revient pour sa 16<sup>ème</sup> édition les <span>7, 8 et 9 décembre 2018</span>. Cette édition aura
+      lieu – comme l'année dernière – dans le cadre du <span>Festival des Jeux</span> au Parc des Expositions de Troyes, le Cube. Au programme
         <span> 5 tournois</span> sur des incontournables de l'E-sport, du skill, des personnalités et des
       rencontres, de nombreuses animations, des <span>lots</span> et du <span>cashprize</span> à gagner, qui rendront cette édition plus intense
       et vibrante que jamais. Pas fan des jeux proposés ? Pas envie d’être dans un cadre compétitif
