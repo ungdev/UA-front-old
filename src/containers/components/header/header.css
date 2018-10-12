@@ -28,21 +28,11 @@
   margin-bottom: 10px;
 }
 
-.a-intro-header__nav__desktop div:nth-child(1) > .a-button {
-  padding-right: 0;
-  display: flex;
-}
-
-.a-intro-header__nav__desktop .a-intro-header__logo {
-  height: 45px;
-}
-
 .a-intro-header__nav__mobile {
   display: none;
 }
 
-
-@media screen and (max-width: 995px) {
+@media screen and (max-width: 996px) {
   .a-intro-header__nav__desktop {
     display: none;
   }
@@ -58,6 +48,10 @@
     height: 100%;
   }
 
+  .a-intro-header__nav__mobile .a-intro-header__hamburger {
+    height: 25px;
+  }
+
   .a-intro-header__nav__mobile .a-intro-header__mainButton {
     position: absolute;
     left: 50%;
@@ -69,7 +63,7 @@
     box-shadow: 0 3px 0 transparent;
     max-height: 0;
     overflow: hidden;
-    transition: max-height .3s ease-in-out, border-bottom .3s;
+    transition: max-height .3s ease-in-out, box-shadow .3s;
   }
 
   .a-intro-header__nav__mobile__content.active {
@@ -96,16 +90,11 @@
   }
 }
 
-@media (max-width: 350px){
-  .a-intro-header__nav__mobile .a-intro-header__mainButton > button {
-    font-size: 15px;
-  }
+@media screen and (max-width: 350px) {
   .a-intro-header__nav__mobile .a-intro-header__mainButton {
     left: 60%;
   }
-  .a-intro-header__nav__mobile__topbar > div > button > img {
-    height: 20px;
-  }
+
   .a-intro-header__nav__mobile__topbar > div > button {
     margin-top: 3px;
   }

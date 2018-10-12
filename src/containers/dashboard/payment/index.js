@@ -131,7 +131,7 @@ class EditInfos extends React.Component {
   }
 
   onTombolaChange(e){
-    if(e.target.value >= 0) this.setState({ tombola: parseInt(e.target.value)})
+    if(e.target.value >= 0) this.setState({ tombola: parseInt(e.target.value, 10)})
   }
 
   payment() {
@@ -237,7 +237,7 @@ class EditInfos extends React.Component {
           </div>
         </ListItem>
         <ListItem
-          price={`+${parseInt(this.state.tombola)}`}
+          price={`+${parseInt(this.state.tombola, 10)}`}
           active={this.state.tombola > 0}
           onClick={() => this.setState({ tombola: this.state.tombola + 1 })}
         >
