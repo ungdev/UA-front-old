@@ -7,5 +7,3 @@
 - FAQ
 - Page tournois
 - Page partenaires
-- Fortnite
-- Responsive
