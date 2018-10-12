@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 import SmoothScroll from 'smooth-scroll'
 
-import logo from '../../../assets/ua2018.small.png'
+import logo from '../../../assets/hamburger.png'
 import Button from '../../../components/button'
 
 import './header.css'
@@ -50,9 +50,6 @@ class Header extends React.Component {
       <header className="a-intro-header">
         <nav className="a-intro-header__nav__desktop">
           <div>
-            <Button onClick={this.props.gotoHome}><img className="a-intro-header__logo" src={logo} height="45" /></Button>
-          </div>
-          <div>
             <Button onClick={this.props.gotoHome}>Accueil</Button>
           </div>
           <div>
@@ -75,7 +72,7 @@ class Header extends React.Component {
         <nav className="a-intro-header__nav__mobile">
           <div className="a-intro-header__nav__mobile__topbar">
             <div>
-              <Button onClick={this.toggleMobileMenu}><img className="a-intro-header__logo" src={logo} height="45" /></Button>
+              <Button onClick={this.toggleMobileMenu}><img className="a-intro-header__logo" src={logo} height="30" /></Button>
             </div>
             <div className="a-intro-header__mainButton">
               <Button onClick={this.mainButton} raised>{mainButtonText}</Button>
