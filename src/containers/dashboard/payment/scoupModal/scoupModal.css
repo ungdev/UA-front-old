@@ -1,0 +1,59 @@
+
+
+.a-react-scoup-modal {
+  width: 95% !important;
+  max-width: 880px;
+  top: 5% !important;
+}
+
+.a-scoup-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.a-scoup-form > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.a-scoup-form > h2 {
+  color: #000;
+  text-align: center;
+  font-family: 'ua2018-font', Impact, sans-serif;
+}
+
+.a-scoup-form > div > .a-list-item{
+  padding: 10px 10px 10px 10px;
+  margin-bottom: 5px;
+  width: 49%;
+}
+
+.a-scoup-form > div > .a-list-item > h3 {
+  font-size: 18px;
+}
+
+.a-scoup-form > button {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 90%;
+}
+
+@media (max-width: 768px) {
+  .a-react-scoup-modal {
+    top: 1% !important;
+  }
+  .a-scoup-form > div > li.a-list-item[data-price]::after {
+    right: 10px;
+    top: 25%;
+    font-size: 15px;
+  }
+  .a-scoup-form > div > .a-list-item[data-price] > span {
+    font-size: 12px;
+    max-width: calc(100% - 10px);
+  }
+  .a-scoup-form > button {
+    font-size: 17px;
+  }
+}

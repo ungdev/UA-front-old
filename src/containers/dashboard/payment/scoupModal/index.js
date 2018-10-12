@@ -1,0 +1,229 @@
+import React from 'react'
+import { connect } from 'react-redux'
+
+import './scoupModal.css'
+
+import Modal from '../../../../components/modal'
+import ListItem from '../../../../components/list-item'
+import Button from '../../../../components/button'
+
+class ScoupModal extends React.Component {
+  constructor(props) {
+    super(props)
+    this.submit = this.submit.bind(this)
+    const { user } = props
+    this.state = {
+      kaliento: user? user.kaliento : true,
+      mouse: user? user.mouse : false,
+      keyboard: user? user.keyboard : false,
+      headset: user? user.headset : false,
+      screen24: user? user.screen24 : false,
+      screen27: user? user.screen27 : false,
+      chair: user? user.chair : false,
+      gamingPC: user? user.gamingPC : false,
+      streamingPC: user? user.streamingPC : false,
+      laptop: user? user.laptop : false,
+    }
+    this.toggleKaliento = this.toggleKaliento.bind(this)
+    this.toggleMouse = this.toggleMouse.bind(this)
+    this.toggleKeyboard = this.toggleKeyboard.bind(this)
+    this.toggleHeadset = this.toggleHeadset.bind(this)
+    this.toggleScreen24 = this.toggleScreen24.bind(this)
+    this.toggleScreen27 = this.toggleScreen27.bind(this)
+    this.toggleChair = this.toggleChair.bind(this)
+    this.toggleGamingPC = this.toggleGamingPC.bind(this)
+    this.toggleStreamingPC = this.toggleStreamingPC.bind(this)
+    this.toggleLaptop = this.toggleLaptop.bind(this)
+  }
+
+  submit() {
+    console.log(this.state)
+    this.props.onClose(this.state)
+  }
+
+  toggleKaliento() {
+    this.setState({ kaliento: !this.state.kaliento })
+  }
+
+  toggleMouse() {
+    this.setState({ mouse: !this.state.mouse })
+  }
+
+  toggleKeyboard() {
+    this.setState({ keyboard: !this.state.keyboard })
+  }
+
+  toggleHeadset() {
+    this.setState({ headset: !this.state.headset })
+  }
+
+  toggleScreen24() {
+    this.setState({ screen24: !this.state.screen24 })
+  }
+
+  toggleScreen27() {
+    this.setState({ screen27: !this.state.screen27 })
+  }
+
+  toggleChair() {
+    this.setState({ chair: !this.state.chair })
+  }
+
+  toggleGamingPC() {
+    this.setState({ gamingPC: !this.state.gamingPC })
+  }
+
+  toggleStreamingPC() {
+    this.setState({ streamingPC: !this.state.streamingPC })
+  }
+
+  toggleLaptop() {
+    this.setState({ laptop: !this.state.laptop })
+  }
+
+
+  render() {
+    const price =
+    (this.state.kaliento ? this.props.prices.kaliento : 0) +
+    (this.state.mouse ? this.props.prices.mouse : 0) +
+    (this.state.keyboard ? this.props.prices.keyboard : 0) +
+    (this.state.headset ? this.props.prices.headset : 0) +
+    (this.state.screen24 ? this.props.prices.screen24 : 0) +
+    (this.state.screen27 ? this.props.prices.screen27 : 0) +
+    (this.state.chair ? this.props.prices.chair : 0) +
+    (this.state.gamingPC ? this.props.prices.gamingPC : 0) +
+    (this.state.streamingPC ? this.props.prices.streamingPC : 0) +
+    (this.state.laptop ? this.props.prices.laptop : 0)
+
+    return (
+      <Modal isOpen={this.props.isOpen} onClose={this.props.onClose} name="a-react-scoup-modal">
+          <div className="a-scoup-modal">
+            <form className="a-scoup-form">
+              <h2>Matériel Scoup Esport</h2>
+              <div>
+                <ListItem
+                  price={`+${this.props.prices.kaliento}`}
+                  active={this.state.kaliento}
+                  onClick={this.toggleKaliento}
+                >
+                  <h3>Kaliento</h3>
+                  <span>
+                    Louer un chauffeur de main électrique Kaliento
+                  </span>
+                </ListItem>
+                <ListItem
+                  price={`+${this.props.prices.mouse}`}
+                  active={this.state.mouse}
+                  onClick={this.toggleMouse}
+                >
+                  <h3>Souris</h3>
+                  <span>
+                  Louer une souris gaming
+                  </span>
+                </ListItem>
+              </div>
+              <div>
+                <ListItem
+                  price={`+${this.props.prices.keyboard}`}
+                  active={this.state.keyboard}
+                  onClick={this.toggleKeyboard}
+                >
+                  <h3>Clavier</h3>
+                  <span>
+                  Louer un clavier gaming
+                  </span>
+                </ListItem>
+                <ListItem
+                  price={`+${this.props.prices.headset}`}
+                  active={this.state.headset}
+                  onClick={this.toggleHeadset}
+                >
+                  <h3>Casque</h3>
+                  <span>
+                  Louer un casque gaming
+                  </span>
+                </ListItem>
+              </div>
+              <div>
+                <ListItem
+                  price={`+${this.props.prices.chair}`}
+                  active={this.state.chair}
+                  onClick={this.toggleChair}
+                >
+                  <h3>Chaise</h3>
+                  <span>
+                  Louer une chaise gaming
+                  </span>
+                </ListItem>
+                <ListItem
+                  price={`+${this.props.prices.screen24}`}
+                  active={this.state.screen24}
+                  onClick={this.toggleScreen24}
+                >
+                  <h3>Écran 24"</h3>
+                  <span>
+                    Louer un écran 24" 144Hz
+                  </span>
+                </ListItem>
+              </div>
+              <div>
+                <ListItem
+                  price={`+${this.props.prices.screen27}`}
+                  active={this.state.screen27}
+                  onClick={this.toggleScreen27}
+                >
+                  <h3>Écran 27"</h3>
+                  <span>
+                    Louer un écran 27" 144Hz
+                  </span>
+                </ListItem>
+                <ListItem
+                  price={`+${this.props.prices.laptop}`}
+                  active={this.state.laptop}
+                  onClick={this.toggleLaptop}
+                >
+                  <h3>PC portable</h3>
+                  <span>
+                  Louer une souris gaming
+                  </span>
+                </ListItem>
+              </div>
+              <div>
+                <ListItem
+                  price={`+${this.props.prices.gamingPC}`}
+                  active={this.state.gamingPC}
+                  onClick={this.toggleGamingPC}
+                >
+                  <h3>PC Gaming</h3>
+                  <span>
+                  Louer une souris gaming
+                  </span>
+                </ListItem>
+                <ListItem
+                  price={`+${this.props.prices.streamingPC}`}
+                  active={this.state.streamingPC}
+                  onClick={this.toggleStreamingPC}
+                >
+                  <h3>PC de streamer</h3>
+                  <span>
+                  Louer un pc de streamer
+                  </span>
+                </ListItem>
+              </div>
+              <Button onClick={this.submit} raised>
+                Ajouter le matériel au panier ({price}€)
+              </Button>
+            </form>
+          </div>
+      </Modal>
+    )
+  }
+}
+
+const mapDispatchToProps = dispatch => ({
+})
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(ScoupModal)
