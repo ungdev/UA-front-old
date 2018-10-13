@@ -247,7 +247,7 @@ class Cart extends React.Component {
           <ListItem
             price={`+${parseInt(this.state.tombola)}`}
             active={this.state.tombola > 0}
-            onClick={() => this.setState({ tombola: this.state.tombola + 1 })}
+            onClick={() => this.state.tombola > 0 ? this.setState({ tombola: 0 }) : this.setState({ tombola: 1 })}
           >
             <h3>Tombola</h3>
             <span>Acheter des tickets de tombola à 1€ par ticket</span>
