@@ -125,7 +125,7 @@
   }
 }
 
-@media (min-width: 996px) {
+@media (max-width: 990px) {
   .a-intro__logo {
     top: 140px;
   }

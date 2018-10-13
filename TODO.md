@@ -1,9 +1,9 @@
 # Features
 
-- Tournoi spotlight plein
-- Ajouter câble 7m à 10€
+- Tournoi spotlight plein - done, à tester
 - PDF billet
 - Templates mail (inscription, billet, ...)
 - FAQ
 - Page tournois
 - Page partenaires
+- limiter à 460 paiement (afin de limiter le libre)
