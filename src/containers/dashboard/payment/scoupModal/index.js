@@ -1,9 +1,9 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
 import './scoupModal.css'
 
 import Modal from '../../../../components/modal'
+import { StreamingPCModal, GamingPCModal, LaptopModal } from '../moreInfoModal'
 import ListItem from '../../../../components/list-item'
 import Button from '../../../../components/button'
 
@@ -23,6 +23,10 @@ class ScoupModal extends React.Component {
       gamingPC: user? user.gamingPC : false,
       streamingPC: user? user.streamingPC : false,
       laptop: user? user.laptop : false,
+      isStreamingModalOpen: false,
+      isGamingModalOpen: false,
+      isLaptopModalOpen: false,
+      item: 'PC Streaming'
     }
     this.toggleKaliento = this.toggleKaliento.bind(this)
     this.toggleMouse = this.toggleMouse.bind(this)
@@ -34,6 +38,10 @@ class ScoupModal extends React.Component {
     this.toggleGamingPC = this.toggleGamingPC.bind(this)
     this.toggleStreamingPC = this.toggleStreamingPC.bind(this)
     this.toggleLaptop = this.toggleLaptop.bind(this)
+    this.moreInfoStreaming = this.moreInfoStreaming.bind(this)
+    this.moreInfoGaming = this.moreInfoGaming.bind(this)
+    this.moreInfoLaptop = this.moreInfoLaptop.bind(this)
+    this.closeMoreInfo = this.closeMoreInfo.bind(this)
   }
 
   submit() {
@@ -80,6 +88,27 @@ class ScoupModal extends React.Component {
   toggleLaptop() {
     this.setState({ laptop: !this.state.laptop })
   }
+  
+  moreInfoStreaming(e) {
+    e.stopPropagation()
+    this.setState({ isStreamingModalOpen: true })
+  }
+  moreInfoGaming(e) {
+    e.stopPropagation()
+    this.setState({ isGamingModalOpen: true })
+  }
+  moreInfoLaptop(e) {
+    e.stopPropagation()
+    this.setState({ isLaptopModalOpen: true })
+  }
+  
+  closeMoreInfo() {
+    this.setState({ 
+      isStreamingModalOpen: false,
+      isGamingModalOpen: false,
+      isLaptopModalOpen: false,
+     })
+  }
 
 
   render() {
@@ -96,134 +125,152 @@ class ScoupModal extends React.Component {
     (this.state.laptop ? this.props.prices.laptop : 0)
 
     return (
-      <Modal isOpen={this.props.isOpen} onClose={this.props.onClose} name="a-react-scoup-modal">
-          <div className="a-scoup-modal">
-            <form className="a-scoup-form">
-              <h2>Matériel Scoup Esport</h2>
-              <div>
-                <ListItem
-                  price={`+${this.props.prices.kaliento}`}
-                  active={this.state.kaliento}
-                  onClick={this.toggleKaliento}
-                >
-                  <h3>Kaliento</h3>
-                  <span>
-                    Louer un chauffeur de main électrique Kaliento
-                  </span>
-                </ListItem>
-                <ListItem
-                  price={`+${this.props.prices.mouse}`}
-                  active={this.state.mouse}
-                  onClick={this.toggleMouse}
-                >
-                  <h3>Souris</h3>
-                  <span>
-                  Louer une souris gaming
-                  </span>
-                </ListItem>
-              </div>
-              <div>
-                <ListItem
-                  price={`+${this.props.prices.keyboard}`}
-                  active={this.state.keyboard}
-                  onClick={this.toggleKeyboard}
-                >
-                  <h3>Clavier</h3>
-                  <span>
-                  Louer un clavier gaming
-                  </span>
-                </ListItem>
-                <ListItem
-                  price={`+${this.props.prices.headset}`}
-                  active={this.state.headset}
-                  onClick={this.toggleHeadset}
-                >
-                  <h3>Casque</h3>
-                  <span>
-                  Louer un casque gaming
-                  </span>
-                </ListItem>
-              </div>
-              <div>
-                <ListItem
-                  price={`+${this.props.prices.chair}`}
-                  active={this.state.chair}
-                  onClick={this.toggleChair}
-                >
-                  <h3>Chaise</h3>
-                  <span>
-                  Louer une chaise gaming
-                  </span>
-                </ListItem>
-                <ListItem
-                  price={`+${this.props.prices.screen24}`}
-                  active={this.state.screen24}
-                  onClick={this.toggleScreen24}
-                >
-                  <h3>Écran 24"</h3>
-                  <span>
-                    Louer un écran 24" 144Hz
-                  </span>
-                </ListItem>
-              </div>
-              <div>
-                <ListItem
-                  price={`+${this.props.prices.screen27}`}
-                  active={this.state.screen27}
-                  onClick={this.toggleScreen27}
-                >
-                  <h3>Écran 27"</h3>
-                  <span>
-                    Louer un écran 27" 144Hz
-                  </span>
-                </ListItem>
-                <ListItem
-                  price={`+${this.props.prices.laptop}`}
-                  active={this.state.laptop}
-                  onClick={this.toggleLaptop}
-                >
-                  <h3>PC portable</h3>
-                  <span>
-                  Louer une souris gaming
-                  </span>
-                </ListItem>
-              </div>
-              <div>
-                <ListItem
-                  price={`+${this.props.prices.gamingPC}`}
-                  active={this.state.gamingPC}
-                  onClick={this.toggleGamingPC}
-                >
-                  <h3>PC Gaming</h3>
-                  <span>
-                  Louer une souris gaming
-                  </span>
-                </ListItem>
-                <ListItem
-                  price={`+${this.props.prices.streamingPC}`}
-                  active={this.state.streamingPC}
-                  onClick={this.toggleStreamingPC}
-                >
-                  <h3>PC de streamer</h3>
-                  <span>
-                  Louer un pc de streamer
-                  </span>
-                </ListItem>
-              </div>
-              <Button onClick={this.submit} raised>
-                Ajouter le matériel au panier ({price}€)
-              </Button>
-            </form>
-          </div>
-      </Modal>
+      <React.Fragment>
+        <Modal isOpen={this.props.isOpen} onClose={this.props.onClose} name="a-react-scoup-modal">
+            <div className="a-scoup-modal">
+              <form className="a-scoup-form">
+                <h2>Matériel Scoup Esport</h2>
+                <div>
+                  <ListItem
+                    price={`+${this.props.prices.kaliento}`}
+                    active={this.state.kaliento}
+                    onClick={this.toggleKaliento}
+                  >
+                    <h3>Kaliento</h3>
+                    <span>
+                      Louer un chauffeur de main électrique Kaliento
+                    </span>
+                  </ListItem>
+                  <ListItem
+                    price={`+${this.props.prices.mouse}`}
+                    active={this.state.mouse}
+                    onClick={this.toggleMouse}
+                  >
+                    <h3>Souris</h3>
+                    <span>
+                    Louer une souris gaming
+                    </span>
+                  </ListItem>
+                </div>
+                <div>
+                  <ListItem
+                    price={`+${this.props.prices.keyboard}`}
+                    active={this.state.keyboard}
+                    onClick={this.toggleKeyboard}
+                  >
+                    <h3>Clavier</h3>
+                    <span>
+                    Louer un clavier gaming
+                    </span>
+                  </ListItem>
+                  <ListItem
+                    price={`+${this.props.prices.headset}`}
+                    active={this.state.headset}
+                    onClick={this.toggleHeadset}
+                  >
+                    <h3>Casque</h3>
+                    <span>
+                    Louer un casque gaming
+                    </span>
+                  </ListItem>
+                </div>
+                <div>
+                  <ListItem
+                    price={`+${this.props.prices.chair}`}
+                    active={this.state.chair}
+                    onClick={this.toggleChair}
+                  >
+                    <h3>Chaise</h3>
+                    <span>
+                    Louer une chaise gaming
+                    </span>
+                  </ListItem>
+                  <ListItem
+                    price={`+${this.props.prices.screen24}`}
+                    active={this.state.screen24}
+                    onClick={this.toggleScreen24}
+                  >
+                    <h3>Écran 24"</h3>
+                    <span>
+                      Louer un écran 24" 144Hz
+                    </span>
+                  </ListItem>
+                </div>
+                <div>
+                  <ListItem
+                    price={`+${this.props.prices.screen27}`}
+                    active={this.state.screen27}
+                    onClick={this.toggleScreen27}
+                  >
+                    <h3>Écran 27"</h3>
+                    <span>
+                      Louer un écran 27" 144Hz
+                    </span>
+                  </ListItem>
+                  <ListItem
+                    price={`+${this.props.prices.laptop}`}
+                    active={this.state.laptop}
+                    onClick={this.toggleLaptop}
+                  >
+                    <h3>PC portable</h3>
+                    <span>
+                      Louer un PC Portable Gaming
+                    </span>
+                    <Button onClick={(e) => this.moreInfoLaptop(e)} raised className="a-info-button">
+                      ?
+                    </Button>
+                  </ListItem>
+                </div>
+                <div>
+                  <ListItem
+                    price={`+${this.props.prices.gamingPC}`}
+                    active={this.state.gamingPC}
+                    onClick={this.toggleGamingPC}
+                  >
+                    <h3>PC Gaming</h3>
+                    <span>
+                    Louer une tour gaming
+                    </span>
+                    <Button onClick={(e) => this.moreInfoGaming(e)} raised className="a-info-button">
+                      ?
+                    </Button>
+                  </ListItem>
+                  <ListItem
+                    price={`+${this.props.prices.streamingPC}`}
+                    active={this.state.streamingPC}
+                    onClick={this.toggleStreamingPC}
+                  >
+                    <h3>PC streaming</h3>
+                    <span>
+                    Louer un pc de streamer
+                    </span>
+                    <Button onClick={(e) => this.moreInfoStreaming(e)} raised className="a-info-button">
+                      ?
+                    </Button>
+                  </ListItem>
+                </div>
+                <Button onClick={this.submit} raised>
+                  Ajouter le matériel au panier ({price}€)
+                </Button>
+              </form>
+            </div>
+        </Modal>
+        <StreamingPCModal
+          isOpen={this.state.isStreamingModalOpen}
+          onClose={this.closeMoreInfo}
+        />
+        <GamingPCModal
+          isOpen={this.state.isGamingModalOpen}
+          onClose={this.closeMoreInfo}
+        />
+        <LaptopModal
+          isOpen={this.state.isLaptopModalOpen}
+          onClose={this.closeMoreInfo}
+        />
+      </React.Fragment>
     )
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-})
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(ScoupModal)
+export default ScoupModal

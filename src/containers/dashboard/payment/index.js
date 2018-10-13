@@ -33,6 +33,16 @@ class Cart extends React.Component {
       tombola: 0,
       shirtGender: { value: 'H', label: 'Homme' },
       shirtSize: { value: 'M', label: 'M' },
+      kaliento: user? user.kaliento : true,
+      mouse: user? user.mouse : false,
+      keyboard: user? user.keyboard : false,
+      headset: user? user.headset : false,
+      screen24: user? user.screen24 : false,
+      screen27: user? user.screen27 : false,
+      chair: user? user.chair : false,
+      gamingPC: user? user.gamingPC : false,
+      streamingPC: user? user.streamingPC : false,
+      laptop: user? user.laptop : false,
       isScoupModalOpen: false,
     }
 
