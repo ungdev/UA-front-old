@@ -120,7 +120,7 @@ class Informations extends React.Component {
             <Category id="presentation">Présentation</Category>
             <p style={{ textAlign: 'justify'}}>
               L’<span className="a-infos__important">UTT Arena</span> c’est le plus gros événement de l’association <span className="a-infos__important">UTT Net Group</span> en matière d’e-sport. L’association a été créée en 1998 et avait pour vocation de réunir les passionnés d’informatique et des nouvelles technologies de l’Université de Technologie de Troyes (UTT).<br />
-              L’UA réalise sa <span className="a-infos__important">16ème édition</span> cette année ! Au commencement, lors de la première édition, nous étions dans une salle d’examen de l’UTT avec une centaine de joueurs.<br />
+              L’UA réalise sa <span className="a-infos__important">16<sup>ème</sup> édition</span> cette année ! Au commencement, lors de la première édition, nous étions dans une salle d’examen de l’UTT avec une centaine de joueurs.<br />
               Puis l'événement a grandi, l’organisation a augmenté à 200 joueurs avec une scène dans la halle sportive de l’UTT.<br />
               2015 arriva, une opportunité unique nous a été offerte par la ville avec la création du Festival des Jeux. Nous avons donc déménagé au Cube et nous sommes depuis dans le format que vous connaissez !<br />
               &Agrave; présent l’UTT Arena c’est <span className="a-infos__important">460 joueurs</span>, <span className="a-infos__important">5 tournois spotlights</span>, une scène de 70 m² et une centaine de bénévoles.<br />
@@ -249,8 +249,8 @@ class Informations extends React.Component {
               <p>La répartition des récompenses entre les 3 premières places est la suivante :
               </p>
               <ul>
-                <li>1ère place : Cashprize et lots</li>
-                <li>2è et 3è places : Lots</li>
+                <li>1<sup>ère</sup> place : Cashprize et lots</li>
+                <li>2<sup>ème</sup> et 3<sup>ème</sup> places : Lots</li>
               </ul>
               <p>
                 Cette année l'<span>UTT Arena</span> s'est associée avec de nombreux partenaires pour vous offrir des lots de qualité !
