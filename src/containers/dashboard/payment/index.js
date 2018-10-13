@@ -29,6 +29,7 @@ class Cart extends React.Component {
     this.state = {
       plusone: user? user.plusone : false,
       ethernet: user? user.ethernet : false,
+      ethernet7: user? user.ethernet7 : false,
       shirt: user? (user.shirt && user.shirt !== 'none') : false,
       tombola: 0,
       shirtGender: { value: 'H', label: 'Homme' },
@@ -51,6 +52,7 @@ class Cart extends React.Component {
     this.switchToPlayer = this.switchToPlayer.bind(this)
     this.switchToPlusone = this.switchToPlusone.bind(this)
     this.toggleEthernet = this.toggleEthernet.bind(this)
+    this.toggleEthernet7 = this.toggleEthernet7.bind(this)
     this.toggleShirt = this.toggleShirt.bind(this)
     this.onTombolaChange = this.onTombolaChange.bind(this)
     this.changeGender = this.changeGender.bind(this)
@@ -70,6 +72,10 @@ class Cart extends React.Component {
 
   toggleEthernet() {
     this.setState({ ethernet: !this.state.ethernet })
+  }
+
+  toggleEthernet7() {
+    this.setState({ ethernet7: !this.state.ethernet7 })
   }
 
   toggleShirt() {
@@ -111,6 +117,7 @@ class Cart extends React.Component {
     const basket = {
       plusone: this.state.plusone,
       ethernet: this.state.ethernet,
+      ethernet7: this.state.ethernet7,
       kaliento: this.state.kaliento,
       mouse: this.state.mouse,
       keyboard: this.state.keyboard,
@@ -137,6 +144,7 @@ class Cart extends React.Component {
     const price =
       (this.state.plusone ? this.props.prices.plusone : playerPrice) +
       (this.state.ethernet ? this.props.prices.ethernet : 0) +
+      (this.state.ethernet7 ? this.props.prices.ethernet7 : 0) +
       (this.state.shirt ? this.props.prices.shirt : 0) +
       (this.state.kaliento ? this.props.prices.kaliento : 0) +
       (this.state.mouse ? this.props.prices.mouse : 0) +
@@ -197,9 +205,19 @@ class Cart extends React.Component {
             active={this.state.ethernet}
             onClick={this.toggleEthernet}
           >
-            <h3>Câble ethernet</h3>
+            <h3>Câble ethernet (5m)</h3>
             <span>
               Un câble (<strong>5m</strong>) est requis pour se brancher aux switchs des tables
+            </span>
+          </ListItem>
+          <ListItem
+            price={`+${this.props.prices.ethernet7}`}
+            active={this.state.ethernet7}
+            onClick={this.toggleEthernet7}
+          >
+            <h3>Câble ethernet (7m)</h3>
+            <span>
+              Un câble (<strong>7m</strong>) plus long pour les joueurs situés en bout de table
             </span>
           </ListItem>
           <ListItem
