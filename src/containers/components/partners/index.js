@@ -13,7 +13,7 @@ class Partners extends React.Component {
     }))
     return (
       <div className="a-partners">
-        <h2 className="a-partners__partner">PARTENAIRES</h2>
+        {this.props.noTitle ? null : <h2 className="a-partners__partner">PARTENAIRES</h2>}
         <div className="a-partners_logos">
           {partners.map((partner, i) =>
             
