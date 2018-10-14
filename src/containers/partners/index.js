@@ -123,7 +123,7 @@ class Partners extends React.Component {
           <div style={{ marginTop: '40px', backgroundColor: '#202020' }}>
             <Category>Nos partenaires</Category>
           </div>
-          <PartnersList noTitle />
+          {/*<PartnersList noTitle />*/}
           <div className="a-partners-list">
             {partners.map((partner, i) =>
               <a
@@ -132,7 +132,7 @@ class Partners extends React.Component {
                 href={partner.url}
               >
                 <div><img src={partner.image} key={i} alt={partner.name} /></div>
-                <div>{partner.description.map(desc => <p key={id++}>{desc}</p>)}</div>
+                <div className="a-partners-text">{partner.description.map(desc => <p key={id++}>{desc}</p>)}</div>
               </a>
             )}
           </div>

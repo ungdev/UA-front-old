@@ -18,6 +18,8 @@
   color: #222222;
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .a-partners-list > .a-partners-item > div{
@@ -28,8 +30,12 @@
   max-width: 200px;
   max-height: 200px;
 }
+.a-partners-list > .a-partners-item > .a-partners-text{
+  width: 60%;
+  min-width: 250px;
+}
 
-.a-partners-list > .a-partners-item > div > p{
+.a-partners-list > .a-partners-item > .a-partners-text > p{
   text-align: justify;
   padding: 10px 10px 10px 10px;
   margin: 0px 0px 0px 0px;
