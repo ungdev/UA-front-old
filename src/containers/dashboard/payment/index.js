@@ -91,7 +91,8 @@ class Cart extends React.Component {
   }
 
   onTombolaChange(e){
-    if(e.target.value >= 0) this.setState({ tombola: parseInt(e.target.value, 10)})
+    if(e.target.value === '') return this.setState({ tombola: 0 })
+    if(e.target.value >= 0) this.setState({ tombola: parseInt(e.target.value, 10) > 100 ? 100 : parseInt(e.target.value, 10) })
   }
 
   openScoupModal() {
@@ -245,7 +246,7 @@ class Cart extends React.Component {
             </div>
           </ListItem>
           <ListItem
-            price={`+${parseInt(this.state.tombola)}`}
+            price={`+${parseInt(this.state.tombola, 10)}`}
             active={this.state.tombola > 0}
             onClick={() => this.state.tombola > 0 ? this.setState({ tombola: 0 }) : this.setState({ tombola: 1 })}
           >

@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Form, Text } from 'react-form'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
+import { actions as notifActions } from 'redux-notifications'
 
 import './loginModal.css'
 
@@ -33,6 +34,7 @@ class LoginModal extends React.Component {
   }
 
   submit(user) {
+    if(user.password !== user.password2) return this.props.passwordMismatch()
     if(!user.gender) user.gender = 'N/A'
     else user.gender = user.gender.value
     this.setState({
@@ -156,7 +158,14 @@ const mapDispatchToProps = dispatch => ({
       dispatch(fetchUser())
     })
   },
-  register: user => dispatch(register(user))
+  register: user => dispatch(register(user)),
+  passwordMismatch: () => dispatch(
+    notifActions.notifSend({
+      message: 'Les mots de passe ne corresspondent pas',
+      kind: 'danger',
+      dismissAfter: 2000
+    })
+  )
 })
 
 export default connect(

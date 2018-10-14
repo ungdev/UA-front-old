@@ -52,7 +52,6 @@ export const fetchUser = () => {
 
     try {
       const res = await axios.get('user', { headers: { 'X-Token': authToken } })
-
       dispatch({ type: SET_USER, payload: res.data.user })
       dispatch({ type: SET_TOKEN, payload: res.data.token })
       dispatch({ type: SET_SPOTLIGHTS, payload: res.data.spotlights })

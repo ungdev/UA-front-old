@@ -1,26 +1,23 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import './home.css'
+import './partners.css'
+
 
 import ScrollToTopOnMount from '../../components/scrollToTopOnMount'
 import Header from '../components/header'
-import Intro from '../components/intro'
-import Countdown from '../components/countdown'
-import Informations from '../components/informations'
-import Category from '../components/category'
+import PartnersList from '../components/partners'
 import Footer from '../components/footer'
 import Social from '../components/social'
-import Spotlights from '../components/spotlights'
-import Partners from '../components/partners'
 import LoginModal from '../components/loginModal'
 import ContactModal from '../components/contactModal'
 import ForgotModal from '../components/forgotModal'
+import Category from '../components/category'
 
 import { fetchCanLogin } from '../../modules/canLogin'
 import { autoLogin } from '../../modules/login'
 
-class Home extends React.Component {
+class Partners extends React.Component {
   constructor() {
     super()
 
@@ -92,18 +89,25 @@ class Home extends React.Component {
     const scrollTop =
       window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
 
-    const bottom = window.innerHeight + 125 - 12 - 60
+    const bottom = window.innerHeight + 125 - 12 - 40
 
     document.body.className =
       scrollTop >= document.body.scrollHeight - bottom ? 'a-social-fixed' : ''
   }
 
   render() {
+    let id = 0
+    const partners = process.env.REACT_APP_PARTNERS.split(',').map(partner => ({
+      key: id++,
+      name: partner,
+      image: `${process.env.PUBLIC_URL}/${partner}.png`,
+      url: process.env[`REACT_APP_PARTNER_${partner.toUpperCase()}_LINK`],
+      description: process.env[`REACT_APP_PARTNER_${partner.toUpperCase()}_DESCRIPTION`].split('<br/>')
+    }))
     return (
       <div>
         <ScrollToTopOnMount />
         <Header openLoginModal={this.openLoginModal} openContactModal={this.openContactModal} />
-        <Intro />
         <LoginModal
           isOpen={this.state.loginModalOpened}
           onClose={this.closeLoginModal}
@@ -115,28 +119,23 @@ class Home extends React.Component {
         />
         <ForgotModal isOpen={this.state.forgotModalOpened} onClose={this.closeForgotModal} />
 
-        <main className="a-home">
-          <div className="a-home__content">
-            <Countdown date={new Date('December 7, 2018 18:00:00')}/>
-            <Category id="informations">Informations</Category>
-            <Informations />
-            <div className="a-home__map">
-              <iframe
-                height="320"
-                title="Google Maps"
-                src="https://maps.google.com/maps?q=UTT Arena&t=&z=17&ie=UTF8&iwloc=&output=embed"
-                frameBorder="0"
-                scrolling="no"
-                marginHeight="0"
-                marginWidth="0"
-              />
-
-              <p>Vous pouvez vous rendre à Troyes en train ou par l'A5.</p>
-            </div>
-            <Category id="spotlights">Tournois</Category>
-            <Spotlights />
+        <main className="a-partners-main">
+          <div style={{ marginTop: '40px', backgroundColor: '#202020' }}>
+            <Category>Nos partenaires</Category>
           </div>
-          <Partners />
+          <PartnersList noTitle />
+          <div className="a-partners-list">
+            {partners.map((partner, i) =>
+              <a
+                key={i}
+                className="a-partners-item"
+                href={partner.url}
+              >
+                <div><img src={partner.image} key={i} alt={partner.name} /></div>
+                <div>{partner.description.map(desc => <p key={id++}>{desc}</p>)}</div>
+              </a>
+            )}
+          </div>
           <Footer openContactModal={this.openContactModal} />
         </main>
 
@@ -148,10 +147,10 @@ class Home extends React.Component {
 
 const mapDispatchToProps = dispatch => ({
   fetchCanLogin: () => dispatch(fetchCanLogin()),
-  autoLogin: () => dispatch(autoLogin())
+  autoLogin: () => dispatch(autoLogin('/partners'))
 })
 
 export default connect(
   null,
   mapDispatchToProps
-)(Home)
+)(Partners)

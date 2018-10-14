@@ -45,7 +45,6 @@ class ScoupModal extends React.Component {
   }
 
   submit() {
-    console.log(this.state)
     this.props.onClose(this.state)
   }
 
