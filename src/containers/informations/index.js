@@ -106,10 +106,24 @@ class Informations extends React.Component {
   }
 
   render() {
-    let faqData = [
-      {question: 'this is the question', answer: 'THIS IS ANSWER'},
-      {question: 'this is the question nb 2', answer: 'THIS IS ANSWER nb 2'}
-    ]
+    let faqData = [{
+      question:
+        <span>Je me suis inscrit et je n'ai pas reçu mon mail de confirmation</span>,
+      answer:
+        <span>
+          Si lors de votre inscription votre adresse e-mail est rejetée, cela peut être dû à trois choses :
+          <ul>
+            <li>On ne peut pas avoir plus d'un compte par mail</li>
+            <li>Cet e-mail a été banni. Contactez les organisateurs afin d'en savoir plus.</li>
+            <li>Vous vous êtes trompé lors de la saisie de votre adresse mail. Contactez les organisateurs grâce au formulaire de contact.</li>
+          </ul>
+        </span>
+    }, {
+      question:
+        <span>Puis-je payer en espèces ?</span>,
+      answer:
+        <span>Il est impossible de payer en espèces pendant les préventes. Ce sera possible une fois sur place, à tes risques et périls, car il y a de fortes chances que les places soient déjà toutes parties.</span>
+    }]
 
     let faqEntries = []
 
@@ -307,32 +321,6 @@ class Informations extends React.Component {
               <h3 className="a-info__title">Inscription</h3>
 
               {faqEntries}
-
-              <div className="faq-container active">
-                <p className="faq-question">
-                  <span className="arrow-segment"></span>
-                  <span className="arrow-segment"></span>
-                  Je me suis inscrit et je n'ai pas reçu mon mail de confirmation
-                </p>
-                <div className="faq-answer">Si lors de votre inscription votre adresse e-mail est rejetée, cela peut être dû à trois choses :
-                  <ul>
-                    <li>On ne peut pas avoir plus d'un compte par mail</li>
-                    <li>Cet e-mail a été banni. Contactez les organisateurs afin d'en savoir plus.</li>
-                    <li>Vous vous êtes trompé lors de la saisie de votre adresse mail. Contactez les organisateurs grâce au formulaire de contact.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="faq-container">
-                <p className="faq-question">
-                  <span className="arrow-segment"></span>
-                  <span className="arrow-segment"></span>
-                  Puis-je payer en espèces ?
-                </p>
-                <p className="faq-answer">
-                  Il est impossible de payer en espèces pendant les préventes. Ce sera possible une fois sur place, à tes risques et périls, car il y a de fortes chances que les places soient déjà toutes parties.
-                </p>
-              </div>
             </div>
           </div>
 
