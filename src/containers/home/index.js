@@ -131,7 +131,7 @@ class Home extends React.Component {
                 marginWidth="0"
               />
 
-              <p>Vous pouvez vous rendre à Troyes par le train ou par l'A5.</p>
+              <p>Vous pouvez vous rendre à Troyes en train ou par l'A5.</p>
             </div>
             <Category id="spotlights">Tournois</Category>
             <Spotlights />
