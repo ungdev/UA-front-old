@@ -24,7 +24,8 @@ class Informations extends React.Component {
     this.state = {
       loginModalOpened: false,
       forgotModalOpened: false,
-      contactModalOpened: false
+      contactModalOpened: false,
+      faqEntriesOpened: []
     }
 
     this.openLoginModal = this.openLoginModal.bind(this)
@@ -95,7 +96,38 @@ class Informations extends React.Component {
       scrollTop >= document.body.scrollHeight - bottom ? 'a-social-fixed' : ''
   }
 
+  toggleFaqEntry(i) {
+    let entries = this.state.faqEntriesOpened.slice()
+    entries[i] = !entries[i]
+
+    this.setState({
+      faqEntriesOpened: entries
+    })
+  }
+
   render() {
+    let faqData = [
+      {question: 'this is the question', answer: 'THIS IS ANSWER'},
+      {question: 'this is the question nb 2', answer: 'THIS IS ANSWER nb 2'}
+    ]
+
+    let faqEntries = []
+
+    for(let i = 0; i < faqData.length; i++) {
+      faqEntries.push(
+        <div className={"faq-container" + (this.state.faqEntriesOpened[i] ? " active" : "")} onClick={this.toggleFaqEntry.bind(this, i)} key={i}>
+          <span className="faq-question">
+            <span className="arrow-segment"></span>
+            <span className="arrow-segment"></span>
+            {faqData[i].question}
+          </span>
+          <span className="faq-answer">
+            {faqData[i].answer}
+          </span>
+        </div>
+      )
+    }
+
     return (
       <div>
         <ScrollToTopOnMount />
@@ -118,14 +150,16 @@ class Informations extends React.Component {
             <p style={{ textAlign: 'justify'}}>Retrouvez toutes les informations de l'<span>UTT Arena</span> sur cette page : rendez-vous du 7 au 9 décembre pour 48 heures de folie et d'évasion au parc des expositions de Troyes !</p>
 
             <Category id="presentation">Présentation</Category>
-            <p style={{ textAlign: 'justify'}}>
-              L’<span className="a-infos__important">UTT Arena</span> c’est le plus gros événement de l’association <span className="a-infos__important">UTT Net Group</span> en matière d’e-sport. L’association a été créée en 1998 et avait pour vocation de réunir les passionnés d’informatique et des nouvelles technologies de l’Université de Technologie de Troyes (UTT).<br />
-              L’UA réalise sa <span className="a-infos__important">16<sup>ème</sup> édition</span> cette année ! Au commencement, lors de la première édition, nous étions dans une salle d’examen de l’UTT avec une centaine de joueurs.<br />
-              Puis l'événement a grandi, l’organisation a augmenté à 200 joueurs avec une scène dans la halle sportive de l’UTT.<br />
-              2015 arriva, une opportunité unique nous a été offerte par la ville avec la création du Festival des Jeux. Nous avons donc déménagé au Cube et nous sommes depuis dans le format que vous connaissez !<br />
-              &Agrave; présent l’UTT Arena c’est <span className="a-infos__important">460 joueurs</span>, <span className="a-infos__important">5 tournois spotlights</span>, une scène de 70 m² et une centaine de bénévoles.<br />
-            </p>
-            <p style={{ textAlign: 'justify'}}>Et tout cela, c’est grâce à vous, les joueurs, qui nous font confiance chaque année pour vous organiser un événement de folie, et à nos partenaires qui nous soutiennent chaque année dans l'organisation de la LAN !</p>
+            <div>
+              <p style={{ textAlign: 'justify'}}>
+                L’<span className="a-infos__important">UTT Arena</span> c’est le plus gros événement de l’association <span className="a-infos__important">UTT Net Group</span> en matière d’e-sport. L’association a été créée en 1998 et avait pour vocation de réunir les passionnés d’informatique et des nouvelles technologies de l’Université de Technologie de Troyes (UTT).<br />
+                L’UA réalise sa <span className="a-infos__important">16<sup>ème</sup> édition</span> cette année ! Au commencement, lors de la première édition, nous étions dans une salle d’examen de l’UTT avec une centaine de joueurs.<br />
+                Puis l'événement a grandi, l’organisation a augmenté à 200 joueurs avec une scène dans la halle sportive de l’UTT.<br />
+                2015 arriva, une opportunité unique nous a été offerte par la ville avec la création du Festival des Jeux. Nous avons donc déménagé au Cube et nous sommes depuis dans le format que vous connaissez !<br />
+                &Agrave; présent l’UTT Arena c’est <span className="a-infos__important">460 joueurs</span>, <span className="a-infos__important">5 tournois spotlights</span>, une scène de 70 m² et une centaine de bénévoles.<br />
+              </p>
+              <p style={{ textAlign: 'justify'}}>Et tout cela, c’est grâce à vous, les joueurs, qui nous font confiance chaque année pour vous organiser un événement de folie, et à nos partenaires qui nous soutiennent chaque année dans l'organisation de la LAN !</p>
+            </div>
 
             <Category id="schedule">Horaires</Category>
             <div className="a-infos__table__container">
@@ -271,16 +305,34 @@ class Informations extends React.Component {
             <div>
               <p>Voici des questions souvent posées, en espérant que cela pourra t'aider dans ta recherche jeune padawan !</p>
               <h3 className="a-info__title">Inscription</h3>
-              <p className="faq-question">Je me suis inscrit et je n'ai pas reçu mon mail de confirmation</p>
-              <p className="faq-answer">Si lors de votre inscription votre adresse e-mail est rejetée, cela peut être dû à trois choses :
-                <ul>
-                  <li>On ne peut pas avoir plus d'un compte par mail</li>
-                  <li>Cet e-mail a été banni. Contactez les organisateurs afin d'expliciter le problème.</li>
-                  <li>Vous vous êtes trompé lors de la saisie de votre adresse mail. Contactez les organisateurs grâce au formulaire de contact.</li>
-                </ul>
-              </p>
-              <p className="faq-question">J'ai payé et je ne reçois pas mon billet</p>
-              <p className="faq-answer"></p>
+
+              {faqEntries}
+
+              <div className="faq-container active">
+                <p className="faq-question">
+                  <span className="arrow-segment"></span>
+                  <span className="arrow-segment"></span>
+                  Je me suis inscrit et je n'ai pas reçu mon mail de confirmation
+                </p>
+                <div className="faq-answer">Si lors de votre inscription votre adresse e-mail est rejetée, cela peut être dû à trois choses :
+                  <ul>
+                    <li>On ne peut pas avoir plus d'un compte par mail</li>
+                    <li>Cet e-mail a été banni. Contactez les organisateurs afin d'en savoir plus.</li>
+                    <li>Vous vous êtes trompé lors de la saisie de votre adresse mail. Contactez les organisateurs grâce au formulaire de contact.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="faq-container">
+                <p className="faq-question">
+                  <span className="arrow-segment"></span>
+                  <span className="arrow-segment"></span>
+                  Puis-je payer en espèces ?
+                </p>
+                <p className="faq-answer">
+                  Il est impossible de payer en espèces pendant les préventes. Ce sera possible une fois sur place, à tes risques et périls, car il y a de fortes chances que les places soient déjà toutes parties.
+                </p>
+              </div>
             </div>
           </div>
 
