@@ -1,23 +1,30 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Route, Redirect, Switch } from 'react-router'
 
-import './partners.css'
+import './tournaments.css'
 
 
-import ScrollToTopOnMount from '../../components/scrollToTopOnMount'
 import Header from '../components/header'
-//import PartnersList from '../components/partners'
 import Footer from '../components/footer'
 import Social from '../components/social'
 import LoginModal from '../components/loginModal'
 import ContactModal from '../components/contactModal'
 import ForgotModal from '../components/forgotModal'
-import Category from '../components/category'
+import HomeTournaments from './home'
+import LOLTournaments from './lol'
+import FortniteTournaments from './fortnite'
+import CSGOTournaments from './csgo'
+import HSTournaments from './hs'
+import SSBUTournaments from './ssbu'
+import LibreTournaments from './libre'
 
 import { fetchCanLogin } from '../../modules/canLogin'
 import { autoLogin } from '../../modules/login'
 
-class Partners extends React.Component {
+const baseUrl = process.env.REACT_APP_BASEURL
+
+class Tournaments extends React.Component {
   constructor() {
     super()
 
@@ -38,7 +45,7 @@ class Partners extends React.Component {
 
   componentWillMount() {
     this.props.fetchCanLogin()
-    this.props.autoLogin()
+    this.props.autoLogin(this.props.location)
 
     document.addEventListener('scroll', this.scrollCapture, { passive: true })
   }
@@ -89,24 +96,15 @@ class Partners extends React.Component {
     const scrollTop =
       window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
 
-    const bottom = window.innerHeight + 125 - 12 - 40
+    const bottom = window.innerHeight + 125 - 12 - 60
 
     document.body.className =
       scrollTop >= document.body.scrollHeight - bottom ? 'a-social-fixed' : ''
   }
 
   render() {
-    let id = 0
-    const partners = process.env.REACT_APP_PARTNERS.split(',').map(partner => ({
-      key: id++,
-      name: partner,
-      image: `${process.env.PUBLIC_URL}/${partner}.png`,
-      url: process.env[`REACT_APP_PARTNER_${partner.toUpperCase()}_LINK`],
-      description: process.env[`REACT_APP_PARTNER_${partner.toUpperCase()}_DESCRIPTION`].split('<br/>')
-    }))
     return (
       <div>
-        <ScrollToTopOnMount />
         <Header openLoginModal={this.openLoginModal} openContactModal={this.openContactModal} />
         <LoginModal
           isOpen={this.state.loginModalOpened}
@@ -119,23 +117,45 @@ class Partners extends React.Component {
         />
         <ForgotModal isOpen={this.state.forgotModalOpened} onClose={this.closeForgotModal} />
 
-        <main className="a-partners-main">
-          <div style={{ marginTop: '40px', backgroundColor: '#202020' }}>
-            <Category>Nos partenaires</Category>
-          </div>
-          {/*<PartnersList noTitle />*/}
-          <div className="a-partners-list">
-            {partners.map((partner, i) =>
-              <a
-                key={i}
-                className="a-partners-item"
-                href={partner.url}
-              >
-                <div><img src={partner.image} key={i} alt={partner.name} /></div>
-                <div className="a-partners-text">{partner.description.map(desc => <p key={id++}>{desc}</p>)}</div>
-              </a>
-            )}
-          </div>
+        <main className="a-tournaments-main">
+          <Switch>
+            <Route
+                path={baseUrl + 'tournaments'}
+                exact
+                component={HomeTournaments}
+              />
+            <Route
+              path={baseUrl + 'tournaments/lol'}
+              exact
+              component={LOLTournaments}
+            />
+            <Route
+              path={baseUrl + 'tournaments/fortnite'}
+              exact
+              component={FortniteTournaments}
+            />
+            <Route
+              path={baseUrl + 'tournaments/csgo'}
+              exact
+              component={CSGOTournaments}
+            />
+            <Route
+              path={baseUrl + 'tournaments/hs'}
+              exact
+              component={HSTournaments}
+            />
+            <Route
+              path={baseUrl + 'tournaments/ssbu'}
+              exact
+              component={SSBUTournaments}
+            />
+            <Route
+              path={baseUrl + 'tournaments/libre'}
+              exact
+              component={LibreTournaments}
+            />
+            <Redirect from="*" to="/tournaments" />
+          </Switch>
           <Footer openContactModal={this.openContactModal} />
         </main>
 
@@ -144,13 +164,15 @@ class Partners extends React.Component {
     )
   }
 }
-
+const mapStateToProps = state => ({
+  location: state.routing.location.pathname
+})
 const mapDispatchToProps = dispatch => ({
   fetchCanLogin: () => dispatch(fetchCanLogin()),
-  autoLogin: () => dispatch(autoLogin('/partners'))
+  autoLogin: (location) => dispatch(autoLogin(location))
 })
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
-)(Partners)
+)(Tournaments)
