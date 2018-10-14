@@ -89,13 +89,21 @@ class Partners extends React.Component {
     const scrollTop =
       window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
 
-    const bottom = window.innerHeight + 125 - 12
+    const bottom = window.innerHeight + 125 - 12 - 40
 
     document.body.className =
       scrollTop >= document.body.scrollHeight - bottom ? 'a-social-fixed' : ''
   }
 
   render() {
+    let id = 0
+    const partners = process.env.REACT_APP_PARTNERS.split(',').map(partner => ({
+      key: id++,
+      name: partner,
+      image: `${process.env.PUBLIC_URL}/${partner}.png`,
+      url: process.env[`REACT_APP_PARTNER_${partner.toUpperCase()}_LINK`],
+      description: process.env[`REACT_APP_PARTNER_${partner.toUpperCase()}_DESCRIPTION`].split('<br/>')
+    }))
     return (
       <div>
         <ScrollToTopOnMount />
@@ -111,12 +119,23 @@ class Partners extends React.Component {
         />
         <ForgotModal isOpen={this.state.forgotModalOpened} onClose={this.closeForgotModal} />
 
-        <main className="a-partner">
-          <div style={{ backgroundColor: '#202020', marginTop: '60px' }}>
+        <main className="a-partners-main">
+          <div style={{ marginTop: '40px', backgroundColor: '#202020' }}>
             <Category>Nos partenaires</Category>
           </div>
-          <PartnersList noTitle/>
-          <div className="a-partner-list"></div>
+          <PartnersList noTitle />
+          <div className="a-partners-list">
+            {partners.map((partner, i) =>
+              <a
+                key={i}
+                className="a-partners-item"
+                href={partner.url}
+              >
+                <div><img src={partner.image} key={i} alt={partner.name} /></div>
+                <div>{partner.description.map(desc => <p key={id++}>{desc}</p>)}</div>
+              </a>
+            )}
+          </div>
           <Footer openContactModal={this.openContactModal} />
         </main>
 

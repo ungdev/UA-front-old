@@ -92,7 +92,7 @@ class Home extends React.Component {
     const scrollTop =
       window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
 
-    const bottom = window.innerHeight + 125 - 12
+    const bottom = window.innerHeight + 125 - 12 - 60
 
     document.body.className =
       scrollTop >= document.body.scrollHeight - bottom ? 'a-social-fixed' : ''
