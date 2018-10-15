@@ -259,7 +259,7 @@ class Informations extends React.Component {
               <p>
                 Adresse de l'événement : 20 rue des Gayettes, 10000 Troyes
               </p>
-              <h3 className="a-info__title">En voiture</h3>
+              <h3 className="a-infos__title">En voiture</h3>
               <p style={{ textAlign: 'justify'}}>Un parking gratuit sera mis à disposition juste devant le Cube. Attention, utilisez le parking en face du Cube de 
               l'autre côté de la route, celui proche de l'entrée est réservé aux visiteurs du festival</p>
               <p>
@@ -290,9 +290,9 @@ class Informations extends React.Component {
                 <li>Autoroute : A31 (4h10, 384km)</li>
                 <li>Nationale : N4 (4h15, 338km)</li>
               </ul>
-              <h3 className="a-info__title">En train</h3>
+              <h3 className="a-infos__title">En train</h3>
               <p>&Agrave; 1h30 de Paris (TER depuis Paris-Est, départ toutes les heures). Le Cube est à 10 minutes à pied de la gare.</p>
-              <h3 className="a-info__title">En bus</h3>
+              <h3 className="a-infos__title">En bus</h3>
               <p>Ligne régulière 2, 6, 8 : arrêt Terrasses</p>
 
               <div className="a-infos__map">
@@ -317,18 +317,120 @@ class Informations extends React.Component {
 
             <Category id="services">Services</Category>
             <div>
-              <h3 className="a-info__title">Nourriture</h3>
+              <h3 className="a-infos__title">Nourriture</h3>
               <p style={{ textAlign: 'justify'}}>On sait qu'un weekend de 48h non-stop ça creuse, nous te proposerons donc sur place : croques-monsieur, crêpes, pizzas, canettes, snack, tout
                pour te sustenter au mieux ! Et tout cela à un prix abordable.</p>
-              <h3 className="a-info__title">Couchage</h3>
+
+              <h3 className="a-infos__title">Couchage</h3>
               <p style={{ textAlign: 'justify'}}>Nous mettons à disposition des joueurs des loges communes avec un accès à l'eau et aux douches ! 
               Pensez à ramener vos duvets si vous souhaitez en profiter ! Nous metterons à disposition des tapis pour plus de confort.</p>
+
+              <h3 className="a-infos__title">Location de matériel</h3>
+              <p>Pas envie de ramener tout ton matériel ? Notre partenaire Scoup E-sport te propose de louer PC, chaise gaming, casque, souris et tout ce dont tu as besoin !</p>
+              <p className="a-infos__services__infos">(Les prix vous permettent de bénéficier du matériel pendant toute la durée de l'événement.)</p>
+              <table className="a-infos__services__table">
+                <thead>
+                  <tr>
+                    <th>Matériel</th>
+                    <th>Prix</th>
+                    <th>Informations</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Kaliento</td>
+                    <td>5€</td>
+                    <td>Chauffeur de main électrique Kaliento</td>
+                  </tr>
+                  <tr>
+                    <td>Souris gaming</td>
+                    <td>5€</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Clavier gaming</td>
+                    <td>10€</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>Casque gaming</td>
+                    <td>15€</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>&Eacute;cran 24"</td>
+                    <td>35€</td>
+                    <td>&Eacute;cran 24" 144Hz</td>
+                  </tr>
+                  <tr>
+                    <td>&Eacute;cran 27"</td>
+                    <td>40€</td>
+                    <td>&Eacute;cran 27" 144Hz</td>
+                  </tr>
+                  <tr>
+                    <td>Chaise gaming</td>
+                    <td>45€</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>PC gaming</td>
+                    <td>95€</td>
+                    <td>
+                      <ul>
+                        <li>CPU : Intel core i5 7100 3.6 GHz</li>
+                        <li>RAM : 8 Go DDR 4</li>
+                        <li>GPU : GTX 1050Ti 4Gb</li>
+                        <li>Carte mère Z170 Serie</li>
+                        <li>Alimentation 430W</li>
+                        <li>Watercooling 120</li>
+                        <li>SSD 120 Go</li>
+                        <li>Disque dur 1 To</li>
+                        <li>Boitier ANTEC P7</li>
+                        <li>Windows 10 Professionnel</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>PC streaming</td>
+                    <td>120€</td>
+                    <td>
+                      <ul>
+                        <li>CPU : Intel core i7 6700K 3.6 GHz</li>
+                        <li>RAM : 16 Go DDR 4</li>
+                        <li>GPU : GTX 1080</li>
+                        <li>Carte mère Z170 Serie</li>
+                        <li>Alimentation 650W Gold</li>
+                        <li>Watercooling 120</li>
+                        <li>SSD 250 Go</li>
+                        <li>Disque dur 1 To</li>
+                        <li>Boitier ANTEC P8</li>
+                        <li>Windows 10 Professionnel</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>PC portable gaming</td>
+                    <td>130€</td>
+                    <td>
+                      PC portable MSI
+                      <ul>
+                        <li>CPU : i7</li>
+                        <li>RAM : 32 Go</li>
+                        <li>GPU : GTX 1060</li>
+                        <li>&Eacute;cran 17"</li>
+                        <li>Windows 10 Professionnel</li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
 
             <Category id="players">Infos joueurs</Category>
             <div>
               <p><strong>Rappel : l'âge minimum pour participer au tournoi est de 15 ans.</strong></p>
-              <h3 className="a-info__title">Cashprize et lots</h3>
+
+              <h3 className="a-infos__title">Cashprize et lots</h3>
               <p>La répartition des récompenses entre les 3 premières places est la suivante :
               </p>
               <ul>
@@ -338,14 +440,15 @@ class Informations extends React.Component {
               <p>
                 Cette année l'<span>UTT Arena</span> s'est associée avec de nombreux partenaires pour vous offrir des lots de qualité !
               </p>
-              <h3 className="a-info__title">Ce qu'il faut apporter</h3>
+
+              <h3 className="a-infos__title">Ce qu'il faut apporter</h3>
               <ul>
                 <li>Ton PC avec tous ces magnifiques périphériques</li>
                 <li>Une multiprise si besoin (chaque joueur dispose d'une prise)</li>
                 <li>Un câble RJ45</li>
               </ul>
-              <p>Si tu ne souhaites pas ramener tout ça, nous te proposons de louer un PC avec notre partenaire Scoup E-sport et nous vendons des multiprises et des câbles RJ45 de 5 et 7m.</p>
-              <h3 className="a-info__title">Ce qui est fourni</h3>
+              <p>Si tu ne souhaites pas ramener tout ça, nous te proposons de louer un PC avec notre partenaire Scoup E-sport. De plus nous vendons des multiprises et des câbles RJ45 de 5 et 7m.</p>
+              <h3 className="a-infos__title">Ce qui est fourni</h3>
               <p>Une prise électrique et un port RJ45.</p>
               <p>Et vu qu'on t'aime bien, on t'offre aussi une place sur une table avec une chaise et l'accès aux loges, mais ça c'est juste pour toi !</p>
             </div>
@@ -353,7 +456,7 @@ class Informations extends React.Component {
             <Category id="faq">FAQ</Category>
             <div>
               <p>Voici des questions souvent posées, en espérant que cela pourra t'aider dans ta recherche jeune padawan !</p>
-              <h3 className="a-info__title">Inscription</h3>
+              <h3 className="a-infos__title">Inscription</h3>
 
               {faqEntries}
             </div>

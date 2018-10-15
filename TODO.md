@@ -9,6 +9,7 @@
 - PDF billet
 - Templates mail (inscription, billet, ...)
 - trier les équipes par tournoi lorsque l'on souhaite en rejoindre une.
+- Inscription : âge
 
 # Si on a le time (impossible)
 
