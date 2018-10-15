@@ -11,8 +11,8 @@ const LOL = () => {
       <Category>League of Legends</Category>
     </div>
     <div className="a-tournament-content">
-      <p>Vous retrouverez sur cette page toutes les informations relatives aux tournois League of Legends, pro et amateur. <strong>Attention, ces informations pourront évoluer,
-      tenez vous informé via nos réseaux (Facebook/Twitter)</strong>.</p>
+      <p>Vous retrouverez sur cette page toutes les informations relatives aux tournois League of Legends, pro et amateur. <strong>Attention</strong>, ces informations pourront évoluer,
+      tenez vous informé via nos réseaux (<a href="https://www.facebook.com/UTTArena/">Facebook</a>/<a href="https://twitter.com/UTTArena">Twitter</a>).</p>
       <Category>Informations générales</Category>
       <p>L'inscription à l'UTT Arena est fixée à 15€ par joueur. La LAN se déroulera du Vendredi 7 Décembre 18h au Dimanche 9 Décembre à 18h <strong>sans interruption</strong>. 
       Les tournois commenceront le samedi à 10h. Il vous sera mis à disposition une buvette, avec à manger en continu à prix réduit.</p>
