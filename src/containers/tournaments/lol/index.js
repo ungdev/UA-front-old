@@ -11,14 +11,17 @@ const LOL = () => {
       <Category>League of Legends</Category>
     </div>
     <div className="a-tournament-content">
-      <p>Vous retrouverez sur cette page toutes les informations relatives aux tournois League of Legends, pro et amateur. <strong>Attention, ces informations pourront évoluer,
-      tenez vous informé via nos réseaux (Facebook/Twitter)</strong>.</p>
+      <p>Vous retrouverez sur cette page toutes les informations relatives aux tournois League of Legends (pro et amateur). <strong>Attention, ces informations pourront évoluer,
+      restez informés via nos réseaux (Facebook / Twitter)</strong>.</p>
+
       <Category>Informations générales</Category>
       <p>L'inscription à l'UTT Arena est fixée à 15€ par joueur. La LAN se déroulera du Vendredi 7 Décembre 18h au Dimanche 9 Décembre à 18h <strong>sans interruption</strong>. 
-      Les tournois commenceront le samedi à 10h. Il vous sera mis à disposition une buvette, avec à manger en continue à prix réduit.</p>
+      Les tournois commenceront le samedi à 10h. Il vous sera mis à disposition une buvette, où vous pourrez manger en continu à prix réduit.</p>
+      
       <Category>Tournoi Libre</Category>
-      <p>En parralèle des tournois "Spotlights" (Lol, HS, CS:GO, Fortnite, SSBU) se déroulera un tournoi libre. Celui-ci sera composé de diférents mini tournoi, sur des jeux divers et variés.
-      <strong> Tout joueur de tournoi Spotlight éliminé rejoindra automatiquement le tournoi Libre.</strong> Il pourra ainsi profiter d'animations malgré qu'il ne soit plus dans la compétition.</p>
+      <p>En parallèle des tournois "Spotlights" (LoL, Hearthstone, CS:GO, Fortnite, SSBU) se déroulera un tournoi libre. Celui-ci sera composé de différents mini-tournois, sur des jeux divers et variés.
+      <strong>Tout joueur de tournoi Spotlight éliminé rejoindra automatiquement le tournoi Libre.</strong> Il pourra ainsi profiter d'animations malgré qu'il ne soit plus dans la compétition.</p>
+      
       <Category>Règlements</Category>
       <p>En participant à cette compétition les joueurs acceptent, sans réticence ou interprétation, de respecter le règlement. 
       Il est à noter que celui-ci est susceptible d’évoluer durant la LAN en fonction des besoins (retard, imprécision,...). </p>
