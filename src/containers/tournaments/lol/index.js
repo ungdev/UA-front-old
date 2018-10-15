@@ -71,7 +71,7 @@ const LOL = () => {
       pour le casque, il faudra qu'il soit anti-bruit et que le micro soit directionnel</strong>. Sinon vous devrez utiliser le casque que nous fournirons.</p>
       <p><strong>Tout retard de plus de 20 minutes dû à un joueur qui prendra trop de temps à s'installer entraînera le forfait automatique d'une partie.</strong></p>
       <h3>Configuration</h3>
-      <p>La configuration du client League of Legends est stockée sur le serveur de Riot Games, vous n'aurez donc pas à reconfigurer le PC. en revanche, si vous aviez quand même 
+      <p>La configuration du client League of Legends est stockée sur le serveur de Riot Games, vous n'aurez donc pas à reconfigurer le PC. En revanche, si vous aviez quand même 
       des changements à faire sur le PC, merci de le prendre en compte lors de l'installation, afin de ne pas mettre en retard votre équipe.</p>
     </div>
     <Arrow/>
