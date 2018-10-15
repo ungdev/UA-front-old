@@ -248,13 +248,6 @@ class Informations extends React.Component {
                 <li>Une réduction de 5€ sera appliquée aux joueurs provenant d'une école du groupe des Universités de Technologie : UTT, UTC, UTBM</li>
                 <li>Accompagnateur : 6€ (limité à 40 places)</li>
               </ul>
-              <br />
-              <p>&Eacute;coles partenaires :</p>
-              <ul>
-                <li>UTT</li>
-                <li>UTC</li>
-                <li>UTBM</li>
-              </ul>
             </div>
             
             <Category id="tickets">Déroulement des inscriptions</Category>
