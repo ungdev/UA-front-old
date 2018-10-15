@@ -149,6 +149,18 @@ class Informations extends React.Component {
         <span>Est ce que je peux jouer à la manette ?</span>,
       answer:
         <span>Oui.</span>
+    },
+    {
+      question:
+        <span>Est ce que je peux payer par paypal ?</span>,
+      answer:
+        <span>Non.</span>
+    },
+    {
+      question:
+        <span>Est ce que je peux payer pour toute mon équipe ?</span>,
+      answer:
+        <span>Non.</span>
     }
   ]
 
@@ -231,12 +243,12 @@ class Informations extends React.Component {
             </div>
 
             <Category id="tickets">Billetterie</Category>
-            <div>
+            <div className="a-infos-inscription">
               <p>Il est possible d'acheter une place sur ce site à partir du mercredi 17 octobre</p>
               <ul>
                 <li>Il faut d'abord s'inscrire</li>
                 <li>Ensuite, il faut payer sa place</li>
-                <li>Chaque joueur paye sa place, il n'y a pas de paiement groupé</li>
+                <li>Chaque joueur paye sa place, <strong>il n'y a pas de paiement groupé</strong></li>
                 <li>Le paiement se fait uniquement par carte banquaire</li>
               </ul>
               <br />
