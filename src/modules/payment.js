@@ -1,6 +1,4 @@
 import axios from '../lib/axios'
-import errorToString from '../lib/errorToString'
-import { actions as notifActions } from 'redux-notifications'
 
 const initialState = {}
 

@@ -35,7 +35,7 @@ const TeamManagement = props => {
   <div className="a-teammanagement a-dashboard-page">
     <h2>{props.user.team.name}</h2>
     <h4>{props.user.team.spotlight.name}</h4>
-    {props.user.team.soloTeam && <span className="a-teammanagement__solo">Équipe mono-joueur</span>}
+    {props.user.team.soloTeam && <div style={{ width: '100%', textAlign: 'center' }}><span className="a-teammanagement__solo" style={{ textAlign: 'center' }}>(Équipe Solo)</span></div>}
     <div className="a-teammanagement__badge">
       <StatusBadge theme={props.teamStatus.theme}>{props.teamStatus.status}</StatusBadge>
     </div>
@@ -69,7 +69,7 @@ const TeamManagement = props => {
         Pour que l'équipe soit complète, il faut que les {spotlight.perTeam} membres aient rejoint l'équipe
         <strong> et</strong> aient payé leur place. Vous serez alors mis sur liste d'attente, au cas où une équipe se désiste.
         Vous pouvez rejoindre un autre tournoi en créant une nouvelle équipe dans le tournoi choisi, en attendant, vous êtes
-        concidérés comme membre du tournoi libre.
+        considérés comme membre du tournoi libre.
       </p>
     )}
     {props.teamStatus.complete === 0 && !props.spotlightFull && (

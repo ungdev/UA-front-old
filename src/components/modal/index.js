@@ -11,7 +11,8 @@ const styles = {
     right: 0,
     bottom: 0,
     backgroundColor: 'rgba(0,0,0,.75)',
-    zIndex: '999'
+    zIndex: '999',
+    overflow: 'auto'
   },
   content: {
     position: 'absolute',
@@ -32,7 +33,7 @@ const styles = {
 }
 
 const Modal = props => (
-  <ReactModal isOpen={props.isOpen} onRequestClose={props.onClose} style={styles}>
+  <ReactModal isOpen={props.isOpen} onRequestClose={props.onClose} style={styles} className={props.name ? props.name : 'a-react-modal'}>
     {props.children}
   </ReactModal>
 )

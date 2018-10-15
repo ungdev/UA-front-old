@@ -22,6 +22,8 @@ export default error => {
       return 'Vous devez avoir payé votre place.'
     case 'SPOTLIGHT_FULL':
       return 'Le tournoi est plein'
+    case 'DUPLICATE_ENTRY':
+      return 'Le pseudo ou le mail est déjà utilisé.'
     case 'UNKNOWN':
       return 'Une erreur est survenue'
     default:

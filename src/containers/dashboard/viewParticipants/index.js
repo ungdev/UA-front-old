@@ -25,21 +25,21 @@ class Participants extends React.Component {
     const teams = this.props.teams.filter(team => team.spotlightId === this.state.spotlight)
 
     const options = this.props.spotlights.map(spotlight => ({
+      id: spotlight.id,
       label: spotlight.name,
       value: spotlight.id
-    }))
-
+    })).sort((s1, s2) => s1.id > s2.id)
     return (
       <div className="a-participants a-dashboard-page">
         <h2>Participants</h2>
         <Form
           defaultValues={{
-            spotliht: options[0]
+            spotlight: options[0]
           }}
           render={({ submitForm }) => (
             <form onSubmit={submitForm}>
               <Select
-                field="spotliht"
+                field="spotlight"
                 onChange={this.changeSpotlight}
                 options={options}
                 searchable={false}
