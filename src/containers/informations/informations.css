@@ -177,6 +177,6 @@
   top: 19px;
 }
 
-.a-infos-inscription > ul > li > strong{
+.a-infos__tickets > ul > li > strong, .a-infos__registration > ul > li > strong {
   color: #14d9fa;
 }

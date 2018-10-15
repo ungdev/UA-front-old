@@ -108,87 +108,6 @@ class Informations extends React.Component {
   }
 
   render() {
-    let faqData = [
-    {
-      question:
-        <span>Je me suis inscrit et je n'ai pas reçu mon mail de confirmation</span>,
-      answer:
-        <span>
-          Si lors de votre inscription votre adresse e-mail est rejetée, cela peut être dû à trois choses :
-          <ul>
-            <li>On ne peut pas avoir plus d'un compte par mail</li>
-            <li>Cet e-mail a été banni. Contactez les organisateurs afin d'en savoir plus.</li>
-            <li>Vous vous êtes trompé lors de la saisie de votre adresse mail. Contactez les organisateurs grâce au formulaire de contact.</li>
-          </ul>
-        </span>
-    },
-    {
-      question:
-        <span>Puis-je payer en espèces ?</span>,
-      answer:
-        <span>Il sera possible de payer en espèce uniquement sur place, mais à tes risques et périls, car il y a de fortes chances que les places soient déjà toutes parties.</span>
-    },
-    {
-      question:
-        <span>Combien coûte la LAN pour les joueurs et les accompagnateurs ?</span>,
-      answer:
-        <span>La LAN coûte 15€ pour tous les joueurs, avec une réduction de 5€ pour les écoles partenaires. La place accompagnateur/visiteur est à 6€.</span>
-    },
-    {
-      question:
-        <span>Quel est l'âge minimum pour la LAN ?</span>,
-      answer:
-        <span>15 ans. Pour les mineurs, une autorisation parentale sera demandée le jour de la LAN.</span>
-    },
-    {
-      question:
-        <span>Quand commencent les tournois ?</span>,
-      answer:
-        <span>Tous les tournois commencent le samedi à 10h.</span>
-    },
-    {
-      question:
-        <span>Est ce que je peux jouer à la manette ?</span>,
-      answer:
-        <span>Oui.</span>
-    },
-    {
-      question:
-        <span>Est ce que je peux payer par paypal ?</span>,
-      answer:
-        <span>Non.</span>
-    },
-    {
-      question:
-        <span>Est ce que je peux payer pour toute mon équipe ?</span>,
-      answer:
-        <span>Non.</span>
-    },
-    {
-      question:
-        <span>Est ce que je peux streamer pendant la LAN ?</span>,
-      answer:
-        <span>Peut être. Il faudra dans un premier temps se déclarer auprès des organisateurs, et ensuite en fonction de l'état du réseau tu pourras ou non streamer.</span>
-    }
-  ]
-
-    let faqEntries = []
-
-    for(let i = 0; i < faqData.length; i++) {
-      faqEntries.push(
-        <div className={"faq-container" + (this.state.faqEntriesOpened[i] ? " active" : "")} key={i}>
-          <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, i)}>
-            <span className="arrow-segment"></span>
-            <span className="arrow-segment"></span>
-            {faqData[i].question}
-          </span>
-          <span className="faq-answer">
-            {faqData[i].answer}
-          </span>
-        </div>
-      )
-    }
-
     return (
       <div>
         <ScrollToTopOnMount />
@@ -257,7 +176,7 @@ class Informations extends React.Component {
             </div>
 
             <Category id="tickets">Billetterie</Category>
-            <div className="a-infos-inscription">
+            <div className="a-infos__tickets">
               <p>Il est possible d'acheter une place sur ce site à partir du mercredi 17 octobre</p>
               <ul>
                 <li>Il faut d'abord s'inscrire</li>
@@ -276,28 +195,28 @@ class Informations extends React.Component {
               </ul>
             </div>
             
-            <Category id="tickets">Déroulement des inscriptions</Category>
-            <div className="a-infos-inscription">
-            <p>Les inscriptions à l'UTT Arena ouvrent le mercredi 17 octobre. (l'heure exacte sera annoncée dans la journée)</p>
-            <p>Pour les tournois multijoueurs :</p>
-            <ul>
-              <li>Il faudra créer un compte sur ce site en cliquant sur le bouton <strong>connexion</strong>.</li>
-              <li>Après avoir renseigné les informations du formulaire, il faudra <strong>valider son compte</strong> en cliquant sur le <strong>lien reçu par mail</strong>.</li>
-              <li>Une fois dans votre dashboard, vous pourrez payer votre place, créer une équipe ou en rejoindre une.</li>
-              <li>Une équipe ne sera <strong>complète</strong> qu'une fois <strong>tous ses joueurs dans l'équipe et ayant payé leur place</strong>.</li>
-              <li>Une équipe complète <strong>sera inscrite</strong> dans le tournoi <strong>si elle s'est complêtée avant que le tournoi ne se remplisse</strong>.
-              Sinon, elle sera mise sur <strong>liste d'attente</strong>.</li>
-              <li>Une équipe sur liste d'attente est considéré comme membre du tournoi libre, sauf si une équipe se désiste.</li>
-            </ul>
-            <p>Pour les tournois solos :</p>
-            <ul>
-              <li>Il faudra créer un compte sur ce site en cliquant sur le bouton <strong>connexion</strong>.</li>
-              <li>Après avoir renseigné les informations du formulaire, il faudra <strong>valider son compte</strong> en cliquant sur le <strong>lien reçu par mail</strong>.</li>
-              <li>Une fois dans votre dashboard, vous pourrez payer votre place, ou rejoindre un tournoi solo.</li>
-              <li>Vous ne serez inscrit que <strong>lorsque vous aurez payé votre place</strong>.</li>
-              <li>Si vous ne payé pas votre place à temps, vous serez mis sur <strong>liste d'attente</strong>.</li>
-              <li>Un joueur sur liste d'attente est considéré comme <strong>membre du tournoi libre</strong>, sauf si un joueur se désiste.</li>
-            </ul>
+            <Category id="registration">Déroulement des inscriptions</Category>
+            <div className="a-infos__registration">
+              <p>Les inscriptions à l'UTT Arena ouvrent le mercredi 17 octobre (l'heure exacte sera annoncée dans la journée).</p>
+              <p>Pour les tournois multijoueurs :</p>
+              <ul>
+                <li>Il faudra créer un compte sur ce site en cliquant sur le bouton <strong>connexion</strong>.</li>
+                <li>Après avoir renseigné les informations du formulaire, il faudra <strong>valider son compte</strong> en cliquant sur le <strong>lien reçu par mail</strong>.</li>
+                <li>Une fois dans votre dashboard, vous pourrez payer votre place, créer une équipe ou en rejoindre une.</li>
+                <li>Une équipe ne sera <strong>complète</strong> lorsqu'elle sera <strong>pleine et que tous les membres auront payé leur place</strong>.</li>
+                <li>Une équipe complète <strong>sera inscrite</strong> dans le tournoi <strong>si elle s'est complétée avant que le tournoi ne soit plein</strong>.
+                Sinon, elle sera mise sur <strong>liste d'attente</strong>.</li>
+                <li>Une équipe sur liste d'attente est considérée comme membre du tournoi libre, sauf si une équipe se désiste.</li>
+              </ul>
+              <p>Pour les tournois solo :</p>
+              <ul>
+                <li>Il faudra créer un compte sur ce site en cliquant sur le bouton <strong>connexion</strong>.</li>
+                <li>Après avoir renseigné les informations du formulaire, il faudra <strong>valider son compte</strong> en cliquant sur le <strong>lien reçu par mail</strong>.</li>
+                <li>Une fois dans votre dashboard, vous pourrez payer votre place et rejoindre un tournoi solo.</li>
+                <li>Vous ne serez inscrit que <strong>lorsque vous aurez payé votre place</strong>.</li>
+                <li>Si vous ne payez pas votre place à temps, vous serez mis sur <strong>liste d'attente</strong>.</li>
+                <li>Un joueur sur liste d'attente est considéré comme <strong>membre du tournoi libre</strong>, sauf si un joueur se désiste.</li>
+              </ul>
             </div>
 
             <Category id="access">Accès</Category>
@@ -375,7 +294,7 @@ class Informations extends React.Component {
               <p style={{ textAlign: 'justify' }}>Pas envie de ramener tout ton matériel ? Notre partenaire Scoup eSport te propose de louer PC, chaise gaming, casque, souris et tout ce dont tu as besoin !</p>
               <p className="a-infos__services__infos">(Les prix vous permettent de bénéficier du matériel pendant toute la durée de l'événement.)</p>
 
-              <div class="a-infos__table__container">
+              <div className="a-infos__table__container">
                 <table className="a-infos__services__table">
                   <thead>
                     <tr>
@@ -509,9 +428,114 @@ class Informations extends React.Component {
             <Category id="faq">FAQ</Category>
             <div>
               <p>Voici des questions souvent posées, en espérant que cela pourra t'aider dans ta recherche jeune padawan !</p>
+
               <h3 className="a-infos__title">Inscription</h3>
 
-              {faqEntries}
+              <div className={"faq-container" + (this.state.faqEntriesOpened[0] ? " active" : "")} key={0}>
+                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 0)}>
+                  <span className="arrow-segment"></span>
+                  <span className="arrow-segment"></span>
+                  Combien coûte la LAN pour les joueurs et les accompagnateurs ?
+                </span>
+                <span className="faq-answer">
+                  La LAN coûte 15€ pour tous les joueurs, avec une réduction de 5€ pour les écoles partenaires. La place accompagnateur/visiteur est à 6€.
+                </span>
+              </div>
+
+              <div className={"faq-container" + (this.state.faqEntriesOpened[1] ? " active" : "")} key={1}>
+                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 1)}>
+                  <span className="arrow-segment"></span>
+                  <span className="arrow-segment"></span>
+                  Je me suis inscrit et je n'ai pas reçu mon mail de confirmation
+                </span>
+                <span className="faq-answer">
+                  Si lors de votre inscription votre adresse e-mail est rejetée, cela peut être dû à trois choses :
+                  <ul>
+                    <li>On ne peut pas avoir plus d'un compte par mail</li>
+                    <li>Cet e-mail a été banni. Contactez les organisateurs afin d'en savoir plus.</li>
+                    <li>Vous vous êtes trompé lors de la saisie de votre adresse mail. Contactez les organisateurs grâce au formulaire de contact.</li>
+                  </ul>
+                </span>
+              </div>
+
+              <div className={"faq-container" + (this.state.faqEntriesOpened[2] ? " active" : "")} key={2}>
+                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 2)}>
+                  <span className="arrow-segment"></span>
+                  <span className="arrow-segment"></span>
+                  Quel est l'âge minimum pour la LAN ?
+                </span>
+                <span className="faq-answer">
+                  15 ans. Pour les mineurs, une autorisation parentale sera demandée le jour de la LAN.
+                </span>
+              </div>
+
+              <div className={"faq-container" + (this.state.faqEntriesOpened[3] ? " active" : "")} key={3}>
+                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 3)}>
+                  <span className="arrow-segment"></span>
+                  <span className="arrow-segment"></span>
+                  Quand commencent les tournois ?
+                </span>
+                <span className="faq-answer">
+                  Tous les tournois commencent le samedi à 10h.
+                </span>
+              </div>
+
+              <div className={"faq-container" + (this.state.faqEntriesOpened[4] ? " active" : "")} key={4}>
+                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 4)}>
+                  <span className="arrow-segment"></span>
+                  <span className="arrow-segment"></span>
+                  Est ce que je peux jouer à la manette ?
+                </span>
+                <span className="faq-answer">
+                  Oui.
+                </span>
+              </div>
+
+              <div className={"faq-container" + (this.state.faqEntriesOpened[5] ? " active" : "")} key={5}>
+                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 5)}>
+                  <span className="arrow-segment"></span>
+                  <span className="arrow-segment"></span>
+                  Est ce que je peux streamer pendant la LAN ?
+                </span>
+                <span className="faq-answer">
+                  Peut être. Il faudra dans un premier temps se déclarer auprès des organisateurs, et ensuite en fonction de l'état du réseau tu pourras streamer ou non.
+                </span>
+              </div>
+
+              <h3 className="a-infos__title">Paiement</h3>
+              
+              <div className={"faq-container" + (this.state.faqEntriesOpened[10] ? " active" : "")} key={10}>
+                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 10)}>
+                  <span className="arrow-segment"></span>
+                  <span className="arrow-segment"></span>
+                  Puis-je payer en espèces ?
+                </span>
+                <span className="faq-answer">
+                  Il sera possible de payer en espèce uniquement sur place, mais à tes risques et périls, car il y a de fortes chances que les places soient déjà toutes parties.
+                </span>
+              </div>
+
+              <div className={"faq-container" + (this.state.faqEntriesOpened[11] ? " active" : "")} key={11}>
+                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 11)}>
+                  <span className="arrow-segment"></span>
+                  <span className="arrow-segment"></span>
+                  Est ce que je peux payer par paypal ?
+                </span>
+                <span className="faq-answer">
+                  Non, sur le site, seul le paiement par carte bancaire est disponible.
+                </span>
+              </div>
+
+              <div className={"faq-container" + (this.state.faqEntriesOpened[12] ? " active" : "")} key={12}>
+                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 12)}>
+                  <span className="arrow-segment"></span>
+                  <span className="arrow-segment"></span>
+                  Est ce que je peux payer pour toute mon équipe ?
+                </span>
+                <span className="faq-answer">
+                  Non, chacun doit payer sa place.
+                </span>
+              </div>
             </div>
           </div>
 
