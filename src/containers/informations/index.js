@@ -444,6 +444,8 @@ class Informations extends React.Component {
                   </tr>
                 </tbody>
               </table>
+              <p>Pour en commander un, il faudra à l'inscription choisir les objets correspondants et les ajouter à votre panier. Attention, l'offre n'est valable que jusqu'au 6 décembre
+              18h. Pensez bien à ajouter les objets lors de votre inscription, il ne sera plus possible après coup d'en commander.</p>
             </div>
 
             <Category id="players">Infos joueurs</Category>
