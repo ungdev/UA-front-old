@@ -5,3 +5,4 @@
 - Templates mail (inscription, billet, ...)
 - limiter à 460 paiement (afin de limiter le libre)
 - trier les équipes par tournoi lorsque l'on souhaite en rejoindre une.
+- Page mentions légales

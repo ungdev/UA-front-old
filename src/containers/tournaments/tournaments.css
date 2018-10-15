@@ -86,3 +86,11 @@
 .a-tournament-content > .a-category{
   margin-top: 20px;
 }
+.a-tournament-content a {
+  text-decoration: underline;
+  color: #14d9fa;
+  transition: color .3s;
+}
+.a-tournament-content a:hover {
+  color: #fff;
+}

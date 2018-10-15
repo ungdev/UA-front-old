@@ -10,33 +10,34 @@ const LOL = () => {
       <Category>League of Legends</Category>
     </div>
     <div className="a-tournament-content">
-      <p>Vous retrouverez sur cette page toutes les informations relatives aux tournois League of Legends, pro et amateur. <strong>Attention</strong>, ces informations pourront évoluer,
+      <p>Vous retrouverez sur cette page toutes les informations relatives aux tournois League of Legends (pro et amateur). <strong>Attention</strong>, ces informations pourront évoluer,
       tenez vous informé via nos réseaux (<a href="https://www.facebook.com/UTTArena/">Facebook</a>/<a href="https://twitter.com/UTTArena">Twitter</a>).</p>
+      
       <Category>Informations générales</Category>
       <p>L'inscription à l'UTT Arena est fixée à 15€ par joueur. La LAN se déroulera du Vendredi 7 Décembre 18h au Dimanche 9 Décembre à 18h <strong>sans interruption</strong>. 
-      Les tournois commenceront le samedi à 10h. Sera mise à disposition une buvette, avec de la nourriture en continu et à prix réduit.</p>
+      Les tournois commenceront le samedi à 10h. Il sera mis à disposition une buvette, où vous pourrez manger en continu à prix réduit.</p>
+      
       <Category>Tournoi Libre</Category>
-      <p>En parallèle des tournois "Spotlights" (Lol, HS, CS:GO, Fortnite, SSBU) se déroulera un tournoi libre. Celui-ci sera composé de différents mini-tournois, sur des jeux divers et variés.
-      <strong> Tout joueur de tournoi Spotlight éliminé rejoindra automatiquement le tournoi Libre.</strong> Il pourra ainsi profiter d'animations même s'il n'est plus dans la compétition.</p>
+      <p>En parallèle des tournois "Spotlights" (LoL, Hearthstone, CS:GO, Fortnite, SSBU) se déroulera un tournoi libre. Celui-ci sera composé de différents mini-tournois, sur des jeux divers et variés.
+      <strong>Tout joueur de tournoi Spotlight éliminé rejoindra automatiquement le tournoi Libre.</strong> Il pourra ainsi profiter d'animations même s'il n'est plus dans la compétition.</p>
+
       <Category>Règlements</Category>
       <p>En participant à cette compétition, les joueurs acceptent, sans réticence ou interprétation, de respecter le règlement.
       Il est à noter que celui-ci est susceptible d’évoluer durant la LAN en fonction des besoins (retard, imprécision...). </p>
       <p>Par ailleurs, en cas de divergence d’interprétation de ce document, l’avis des administrateurs du tournoi a préséance sur celui des joueurs. Les joueurs doivent respecter les horaires
        donnés par les organisateurs et s’assurer d’être disponibles lorsqu’ils seront appelés avant le début du tournoi ainsi qu’à chaque fois que cela sera nécessaire, sous peine de disqualification. </p>
+      
       <h2>Prérequis</h2>
-
       <p>Le tournoi est organisé sur les serveurs officiels de <strong>l’Europe de l’Ouest.</strong>  Les participants doivent donc disposer d’un compte d’invocateur et d’un client du jeu à jour pour pouvoir participer à l’évènement.
       <strong> Les tournois commencent le samedi à 10h</strong>.</p>
 
       <h2>Règles générales du jeu</h2>
-
       <p><strong>Mode :</strong> partie personnalisée « Tournament Draft Mode »</p>
       <p><strong>Map :</strong> faille de l'invocateur (5c5)</p>
       <p><strong>Sélection des champions :</strong> avant le début du match, une équipe sera tirée au sort. L’équipe en question se retrouvera à gauche lors de la constitution du match. Les Bans et les picks devront respecter la procédure de draft habituelle.</p>
       <p><strong>ATTENTION :</strong> les champions sortis 2 semaines avant le tournoi ne seront pas acceptés lors des matchs. Les équipes n’auront pas besoin de ban le ou les champions récemment sortis mais ne pourront pas le/les jouer.</p>
 
       <h2>Déroulement d'un match</h2>
-
       <p><strong>Avant le match :</strong> si une équipe ne se présente pas dans le temps imparti, elle sera considérée comme déclarant forfait.</p>
       <p><strong>Capitaine :</strong> pour créer une équipe sur le site, un joueur doit jouer le rôle de capitaine d'équipe, et les autres joueurs rejoindront son équipe. Ce capitaine
       le restera pendant toute la durée du tournoi, et sera donc le référent de l'équipe. Pour plus de simplicité, il est demandé à ce que ce soit majoritairement le capitaine qui rentre en relation avec
@@ -45,6 +46,7 @@ const LOL = () => {
       <p><strong>Interruption du match :</strong> si un match est involontairement interrompu (plantage, déconnexion, réseau…), les équipes sont invitées à « pauser » la partie. En revanche, si
       un joueur possède des problèmes à répétition dûs à sa configuration, il pourra être disqualifié. Son équipe devra alors chercher un remplaçant (parmi des joueurs du tournoi libre) ou abandonner, à moins qu'il ne trouve du matériel de remplacement.</p>
       <p><strong>Retard :</strong> tout retard de plus de 20 minutes entraînera le forfait automatique d'une partie.</p>
+      
       <h2>Format du tournoi (à venir)</h2>
 
       <h2>Règles de bonne conduite</h2>
@@ -55,7 +57,6 @@ const LOL = () => {
         <li>Arrive en retard à l’heure de convocation ;</li>
         <li>Laisse intentionnellement un adversaire remporter le match.</li>
       </ul>
-
       <p>Un manquement à ces règles pourra entraîner <strong>un avertissement, la perte d'une partie ou d'un match ou encore la disqualification de l’équipe.</strong> </p>
       
       <h2>Finales sur scène</h2>
@@ -74,7 +75,7 @@ const LOL = () => {
       <p>La configuration du client League of Legends est stockée sur le serveur de Riot Games, vous n'aurez donc pas à reconfigurer le PC. En revanche, si vous aviez quand même 
       des changements à faire sur le PC, merci de le prendre en compte lors de l'installation, afin de ne pas mettre en retard votre équipe.</p>
     </div>
-    <Arrow/>
+    <Arrow />
   </React.Fragment>)
 }
 

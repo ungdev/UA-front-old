@@ -22,24 +22,22 @@ const Informations = () => (
     <div className="a-informations__table">
       <div className="a-informations__table__row">
         <div className="a-informations__table__row__cell">Format</div>
-        <div className="a-informations__table__row__cell">
-          Bring Your Own Computer (casque, multiprise et RJ45 à amener)
-        </div>
+        <div className="a-informations__table__row__cell">Bring Your Own Computer (casque, multiprise et RJ45 à amener)</div>
       </div>
       <div className="a-informations__table__row">
         <div className="a-informations__table__row__cell">Ouverture</div>
-        <div className="a-informations__table__row__cell">07/12/2018 - 18h</div>
+        <div className="a-informations__table__row__cell">7 décembre 2018 - 17h</div>
       </div>
       <div className="a-informations__table__row">
         <div className="a-informations__table__row__cell">Fermeture</div>
-        <div className="a-informations__table__row__cell">09/12/2018 - 18h</div>
+        <div className="a-informations__table__row__cell">9 décembre 2018 - 18h</div>
       </div>
       <div className="a-informations__table__row">
         <div className="a-informations__table__row__cell">Nourriture</div>
-        <div className="a-informations__table__row__cell">sur place à prix minis</div>
+        <div className="a-informations__table__row__cell">Sur place à prix minis</div>
       </div>
       <div className="a-informations__table__row">
-        <div className="a-informations__table__row__cell">Horraire</div>
+        <div className="a-informations__table__row__cell">Horaires</div>
         <div className="a-informations__table__row__cell">24h/24 (nourriture aussi)</div>
       </div>
       <div className="a-informations__table__row">
@@ -51,8 +49,12 @@ const Informations = () => (
         <div className="a-informations__table__row__cell">15€</div>
       </div>
       <div className="a-informations__table__row">
+        <div className="a-informations__table__row__cell">&Acirc;ge minimum</div>
+        <div className="a-informations__table__row__cell">15 ans</div>
+      </div>
+      <div className="a-informations__table__row">
         <div className="a-informations__table__row__cell">Tournois</div>
-        <div className="a-informations__table__row__cell">5 (les tournois commencent le Samedi à 10h précises)</div>
+        <div className="a-informations__table__row__cell">5 (les tournois commencent le samedi à 10h précises)</div>
       </div>
     </div>
 
