@@ -15,10 +15,10 @@ const LOL = () => {
       tenez vous informé via nos réseaux (Facebook/Twitter)</strong>.</p>
       <Category>Informations générales</Category>
       <p>L'inscription à l'UTT Arena est fixée à 15€ par joueur. La LAN se déroulera du Vendredi 7 Décembre 18h au Dimanche 9 Décembre à 18h <strong>sans interruption</strong>. 
-      Les tournois commenceront le samedi à 10h. Il vous sera mis à disposition une buvette, avec à manger en continue à prix réduit.</p>
+      Les tournois commenceront le samedi à 10h. Il vous sera mis à disposition une buvette, avec à manger en continu à prix réduit.</p>
       <Category>Tournoi Libre</Category>
-      <p>En parralèle des tournois "Spotlights" (Lol, HS, CS:GO, Fortnite, SSBU) se déroulera un tournoi libre. Celui-ci sera composé de diférents mini tournoi, sur des jeux divers et variés.
-      <strong> Tout joueur de tournoi Spotlight éliminé rejoindra automatiquement le tournoi Libre.</strong> Il pourra ainsi profiter d'animations malgré qu'il ne soit plus dans la compétition.</p>
+      <p>En parralèle des tournois "Spotlights" (Lol, HS, CS:GO, Fortnite, SSBU) se déroulera un tournoi libre. Celui-ci sera composé de différents minis tournois, sur des jeux divers et variés.
+      <strong> Tout joueur de tournoi Spotlight éliminé rejoindra automatiquement le tournoi Libre.</strong> Il pourra ainsi profiter d'animations même s'il n'est plus dans la compétition.</p>
       <Category>Règlements</Category>
       <p>En participant à cette compétition les joueurs acceptent, sans réticence ou interprétation, de respecter le règlement. 
       Il est à noter que celui-ci est susceptible d’évoluer durant la LAN en fonction des besoins (retard, imprécision,...). </p>
@@ -60,19 +60,19 @@ const LOL = () => {
       <p>Un manquement à ces règles pourra entraîner <strong>un avertissement, la perte d'une partie ou d'un match ou encore la disqualification de l’équipe.</strong> </p>
       
       <h2>Finales sur scène</h2>
-      <p>Cette année les finalistes auront l'occasion de pouvoir jouer les finales sur la scène de l'événement, devant le publique du festival.
-      C'est une occasion unique de pouvoir montrer son skill devant tous le monde, mais quelques règles s'imposent.</p>
+      <p>Cette année les finalistes auront l'occasion de pouvoir jouer les finales sur la scène de l'événement, devant le public du festival.
+      C'est une occasion unique de pouvoir montrer son skill devant tout le monde, mais quelques règles s'imposent.</p>
       <h3>Obligation</h3>
       <p>Jouer sur scène est <strong>obligatoire</strong>, tout refus entraînera la disqualification de l'équipe.</p>
       <h3>Matériel</h3>
       <p>Il vous sera mis à disposition sur scène du matériel dernière génération par notre partenaire <strong>Scoup Esport</strong> (clavier, souris, casque, tour, écran, chaise). 
       Seulement nous sommes conscient que vous êtes habitués à utiliser votre matériel pour jouer. 
       Ainsi, il vous sera possible d'emmener sur scène votre clavier et votre souris. Si vous souhaitez utiliser votre écran, pc ou tout autre matériel, il faudra que vous le fassiez 
-      valider par le staff avant, et que cela ne mette pas le début du matche en retard. N'hésitez pas à demander l'aide du staff <strong>à l'avance</strong>. Attention, <strong>
-      pour le casque, il faudra qu'il soit anti-bruit et que le micro soit directif</strong>. Sinon vous devrez utiliser le casque que nous fournirons.</p>
+      valider par le staff avant, et que cela ne mette pas le début du match en retard. N'hésitez pas à demander l'aide du staff <strong>à l'avance</strong>. Attention, <strong>
+      pour le casque, il faudra qu'il soit anti-bruit et que le micro soit directionnel</strong>. Sinon vous devrez utiliser le casque que nous fournirons.</p>
       <p><strong>Tout retard de plus de 20 minutes dû à un joueur qui prendra trop de temps à s'installer entraînera la perte automatique d'une partie.</strong></p>
       <h3>Configuration</h3>
-      <p>La configuration du client League of Legends est stocké sur le serveur de Riot Games, vous n'aurez donc pas à reconfigurer le PC. en revanche, si vous aviez quand même 
+      <p>La configuration du client League of Legends est stockée sur le serveur de Riot Games, vous n'aurez donc pas à reconfigurer le PC. en revanche, si vous aviez quand même 
       des changements à faire sur le PC, merci de le prendre en compte lors de l'installation, afin de ne pas mettre en retard votre équipe.</p>
     </div>
   </React.Fragment>)

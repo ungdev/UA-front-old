@@ -161,7 +161,7 @@ const mapDispatchToProps = dispatch => ({
   register: user => dispatch(register(user)),
   passwordMismatch: () => dispatch(
     notifActions.notifSend({
-      message: 'Les mots de passe ne corresspondent pas',
+      message: 'Les mots de passe ne correspondent pas',
       kind: 'danger',
       dismissAfter: 2000
     })
