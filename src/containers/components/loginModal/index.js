@@ -84,7 +84,7 @@ class LoginModal extends React.Component {
                         field="name"
                         type="text"
                         placeholder="Nom d'utilisateur"
-                        pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěêçëùíňóřšťúůýž]+"
+                        pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěêçëùíňóřšťúůýž-]+"
                         minLength="3"
                         maxLength="90"
                         autoFocus
@@ -103,7 +103,7 @@ class LoginModal extends React.Component {
                         field="firstname"
                         type="text"
                         placeholder="Prénom"
-                        pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěêçëùěíňóřšťúůýž]+"
+                        pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěêçëùěíňóřšťúůýž-]+"
                         minLength="2"
                         maxLength="200"
                       />
@@ -111,7 +111,7 @@ class LoginModal extends React.Component {
                         field="lastname"
                         type="text"
                         placeholder="Nom"
-                        pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěěêçëùíňóřšťúůýž]+"
+                        pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěěêçëùíňóřšťúůýž-]+"
                         minLength="2"
                         maxLength="200"
                       />
