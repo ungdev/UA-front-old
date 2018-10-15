@@ -97,7 +97,6 @@ class LoginModal extends React.Component {
                         searchable={false}
                         options={genderOptions}
                         placeholder="Sélectionner..."
-                        styles={{fontSize: '10px'}}
                       />
                       <Text
                         field="firstname"

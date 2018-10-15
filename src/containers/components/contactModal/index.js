@@ -74,11 +74,9 @@ class ContactModal extends React.Component {
                       />
                       <Text field="email" type="email" placeholder="Mail" />
                       <Text field="phone" type="tel" placeholder="Téléphone" />
-                      <TextArea field="message" style={{ height: '200px' }} placeholder="Votre message ici ... Pensez à décrire très précisément votre problème, nous vous répondrons par mail." />
+                      <TextArea field="message" style={{ height: '200px' }} placeholder="Tapez votre message ici... Pensez à décrire très précisément votre problème, nous vous répondrons par mail." />
                       <br />
-                      <Button type="submit" raised>
-                        Envoyer
-                      </Button>
+                      <Button type="submit" raised>Envoyer</Button>
                     </form>
                   </React.Fragment>
                 )}

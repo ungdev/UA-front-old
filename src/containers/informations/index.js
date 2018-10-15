@@ -106,7 +106,8 @@ class Informations extends React.Component {
   }
 
   render() {
-    let faqData = [{
+    let faqData = [
+    {
       question:
         <span>Je me suis inscrit et je n'ai pas reçu mon mail de confirmation</span>,
       answer:
@@ -155,8 +156,8 @@ class Informations extends React.Component {
 
     for(let i = 0; i < faqData.length; i++) {
       faqEntries.push(
-        <div className={"faq-container" + (this.state.faqEntriesOpened[i] ? " active" : "")} onClick={this.toggleFaqEntry.bind(this, i)} key={i}>
-          <span className="faq-question">
+        <div className={"faq-container" + (this.state.faqEntriesOpened[i] ? " active" : "")} key={i}>
+          <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, i)}>
             <span className="arrow-segment"></span>
             <span className="arrow-segment"></span>
             {faqData[i].question}
