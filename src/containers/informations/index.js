@@ -320,6 +320,7 @@ class Informations extends React.Component {
 
             <Category id="players">Infos joueurs</Category>
             <div>
+              <p><strong>Rappel : l'âge minimum pour participer au tournoi est de 15 ans.</strong></p>
               <h3 className="a-info__title">Cashprize et lots</h3>
               <p>La répartition des récompenses entre les 3 premières places est la suivante :
               </p>
