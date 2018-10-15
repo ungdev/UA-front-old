@@ -7,7 +7,7 @@
 - Boutique après achat du billet
 - Tournoi spotlight plein - done, à tester
 - PDF billet // almost done, manque le qrcode
-- Templates mail (inscription, billet, ...)
+- Templates mail pour mot de passe oublié
 - trier les équipes par tournoi lorsque l'on souhaite en rejoindre une.
 - Inscription : âge
 
