@@ -245,6 +245,13 @@ class Informations extends React.Component {
                 <li>Joueur : 15€ (10€ pour les écoles partenaires)</li>
                 <li>Accompagnateur : 6€ (limité à 40 places)</li>
               </ul>
+              <br />
+              <p>&Eacute;coles partenaires :</p>
+              <ul>
+                <li>UTT</li>
+                <li>UTC</li>
+                <li>UTBM</li>
+              </ul>
             </div>
 
             <Category id="access">Accès</Category>
