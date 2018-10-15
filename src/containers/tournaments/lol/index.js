@@ -6,7 +6,6 @@ import ScrollToTopOnMount from '../../../components/scrollToTopOnMount'
 const LOL = () => {
   return (<React.Fragment>
     <ScrollToTopOnMount/>
-    <Arrow/>
     <div style={{ marginTop: '40px', backgroundColor: '#202020' }}>
       <Category>League of Legends</Category>
     </div>
@@ -75,6 +74,7 @@ const LOL = () => {
       <p>La configuration du client League of Legends est stockée sur le serveur de Riot Games, vous n'aurez donc pas à reconfigurer le PC. en revanche, si vous aviez quand même 
       des changements à faire sur le PC, merci de le prendre en compte lors de l'installation, afin de ne pas mettre en retard votre équipe.</p>
     </div>
+    <Arrow/>
   </React.Fragment>)
 }
 
