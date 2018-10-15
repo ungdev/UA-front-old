@@ -1,12 +1,15 @@
 .a-category{
   margin-top: 60px;
 }
+.a-tournaments-main{
+  background-color: #202020;
+}
 .a-tournament-buttons {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #222222;
+  background-color: #444;
 }
 .a-tournament-buttons > button {
   width: 80%;
