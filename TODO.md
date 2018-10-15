@@ -6,8 +6,8 @@
 - Places visiteurs --> droits restreints
 - Boutique après achat du billet
 - Tournoi spotlight plein - done, à tester
-- PDF billet
-- Templates mail (inscription, billet, ...)
+- PDF billet // almost done, manque le qrcode
+- Templates mail pour mot de passe oublié
 - trier les équipes par tournoi lorsque l'on souhaite en rejoindre une.
 - Inscription : âge
 

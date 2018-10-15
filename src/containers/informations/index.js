@@ -151,6 +151,24 @@ class Informations extends React.Component {
         <span>Est ce que je peux jouer à la manette ?</span>,
       answer:
         <span>Oui.</span>
+    },
+    {
+      question:
+        <span>Est ce que je peux payer par paypal ?</span>,
+      answer:
+        <span>Non.</span>
+    },
+    {
+      question:
+        <span>Est ce que je peux payer pour toute mon équipe ?</span>,
+      answer:
+        <span>Non.</span>
+    },
+    {
+      question:
+        <span>Est ce que je peux streamer pendant la LAN ?</span>,
+      answer:
+        <span>Peut être. Il faudra dans un premier temps se déclarer auprès des organisateurs, et ensuite en fonction de l'état du réseau tu pourras ou non streamer.</span>
     }
   ]
 
@@ -239,30 +257,47 @@ class Informations extends React.Component {
             </div>
 
             <Category id="tickets">Billetterie</Category>
-            <div>
+            <div className="a-infos-inscription">
               <p>Il est possible d'acheter une place sur ce site à partir du mercredi 17 octobre</p>
               <ul>
                 <li>Il faut d'abord s'inscrire</li>
                 <li>Ensuite, il faut payer sa place</li>
-                <li>Chaque joueur paye sa place, il n'y a pas de paiement groupé</li>
+                <li>Chaque joueur paye sa place, <strong>il n'y a pas de paiement groupé</strong></li>
                 <li>Le paiement se fait uniquement par carte banquaire</li>
               </ul>
               <br />
               <p>
                 <strong>Les tarifs sont les suivants :</strong>
-              </p><br />
+              </p>
               <ul>
                 <li>Joueur : 15€</li>
                 <li>Une réduction de 5€ sera appliquée aux joueurs provenant d'une école du groupe des Universités de Technologie : UTT, UTC, UTBM</li>
                 <li>Accompagnateur : 6€ (limité à 40 places)</li>
               </ul>
-              <br />
-              <p>&Eacute;coles partenaires :</p>
-              <ul>
-                <li>UTT</li>
-                <li>UTC</li>
-                <li>UTBM</li>
-              </ul>
+            </div>
+            
+            <Category id="tickets">Déroulement des inscriptions</Category>
+            <div className="a-infos-inscription">
+            <p>Les inscriptions à l'UTT Arena ouvrent le mercredi 17 octobre. (l'heure exacte sera annoncée dans la journée)</p>
+            <p>Pour les tournois multijoueurs :</p>
+            <ul>
+              <li>Il faudra créer un compte sur ce site en cliquant sur le bouton <strong>connexion</strong>.</li>
+              <li>Après avoir renseigné les informations du formulaire, il faudra <strong>valider son compte</strong> en cliquant sur le <strong>lien reçu par mail</strong>.</li>
+              <li>Une fois dans votre dashboard, vous pourrez payer votre place, créer une équipe ou en rejoindre une.</li>
+              <li>Une équipe ne sera <strong>complète</strong> qu'une fois <strong>tous ses joueurs dans l'équipe et ayant payé leur place</strong>.</li>
+              <li>Une équipe complète <strong>sera inscrite</strong> dans le tournoi <strong>si elle s'est complêtée avant que le tournoi ne se remplisse</strong>.
+              Sinon, elle sera mise sur <strong>liste d'attente</strong>.</li>
+              <li>Une équipe sur liste d'attente est considéré comme membre du tournoi libre, sauf si une équipe se désiste.</li>
+            </ul>
+            <p>Pour les tournois solos :</p>
+            <ul>
+              <li>Il faudra créer un compte sur ce site en cliquant sur le bouton <strong>connexion</strong>.</li>
+              <li>Après avoir renseigné les informations du formulaire, il faudra <strong>valider son compte</strong> en cliquant sur le <strong>lien reçu par mail</strong>.</li>
+              <li>Une fois dans votre dashboard, vous pourrez payer votre place, ou rejoindre un tournoi solo.</li>
+              <li>Vous ne serez inscrit que <strong>lorsque vous aurez payé votre place</strong>.</li>
+              <li>Si vous ne payé pas votre place à temps, vous serez mis sur <strong>liste d'attente</strong>.</li>
+              <li>Un joueur sur liste d'attente est considéré comme <strong>membre du tournoi libre</strong>, sauf si un joueur se désiste.</li>
+            </ul>
             </div>
 
             <Category id="access">Accès</Category>
@@ -339,6 +374,7 @@ class Informations extends React.Component {
               <h3 className="a-infos__title">Location de matériel</h3>
               <p style={{ textAlign: 'justify' }}>Pas envie de ramener tout ton matériel ? Notre partenaire Scoup eSport te propose de louer PC, chaise gaming, casque, souris et tout ce dont tu as besoin !</p>
               <p className="a-infos__services__infos">(Les prix vous permettent de bénéficier du matériel pendant toute la durée de l'événement.)</p>
+
               <div class="a-infos__table__container">
                 <table className="a-infos__services__table">
                   <thead>
@@ -437,6 +473,7 @@ class Informations extends React.Component {
                   </tbody>
                 </table>
               </div>
+              <p>Pour louer du matériel, il faudra choisir les objets lors de l'inscription et les ajouter à votre panier. Attention, l'offre n'est valable que jusqu'au 6 décembre à 18h. Pensez bien à ajouter les objets lors de votre inscription, il ne sera plus possible après coup d'en commander.</p>
             </div>
 
             <Category id="players">Infos joueurs</Category>
@@ -460,10 +497,13 @@ class Informations extends React.Component {
                 <li>Une multiprise si besoin (chaque joueur dispose d'une prise)</li>
                 <li>Un câble RJ45</li>
               </ul>
-              <p>Si tu ne souhaites pas ramener tout ça, nous te proposons de louer un PC avec notre partenaire Scoup E-sport. De plus nous vendons des multiprises et des câbles RJ45 de 5 et 7m.</p>
+              <p>Si tu ne souhaites pas ramener tout ça, nous te proposons de louer un PC avec notre partenaire Scoup eSport. De plus nous vendons des multiprises et des câbles RJ45 de 5 et 7m.</p>
               <h3 className="a-infos__title">Ce qui est fourni</h3>
               <p>Une prise électrique et un port RJ45.</p>
               <p>Et vu qu'on t'aime bien, on t'offre aussi une place sur une table avec une chaise et l'accès aux loges, mais ça c'est juste pour toi !</p>
+              <h3 className="a-infos__title">Streaming</h3>
+              <p>Pour les joueurs souhaitant streamer pendant la LAN, il faudra en faire la demande au moins 2 semaines avant l'UA, et nous vous autoriserons peut-être à streamer.
+              Nous nous réserverons le droit d'empêcher le stream si le réseau ne le permet pas.</p>
             </div>
             
             <Category id="faq">FAQ</Category>
