@@ -124,7 +124,7 @@ class Informations extends React.Component {
       question:
         <span>Puis-je payer en espèces ?</span>,
       answer:
-        <span>Il est impossible de payer en espèces pendant les préventes. Ce sera possible une fois sur place, à tes risques et périls, car il y a de fortes chances que les places soient déjà toutes parties.</span>
+        <span>Il sera possible de payer en espèce uniquement sur place, mais à tes risques et périls, car il y a de fortes chances que les places soient déjà toutes parties.</span>
     },
     {
       question:
@@ -232,17 +232,20 @@ class Informations extends React.Component {
 
             <Category id="tickets">Billetterie</Category>
             <div>
-              <p>Astuce : en achetant vos billets en prévente :</p>
+              <p>Il est possible d'acheter une place sur ce site à partir du mercredi 17 octobre</p>
               <ul>
-                <li>Bénéficiez de tarifs réduits</li>
-                <li>Assurez une place pour votre équipe</li>
+                <li>Il faut d'abord s'inscrire</li>
+                <li>Ensuite, il faut payer sa place</li>
+                <li>Chaque joueur paye sa place, il n'y a pas de paiement groupé</li>
+                <li>Le paiement se fait uniquement par carte banquaire</li>
               </ul>
               <br />
               <p>
-                <strong>Inscris-toi sur le site pour accéder à la billeterie !</strong>
+                <strong>Les tarifs sont les suivants :</strong>
               </p><br />
               <ul>
-                <li>Joueur : 15€ (10€ pour les écoles partenaires)</li>
+                <li>Joueur : 15€</li>
+                <li>Une réduction de 5€ sera appliquée aux joueurs provenant d'une école du groupe des Universités de Technologie : UTT, UTC, UTBM</li>
                 <li>Accompagnateur : 6€ (limité à 40 places)</li>
               </ul>
               <br />
