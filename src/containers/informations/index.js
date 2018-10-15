@@ -242,12 +242,36 @@ class Informations extends React.Component {
               <br />
               <p>
                 <strong>Les tarifs sont les suivants :</strong>
-              </p><br />
+              </p>
               <ul>
                 <li>Joueur : 15€</li>
                 <li>Une réduction de 5€ sera appliquée aux joueurs provenant d'une école du groupe des Universités de Technologie : UTT, UTC, UTBM</li>
                 <li>Accompagnateur : 6€ (limité à 40 places)</li>
               </ul>
+            </div>
+            
+            <Category id="tickets">Déroulement des inscriptions</Category>
+            <div className="a-infos-inscription">
+            <p>Les inscriptions à l'UTT Arena ouvrent le mercredi 17 octobre. (l'heure exacte sera annoncée dans la journée)</p>
+            <p>Pour les tournois multijoueurs :</p>
+            <ul>
+              <li>Il faudra créer un compte sur ce site en cliquant sur le bouton <strong>connexion</strong>.</li>
+              <li>Après avoir renseigné les informations du formulaire, il faudra <strong>valider son compte</strong> en cliquant sur le <strong>lien reçu par mail</strong>.</li>
+              <li>Une fois dans votre dashboard, vous pourrez payer votre place, créer une équipe ou en rejoindre une.</li>
+              <li>Une équipe ne sera <strong>complète</strong> qu'une fois <strong>tous ses joueurs dans l'équipe et ayant payé leur place</strong>.</li>
+              <li>Une équipe complète <strong>sera inscrite</strong> dans le tournoi <strong>si elle s'est complêtée avant que le tournoi ne se remplisse</strong>.
+              Sinon, elle sera mise sur <strong>liste d'attente</strong>.</li>
+              <li>Une équipe sur liste d'attente est considéré comme membre du tournoi libre, sauf si une équipe se désiste.</li>
+            </ul>
+            <p>Pour les tournois solos :</p>
+            <ul>
+              <li>Il faudra créer un compte sur ce site en cliquant sur le bouton <strong>connexion</strong>.</li>
+              <li>Après avoir renseigné les informations du formulaire, il faudra <strong>valider son compte</strong> en cliquant sur le <strong>lien reçu par mail</strong>.</li>
+              <li>Une fois dans votre dashboard, vous pourrez payer votre place, ou rejoindre un tournoi solo.</li>
+              <li>Vous ne serez inscrit que <strong>lorsque vous aurez payé votre place</strong>.</li>
+              <li>Si vous ne payé pas votre place à temps, vous serez mis sur <strong>liste d'attente</strong>.</li>
+              <li>Un joueur sur liste d'attente est considéré comme <strong>membre du tournoi libre</strong>, sauf si un joueur se désiste.</li>
+            </ul>
             </div>
 
             <Category id="access">Accès</Category>
