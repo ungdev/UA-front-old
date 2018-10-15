@@ -55,7 +55,7 @@
   text-decoration: none;
 }
 
-.a-info__title {
+.a-infos__title {
   font-size: 1.5em;
   color: #14d9fa;
   font-weight: bold;
@@ -90,11 +90,32 @@
 }
 
 .a-infos__content table td {
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #aaa;
 }
 
-.a-infos__content table tbody tr:nth-child(1) {
+.a-infos__content table tbody tr:nth-child(2n+1) {
   background: rgba(50, 50, 50, 0.7);
+}
+
+.a-infos__content table tbody tr:nth-child(2n) {
+  background: rgba(50, 50, 50, 0.2);
+}
+
+.a-infos__services__infos {
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+.a-infos__services__table {
+  width: 100%;
+}
+
+.a-infos__services__table ul {
+  margin: 0;
+}
+
+.a-infos__services__table ul li {
+  padding: 5px;
 }
 
 @media (min-width: 768px) {

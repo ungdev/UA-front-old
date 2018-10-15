@@ -37,7 +37,7 @@ class JoinTeam extends React.Component {
               autoFocus
               searchable
             />
-            <Text field="message" placeholder="Votre message" minLength="3" maxLength="255" />
+            <Text field="message" placeholder="Votre message" minLength="3" maxLength="255" style={{marginBottom: '15px'}} />
             <br />
             <Button type="submit" raised>
               Rejoindre cette équipe
