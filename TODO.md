@@ -6,13 +6,9 @@
 - Places visiteurs --> droits restreints
 - Boutique après achat du billet
 - Tournoi spotlight plein - done, à tester
-- PDF billet
+- PDF billet // almost done, manque le qrcode
 - Templates mail (inscription, billet, ...)
 - trier les équipes par tournoi lorsque l'on souhaite en rejoindre une.
-- Page mentions légales
-- gallerie photo
-- item scoup
-- informations streamer
 - Inscription : âge
 
 # Si on a le time (impossible)

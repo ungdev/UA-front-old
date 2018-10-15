@@ -161,6 +161,12 @@ class Informations extends React.Component {
         <span>Est ce que je peux payer pour toute mon équipe ?</span>,
       answer:
         <span>Non.</span>
+    },
+    {
+      question:
+        <span>Est ce que je peux streamer pendant la LAN ?</span>,
+      answer:
+        <span>Peut être. Il faudra dans un premier temps se déclarer auprès des organisateurs, et ensuite en fonction de l'état du réseau tu pourras ou non streamer.</span>
     }
   ]
 
@@ -485,6 +491,9 @@ class Informations extends React.Component {
               <h3 className="a-infos__title">Ce qui est fourni</h3>
               <p>Une prise électrique et un port RJ45.</p>
               <p>Et vu qu'on t'aime bien, on t'offre aussi une place sur une table avec une chaise et l'accès aux loges, mais ça c'est juste pour toi !</p>
+              <h3 className="a-infos__title">Streaming</h3>
+              <p>Pour les joueurs souhaitant streamer pendant la LAN, il faudra en faire la demande au moins 2 semaines avant l'UA, et nous vous autoriserons peut-être à streamer.
+              Nous nous réserverons le droit d'empêcher le stream si le réseau ne le permet pas.</p>
             </div>
             
             <Category id="faq">FAQ</Category>
