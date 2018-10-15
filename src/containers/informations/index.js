@@ -1,7 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import Button from '../../components/button'
 
-import './home.css'
+import './informations.css'
 
 import logo from '../../assets/ua2018.png'
 
@@ -200,6 +202,12 @@ class Informations extends React.Component {
                 &Agrave; présent l’UTT Arena c’est <span className="a-infos__important">460 joueurs</span>, <span className="a-infos__important">5 tournois spotlights</span>, une scène de 70 m² et une centaine de bénévoles.<br />
               </p>
               <p style={{ textAlign: 'justify'}}>Et tout cela, c’est grâce à vous, les joueurs, qui nous font confiance chaque année pour vous organiser un événement de folie, et à nos partenaires qui nous soutiennent chaque année dans l'organisation de la LAN !</p>
+            
+              <div style={{textAlign: 'center', marginTop: '40px'}}>
+                <Link to={"/gallery"}>
+                  <Button raised>Voir les photos</Button>
+                </Link>
+              </div>
             </div>
 
             <Category id="schedule">Horaires</Category>
@@ -329,104 +337,106 @@ class Informations extends React.Component {
               Pensez à ramener vos duvets si vous souhaitez en profiter ! Nous metterons à disposition des tapis pour plus de confort.</p>
 
               <h3 className="a-infos__title">Location de matériel</h3>
-              <p>Pas envie de ramener tout ton matériel ? Notre partenaire Scoup E-sport te propose de louer PC, chaise gaming, casque, souris et tout ce dont tu as besoin !</p>
+              <p style={{ textAlign: 'justify' }}>Pas envie de ramener tout ton matériel ? Notre partenaire Scoup eSport te propose de louer PC, chaise gaming, casque, souris et tout ce dont tu as besoin !</p>
               <p className="a-infos__services__infos">(Les prix vous permettent de bénéficier du matériel pendant toute la durée de l'événement.)</p>
-              <table className="a-infos__services__table">
-                <thead>
-                  <tr>
-                    <th>Matériel</th>
-                    <th>Prix</th>
-                    <th>Informations</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Kaliento</td>
-                    <td>5€</td>
-                    <td>Chauffeur de main électrique Kaliento</td>
-                  </tr>
-                  <tr>
-                    <td>Souris gaming</td>
-                    <td>5€</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>Clavier gaming</td>
-                    <td>10€</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>Casque gaming</td>
-                    <td>15€</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>&Eacute;cran 24"</td>
-                    <td>35€</td>
-                    <td>&Eacute;cran 24" 144Hz</td>
-                  </tr>
-                  <tr>
-                    <td>&Eacute;cran 27"</td>
-                    <td>40€</td>
-                    <td>&Eacute;cran 27" 144Hz</td>
-                  </tr>
-                  <tr>
-                    <td>Chaise gaming</td>
-                    <td>45€</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>PC gaming</td>
-                    <td>95€</td>
-                    <td>
-                      <ul>
-                        <li>CPU : Intel core i5 7100 3.6 GHz</li>
-                        <li>RAM : 8 Go DDR 4</li>
-                        <li>GPU : GTX 1050Ti 4Gb</li>
-                        <li>Carte mère Z170 Serie</li>
-                        <li>Alimentation 430W</li>
-                        <li>Watercooling 120</li>
-                        <li>SSD 120 Go</li>
-                        <li>Disque dur 1 To</li>
-                        <li>Boitier ANTEC P7</li>
-                        <li>Windows 10 Professionnel</li>
-                      </ul>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>PC streaming</td>
-                    <td>120€</td>
-                    <td>
-                      <ul>
-                        <li>CPU : Intel core i7 6700K 3.6 GHz</li>
-                        <li>RAM : 16 Go DDR 4</li>
-                        <li>GPU : GTX 1080</li>
-                        <li>Carte mère Z170 Serie</li>
-                        <li>Alimentation 650W Gold</li>
-                        <li>Watercooling 120</li>
-                        <li>SSD 250 Go</li>
-                        <li>Disque dur 1 To</li>
-                        <li>Boitier ANTEC P8</li>
-                        <li>Windows 10 Professionnel</li>
-                      </ul>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>PC portable gaming</td>
-                    <td>130€</td>
-                    <td>
-                      PC portable MSI
-                      <ul>
-                        <li>CPU : i7</li>
-                        <li>RAM : 32 Go</li>
-                        <li>GPU : GTX 1060</li>
-                        <li>&Eacute;cran 17"</li>
-                        <li>Windows 10 Professionnel</li>
-                      </ul>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="a-infos__table__container">
+                <table className="a-infos__services__table">
+                  <thead>
+                    <tr>
+                      <th>Matériel</th>
+                      <th>Prix</th>
+                      <th>Informations</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Kaliento</td>
+                      <td>5€</td>
+                      <td>Chauffeur de main électrique Kaliento</td>
+                    </tr>
+                    <tr>
+                      <td>Souris gaming</td>
+                      <td>5€</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>Clavier gaming</td>
+                      <td>10€</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>Casque gaming</td>
+                      <td>15€</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>&Eacute;cran 24"</td>
+                      <td>35€</td>
+                      <td>&Eacute;cran 24" 144Hz</td>
+                    </tr>
+                    <tr>
+                      <td>&Eacute;cran 27"</td>
+                      <td>40€</td>
+                      <td>&Eacute;cran 27" 144Hz</td>
+                    </tr>
+                    <tr>
+                      <td>Chaise gaming</td>
+                      <td>45€</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>PC gaming</td>
+                      <td>95€</td>
+                      <td>
+                        <ul>
+                          <li>CPU : Intel core i5 7100 3.6 GHz</li>
+                          <li>RAM : 8 Go DDR 4</li>
+                          <li>GPU : GTX 1050Ti 4Gb</li>
+                          <li>Carte mère Z170 Serie</li>
+                          <li>Alimentation 430W</li>
+                          <li>Watercooling 120</li>
+                          <li>SSD 120 Go</li>
+                          <li>Disque dur 1 To</li>
+                          <li>Boitier ANTEC P7</li>
+                          <li>Windows 10 Professionnel</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>PC streaming</td>
+                      <td>120€</td>
+                      <td>
+                        <ul>
+                          <li>CPU : Intel core i7 6700K 3.6 GHz</li>
+                          <li>RAM : 16 Go DDR 4</li>
+                          <li>GPU : GTX 1080</li>
+                          <li>Carte mère Z170 Serie</li>
+                          <li>Alimentation 650W Gold</li>
+                          <li>Watercooling 120</li>
+                          <li>SSD 250 Go</li>
+                          <li>Disque dur 1 To</li>
+                          <li>Boitier ANTEC P8</li>
+                          <li>Windows 10 Professionnel</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>PC portable gaming</td>
+                      <td>130€</td>
+                      <td>
+                        PC portable MSI
+                        <ul>
+                          <li>CPU : i7</li>
+                          <li>RAM : 32 Go</li>
+                          <li>GPU : GTX 1060</li>
+                          <li>&Eacute;cran 17"</li>
+                          <li>Windows 10 Professionnel</li>
+                        </ul>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
 
             <Category id="players">Infos joueurs</Category>
