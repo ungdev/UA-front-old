@@ -39,8 +39,8 @@ const Informations = () => (
         <div className="a-informations__table__row__cell">sur place à prix minis</div>
       </div>
       <div className="a-informations__table__row">
-        <div className="a-informations__table__row__cell">24h/24h</div>
-        <div className="a-informations__table__row__cell">Oui (nourriture aussi)</div>
+        <div className="a-informations__table__row__cell">Horraire</div>
+        <div className="a-informations__table__row__cell">24h/24 (nourriture aussi)</div>
       </div>
       <div className="a-informations__table__row">
         <div className="a-informations__table__row__cell">Places</div>

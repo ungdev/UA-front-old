@@ -118,12 +118,38 @@ class Informations extends React.Component {
             <li>Vous vous êtes trompé lors de la saisie de votre adresse mail. Contactez les organisateurs grâce au formulaire de contact.</li>
           </ul>
         </span>
-    }, {
+    },
+    {
       question:
         <span>Puis-je payer en espèces ?</span>,
       answer:
         <span>Il est impossible de payer en espèces pendant les préventes. Ce sera possible une fois sur place, à tes risques et périls, car il y a de fortes chances que les places soient déjà toutes parties.</span>
-    }]
+    },
+    {
+      question:
+        <span>Combien coûte la LAN pour les joueurs et les accompagnateurs ?</span>,
+      answer:
+        <span>La LAN coûte 15€ pour tous les joueurs, avec une réduction de 5€ pour les écoles partenaires. La place accompagnateur/visiteur est à 6€.</span>
+    },
+    {
+      question:
+        <span>Quel est l'âge minimum pour la LAN ?</span>,
+      answer:
+        <span>15 ans. Pour les mineurs, une autorisation parentale sera demandée le jour de la LAN.</span>
+    },
+    {
+      question:
+        <span>Quand commencent les tournois ?</span>,
+      answer:
+        <span>Tous les tournois commencent le samedi à 10h.</span>
+    },
+    {
+      question:
+        <span>Est ce que je peux jouer à la manette ?</span>,
+      answer:
+        <span>Oui.</span>
+    }
+  ]
 
     let faqEntries = []
 
