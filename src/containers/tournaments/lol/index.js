@@ -13,7 +13,17 @@ const LOL = () => {
     <div className="a-tournament-content">
       <p>Vous retrouverez sur cette page toutes les informations relatives aux tournois League of Legends, pro et amateur. <strong>Attention, ces informations pourront évoluer,
       tenez vous informé via nos réseaux (Facebook/Twitter)</strong>.</p>
+      <Category>Informations générales</Category>
+      <p>L'inscription à l'UTT Arena est fixée à 15€ par joueur. La LAN se déroulera du Vendredi 7 Décembre 18h au Dimanche 9 Décembre à 18h <strong>sans interruption</strong>. 
+      Les tournois commenceront le samedi à 10h. Il vous sera mis à disposition une buvette, avec à manger en continue à prix réduit.</p>
+      <Category>Tournoi Libre</Category>
+      <p>En parralèle des tournois "Spotlights" (Lol, HS, CS:GO, Fortnite, SSBU) se déroulera un tournoi libre. Celui-ci sera composé de diférents mini tournoi, sur des jeux divers et variés.
+      <strong> Tout joueur de tournoi Spotlight éliminé rejoindra automatiquement le tournoi Libre.</strong> Il pourra ainsi profiter d'animations malgré qu'il ne soit plus dans la compétition.</p>
       <Category>Règlements</Category>
+      <p>En participant à cette compétition les joueurs acceptent, sans réticence ou interprétation, de respecter le règlement. 
+      Il est à noter que celui-ci est susceptible d’évoluer durant la LAN en fonction des besoins (retard, imprécision,...). </p>
+      <p>Par ailleurs, en cas de divergence d’interprétation de ce document, l’avis des administrateurs du tournoi a priorité sur celui des joueurs. Les joueurs doivent respecter les horaires
+       donnés par les organisateurs et s’assurer d’être disponibles lorsqu’ils seront appelés avant le début du tournoi ainsi qu’à chaque fois que cela sera nécessaire, sous peine de disqualification. </p>
       <h2>Prérequis</h2>
 
       <p>Le tournoi est organisé sur les serveurs officiels de <strong>l’Europe de l’Ouest.</strong>  Les participants doivent donc disposer d’un compte d’invocateur et d’un client du jeu à jour pour pouvoir participer à l’évènement.
