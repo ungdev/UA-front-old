@@ -24,6 +24,8 @@ export default error => {
       return 'Le tournoi est plein'
     case 'DUPLICATE_ENTRY':
       return 'Le pseudo ou le mail est déjà utilisé.'
+    case 'VISITOR_FULL':
+      return 'Il n\'y a plus de places visiteur.'
     case 'UNKNOWN':
       return 'Une erreur est survenue'
     default:

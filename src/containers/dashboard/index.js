@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Redirect } from 'react-router'
+import { Route, Redirect, Switch } from 'react-router'
 import { connect } from 'react-redux'
 
 import Header from '../../components/header'
@@ -55,9 +55,10 @@ class Dashboard extends React.Component {
         <main className="a-dashboard">
           <h1>
             Dashboard {this.props.user && this.props.user.name && `de ${this.props.user.name}`}
-            {this.props.user && this.props.user.team ? ` (joueur ${this.props.user.team.spotlight.shortName})` : ' (joueur libre)'}
+            {this.props.user && this.props.user.team && !this.props.user.plusone ? ` (joueur ${this.props.user.team.spotlight.shortName})` : 
+            (this.props.user && this.props.user.plusone ? ' (Visiteur)' : ' (joueur libre)')}
           </h1>
-
+          <Switch>
           {this.state.render && (
             <Route
               path={baseUrl + 'dashboard'}
@@ -85,7 +86,7 @@ class Dashboard extends React.Component {
               component={DashboardPaymentError}
             />
           )}
-          {this.state.render && (
+          {this.state.render && !this.props.user.paid && (
             <Route
               exact
               path={baseUrl + 'dashboard/payment'}
@@ -139,6 +140,8 @@ class Dashboard extends React.Component {
                 : <Redirect to={baseUrl + 'dashboard'} />
             )}/>
           )}
+          {this.state.render && <Redirect from="*" to="/dashboard" />}
+          </Switch>
         </main>
       </div>
     )
