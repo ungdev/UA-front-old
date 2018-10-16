@@ -56,6 +56,9 @@ class Header extends React.Component {
             <Button onClick={this.props.gotoInformations}>Informations</Button>
           </div>
           <div>
+            <Button onClick={this.props.gotoFAQ}>FAQ</Button>
+          </div>
+          <div>
             <Button onClick={this.props.gotoTournaments}>Tournois</Button>
           </div>
           <div>
@@ -87,6 +90,9 @@ class Header extends React.Component {
               <Button onClick={this.props.gotoInformations}>Informations</Button>
             </div>
             <div>
+              <Button onClick={this.props.gotoFAQ}>FAQ</Button>
+            </div>
+            <div>
               <Button onClick={this.props.gotoTournaments}>Tournois</Button>
             </div>
             <div>
@@ -111,6 +117,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   gotoHome: () => dispatch(push('/')),
   gotoInformations: () => dispatch(push('/informations')),
+  gotoFAQ: () => dispatch(push('/faq')),
   gotoTournaments: () => dispatch(push('/tournaments')),
   gotoPartners: () => dispatch(push('/partners')),
   gotoDashboard: () => dispatch(push('/dashboard'))
