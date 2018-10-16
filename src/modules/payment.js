@@ -25,7 +25,7 @@ export const payment = basket => {
       }
     } catch (err) {
       console.log(err.response)
-      if(err.response.status === 404) {
+      if (err.response.status === 404) {
         dispatch(
           notifActions.notifSend({
             message: errorToString(err.response.data.error),
