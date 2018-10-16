@@ -8,8 +8,15 @@
   margin: 0 auto;
   color: #fff;
   margin-top: 50px;
+  text-align: justify;
 }
 .a-mentions-body > .a-category {
   margin: 40px -20px 35px -20px;
   padding: 0;
+}
+.a-mentions-body > h1 {
+  text-align: center;
+}
+.a-mentions-body > h2 {
+  text-align: center;
 }
