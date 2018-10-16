@@ -231,6 +231,41 @@ class FAQ extends React.Component {
                   Non, chacun doit payer sa place.
                 </span>
               </div>
+              <h3 className="a-infos__title">Déroulement des tournois</h3>
+
+              <div className={"faq-container" + (this.state.faqEntriesOpened[13] ? " active" : "")} key={13}>
+                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 13)}>
+                  <span className="arrow-segment"></span>
+                  <span className="arrow-segment"></span>
+                  Est-ce que je peux jouer sur PS4 à Fortnite
+                </span>
+                <span className="faq-answer">
+                  Non, seuls les PCs sont autorisés.
+                </span>
+              </div>
+              <h3 className="a-infos__title">Tournoi Super Smash Bros Ultimate</h3>
+              <div className={"faq-container" + (this.state.faqEntriesOpened[14] ? " active" : "")} key={14}>
+                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 14)}>
+                  <span className="arrow-segment"></span>
+                  <span className="arrow-segment"></span>
+                  Est-ce que je dois ramener ma console pour le tournoi à Smash Bros ?
+                </span>
+                <span className="faq-answer">
+                  Non, nous fournissons tout le matériel
+                </span>
+              </div>
+              <div className={"faq-container" + (this.state.faqEntriesOpened[15] ? " active" : "")} key={15}>
+                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 15)}>
+                  <span className="arrow-segment"></span>
+                  <span className="arrow-segment"></span>
+                  Est-ce que je peux ramener mon PC ?
+                </span>
+                <span className="faq-answer">
+                  Non, vous n'aurez pas de place attribuée
+                </span>
+              </div>
+
+
             </div>
           </div>
 

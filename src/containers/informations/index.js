@@ -163,7 +163,7 @@ class Informations extends React.Component {
                 <li>Il faut d'abord s'inscrire</li>
                 <li>Ensuite, il faut payer sa place</li>
                 <li>Chaque joueur paye sa place, <strong>il n'y a pas de paiement groupé</strong></li>
-                <li>Le paiement se fait uniquement par carte banquaire</li>
+                <li>Le paiement se fait uniquement par carte bancaire</li>
               </ul>
               <br />
               <p>
