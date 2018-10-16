@@ -125,22 +125,20 @@ class MentionsLegales extends React.Component {
                         <Category>Mentions Légales</Category>
                         <h1>Propriétaire du site</h1>
                         <p>
-                            UTT Net Group, association loi 1901
-                            N° RNA : W103000699
-
-                            situé au 12 rue Marie Curie 10004 Troyes
-
-                            03 26 40 60 00
-                            ung@utt.fr
+                            UTT Net Group, association loi 1901<br/>
+                            N° RNA : W103000699<br/>
+                            situé au 12 rue Marie Curie<br/>
+                            10004 Troyes<br/>
+                            03 26 40 60 00<br/>
+                            ung@utt.fr<br/>
                         </p>
 
                         <h1>Hébergeur du site</h1>
-                        <p>UTT Net Group, association loi 1901
-                            N° RNA : W103000699
-
-                            12 rue Marie Curie 10004 Troyes
-
-                            03 26 40 60 00
+                        <p>UTT Net Group, association loi 1901<br/>
+                            N° RNA : W103000699<br/>
+                            12 rue Marie Curie <br/>
+                            10004 Troyes<br/>
+                            03 26 40 60 00<br/>
                             ung@utt.fr
                         </p>
 
@@ -163,23 +161,23 @@ class MentionsLegales extends React.Component {
                         <p>
                             Les présentes conditions générales de vente s’appliquent à toutes les ventes conclues sur le site internet arena.utt.fr
 
-                            Le site internet arena.utt.fr est un service de :
+                            Le site internet arena.utt.fr est un service de :<br/>
 
-                            UTT Net Group, association loi 1901
-                            N° RNA : W103000699
+                            UTT Net Group, association loi 1901<br/>
+                            N° RNA : W103000699<br/>
 
-                            situé au 12 rue Marie Curie 10004 Troyes
+                            situé au 12 rue Marie Curie 10004 Troyes<br/>
 
-                            03 26 40 60 00
-                            ung@utt.fr
+                            03 26 40 60 00<br/>
+                            ung@utt.fr<br/>
 
-                            Le site arena.utt.fr commercialise le produit suivant : Place pour la LAN et matériel en prévente ou location. Le client déclare avoir pris connaissance et avoir accepté les conditions générales de vente antérieurement à la passation de sa commande. La validation de la commande vaut donc acceptation des conditions générales de vente.
+                            Le site arena.utt.fr commercialise le produit suivant : Place pour la LAN et matériel en prévente ou location. Le client déclare avoir pris connaissance et avoir accepté les conditions générales de vente antérieurement à la passation de sa commande. La validation de la commande vaut donc acceptation des conditions générales de vente.<br/>
 
-                            Le paiement est assuré par le prestataire suivant :
+                            Le paiement est assuré par le prestataire suivant :<br/>
 
-                            BDE UTT, association loi 1901
-                            sis au 12, rue Marie Curie, 10000 Troyes
-                            SIRET 4483866720001
+                            BDE UTT, association loi 1901<br/>
+                            sis au 12, rue Marie Curie, 10000 Troyes<br/>
+                            SIRET 4483866720001<br/>
                         </p>
 
                         <h2>Article I - Principe</h2>
