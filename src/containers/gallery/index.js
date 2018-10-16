@@ -14,6 +14,16 @@ import ForgotModal from '../components/forgotModal'
 import { fetchCanLogin } from '../../modules/canLogin'
 import { autoLogin } from '../../modules/login'
 
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
+
+function importAll(e) {
+  return e.keys().map(e)
+}
+
+var imagesUrl = [];
+var images = [];
+
 class Gallery extends React.Component {
   constructor() {
     super()
@@ -31,8 +41,20 @@ class Gallery extends React.Component {
     this.closeContactModal = this.closeContactModal.bind(this)
     this.closeForgotModal = this.closeForgotModal.bind(this)
     this.scrollCapture = this.scrollCapture.bind(this)
-  }
 
+    imagesUrl = importAll(require.context('../../assets/gallery', false, /\.(jpe?g)$/i))
+
+    for(let i = 0; i < imagesUrl.length; i++) {
+      images.push(
+        <div className="a-gallery__image__container">
+          <img
+            src={imagesUrl[i]}
+          />
+        </div>
+      )
+    }
+  }
+  
   componentWillMount() {
     this.props.fetchCanLogin()
     this.props.autoLogin()
@@ -110,7 +132,7 @@ class Gallery extends React.Component {
 
         <main className="a-gallery">
           <div className="a-gallery__content">
-            <div>gefuzvfhzebjfz</div>
+            {images}
           </div>
 
           <Footer openContactModal={this.openContactModal} />

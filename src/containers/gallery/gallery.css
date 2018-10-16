@@ -5,26 +5,29 @@
 }
 
 .a-gallery__content {
+  display: flex;
+  flex-wrap: wrap;
   margin: 0 auto;
   padding: 40px 20px;
   color: #fff;
   margin-top: 50px;
 }
 
-@media (min-width: 768px) {
+.a-gallery__content span {
+  width: 300px;
+  margin: 5px;
+}
+
+.a-gallery__content {
+  width: 80%;
+}
+
+.a-gallery__image__container {
+  display: block;
+}
+
+@media (max-width: 768px) {
   .a-gallery__content {
     width: 600px;
-  }
-}
-
-@media (min-width: 992px) {
-  .a-gallery__content {
-    width: 750px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .a-gallery__content {
-    width: 970px;
   }
 }
