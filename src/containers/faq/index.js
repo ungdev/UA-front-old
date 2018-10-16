@@ -3,11 +3,9 @@ import { connect } from 'react-redux'
 
 import './faq.css'
 
-import logo from '../../assets/ua2018.png'
 
 import ScrollToTopOnMount from '../../components/scrollToTopOnMount'
 import Header from '../components/header'
-import Category from '../components/category'
 import Footer from '../components/footer'
 import Social from '../components/social'
 import LoginModal from '../components/loginModal'

@@ -24,8 +24,7 @@ class Informations extends React.Component {
     this.state = {
       loginModalOpened: false,
       forgotModalOpened: false,
-      contactModalOpened: false,
-      faqEntriesOpened: []
+      contactModalOpened: false
     }
 
     this.openLoginModal = this.openLoginModal.bind(this)
@@ -95,16 +94,6 @@ class Informations extends React.Component {
     document.body.className =
       scrollTop >= document.body.scrollHeight - bottom ? 'a-social-fixed' : ''
   }
-
-  toggleFaqEntry(i) {
-    let entries = this.state.faqEntriesOpened.slice()
-    entries[i] = !entries[i]
-
-    this.setState({
-      faqEntriesOpened: entries
-    })
-  }
-
   render() {
     return (
       <div>
