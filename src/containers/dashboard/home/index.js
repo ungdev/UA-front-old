@@ -9,9 +9,9 @@ import ListItem from '../../../components/list-item'
 
 const Home = props => {
   return [
-  <h2 key="0">Équipe</h2>,
+  <h2 key="0">Équipes</h2>,
   <List key="1">
-    {props.user && !props.user.team && (
+    {props.user && !props.user.team && !props.user.plusone && (
       <ListItem clickable={true} onClick={props.createTeam}>
         <h3>Créer une équipe</h3>
         <span>
@@ -19,25 +19,25 @@ const Home = props => {
         </span>
       </ListItem>
     )}
-    {props.user && !props.user.team && (
+    {props.user && !props.user.team && !props.user.plusone && (
       <ListItem clickable={true} onClick={props.joinTeam}>
         <h3>Rejoindre une équipe</h3>
         <span>Rejoins ton équipe de compétiteurs pour vous inscrire aux tournois !</span>
       </ListItem>
     )}
-    {props.user && !props.user.team && (
+    {props.user && !props.user.team && !props.user.plusone && (
       <ListItem clickable={true} onClick={props.solo}>
         <h3>Rejoindre un tournoi solo</h3>
         <span>Pour rejoindre le tournoi Hearthstone ou Super Smash Bros Ultimate, c'est par ici !</span>
       </ListItem>
     )}
-    {props.user && !props.user.team && (
+    {props.user && !props.user.team && !props.user.plusone && (
       <ListItem clickable={true} onClick={props.requests}>
         <h3>Mes demandes</h3>
         <span>La liste des demandes d'équipe que tu as faites</span>
       </ListItem>
     )}
-    {props.user && props.user.team && (
+    {props.user && props.user.team && !props.user.plusone && (
       <ListItem clickable={true} onClick={props.teamManagement}>
         <h3>{props.user.team.name}</h3>
         <span>Gère ton équipe, ses membres et vérifie son statut d'inscription !</span>
