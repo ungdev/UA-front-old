@@ -10,6 +10,7 @@
 - Templates mail pour mot de passe oublié
 - trier les équipes par tournoi lorsque l'on souhaite en rejoindre une.
 - Inscription : âge
+- MessageBox à changer
 
 # Si on a le time (impossible)
 
