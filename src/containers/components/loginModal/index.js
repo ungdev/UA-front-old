@@ -138,7 +138,7 @@ class LoginModal extends React.Component {
                           onChange={() => this.setState({ accepted: !this.state.accepted })}
                           style={{ marginBottom: '0px' }}
                         />
-                        <span style={{ fontSize: '10px' }}>Je certifie bozbfzbf <a href='/mentions-legales'>conditions d'utilisations</a> du site</span>
+                        <span style={{ fontSize: '10px' }}>Je certifie avoir lu et accepté sans réserve les <a href='/mentions-legales'>conditions d'utilisations</a> du site</span>
                       </div>
                       {this.state.loading && <div style={{ margin: '12px 0 0 0' }}>Envoi en cours...</div>}
                       <br />
