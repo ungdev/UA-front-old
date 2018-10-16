@@ -160,7 +160,7 @@ class FAQ extends React.Component {
                   Quel est l'âge minimum pour la LAN ?
                 </span>
                 <span className="faq-answer">
-                  15 ans. Pour les mineurs, une autorisation parentale sera demandée le jour de la LAN.
+                  15 ans. Pour les mineurs, une autorisation parentale ou du responsable légal sera demandée le jour de la LAN.
                 </span>
               </div>
 
