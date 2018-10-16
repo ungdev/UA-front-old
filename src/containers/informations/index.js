@@ -1,7 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
-import Button from '../../components/button'
 
 import './informations.css'
 
@@ -139,12 +137,6 @@ class Informations extends React.Component {
                 &Agrave; présent l’UTT Arena c’est <span className="a-infos__important">460 joueurs</span>, <span className="a-infos__important">5 tournois spotlights</span>, une scène de 70 m² et une centaine de bénévoles.<br />
               </p>
               <p style={{ textAlign: 'justify'}}>Et tout cela, c’est grâce à vous, les joueurs, qui nous font confiance chaque année pour vous organiser un événement de folie, et à nos partenaires qui nous soutiennent chaque année dans l'organisation de la LAN !</p>
-            
-              <div style={{textAlign: 'center', marginTop: '40px'}}>
-                <Link to={"/gallery"}>
-                  <Button raised>Voir les photos</Button>
-                </Link>
-              </div>
             </div>
 
             <Category id="schedule">Horaires</Category>

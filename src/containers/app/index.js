@@ -9,7 +9,6 @@ const AsyncInformations = asyncComponent(() => import('../informations'))
 const AsyncPartners = asyncComponent(() => import('../partners'))
 const AsyncTournaments = asyncComponent(() => import('../tournaments'))
 const AsyncPizza = asyncComponent(() => import('../../components/pizza'))
-const AsyncGallery = asyncComponent(() => import('../gallery'))
 const AsyncDashboard = asyncComponent(() => import('../dashboard'))
 const Reset = asyncComponent(() => import('../reset'))
 const Validate = asyncComponent(() => import('../validate'))
@@ -23,7 +22,6 @@ const App = props => (
       <Route path={process.env.REACT_APP_BASEURL + 'informations'} exact component={AsyncInformations} />
       <Route path={process.env.REACT_APP_BASEURL + 'partners'} exact component={AsyncPartners} />
       <Route path={process.env.REACT_APP_BASEURL + 'tournaments'} component={AsyncTournaments} />
-      <Route path={process.env.REACT_APP_BASEURL + 'gallery'} component={AsyncGallery} />
       <Route path={process.env.REACT_APP_BASEURL + 'dashboard'} component={AsyncDashboard} />
       <Route path={process.env.REACT_APP_BASEURL + 'reset/:token'} component={Reset} />
       <Route path={process.env.REACT_APP_BASEURL + 'valid/:token'} component={Validate} />
