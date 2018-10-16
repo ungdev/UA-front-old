@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 
 import './faq.css'
 
-
 import ScrollToTopOnMount from '../../components/scrollToTopOnMount'
 import Header from '../components/header'
 import Footer from '../components/footer'
@@ -119,12 +118,12 @@ class FAQ extends React.Component {
         />
         <ForgotModal isOpen={this.state.forgotModalOpened} onClose={this.closeForgotModal} />
 
-        <main className="a-infos">
-          <div className="a-infos__content">
+        <main className="a-faq">
+          <div className="a-faq__content">
             <div>
               <h2>Voici des questions souvent posées, en espérant que cela pourra t'aider dans ta recherche jeune padawan !</h2>
 
-              <h3 className="a-infos__title">Inscription</h3>
+              <h3 className="a-faq__title">Inscription</h3>
 
               <div className={"faq-container" + (this.state.faqEntriesOpened[0] ? " active" : "")} key={0}>
                 <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 0)}>
@@ -197,7 +196,7 @@ class FAQ extends React.Component {
                 </span>
               </div>
 
-              <h3 className="a-infos__title">Paiement</h3>
+              <h3 className="a-faq__title">Paiement</h3>
               
               <div className={"faq-container" + (this.state.faqEntriesOpened[10] ? " active" : "")} key={10}>
                 <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 10)}>
