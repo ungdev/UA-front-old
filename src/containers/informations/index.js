@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import './home.css'
+import './informations.css'
 
 import logo from '../../assets/ua2018.png'
 
@@ -106,69 +106,6 @@ class Informations extends React.Component {
   }
 
   render() {
-    let faqData = [
-    {
-      question:
-        <span>Je me suis inscrit et je n'ai pas reçu mon mail de confirmation</span>,
-      answer:
-        <span>
-          Si lors de votre inscription votre adresse e-mail est rejetée, cela peut être dû à trois choses :
-          <ul>
-            <li>On ne peut pas avoir plus d'un compte par mail</li>
-            <li>Cet e-mail a été banni. Contactez les organisateurs afin d'en savoir plus.</li>
-            <li>Vous vous êtes trompé lors de la saisie de votre adresse mail. Contactez les organisateurs grâce au formulaire de contact.</li>
-          </ul>
-        </span>
-    },
-    {
-      question:
-        <span>Puis-je payer en espèces ?</span>,
-      answer:
-        <span>Il est impossible de payer en espèces pendant les préventes. Ce sera possible une fois sur place, à tes risques et périls, car il y a de fortes chances que les places soient déjà toutes parties.</span>
-    },
-    {
-      question:
-        <span>Combien coûte la LAN pour les joueurs et les accompagnateurs ?</span>,
-      answer:
-        <span>La LAN coûte 15€ pour tous les joueurs, avec une réduction de 5€ pour les écoles partenaires. La place accompagnateur/visiteur est à 6€.</span>
-    },
-    {
-      question:
-        <span>Quel est l'âge minimum pour la LAN ?</span>,
-      answer:
-        <span>15 ans. Pour les mineurs, une autorisation parentale sera demandée le jour de la LAN.</span>
-    },
-    {
-      question:
-        <span>Quand commencent les tournois ?</span>,
-      answer:
-        <span>Tous les tournois commencent le samedi à 10h.</span>
-    },
-    {
-      question:
-        <span>Est ce que je peux jouer à la manette ?</span>,
-      answer:
-        <span>Oui.</span>
-    }
-  ]
-
-    let faqEntries = []
-
-    for(let i = 0; i < faqData.length; i++) {
-      faqEntries.push(
-        <div className={"faq-container" + (this.state.faqEntriesOpened[i] ? " active" : "")} key={i}>
-          <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, i)}>
-            <span className="arrow-segment"></span>
-            <span className="arrow-segment"></span>
-            {faqData[i].question}
-          </span>
-          <span className="faq-answer">
-            {faqData[i].answer}
-          </span>
-        </div>
-      )
-    }
-
     return (
       <div>
         <ScrollToTopOnMount />
@@ -231,19 +168,46 @@ class Informations extends React.Component {
             </div>
 
             <Category id="tickets">Billetterie</Category>
-            <div>
-              <p>Astuce : en achetant vos billets en prévente :</p>
+            <div className="a-infos__tickets">
+              <p>Il est possible d'acheter une place sur ce site à partir du mercredi 17 octobre</p>
               <ul>
-                <li>Bénéficiez de tarifs réduits</li>
-                <li>Assurez une place pour votre équipe</li>
+                <li>Il faut d'abord s'inscrire</li>
+                <li>Ensuite, il faut payer sa place</li>
+                <li>Chaque joueur paye sa place, <strong>il n'y a pas de paiement groupé</strong></li>
+                <li>Le paiement se fait uniquement par carte banquaire</li>
               </ul>
               <br />
               <p>
-                <strong>Inscris-toi sur le site pour accéder à la billeterie !</strong>
-              </p><br />
+                <strong>Les tarifs sont les suivants :</strong>
+              </p>
               <ul>
-                <li>Joueur : 15€ (10€ pour les écoles partenaires)</li>
+                <li>Joueur : 15€</li>
+                <li>Une réduction de 5€ sera appliquée aux joueurs provenant d'une école du groupe des Universités de Technologie : UTT, UTC, UTBM</li>
                 <li>Accompagnateur : 6€ (limité à 40 places)</li>
+              </ul>
+            </div>
+            
+            <Category id="registration">Déroulement des inscriptions</Category>
+            <div className="a-infos__registration">
+              <p>Les inscriptions à l'UTT Arena ouvrent le mercredi 17 octobre (l'heure exacte sera annoncée dans la journée).</p>
+              <p>Pour les tournois multijoueurs :</p>
+              <ul>
+                <li>Il faudra créer un compte sur ce site en cliquant sur le bouton <strong>connexion</strong>.</li>
+                <li>Après avoir renseigné les informations du formulaire, il faudra <strong>valider son compte</strong> en cliquant sur le <strong>lien reçu par mail</strong>.</li>
+                <li>Une fois dans votre dashboard, vous pourrez payer votre place, créer une équipe ou en rejoindre une.</li>
+                <li>Une équipe ne sera <strong>complète</strong> lorsqu'elle sera <strong>pleine et que tous les membres auront payé leur place</strong>.</li>
+                <li>Une équipe complète <strong>sera inscrite</strong> dans le tournoi <strong>si elle s'est complétée avant que le tournoi ne soit plein</strong>.
+                Sinon, elle sera mise sur <strong>liste d'attente</strong>.</li>
+                <li>Une équipe sur liste d'attente est considérée comme membre du tournoi libre, sauf si une équipe se désiste.</li>
+              </ul>
+              <p>Pour les tournois solo :</p>
+              <ul>
+                <li>Il faudra créer un compte sur ce site en cliquant sur le bouton <strong>connexion</strong>.</li>
+                <li>Après avoir renseigné les informations du formulaire, il faudra <strong>valider son compte</strong> en cliquant sur le <strong>lien reçu par mail</strong>.</li>
+                <li>Une fois dans votre dashboard, vous pourrez payer votre place et rejoindre un tournoi solo.</li>
+                <li>Vous ne serez inscrit que <strong>lorsque vous aurez payé votre place</strong>.</li>
+                <li>Si vous ne payez pas votre place à temps, vous serez mis sur <strong>liste d'attente</strong>.</li>
+                <li>Un joueur sur liste d'attente est considéré comme <strong>membre du tournoi libre</strong>, sauf si un joueur se désiste.</li>
               </ul>
             </div>
 
@@ -252,7 +216,7 @@ class Informations extends React.Component {
               <p>
                 Adresse de l'événement : 20 rue des Gayettes, 10000 Troyes
               </p>
-              <h3 className="a-info__title">En voiture</h3>
+              <h3 className="a-infos__title">En voiture</h3>
               <p style={{ textAlign: 'justify'}}>Un parking gratuit sera mis à disposition juste devant le Cube. Attention, utilisez le parking en face du Cube de 
               l'autre côté de la route, celui proche de l'entrée est réservé aux visiteurs du festival</p>
               <p>
@@ -283,9 +247,9 @@ class Informations extends React.Component {
                 <li>Autoroute : A31 (4h10, 384km)</li>
                 <li>Nationale : N4 (4h15, 338km)</li>
               </ul>
-              <h3 className="a-info__title">En train</h3>
+              <h3 className="a-infos__title">En train</h3>
               <p>&Agrave; 1h30 de Paris (TER depuis Paris-Est, départ toutes les heures). Le Cube est à 10 minutes à pied de la gare.</p>
-              <h3 className="a-info__title">En bus</h3>
+              <h3 className="a-infos__title">En bus</h3>
               <p>Ligne régulière 2, 6, 8 : arrêt Terrasses</p>
 
               <div className="a-infos__map">
@@ -310,18 +274,124 @@ class Informations extends React.Component {
 
             <Category id="services">Services</Category>
             <div>
-              <h3 className="a-info__title">Nourriture</h3>
+              <h3 className="a-infos__title">Nourriture</h3>
               <p style={{ textAlign: 'justify'}}>On sait qu'un weekend de 48h non-stop ça creuse, nous te proposerons donc sur place : croques-monsieur, crêpes, pizzas, canettes, snack, tout
                pour te sustenter au mieux ! Et tout cela à un prix abordable.</p>
-              <h3 className="a-info__title">Couchage</h3>
+
+              <h3 className="a-infos__title">Couchage</h3>
               <p style={{ textAlign: 'justify'}}>Nous mettons à disposition des joueurs des loges communes avec un accès à l'eau et aux douches ! 
               Pensez à ramener vos duvets si vous souhaitez en profiter ! Nous metterons à disposition des tapis pour plus de confort.</p>
+
+              <h3 className="a-infos__title">Location de matériel</h3>
+              <p style={{ textAlign: 'justify' }}>Pas envie de ramener tout ton matériel ? Notre partenaire Scoup eSport te propose de louer PC, chaise gaming, casque, souris et tout ce dont tu as besoin !</p>
+              <p className="a-infos__services__infos">(Les prix vous permettent de bénéficier du matériel pendant toute la durée de l'événement.)</p>
+
+              <div className="a-infos__table__container">
+                <table className="a-infos__services__table">
+                  <thead>
+                    <tr>
+                      <th>Matériel</th>
+                      <th>Prix</th>
+                      <th>Informations</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Kaliento</td>
+                      <td>5€</td>
+                      <td>Chauffeur de main électrique Kaliento</td>
+                    </tr>
+                    <tr>
+                      <td>Souris gaming</td>
+                      <td>5€</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>Clavier gaming</td>
+                      <td>10€</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>Casque gaming</td>
+                      <td>15€</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>&Eacute;cran 24"</td>
+                      <td>35€</td>
+                      <td>&Eacute;cran 24" 144Hz</td>
+                    </tr>
+                    <tr>
+                      <td>&Eacute;cran 27"</td>
+                      <td>40€</td>
+                      <td>&Eacute;cran 27" 144Hz</td>
+                    </tr>
+                    <tr>
+                      <td>Chaise gaming</td>
+                      <td>45€</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>PC gaming</td>
+                      <td>95€</td>
+                      <td>
+                        <ul>
+                          <li>CPU : Intel core i5 7100 3.6 GHz</li>
+                          <li>RAM : 8 Go DDR 4</li>
+                          <li>GPU : GTX 1050Ti 4Gb</li>
+                          <li>Carte mère Z170 Serie</li>
+                          <li>Alimentation 430W</li>
+                          <li>Watercooling 120</li>
+                          <li>SSD 120 Go</li>
+                          <li>Disque dur 1 To</li>
+                          <li>Boitier ANTEC P7</li>
+                          <li>Windows 10 Professionnel</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>PC streaming</td>
+                      <td>120€</td>
+                      <td>
+                        <ul>
+                          <li>CPU : Intel core i7 6700K 3.6 GHz</li>
+                          <li>RAM : 16 Go DDR 4</li>
+                          <li>GPU : GTX 1080</li>
+                          <li>Carte mère Z170 Serie</li>
+                          <li>Alimentation 650W Gold</li>
+                          <li>Watercooling 120</li>
+                          <li>SSD 250 Go</li>
+                          <li>Disque dur 1 To</li>
+                          <li>Boitier ANTEC P8</li>
+                          <li>Windows 10 Professionnel</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>PC portable gaming</td>
+                      <td>130€</td>
+                      <td>
+                        PC portable MSI
+                        <ul>
+                          <li>CPU : i7</li>
+                          <li>RAM : 32 Go</li>
+                          <li>GPU : GTX 1060</li>
+                          <li>&Eacute;cran 17"</li>
+                          <li>Windows 10 Professionnel</li>
+                        </ul>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>Pour louer du matériel, il faudra choisir les objets lors de l'inscription et les ajouter à votre panier. Attention, l'offre n'est valable que jusqu'au 6 décembre à 18h. Pensez bien à ajouter les objets lors de votre inscription, il ne sera plus possible après coup d'en commander.</p>
             </div>
 
             <Category id="players">Infos joueurs</Category>
             <div>
               <p><strong>Rappel : l'âge minimum pour participer au tournoi est de 15 ans.</strong></p>
-              <h3 className="a-info__title">Cashprize et lots</h3>
+
+              <h3 className="a-infos__title">Cashprize et lots</h3>
               <p>La répartition des récompenses entre les 3 premières places est la suivante :
               </p>
               <ul>
@@ -331,24 +401,133 @@ class Informations extends React.Component {
               <p>
                 Cette année l'<span>UTT Arena</span> s'est associée avec de nombreux partenaires pour vous offrir des lots de qualité !
               </p>
-              <h3 className="a-info__title">Ce qu'il faut apporter</h3>
+
+              <h3 className="a-infos__title">Ce qu'il faut apporter</h3>
               <ul>
                 <li>Ton PC avec tous ces magnifiques périphériques</li>
                 <li>Une multiprise si besoin (chaque joueur dispose d'une prise)</li>
                 <li>Un câble RJ45</li>
               </ul>
-              <p>Si tu ne souhaites pas ramener tout ça, nous te proposons de louer un PC avec notre partenaire Scoup E-sport et nous vendons des multiprises et des câbles RJ45 de 5 et 7m.</p>
-              <h3 className="a-info__title">Ce qui est fourni</h3>
+              <p>Si tu ne souhaites pas ramener tout ça, nous te proposons de louer un PC avec notre partenaire Scoup eSport. De plus nous vendons des multiprises et des câbles RJ45 de 5 et 7m.</p>
+              <h3 className="a-infos__title">Ce qui est fourni</h3>
               <p>Une prise électrique et un port RJ45.</p>
               <p>Et vu qu'on t'aime bien, on t'offre aussi une place sur une table avec une chaise et l'accès aux loges, mais ça c'est juste pour toi !</p>
+              <h3 className="a-infos__title">Streaming</h3>
+              <p>Pour les joueurs souhaitant streamer pendant la LAN, il faudra en faire la demande au moins 2 semaines avant l'UA, et nous vous autoriserons peut-être à streamer.
+              Nous nous réserverons le droit d'empêcher le stream si le réseau ne le permet pas.</p>
             </div>
             
             <Category id="faq">FAQ</Category>
             <div>
               <p>Voici des questions souvent posées, en espérant que cela pourra t'aider dans ta recherche jeune padawan !</p>
-              <h3 className="a-info__title">Inscription</h3>
 
-              {faqEntries}
+              <h3 className="a-infos__title">Inscription</h3>
+
+              <div className={"faq-container" + (this.state.faqEntriesOpened[0] ? " active" : "")} key={0}>
+                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 0)}>
+                  <span className="arrow-segment"></span>
+                  <span className="arrow-segment"></span>
+                  Combien coûte la LAN pour les joueurs et les accompagnateurs ?
+                </span>
+                <span className="faq-answer">
+                  La LAN coûte 15€ pour tous les joueurs, avec une réduction de 5€ pour les écoles partenaires. La place accompagnateur/visiteur est à 6€.
+                </span>
+              </div>
+
+              <div className={"faq-container" + (this.state.faqEntriesOpened[1] ? " active" : "")} key={1}>
+                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 1)}>
+                  <span className="arrow-segment"></span>
+                  <span className="arrow-segment"></span>
+                  Je me suis inscrit et je n'ai pas reçu mon mail de confirmation
+                </span>
+                <span className="faq-answer">
+                  Si lors de votre inscription votre adresse e-mail est rejetée, cela peut être dû à trois choses :
+                  <ul>
+                    <li>On ne peut pas avoir plus d'un compte par mail</li>
+                    <li>Cet e-mail a été banni. Contactez les organisateurs afin d'en savoir plus.</li>
+                    <li>Vous vous êtes trompé lors de la saisie de votre adresse mail. Contactez les organisateurs grâce au formulaire de contact.</li>
+                  </ul>
+                </span>
+              </div>
+
+              <div className={"faq-container" + (this.state.faqEntriesOpened[2] ? " active" : "")} key={2}>
+                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 2)}>
+                  <span className="arrow-segment"></span>
+                  <span className="arrow-segment"></span>
+                  Quel est l'âge minimum pour la LAN ?
+                </span>
+                <span className="faq-answer">
+                  15 ans. Pour les mineurs, une autorisation parentale sera demandée le jour de la LAN.
+                </span>
+              </div>
+
+              <div className={"faq-container" + (this.state.faqEntriesOpened[3] ? " active" : "")} key={3}>
+                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 3)}>
+                  <span className="arrow-segment"></span>
+                  <span className="arrow-segment"></span>
+                  Quand commencent les tournois ?
+                </span>
+                <span className="faq-answer">
+                  Tous les tournois commencent le samedi à 10h.
+                </span>
+              </div>
+
+              <div className={"faq-container" + (this.state.faqEntriesOpened[4] ? " active" : "")} key={4}>
+                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 4)}>
+                  <span className="arrow-segment"></span>
+                  <span className="arrow-segment"></span>
+                  Est ce que je peux jouer à la manette ?
+                </span>
+                <span className="faq-answer">
+                  Oui.
+                </span>
+              </div>
+
+              <div className={"faq-container" + (this.state.faqEntriesOpened[5] ? " active" : "")} key={5}>
+                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 5)}>
+                  <span className="arrow-segment"></span>
+                  <span className="arrow-segment"></span>
+                  Est ce que je peux streamer pendant la LAN ?
+                </span>
+                <span className="faq-answer">
+                  Peut être. Il faudra dans un premier temps se déclarer auprès des organisateurs, et ensuite en fonction de l'état du réseau tu pourras streamer ou non.
+                </span>
+              </div>
+
+              <h3 className="a-infos__title">Paiement</h3>
+              
+              <div className={"faq-container" + (this.state.faqEntriesOpened[10] ? " active" : "")} key={10}>
+                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 10)}>
+                  <span className="arrow-segment"></span>
+                  <span className="arrow-segment"></span>
+                  Puis-je payer en espèces ?
+                </span>
+                <span className="faq-answer">
+                  Il sera possible de payer en espèce uniquement sur place, mais à tes risques et périls, car il y a de fortes chances que les places soient déjà toutes parties.
+                </span>
+              </div>
+
+              <div className={"faq-container" + (this.state.faqEntriesOpened[11] ? " active" : "")} key={11}>
+                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 11)}>
+                  <span className="arrow-segment"></span>
+                  <span className="arrow-segment"></span>
+                  Est ce que je peux payer par paypal ?
+                </span>
+                <span className="faq-answer">
+                  Non, sur le site, seul le paiement par carte bancaire est disponible.
+                </span>
+              </div>
+
+              <div className={"faq-container" + (this.state.faqEntriesOpened[12] ? " active" : "")} key={12}>
+                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 12)}>
+                  <span className="arrow-segment"></span>
+                  <span className="arrow-segment"></span>
+                  Est ce que je peux payer pour toute mon équipe ?
+                </span>
+                <span className="faq-answer">
+                  Non, chacun doit payer sa place.
+                </span>
+              </div>
             </div>
           </div>
 
