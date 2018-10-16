@@ -149,6 +149,14 @@ class MentionsLegales extends React.Component {
                             Conformément à la directive européenne 2009/136/CE, ce cookie est indispensable à la fourniture du service sollicité. L’utilisateur peut se dispenser de ce cookie en ne s’inscrivant pas sur le site.
                         </p>
 
+                        <h1>Conditions d'accès aux systèmes informatiques</h1>
+                        <p>
+                            Pour assurer la qualité et la sécurité du réseau et des équipements rattachés d'une part,
+                            et la fluidité des échanges et des services offerts d'autre part, les organisateurs se réservent le droit
+                            de bloquer, altérer ou réaliser toute autre action qu'ils jugeront pertinente sur les échanges réseaux afin d'atteindre
+                            les objectifs susmentionnés.
+                        </p>
+
                         <h1>Conditions générales de vente</h1>
 
                         <h2>Préambule</h2>
