@@ -28,8 +28,6 @@ class LoginModal extends React.Component {
     this.submit = this.submit.bind(this)
   }
 
-  check() {
-  }
 
   setTabIndex(tabIndex) {
     this.setState({
