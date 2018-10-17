@@ -40,7 +40,6 @@ const SSBU = () => {
       <p><strong>Combattant personalisés :</strong> désactivés</p>
       <p><strong>Handicap :</strong> désactivés</p>
       <p><strong>Taux d'éjection :</strong> x1,0</p>
-      <p><strong>Choix du stage :</strong> libre</p>
       <p><strong>Choix des objets :</strong> désactivés & Aucun</p>
       <p><strong>Temps limite :</strong> 6mn</p>
       <p><strong>Affichage des dégats :</strong> Activé</p>
