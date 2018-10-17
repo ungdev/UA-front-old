@@ -27,7 +27,13 @@ const Fortnite = () => {
 
       <p><strong> Les tournois commencent le samedi à 10h</strong>.</p>
 
-      <h2>Règles générales du jeu (à venir)</h2>
+      <h2>Règles générales</h2>
+      <p>La participation au Tournoi est ouverte à toute personne disposant des éléments suivants :</p>
+      <ul>
+        <li>Un compte Epic Games</li>
+        <li>D’un ordinateur et du jeu Fortnite sur PC à jour</li>
+      </ul>
+      <p>Les joueurs doivent avoir acceptés les conditions générales de Fortnite et d’Epic Games.</p>
 
       <h2>Déroulement d'un match</h2>
 
@@ -39,7 +45,45 @@ const Fortnite = () => {
       <p><strong>Interruption du match :</strong> si un match est involontairement interrompu (plantage, déconnexion, réseau…), la partie pourra recommencer. Nous nous excusons d'avance pour la gêne occasionée. En revanche, si
       un joueur possède des problèmes à répétition dûs à sa configuration, il pourra être disqualifié. Son équipe devra alors chercher un remplaçant (parmi des joueurs du tournoi libre) ou jouer sans lui, à moins qu'il ne trouve du matériel de remplacement.</p>
       <p><strong>Retard :</strong> tout retard de plus de 20 minutes entraînera le début de la partie sans l'équipe.</p>
-      <h2>Format du tournoi (à venir)</h2>
+      <h2>Format du tournoi</h2>
+
+      <p><strong>Phase de placement :</strong></p>
+      <p>2 groupes de 12 équipes:  2 poules A et B réparties aléatoirement - Matchs en BR4 
+      </p>
+      <p><strong>A l’issue de la phase de placement:</strong></p>
+      <ul>
+        <li>Poule A - Les équipes qui terminent en position 1 à 6 sont qualifiées pour le groupe «Elite» .</li>
+        <li>Poule B - Les équipes qui terminent en position 7 à 12 sont qualifiées pour le groupe «Challenger » .</li>
+      </ul>
+
+      <h3>Tour 1</h3>
+      <p>2 groupes de 12 équipes:  poules « Challenger » et  « Elite » - Matchs en BR4</p>
+
+      <p>A l’issue du Tour 1 : Les équipes des groupes « Challenger  » terminant en position 1 à 6 
+      dans leur groupe sont promus dans le groupe de niveau supérieur. </p>
+      <p>Les équipes des groupes, « Elite » qui terminent en position 7 à 12 de leur groupe sont reléguées dans le 
+      groupe de niveau inférieur.</p>
+
+      <h3>Tour 2</h3>
+      <p>2 groupes de 12 équipes:  poules « Challenger » et  « Elite » - Matchs en BR4</p>
+
+      <p>A l’issue du Tour  2: Les équipes des groupes « Challenger » terminant en position 1 à 4 dans leur groupe 
+      sont promus dans le groupe de niveau supérieur. </p>
+      <p>Les équipes des groupes, «Elite» qui terminent en position 9 à 12 de leur groupe sont reléguées dans 
+      le groupe de niveau inférieur.</p>
+
+      <h3>Tour 3</h3>
+      <p>2 groupes de 12 équipes:  poules « Challenger » et  « Elite » - Matchs en BR4</p>
+
+      <p>A l’issue du Tour 3 : Les équipes des groupes « Elite » terminant en position 1 à 3 dans leur groupe sont 
+      promus dans le groupe de niveau supérieur. Les équipes des groupes, «Challenger » terminant en position 10 à 
+      12 de leur groupe sont reléguées dans le groupe de niveau inférieur.</p>
+
+      <h3>Tour final</h3>
+      <p>2 groupes de 12 équipes:  poules « Challenger » et  « Elite » - Matchs en BR6</p>
+
+      <p>A l’issue de ce tour final, un classement des équipes est dressé suivant le système point en vigueur.</p>  
+
 
       <h2>Règles de bonne conduite</h2>
       <p>Tous les participants sont invités à se comporter de façon respectueuse envers les autres participants. Une équipe peut être réprimandée et recevoir un avertissement si un de ses joueurs :</p>
