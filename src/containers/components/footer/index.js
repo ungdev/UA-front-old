@@ -7,7 +7,7 @@ class Footer extends React.Component {
         <div className="a-home__content a-home__footer">
             <div>
               © UTT Net Group
-              <a href="/mentions">Mentions légales</a>
+              <a href="/mentions-legales">Mentions légales</a>
             </div>
             <div>
               <a href={`mailto:UTT%20Arena<${process.env.REACT_APP_CONTACT_MAIL}>`}>

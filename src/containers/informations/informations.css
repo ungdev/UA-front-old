@@ -119,64 +119,6 @@
   }
 }
 
-.faq-container {
-  display: block;
-  background: #272727;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  border: 1px solid #fff;
-  position: relative;
-}
-
-.faq-question {
-  display: block;
-  cursor: pointer;
-  padding: 15px 20px 13px 35px;
-  margin: 0;
-}
-
-.faq-container.active .faq-question {
-  border-bottom: 1px solid #fff;
-}
-
-.faq-answer {
-  display: block;
-  margin: 0;
-  padding: 15px 20px;
-}
-
-.faq-container:not(.active) .faq-answer {
-  display: none;
-}
-
-.faq-container .arrow-segment {
-  border: 1px solid #fff;
-  height: 9px;
-  position: absolute;
-  left: 17px;
-  transition: all .3s;
-}
-
-.faq-container .arrow-segment:nth-child(1) {
-  top: 16px;
-  transform: rotate(-45deg);
-  transition: all .3s;
-}
-
-.faq-container .arrow-segment:nth-child(2) {
-  top: 21px;
-  transform: rotate(45deg);
-}
-
-.faq-container.active .arrow-segment:nth-child(1) {
-  top: 19px;
-}
-
-.faq-container.active .arrow-segment:nth-child(2) {
-  left: 22px;
-  top: 19px;
-}
-
 .a-infos__tickets > ul > li > strong, .a-infos__registration > ul > li > strong {
   color: #14d9fa;
 }
