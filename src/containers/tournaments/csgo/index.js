@@ -29,33 +29,47 @@ const CSGO = () => {
 
       <h2>Règles générales du jeu</h2>
 
-      <p><strong>Utilisation de la pause :</strong> Chaque équipe dispose au maximum de 2 pauses tactiques, pour une durée cumulée maximum de 2 minutes par side. Ce qui représente donc un total de 4 pauses tactiques réparties sur 4 minutes. La pause technique dure quant à elle autant de temps que nécessaire jusqu’à résolution du problème. Celle-ci peut être déclenchée à tout moment par un joueur ou un administrateur du tournoi. L’abus de l’utilisation de la pause technique entraînera une disqualification définitive du tournoi.</p>
-      <p>La liste des cartes disponibles est composée de :
+      <p><strong>Utilisation de la pause :</strong> Chaque équipe dispose au maximum de 2 pauses tactiques, pour une 
+      durée cumulée maximum de 2 minutes par side. Ce qui représente donc un total de 4 pauses tactiques réparties sur 
+      4 minutes. La pause technique dure quant à elle autant de temps que nécessaire jusqu’à résolution du problème. 
+      Celle-ci peut être déclenchée à tout moment par un joueur ou un administrateur du tournoi. L’abus de l’utilisation
+       de la pause technique entraînera une disqualification définitive du tournoi.</p>
+      <p>Les cartes sur lesquelles se dérouleront les matchs sont issues du Map Pool compétitif : 
         <ul>
           <li>de_inferno</li>
           <li>de_nuke</li>
           <li>de_cache</li>
           <li>de_overpass</li>
-          <li>de_cobblestone</li>
+          <li>de_dust2</li>
           <li>de_mirage</li>
           <li>de_train</li>
         </ul>
       </p>
-      <p>Il est <strong>strictement</strong> interdit aux participants d’utiliser quelconque outil ou assistance extérieure pouvant apporter un avantage déloyal lors du tournois.</p>
+      <p>Il est <strong>strictement</strong> interdit aux participants d’utiliser quelconque outil ou assistance extérieure
+       pouvant apporter un avantage déloyal lors du tournois. 
+      Ceci comprend notamment (liste non exhaustive), l’utilisation de cheats (wall, aim, scripting quelconque, …), 
+      ainsi que la communication avec un tier-extérieur durant le match (hors coach pendant les pauses tactiques). Toute constatation, automatique (EAC/VAC) ou manuelle d’une quelconque assistance entraînera <strong>la disqualification immédiate de l’équipe du tournoi.</strong></p>
 
-      <p>Ceci comprend notamment (liste non exhaustive), l’utilisation de cheats (wall, aim, scripting quelconque, …), ainsi que la communication avec un tier-extérieur durant le match (hors coach pendant les pauses tactiques). Toute constatation, automatique (EAC/VAC) ou manuelle d’une quelconque assistance entraînera <strong>la disqualification immédiate de l’équipe du tournoi.</strong></p>
-
+      <p>Dans le cas où une équipe peut avoir vision sur les écrans de son adversaire, des panneaux seront installés 
+      pour éviter toute tricherie.</p>
       <h2>Déroulement d'un match</h2>
 
-      <p><strong>Avant le match :</strong> si une équipe ne se présente pas dans le temps imparti, elle sera considérée comme déclarant forfait.</p>
-      <p><strong>Capitaine :</strong> pour créer une équipe sur le site, un joueur doit jouer le rôle de capitaine d'équipe, et les autres joueurs rejoindront son équipe. Ce capitaine
-      le restera pendant toute la durée du tournoi, et sera donc le référent de l'équipe. Pour plus de simplicité, il est demandé à ce que ce soit majoritairement le capitaine qui rentre en relation avec
+      <p><strong>Avant le match :</strong> si une équipe ne se présente pas dans le temps imparti, elle sera considérée 
+      comme déclarant forfait. Tout retard de plus de 15 minutes entraînera le forfait automatique d'une manche. 
+      Après l'annonce du match, les joueurs ont 10 minutes pour se préparer et se connecter au
+       serveur du jeu.</p>
+      <p><strong>Capitaine :</strong> pour créer une équipe sur le site, un joueur doit jouer le rôle de capitaine, et les autres joueurs rejoindront son équipe. Ce capitaine
+      le restera pendant toute la durée du tournoi, et sera le référent de l'équipe. Pour plus de simplicité, il est demandé à ce que ce soit le capitaine qui rentre en relation avec
       le staff (en cas de problème, questions diverses, etc.). Le capitaine d’équipe sera donc la personne en charge de son équipe pendant le tournoi,
       il se chargera de la communication au sein de son équipe et devra reporter le résultat du match auprès des officiels du tournoi.</p>
       <p><strong>Interruption du match :</strong> si un match est involontairement interrompu (plantage, déconnexion, réseau…), les équipes sont invitées à « pauser » la partie. En revanche, si
       un joueur possède des problèmes à répétition dûs à sa configuration, il pourra être disqualifié. Son équipe devra alors chercher un remplaçant (parmi des joueurs du tournoi libre) ou abandonner, à moins qu'il ne trouve du matériel de remplacement.</p>
-      <p><strong>Retard :</strong> tout retard de plus de 15 minutes entraînera le forfait automatique d'une manche.</p>
-      <h2>Format du tournoi (à venir)</h2>
+      <p><strong>Retard :</strong> </p>
+      <h2>Format du tournoi</h2>
+      <p>Le tournoi se décompose en 2 phases : matchs de Poules, puis matchs suivant un arbre de tournoi à double 
+      élimination. Les matchs de Poules se dérouleront en BO1. Suite à ces matchs, un classement sera établi et le
+       tournoi à double élimination commencera. Les 8ème et quarts de finales seront en BO1, tandis que les demi-finales, 
+       finales et la grande finale se dérouleront en BO3.</p>
 
       <h2>Règles de bonne conduite</h2>
       <p>Tous les participants sont invités à se comporter de façon respectueuse envers les autres participants. Une équipe peut être réprimandée et recevoir un avertissement si un de ses joueurs :</p>

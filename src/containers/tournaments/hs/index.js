@@ -29,8 +29,14 @@ const HS = () => {
 
       <h2>Règles générales du jeu</h2>
 
-      <p><strong>Mode :</strong> standard</p>
-      <p><strong>Format :</strong> conquest</p>
+      <p>Le tournoi se fera en mode <strong>Standard</strong> de Hearthstone.</p>
+      <p>Le format du tournoi est le mode <strong>« Conquest »</strong>. Pour gagner une confrontation, il faudra gagner une partie 
+      avec chacun des decks retenus. Quand un deck a été validé, on ne peut plus le rejouer pendant cet affrontement.</p>
+      <p>Les joueurs doivent envoyer la liste des decks qu’ils ont l'intention de jouer (avec la liste des cartes) 
+      aux organisateurs avant le vendredi 7 décembre, premier jour de l'événement. Les joueurs doivent soumettre obligatoirement 4 
+      decklists, de 4 classes différentes. Une fois cette liste envoyée, aucun changement ne sera possible. Les decks 
+      listes seront à envoyer sur un site internet, dont nous communiquerons l'adresse prochainement.</p>
+
       <p><strong>ATTENTION :</strong> les extensions sortis 2 semaines avant le tournoi ne seront pas acceptés lors des matchs.</p>
 
       <h2>Déroulement d'un match</h2>
@@ -39,7 +45,23 @@ const HS = () => {
       <p><strong>Interruption du match :</strong> si un match est involontairement interrompu (plantage, déconnexion, réseau…), les joueurs sont invitées à recommencer la partie. En revanche, si
       un joueur possède des problèmes à répétition dûs à sa configuration, il pourra être disqualifié, à moins qu'il ne trouve du matériel de remplacement.</p>
       <p><strong>Retard :</strong> tout retard de plus de 20 minutes entraînera le forfait automatique d'une partie.</p>
-      <h2>Format du tournoi (à venir)</h2>
+      <h2>Format du tournoi</h2>
+      <p>Le système de classement sera le système de rondes suisse. Au début du tournoi, les joueurs auront chacun
+       adversaire choisi au hasard dans l’ensemble des compétiteurs.</p>
+
+      <p>Après ce premier tour de jeu, les joueurs vainqueurs gagnent tous un point. Le score des joueurs ayant été défaits
+       ne change pas. Une nouvelle phase de jeu commence alors, les joueurs affrontent d’autres joueurs ayant le même 
+       score qu’eux. Il y aura au total 7 rondes. Il pourra y avoir d’autres matchs départageant d’éventuels ex-aequo.</p>
+     
+      <p>Après ces 7  phases de tournoi, les quatres joueurs les mieux classés s’affrontent en demi-finale. (1er contre 
+        4ème, 2ème contre 3ème). Les vainqueurs de la demi-finale s’affrontent dans la grande finale. Les deux autres 
+        joueurs s’affrontent dans la petite finale pour la 3ème place.</p>
+     
+      <p>Tous les matchs se joueront en BO5 (le premier joueur gagnant 3 manches est déclaré vainqueur). A chaques match, 
+      les deux joueurs choisiront un des decks de l’autre joueur, qui ne sera pas utilisé dans ce match. Si les deux 
+      joueurs ont le même nombre de point, le joueur qui choisit en premier le deck banni est tiré au hasard. Dans le cas 
+      contraire, celui qui a le moins de points commence.
+     </p>
 
       <h2>Règles de bonne conduite</h2>
       <p>Tous les participants sont invités à se comporter de façon respectueuse envers les autres participants. Un joueur peut être réprimandée et recevoir un avertissement si :</p>
@@ -52,9 +74,12 @@ const HS = () => {
 
       <p>Un manquement à ces règles pourra entraîner <strong>un avertissement, la perte d'une partie ou d'un match ou encore la disqualification du joueur.</strong> </p>
       
-      <h2>Finales sur scène</h2>
+      <h2>Finales sur scène et Cast</h2>
       <p>Cette année, les finalistes auront l'occasion de pouvoir jouer les finales sur la scène de l'événement, devant le public du festival.
-      C'est une occasion unique de pouvoir montrer son skill devant tout le monde, mais quelques règles s'imposent.</p>
+      Mais quelques règles s'imposent.</p>
+      <p>Certains matchs seront commentés en direct, il faudra donc au préalable accepter l’invitation du compte UTT 
+      Arena (qui vous sera envoyé avant le tournoi).</p>
+
       <h3>Obligation</h3>
       <p>Jouer sur scène est <strong>obligatoire</strong>, tout refus entraînera la disqualification du joueur.</p>
       <h3>Matériel</h3>
