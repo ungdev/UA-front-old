@@ -64,7 +64,7 @@ const CSGO = () => {
       il se chargera de la communication au sein de son équipe et devra reporter le résultat du match auprès des officiels du tournoi.</p>
       <p><strong>Interruption du match :</strong> si un match est involontairement interrompu (plantage, déconnexion, réseau…), les équipes sont invitées à « pauser » la partie. En revanche, si
       un joueur possède des problèmes à répétition dûs à sa configuration, il pourra être disqualifié. Son équipe devra alors chercher un remplaçant (parmi des joueurs du tournoi libre) ou abandonner, à moins qu'il ne trouve du matériel de remplacement.</p>
-      <p><strong>Retard :</strong> </p>
+      
       <h2>Format du tournoi</h2>
       <p>Le tournoi se décompose en 2 phases : matchs de Poules, puis matchs suivant un arbre de tournoi à double 
       élimination. Les matchs de Poules se dérouleront en BO1. Suite à ces matchs, un classement sera établi et le

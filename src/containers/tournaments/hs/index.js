@@ -69,7 +69,8 @@ const HS = () => {
         <li>Utilise un langage et des gestes insultants ;</li>
         <li>Est coupable d’actes violents ;</li>
         <li>Arrive en retard à l’heure de convocation ;</li>
-        <li>Laisse intentionnellement un adversaire remporter le match.</li>
+        <li>Laisse intentionnellement un adversaire remporter le match;</li>
+		    <li>Interrompt volontairement un match.</li>
       </ul>
 
       <p>Un manquement à ces règles pourra entraîner <strong>un avertissement, la perte d'une partie ou d'un match ou encore la disqualification du joueur.</strong> </p>
