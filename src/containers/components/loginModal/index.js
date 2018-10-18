@@ -87,7 +87,7 @@ class LoginModal extends React.Component {
                         field="name"
                         type="text"
                         placeholder="Nom d'utilisateur"
-                        pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěêçëùíňóřšťúůýž-]+"
+                        pattern="[ªµºÀÂÃÄÅÆÇÈÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÞßàâãäåæèìíîïðñòóôõöøùúûüþÿĄąĆćĘęıŁłŃńŒœŚśŸŹźŻżƒˆˇˉμﬁﬂ0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-z áčďéěêçëùíňóřšťúůýž-]+"
                         minLength="3"
                         maxLength="90"
                         autoFocus
@@ -105,7 +105,7 @@ class LoginModal extends React.Component {
                         field="firstname"
                         type="text"
                         placeholder="Prénom"
-                        pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěêçëùěíňóřšťúůýž-]+"
+                        pattern="[ªµºÀÂÃÄÅÆÇÈÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÞßàâãäåæèìíîïðñòóôõöøùúûüþÿĄąĆćĘęıŁłŃńŒœŚśŸŹźŻżƒˆˇˉμﬁﬂ0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-z áčďéěêçëùíňóřšťúůýž-]+"
                         minLength="2"
                         maxLength="200"
                       />
@@ -113,7 +113,7 @@ class LoginModal extends React.Component {
                         field="lastname"
                         type="text"
                         placeholder="Nom"
-                        pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěěêçëùíňóřšťúůýž-]+"
+                        pattern="[ªµºÀÂÃÄÅÆÇÈÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÞßàâãäåæèìíîïðñòóôõöøùúûüþÿĄąĆćĘęıŁłŃńŒœŚśŸŹźŻżƒˆˇˉμﬁﬂ0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-z áčďéěêçëùíňóřšťúůýž-]+"
                         minLength="2"
                         maxLength="200"
                       />

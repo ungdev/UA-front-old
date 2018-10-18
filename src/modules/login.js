@@ -53,6 +53,7 @@ export const tryLogin = user => {
         })
       )
     } catch (err) {
+      console.log(err.response.data)
       dispatch(
         notifActions.notifSend({
           message: errorToString(err.response.data.error),

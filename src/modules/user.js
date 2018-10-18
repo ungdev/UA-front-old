@@ -83,8 +83,8 @@ export const editUser = newUserData => {
     }
 
     try {
-      if(!newUserData.gender) newUserData.gender = 'N/A'
-      else newUserData.gender = newUserData.gender.value
+      if(!newUserData.gender) newUserData.gender = newUserData.gender.value
+      else newUserData.gender = 'N/A'
       const res = await axios.put('user', newUserData, { headers: { 'X-Token': authToken } })
       dispatch({
         type: SET_USER,
@@ -98,6 +98,7 @@ export const editUser = newUserData => {
         })
       )
     } catch (err) {
+      console.log(err.response.data)
       dispatch(
         notifActions.notifSend({
           message: errorToString(err.response.data.error),
