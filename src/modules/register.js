@@ -29,6 +29,7 @@ export const register = user => {
         })
       )
     } catch (err) {
+      console.log(err.response.data)
       dispatch(
         notifActions.notifSend({
           message: errorToString(err.response.data.error),
@@ -54,6 +55,7 @@ export const validate = token => {
         })
       )
     } catch (err) {
+      console.log(err.response.data)
       dispatch(
         notifActions.notifSend({
           message: errorToString(err.response.data.error),
