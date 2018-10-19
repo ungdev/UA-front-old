@@ -13,13 +13,10 @@ const SSBU = () => {
       <p>Vous retrouverez sur cette page toutes les informations relatives aux tournoi Super Smash Bros Ultimate. <strong>Attention</strong>, ces informations pourront évoluer,
       tenez vous informé via nos réseaux (<a href="https://www.facebook.com/UTTArena/">Facebook</a>/<a href="https://twitter.com/UTTArena">Twitter</a>).</p>
       <Category>Informations générales</Category>
-      <p>L'inscription à l'UTT Arena est fixée à 15€ par joueur. La LAN se déroulera du Vendredi 7 Décembre 18h au Dimanche 9 Décembre à 18h <strong>sans interruption</strong>. 
+      <p>L'inscription à l'UTT Arena est fixée à 15€ par joueur. La LAN se déroulera du Vendredi 7 Décembre 18h au Dimanche 9 Décembre à 18h <strong>sans interruption</strong>.
       Les tournois commenceront le samedi à 10h. Sera mise à disposition une buvette, avec de la nourriture en continu et à prix réduit.</p>
-      <p>Lorsque les joueurs ne seront pas en trian de jouer sur les nintendo switch mises à disposition, 
-      ils seront invités à attendre autour des consoles ou devant la scène. Aucune place 
-      assise ne sera attribuée aux joueurs SSBU, ils n'auront pas accès au réseau et ne devront pas apporter de matériel. 
-      Il est conseillé de ramener sa manette (GameCube de préférence). Toutefois des manettes de Gamecube sont disponibles
-       en prêt (gratuit).</p>
+      <p>Lorsque les joueurs ne seront pas en train de jouer sur les Nintendo Switch mises à disposition, ils seront invités à attendre autour des consoles ou devant la scène.
+      Aucune place assise ne sera attribuée aux joueurs de Super Smash Bros. Ultimate  et ils n'auront pas accès au réseau.</p>
       <Category>Tournoi Libre</Category>
       <p>En parallèle des tournois "Spotlights" (Lol, HS, CS:GO, Fortnite, SSBU) se déroulera un tournoi libre. Celui-ci sera composé de différents mini-tournois, sur des jeux divers et variés.
       <strong> Tout joueur de tournoi Spotlight éliminé rejoindra automatiquement le tournoi Libre.</strong> Il pourra ainsi profiter d'animations même s'il n'est plus dans la compétition.</p>
@@ -55,12 +52,12 @@ const SSBU = () => {
       </ul>
       <p><strong>Début du match :</strong></p>
       <ul>
-        <li><strong>Pour les poules</strong> : Choix du terrain aléatoire parmi une sélection de stages faite par 
+        <li><strong>Pour les poules</strong> : Choix du terrain aléatoire parmi une sélection de stages faite par
         les organisateurs (sauf si les deux joueurs sont d'accords sur le choix du terrain, parmi les terrains sélectionnés)</li>
         <li><strong>À partir des quarts de finales (top 8)</strong> :  Première phase de striking :
           <ul>
             <li>Une manche de pierre-feuille-ciseaux (PFC) est jouée.</li>
-            <li>Le gagnant élimine 1 stage dans la liste de terrains choisies par les organisateurs ; 
+            <li>Le gagnant élimine 1 stage dans la liste de terrains choisies par les organisateurs ;
             le perdant du PFC en élimine 2 autres ; puis le gagnant choisit parmi les deux terrains restants.</li>
             <li>Le match est joué.</li>
             <li>Le gagnant du match bannit 2 stages ; le perdant choisit dans ceux restants. </li>
@@ -76,7 +73,7 @@ const SSBU = () => {
         <li>Si % égaux ou mort simultanée à la fin du rematch, la nouvelle mort subite est jouée.</li>
         <li>Si un match est terminé par une attaque suicide (Bowsercide, Ganoncide, etc.), il est remporté par le gagnant affiché par l’écran de résultats.</li>
       </ul>
-      
+
       <p><strong>Interruption du match :</strong></p>
       <ul>
         <li>Si un match est interrompu par un aléa extérieur, le match sera rejoué entièrement. (Ou partiellement en fonction des décisions des organisateurs). </li>
@@ -122,9 +119,10 @@ const SSBU = () => {
         <li>Le choix des stages s'effectue selon les règles citées dans la section "Déroulement d'un match" (Striking)</li>
       </ul>
       <p>En cas de victoire du finaliste qui provient du Losers' Bracket, le BO5 est rejoué. (Première défaite de l'autre finaliste)</p>
-    
-      <p><strong>Matériel :</strong> Tous le matériel vous sera fournit, en revanche, il n'y aura pas une console par joueur. Le reste du temps, les joueurs seront invités 
-      à attendre autour des consoles ou devant la scène. <strong>Aucune place assise ne sera attribuée aux joueurs SSBU, ils n'auront pas accès au réseau et ne devront pas apporter de matériel.</strong></p>
+
+      <p><strong>Matériel :</strong> <strong>4 consoles sont mises à disposition des joueurs. Il est vivement conseillé de ramener sa manette.</strong>
+      Pour des soucis des connectivité, il est préférable de ramener une manette filaire comme la manette de GameCube mais les manettes sans-fil compatibles avec la Nintendo Switch seront tolérées.
+      Sinon des manettes de Gamecube sont disponibles en prêt gratuit.</p>
 
       <h2>Règles de bonne conduite</h2>
       <p>Tous les participants sont invités à se comporter de façon respectueuse envers les autres participants. Un joueur peut être réprimandée et recevoir un avertissement si :</p>
@@ -136,7 +134,7 @@ const SSBU = () => {
       </ul>
 
       <p>Un manquement à ces règles pourra entraîner <strong>un avertissement, la perte d'une partie ou d'un match ou encore la disqualification du joueur.</strong> </p>
-      
+
       <h2>Finales sur scène</h2>
       <p>Cette année, les finalistes auront l'occasion de pouvoir jouer les finales sur la scène de l'événement, devant le public du festival.
       C'est une occasion unique de pouvoir montrer son skill devant tout le monde, mais quelques règles s'imposent.</p>
