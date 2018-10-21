@@ -25,7 +25,7 @@ class Participants extends React.Component {
     const teams = this.props.teams.filter(team => team.spotlightId === this.state.spotlight)
                                   .filter(team => team.isInSpotlight)
     teams.forEach(team => {
-      if(team.soloTeam) team.name = team.name.substr(0, team.name.length - 10)
+      if(team.soloTeam && team.name.includes('solo-team')) team.name = team.name.substr(0, team.name.length - 10)
     })
     const options = this.props.spotlights.map(spotlight => ({
       id: spotlight.id,
