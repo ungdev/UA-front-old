@@ -23,6 +23,7 @@ class Participants extends React.Component {
 
   render() {
     const teams = this.props.teams.filter(team => team.spotlightId === this.state.spotlight)
+                                  .filter(team => team.isInSpotlight)
 
     const options = this.props.spotlights.map(spotlight => ({
       id: spotlight.id,
