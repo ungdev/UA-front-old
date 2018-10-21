@@ -1,0 +1,23 @@
+.a-info-modal{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #222222;
+  margin: 10px 10px 10px 10px;
+}
+
+.a-info-modal-title{
+  color: #14d9fa;
+  text-align: center;
+  font-size: 25px;
+  padding: 10px 10px 10px 10px;
+  font-family: 'ua1028-font', Impact, sans-serif;
+}
+
+.a-info-modal-body{
+  color: #ffffff;
+  padding: 10px 10px 10px 10px;
+  font-size: 14px;
+  font-family: sans-serif;
+  line-height: 20px;
+}

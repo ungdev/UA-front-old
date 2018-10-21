@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Select from 'react-select'
 
@@ -8,7 +7,7 @@ import Button from '../../../components/button'
 import selectStyles from '../../../components/select/styles'
 import ScoupModal from './scoupModal'
 
-import { payment } from '../../../modules/payment'
+import { shop } from '../../../modules/shop'
 
 import './payment.css'
 
@@ -25,32 +24,26 @@ const shirtSizes = [
 class Cart extends React.Component {
   constructor(props) {
     super()
-    const { user } = props
     this.state = {
-      plusone: user? user.plusone : false,
-      ethernet: user? user.ethernet : false,
-      ethernet7: user? user.ethernet7 : false,
-      shirt: user? (user.shirt && user.shirt !== 'none') : false,
+      ethernet: false,
+      ethernet7: false,
+      shirt: false,
       tombola: 0,
       shirtGender: { value: 'H', label: 'Homme' },
       shirtSize: { value: 'M', label: 'M' },
-      kaliento: user? user.kaliento : false,
-      mouse: user? user.mouse : false,
-      keyboard: user? user.keyboard : false,
-      headset: user? user.headset : false,
-      screen24: user? user.screen24 : false,
-      screen27: user? user.screen27 : false,
-      chair: user? user.chair : false,
-      gamingPC: user? user.gamingPC : false,
-      streamingPC: user? user.streamingPC : false,
-      laptop: user? user.laptop : false,
+      kaliento: false,
+      mouse: false,
+      keyboard: false,
+      headset: false,
+      screen24: false,
+      screen27: false,
+      chair: false,
+      gamingPC: false,
+      streamingPC: false,
+      laptop: false,
       isScoupModalOpen: false,
     }
 
-    this.isPartner = props.prices.partners.some(partner => props.user.email.endsWith(partner))
-
-    this.switchToPlayer = this.switchToPlayer.bind(this)
-    this.switchToPlusone = this.switchToPlusone.bind(this)
     this.toggleEthernet = this.toggleEthernet.bind(this)
     this.toggleEthernet7 = this.toggleEthernet7.bind(this)
     this.toggleShirt = this.toggleShirt.bind(this)
@@ -60,14 +53,6 @@ class Cart extends React.Component {
     this.payment = this.payment.bind(this)
     this.openScoupModal = this.openScoupModal.bind(this)
     this.closeScoupModal = this.closeScoupModal.bind(this)
-  }
-
-  switchToPlayer() {
-    this.setState({ plusone: false })
-  }
-
-  switchToPlusone() {
-    this.setState({ plusone: true })
   }
 
   toggleEthernet() {
@@ -116,7 +101,6 @@ class Cart extends React.Component {
 
   payment() {
     const basket = {
-      plusone: this.state.plusone,
       ethernet: this.state.ethernet,
       ethernet7: this.state.ethernet7,
       kaliento: this.state.kaliento,
@@ -137,13 +121,11 @@ class Cart extends React.Component {
     }
     if (this.state.tombola > 0) basket.tombola = this.state.tombola
 
-    this.props.payment(basket) 
+    this.props.shop(basket) 
   }
 
   render() {
-    const playerPrice = this.isPartner ? this.props.prices.partner : this.props.prices.default
-    const price =
-      (this.state.plusone ? this.props.prices.plusone : playerPrice) +
+    const price = 0 +
       (this.state.ethernet ? this.props.prices.ethernet : 0) +
       (this.state.ethernet7 ? this.props.prices.ethernet7 : 0) +
       (this.state.shirt ? this.props.prices.shirt : 0) +
@@ -178,29 +160,13 @@ class Cart extends React.Component {
           user={this.props.user}
         />
         <form className="a-dashboard-page a-dashboard-payment">
-          <h2>Paiement de la place</h2>
+          <h2>Achats supplémentaire</h2>
           <p>
-            Toutes les places vous donnent accès à l’ensemble du Festival des Jeux et de la LAN, et
-            permettent de rester à l'UTT Arena même en dehors des horaires d'ouverture du Festival.
-            Vous êtes d'une école partenaire et le prix n'est pas réduit ? Vérifiez votre e-mail dans{' '}
-            <Link to="/dashboard/user">vos infos</Link>.
-            <br />
+            Vous pouvez acheter et louer des objets ici, en plus de ce que vous avez déjà précommandé lorsque vous avez
+            payé votre place
             <br />
             Le paiement se déroule sur un site sécurisé.
           </p>
-          <ListItem price={playerPrice} active={!this.state.plusone} onClick={this.switchToPlayer}>
-            <h3>Place joueur</h3>
-            <span>Place joueur.euse (tournoi spotlight ou libre). Permet d'avoir une place assise attitrée (sauf Super Smash Bros Ultimate)</span>
-          </ListItem>
-          <ListItem
-            price={this.props.prices.plusone}
-            active={this.state.plusone}
-            onClick={this.switchToPlusone}
-          >
-            <h3>Place visiteur</h3>
-            <span>Réservé aux accompagnateurs.rices</span>
-          </ListItem>
-          <div className="a-dashboard-payment__separator" />
           <ListItem
             price={`+${this.props.prices.ethernet}`}
             active={this.state.ethernet}
@@ -281,7 +247,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  payment: body => dispatch(payment(body))
+  shop: body => dispatch(shop(body))
 })
 
 export default connect(

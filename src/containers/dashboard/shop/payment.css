@@ -1,0 +1,25 @@
+.a-dashboard-page.a-dashboard-payment {
+  max-width: 660px;
+}
+
+.a-dashboard-payment > .a-list-item:not(:last-of-type) {
+  margin-bottom: 12px;
+}
+
+.a-dashboard-payment__separator {
+  height: 24px;
+}
+
+.a-dashboard-payment > .a-list-item > div:last-child {
+  max-width: 200px;
+}
+
+.a-dashboard-payment__separator + .error {
+  margin-bottom: 24px;
+}
+
+@media (min-width: 996px) {
+  .a-dashboard-page.a-dashboard-payment {
+    max-width: 880px;
+  }
+}
