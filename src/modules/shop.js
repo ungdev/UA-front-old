@@ -17,9 +17,8 @@ export const shop = basket => {
     if (!authToken || authToken.length === 0) {
       return
     }
-    return
     try {
-      const res = await axios.post('shop', basket, { headers: { 'X-Token': authToken } })
+      const res = await axios.post('user/shop', basket, { headers: { 'X-Token': authToken } })
       if (res.status === 200) {
         location.href = res.data.url // eslint-disable-line no-restricted-globals
       }
