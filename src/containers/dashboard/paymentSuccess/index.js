@@ -15,7 +15,7 @@ class PayementSuccess extends React.Component {
     if(this.props.user && !this.props.user.paid) this.props.redirect()
     return (<div className="successframe">
       <h1>Paiement validé !</h1>
-      <p>Vous devriez recevoir sous peu confirmant le paiement.</p>
+      <p>Vous devriez recevoir sous peu un mail confirmant le paiement.</p>
     </div>)
   }
 }

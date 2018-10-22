@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Select from 'react-select'
+import { push } from 'react-router-redux'
 
 import ListItem from '../../../components/list-item'
 import Button from '../../../components/button'
@@ -26,28 +27,29 @@ class Cart extends React.Component {
   constructor(props) {
     super()
     const { user } = props
+    if(user.paid) this.props.redirectToDashboard()
     this.state = {
-      plusone: user? user.plusone : false,
-      ethernet: user? user.ethernet : false,
-      ethernet7: user? user.ethernet7 : false,
-      shirt: user? (user.shirt && user.shirt !== 'none') : false,
+      plusone: false,
+      ethernet: false,
+      ethernet7: false,
+      shirt: false,
       tombola: 0,
       shirtGender: { value: 'H', label: 'Homme' },
       shirtSize: { value: 'M', label: 'M' },
-      kaliento: user? user.kaliento : false,
-      mouse: user? user.mouse : false,
-      keyboard: user? user.keyboard : false,
-      headset: user? user.headset : false,
-      screen24: user? user.screen24 : false,
-      screen27: user? user.screen27 : false,
-      chair: user? user.chair : false,
-      gamingPC: user? user.gamingPC : false,
-      streamingPC: user? user.streamingPC : false,
-      laptop: user? user.laptop : false,
+      kaliento: false,
+      mouse: false,
+      keyboard: false,
+      headset: false,
+      screen24: false,
+      screen27: false,
+      chair: false,
+      gamingPC: false,
+      streamingPC: false,
+      laptop: false,
       isScoupModalOpen: false,
     }
 
-    this.isPartner = props.prices.partners.some(partner => props.user.email.endsWith(partner))
+    this.isPartner = props.prices.partners.some(partner => user.email.endsWith(partner))
 
     this.switchToPlayer = this.switchToPlayer.bind(this)
     this.switchToPlusone = this.switchToPlusone.bind(this)
@@ -175,7 +177,6 @@ class Cart extends React.Component {
           isOpen={this.state.isScoupModalOpen}
           onClose={this.closeScoupModal}
           prices={this.props.prices}
-          user={this.props.user}
         />
         <form className="a-dashboard-page a-dashboard-payment">
           <h2>Paiement de la place</h2>
@@ -281,7 +282,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  payment: body => dispatch(payment(body))
+  payment: body => dispatch(payment(body)),
+  redirectToDashboard : () => dispatch(push('/dashboard'))
 })
 
 export default connect(

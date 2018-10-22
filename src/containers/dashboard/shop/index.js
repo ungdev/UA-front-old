@@ -157,7 +157,6 @@ class Cart extends React.Component {
           isOpen={this.state.isScoupModalOpen}
           onClose={this.closeScoupModal}
           prices={this.props.prices}
-          user={this.props.user}
         />
         <form className="a-dashboard-page a-dashboard-payment">
           <h2>Achats supplémentaire</h2>
@@ -242,7 +241,6 @@ class Cart extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  user: state.user.user,
   prices: state.user.prices
 })
 
