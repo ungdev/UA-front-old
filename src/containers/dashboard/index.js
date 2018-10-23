@@ -6,6 +6,8 @@ import Header from '../../components/header'
 import DashboardHome from './home'
 import DashboardEditInfos from './editInfos'
 import DashboardPayment from './payment'
+import DashboardShop from './shop'
+import DashboardItems from './items'
 import DashboardPaymentSuccess from './paymentSuccess'
 import DashboardPaymentError from './paymentFail'
 import DashboardRequests from './requests'
@@ -91,6 +93,20 @@ class Dashboard extends React.Component {
               exact
               path={baseUrl + 'dashboard/payment'}
               component={DashboardPayment}
+            />
+          )}
+          {this.state.render && this.props.user.paid && (
+            <Route
+              exact
+              path={baseUrl + 'dashboard/shop'}
+              component={DashboardShop}
+            />
+          )}
+          {this.state.render && this.props.user.paid && (
+            <Route
+              exact
+              path={baseUrl + 'dashboard/items'}
+              component={DashboardItems}
             />
           )}
           {this.state.render && (

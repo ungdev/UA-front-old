@@ -10,7 +10,6 @@ import Button from '../../../../components/button'
 class ScoupModal extends React.Component {
   constructor(props) {
     super(props)
-    this.submit = this.submit.bind(this)
     this.state = {
       kaliento: false,
       mouse: false,
@@ -26,6 +25,7 @@ class ScoupModal extends React.Component {
       isGamingModalOpen: false,
       isLaptopModalOpen: false,
     }
+    this.submit = this.submit.bind(this)
     this.toggleKaliento = this.toggleKaliento.bind(this)
     this.toggleMouse = this.toggleMouse.bind(this)
     this.toggleKeyboard = this.toggleKeyboard.bind(this)

@@ -52,28 +52,3 @@ export const sendMessage = user => {
     }
   }
 }
-
-export const validate = token => {
-  return async dispatch => {
-    try {
-      const res = await axios.post('user/validate', { token })
-
-      await dispatch(saveToken(res.data.token))
-
-      dispatch(
-        notifActions.notifSend({
-          message: 'Inscription validée',
-          dismissAfter: 2000
-        })
-      )
-    } catch (err) {
-      dispatch(
-        notifActions.notifSend({
-          message: errorToString(err.response.data.error),
-          kind: 'danger',
-          dismissAfter: 2000
-        })
-      )
-    }
-  }
-}
