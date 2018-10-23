@@ -74,7 +74,7 @@ class Cart extends React.Component {
               {items.gamingPC > 0 && <li>Location PC Gaming x{items.gamingPC}</li>}
               {items.streamingPC > 0 && <li>Location PC Streaming x{items.streamingPC}</li>}
               {items.laptop > 0 && <li>Location PC Portable Gaming x{items.laptop}</li>}
-              {items.tombola > 0 && <li>Tombola x{items.tombola}</li>}
+              {items.tombola > 0 && <li>Ticket de tombola x{items.tombola}</li>}
           </ul>
         </div>
       </div>
