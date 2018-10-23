@@ -62,19 +62,19 @@ class Cart extends React.Component {
             {items.shirts.length > 0 && items.shirts.map(shirt => (<li>
                 T-shirt {this.getGender(shirt)} {this.getSize(shirt)}
               </li>))}
-              <li>Câble ethernet de 5m x{items.ethernet}</li>
-              <li>Câble ethernet de 7m x{items.ethernet7}</li>
-              <li>Location chauffeur de main électrique Kaliento x{items.kaliento}</li>
-              <li>Location Souris Gaming x{items.mouse}</li>
-              <li>Location Clavier Gaming x{items.keyboard}</li>
-              <li>Location Casque Gaming x{items.headset}</li>
-              <li>Location Écran 24" x{items.screen24}</li>
-              <li>Location Écran 27" x{items.screen27}</li>
-              <li>Location Chaise Gaming x{items.chair}</li>
-              <li>Location PC Gaming x{items.gamingPC}</li>
-              <li>Location PC Streaming x{items.streamingPC}</li>
-              <li>Location PC Portable Gaming x{items.laptop}</li>
-              <li>Tombola x{items.tombola}</li>
+              {items.ethernet > 0 && <li>Câble ethernet de 5m x{items.ethernet}</li>}
+              {items.ethernet7 > 0 && <li>Câble ethernet de 7m x{items.ethernet7}</li>}
+              {items.kaliento > 0 && <li>Location chauffeur de main électrique Kaliento x{items.kaliento}</li>}
+              {items.mouse > 0 && <li>Location Souris Gaming x{items.mouse}</li>}
+              {items.keyboard > 0 && <li>Location Clavier Gaming x{items.keyboard}</li>}
+              {items.headset > 0 && <li>Location Casque Gaming x{items.headset}</li>}
+              {items.screen24 > 0 && <li>Location Écran 24" x{items.screen24}</li>}
+              {items.screen27 > 0 && <li>Location Écran 27" x{items.screen27}</li>}
+              {items.chair > 0 && <li>Location Chaise Gaming x{items.chair}</li>}
+              {items.gamingPC > 0 && <li>Location PC Gaming x{items.gamingPC}</li>}
+              {items.streamingPC > 0 && <li>Location PC Streaming x{items.streamingPC}</li>}
+              {items.laptop > 0 && <li>Location PC Portable Gaming x{items.laptop}</li>}
+              {items.tombola > 0 && <li>Tombola x{items.tombola}</li>}
           </ul>
         </div>
       </div>
