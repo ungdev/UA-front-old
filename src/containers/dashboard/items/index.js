@@ -52,7 +52,6 @@ class Cart extends React.Component {
       if (order.streamingPC) items.streamingPC++
       if (order.tombola) items.tombola += order.tombola
     })
-    console.log(orders, items)
     return (
       <div className="a-dashboard-items">
         <h2>Listes des achats</h2>
