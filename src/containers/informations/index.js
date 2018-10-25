@@ -373,7 +373,7 @@ class Informations extends React.Component {
                   </tbody>
                 </table>
               </div>
-              <p>Pour louer du matériel, il faudra choisir les objets lors de l'inscription et les ajouter à votre panier. Attention, l'offre n'est valable que jusqu'au 6 décembre à 18h. Pensez bien à ajouter les objets lors de votre inscription, il ne sera plus possible après coup d'en commander.</p>
+              <p>Vous pouvez louer du matériel lorsque vous achetez votre place ou en ajouter par la suite. Attention, l'offre n'est valable que jusqu'au 6 décembre à 18h.</p>
             </div>
 
             <Category id="players">Infos joueurs</Category>
@@ -403,7 +403,7 @@ class Informations extends React.Component {
               <p>Et vu qu'on t'aime bien, on t'offre aussi une place sur une table avec une chaise et l'accès aux loges, mais ça c'est juste pour toi !</p>
               <h3 className="a-infos__title">Streaming</h3>
               <p>Pour les joueurs souhaitant streamer pendant la LAN, il faudra en faire la demande au moins 2 semaines avant l'UA, et nous vous autoriserons peut-être à streamer.
-              Nous nous réserverons le droit d'empêcher le stream si le réseau ne le permet pas.</p>
+              Nous nous réservons le droit d'empêcher le stream si le réseau ne le permet pas.</p>
             </div>
           </div>
 
