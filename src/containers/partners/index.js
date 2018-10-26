@@ -6,7 +6,6 @@ import './partners.css'
 
 import ScrollToTopOnMount from '../../components/scrollToTopOnMount'
 import Header from '../components/header'
-//import PartnersList from '../components/partners'
 import Footer from '../components/footer'
 import Social from '../components/social'
 import LoginModal from '../components/loginModal'
@@ -123,7 +122,6 @@ class Partners extends React.Component {
           <div style={{ marginTop: '40px', backgroundColor: '#202020' }}>
             <Category>Nos partenaires</Category>
           </div>
-          {/*<PartnersList noTitle />*/}
           <div className="a-partners-list">
             {partners.map((partner, i) =>
               <a
