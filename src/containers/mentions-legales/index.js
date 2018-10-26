@@ -248,11 +248,11 @@ class MentionsLegales extends React.Component {
                         </p>
                         <h2>Article XI - Droit de rétractation</h2>
                         <p>
-                            Conformément à l'article L. 121-20-4 du code de la consommation, les inscriptions ne font pas l'objet d'un droit de rétractation. Toute commande est ferme et définitive.<br>
-                        Toutefois, l'organisateur autorise tout inscrit à demander un remboursement de son inscription, au plus tard 7 jours calendaires avant la date de l'évènement — soit le 30/11/22018 18:00 CET.<br>
-                            Toute demande doit être formulée par courriel addressé à arena@utt.fr, précisant le nom d'utilisateur et l'adresse courriel utilisée pour l'inscription. Le remboursement sera exécuté sous quinzaine à dater de la fin de l'évènement, et interviendra sur la carte bleue ayant servi au paiement. <br>
+                            Conformément à l'article L. 121-20-4 du code de la consommation, les inscriptions ne font pas l'objet d'un droit de rétractation. Toute commande est ferme et définitive.<br/>
+                        Toutefois, l'organisateur autorise tout inscrit à demander un remboursement de son inscription, au plus tard 7 jours calendaires avant la date de l'évènement — soit le 30/11/22018 18:00 CET.<br/>
+                            Toute demande doit être formulée par courriel addressé à arena@utt.fr, précisant le nom d'utilisateur et l'adresse courriel utilisée pour l'inscription. Le remboursement sera exécuté sous quinzaine à dater de la fin de l'évènement, et interviendra sur la carte bleue ayant servi au paiement. <br/>
                             Compte-tenu des frais bancaires endossés, tout remboursement fera l'objet d'une retenue d'un montant 1€ (un euro) sur le montant total à rembourser.
-                    </p>
+                        </p>
                         <h2>Article XII - Force majeure</h2>
                         <p>
                             Toutes circonstances indépendantes de la volonté des parties empêchant l’exécution dans des conditions normales de leurs obligations sont considérées comme des causes d’exonération des obligations des parties et entraînent leur suspension.
