@@ -16,8 +16,8 @@ const Spotlights = () => (
         <li>LoL (pro) : 1250€</li>
         <li>Fortnite : 1000€</li>
         <li>CS:GO : 450€</li>
-        <li>SSBU : 200€</li>
-        <li>Hearthstone : 100€</li>
+        <li>SSBU : 150€</li>
+        <li>Hearthstone : 150€</li>
       </ul>
       <div>En plus des cashprizes, des lots seront offerts !</div>
       <br /><br />
