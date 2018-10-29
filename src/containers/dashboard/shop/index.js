@@ -159,11 +159,9 @@ class Cart extends React.Component {
           prices={this.props.prices}
         />
         <form className="a-dashboard-page a-dashboard-payment">
-          <h2>Achats supplémentaire</h2>
+          <h2>Achats supplémentaires</h2>
           <p>
-            Vous pouvez acheter et louer des objets ici, en plus de ce que vous avez déjà précommandé lorsque vous avez
-            payé votre place
-            <br />
+            Vous pouvez acheter et louer des objets ici, en plus de ce que vous avez déjà précommandé lorsque vous avez payé votre place.<br />
             Le paiement se déroule sur un site sécurisé.
           </p>
           <ListItem
