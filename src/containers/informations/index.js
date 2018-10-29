@@ -387,8 +387,18 @@ class Informations extends React.Component {
                 <li>1<sup>ère</sup> place : Cashprize et lots</li>
                 <li>2<sup>ème</sup> et 3<sup>ème</sup> places : Lots</li>
               </ul>
+              <br />
+              <span>Répartition des cashprizes :</span>
+              <ul>
+                <li>LoL (pro) : 1250€</li>
+                <li>Fortnite : 1000€</li>
+                <li>CS:GO : 450€</li>
+                <li>SSBU : 150€</li>
+                <li>Hearthstone : 150€</li>
+              </ul>
               <p>
-                Cette année l'<span>UTT Arena</span> s'est associée avec de nombreux partenaires pour vous offrir des lots de qualité !
+                En plus des cashprizes, des lots seront offerts !<br />
+                Cette année l'UTT Arena s'est associée avec de nombreux partenaires pour vous offrir des lots de qualité !
               </p>
 
               <h3 className="a-infos__title">Ce qu'il faut apporter</h3>

@@ -8,16 +8,28 @@ const Spotlights = () => (
     <p>
       <span>League of Legends</span>, <span>Counter-Strike: Global Offensive</span>, <span>Hearthstone
       </span>, <span>Super Smash Bros Ultimate</span> et <span>Fortnite</span>. Les cinq jeux
-      seront présents pour cette édition 2018.<br />
-      <br />
-      <span>Répartition des cashprizes</span> : to be announced<br />
+      seront présents pour cette édition 2018.
+      <br /><br /><br />
+
+      <span>Répartition des cashprizes :</span>
+      <ul style={{ marginTop: '5px', marginBottom: '5px' }}>
+        <li>LoL (pro) : 1250€</li>
+        <li>Fortnite : 1000€</li>
+        <li>CS:GO : 450€</li>
+        <li>SSBU : 150€</li>
+        <li>Hearthstone : 150€</li>
+      </ul>
+      <div>En plus des cashprizes, des lots seront offerts !</div>
+      <br /><br />
+
       <span>Nombre de places par tournoi :</span>
-      <br />
-      <span>- Hearthstone :</span> 32 slots (en solo)<br />
-      <span>- CS:GO :</span> 8 slots (équipes de 5)<br />
-      <span>- League of Legends :</span> 8 slots Pro et 24 slots Amateurs (équipes de 5)<br />
-      <span>- SSBU :</span> 64 slots (en solo)<br />
-      <span>- Fortnite :</span> 24 slots (équipes de 4)<br />
+      <ul style={{ marginTop: '5px', marginBottom: '5px' }}>
+        <li>LoL : 8 slots Pros et 24 slots Amateurs (équipes de 5)</li>
+        <li>Fortnite : 24 slots (équipes de 4)</li>
+        <li>CS:GO : 8 slots (équipes de 5)</li>
+        <li>SSBU : 64 slots (en solo)</li>
+        <li>Hearthstone : 32 slots (en solo)</li>
+      </ul>
     </p>
   </div>
 )

@@ -16,35 +16,36 @@ const SSBU = () => {
       <p>L'inscription à l'UTT Arena est fixée à 15€ par joueur. La LAN se déroulera du Vendredi 7 Décembre 18h au Dimanche 9 Décembre à 18h <strong>sans interruption</strong>.
       Les tournois commenceront le samedi à 10h. Sera mise à disposition une buvette, avec de la nourriture en continu et à prix réduit.</p>
       <p>Lorsque les joueurs ne seront pas en train de jouer sur les Nintendo Switch mises à disposition, ils seront invités à attendre autour des consoles ou devant la scène.
-      Aucune place assise ne sera attribuée aux joueurs de Super Smash Bros. Ultimate  et ils n'auront pas accès au réseau.</p>
+      Aucune place assise ne sera attribuée aux joueurs de Super Smash Bros Ultimate et ils n'auront pas accès au réseau.</p>
+
       <Category>Tournoi Libre</Category>
       <p>En parallèle des tournois "Spotlights" (Lol, HS, CS:GO, Fortnite, SSBU) se déroulera un tournoi libre. Celui-ci sera composé de différents mini-tournois, sur des jeux divers et variés.
       <strong> Tout joueur de tournoi Spotlight éliminé rejoindra automatiquement le tournoi Libre.</strong> Il pourra ainsi profiter d'animations même s'il n'est plus dans la compétition.</p>
+      
       <Category>Règlements</Category>
       <p>En participant à cette compétition, les joueurs acceptent, sans réticence ou interprétation, de respecter le règlement.
       Il est à noter que celui-ci est susceptible d’évoluer durant la LAN en fonction des besoins (retard, imprécision...). </p>
       <p>Par ailleurs, en cas de divergence d’interprétation de ce document, l’avis des administrateurs du tournoi a préséance sur celui des joueurs. Les joueurs doivent respecter les horaires
        donnés par les organisateurs et s’assurer d’être disponibles lorsqu’ils seront appelés avant le début du tournoi ainsi qu’à chaque fois que cela sera nécessaire, sous peine de disqualification. </p>
+      
       <h2>Prérequis</h2>
-
       <p><strong> Les tournois commencent le samedi à 10h</strong>.</p>
 
       <h2>Règles générales du jeu</h2>
-
       <p><strong>Format :</strong> 1v1</p>
       <p><strong>Mode :</strong> Vie</p>
-      <p><strong>Vie :</strong> 2</p>
-      <p><strong>Combattant personalisés :</strong> désactivés</p>
-      <p><strong>Handicap :</strong> désactivés</p>
+      <p><strong>Vies :</strong> 2</p>
+      <p><strong>Combattants personnalisés :</strong> désactivé</p>
+      <p><strong>Handicap :</strong> désactivé</p>
       <p><strong>Taux d'éjection :</strong> x1,0</p>
-      <p><strong>Choix des objets :</strong> désactivés & Aucun</p>
-      <p><strong>Temps limite :</strong> 6mn</p>
-      <p><strong>Affichage des dégats :</strong> Activé</p>
+      <p><strong>Choix des objets :</strong> désactivés, aucun</p>
+      <p><strong>Temps limite :</strong> 6 minutes</p>
+      <p><strong>Affichage des dégâts :</strong> activé</p>
       <p><strong>Stage :</strong> Aléatoire parmi une sélection de stages faite par les organisateurs (sauf si les deux joueurs sont d'accords sur le choix du terrain, parmi les terrains sélectionnés)</p>
-      <p><strong>ATTENTION :</strong> le jeu sortant le jour même, nous ne garantissons pas qu'il n'y ait pas de bug, ou que tous les personnages soient débloqués.</p>
+      <p><strong>Personnages :</strong> Une liste de personnages disponibles sera dévoilée au début du tournoi en fonction des personnages débloqués. Le jeu sortant le jour même, nous ne pouvons pas garantir la disponibilité de tous les personnages.</p>
+      <p><strong>ATTENTION :</strong> le jeu sortant le jour même, nous ne pouvons pas vous garantir qu'il n'y ait pas de bug, ou que tous les personnages soient débloqués.</p>
 
       <h2>Déroulement d'un match</h2>
-
       <p><strong>Avant le match :</strong></p>
       <ul>
         <li>Tout retard de plus de 5 minutes entraînera le forfait automatique d'une partie.</li>
@@ -68,9 +69,9 @@ const SSBU = () => {
       </ul>
       <p><strong>Fin du temps imparti / mort subite :</strong></p>
       <ul>
-        <li>Si temps est écoulé, la personne ayant le pourcentage le plus bas l’emporte.</li>
-        <li>Si % égaux ou mort simultanée, un rematch 1 vie 3 minutes est joué avec les mêmes personnages sur le même stage.</li>
-        <li>Si % égaux ou mort simultanée à la fin du rematch, la nouvelle mort subite est jouée.</li>
+        <li>Si temps est écoulé, le joueur ayant le pourcentage le plus bas l’emporte.</li>
+        <li>Si les pourcentages sont égaux ou si la mort des deux joueurs est simultanée, un match de 1 vie et 3 minutes est joué avec les mêmes personnages sur le même stage.</li>
+        <li>Si les pourcentages sont égaux ou si la mort des deux joueurs est simultanée lors du rematch, le vainqueur sera désigné par mort subite.</li>
         <li>Si un match est terminé par une attaque suicide (Bowsercide, Ganoncide, etc.), il est remporté par le gagnant affiché par l’écran de résultats.</li>
       </ul>
 
