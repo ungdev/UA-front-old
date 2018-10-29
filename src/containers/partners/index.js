@@ -129,7 +129,7 @@ class Partners extends React.Component {
                 className="a-partners-item"
                 href={partner.url}
               >
-                <div><img src={partner.image} key={i} alt={partner.name} /></div>
+                <div className="a-partners-image"><img src={partner.image} key={i} alt={partner.name} /></div>
                 <div className="a-partners-text">{partner.description.map(desc => <p key={id++}>{desc}</p>)}</div>
               </a>
             )}
