@@ -124,12 +124,14 @@
     position: absolute;
     height: 0;
     width: 100vw;
-    transition: height .3s;
+    opacity: 0;
+    transition: height .3s cubic-bezier(1,0,1,0), opacity .3s;
   }
 
   .a-intro-header__nav__mobile__overlay.active {
     height: 100vh;
-    transition: height .3s;
+    opacity: 1;
+    transition: height .3s cubic-bezier(0,1,0,1), opacity .3s;
   }
 }
 
