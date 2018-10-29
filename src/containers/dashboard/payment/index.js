@@ -183,8 +183,7 @@ class Cart extends React.Component {
           <p>
             Toutes les places vous donnent accès à l’ensemble du Festival des Jeux et de la LAN, et
             permettent de rester à l'UTT Arena même en dehors des horaires d'ouverture du Festival.
-            Vous êtes d'une école partenaire et le prix n'est pas réduit ? Vérifiez votre e-mail dans{' '}
-            <Link to="/dashboard/user">vos infos</Link>.
+            Vous êtes d'une école partenaire et le prix n'est pas réduit ? Vérifiez votre e-mail dans <Link to="/dashboard/user">vos infos</Link>.
             <br />
             <br />
             Le paiement se déroule sur un site sécurisé.

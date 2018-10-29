@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Select from 'react-select'
 
@@ -55,6 +56,23 @@ class Cart extends React.Component {
     this.closeScoupModal = this.closeScoupModal.bind(this)
   }
 
+  getPrice() {
+    return (this.state.ethernet ? this.props.prices.ethernet : 0) +
+      (this.state.ethernet7 ? this.props.prices.ethernet7 : 0) +
+      (this.state.shirt ? this.props.prices.shirt : 0) +
+      (this.state.kaliento ? this.props.prices.kaliento : 0) +
+      (this.state.mouse ? this.props.prices.mouse : 0) +
+      (this.state.keyboard ? this.props.prices.keyboard : 0) +
+      (this.state.headset ? this.props.prices.headset : 0) +
+      (this.state.screen24 ? this.props.prices.screen24 : 0) +
+      (this.state.screen27 ? this.props.prices.screen27 : 0) +
+      (this.state.chair ? this.props.prices.chair : 0) +
+      (this.state.gamingPC ? this.props.prices.gamingPC : 0) +
+      (this.state.streamingPC ? this.props.prices.streamingPC : 0) +
+      (this.state.laptop ? this.props.prices.laptop : 0) +
+      (this.state.tombola > 0 ? this.state.tombola : 0)
+  }
+
   toggleEthernet() {
     this.setState({ ethernet: !this.state.ethernet })
   }
@@ -100,6 +118,10 @@ class Cart extends React.Component {
   }
 
   payment() {
+    if(this.getPrice() === 0) {
+      return
+    }
+
     const basket = {
       ethernet: this.state.ethernet,
       ethernet7: this.state.ethernet7,
@@ -125,21 +147,7 @@ class Cart extends React.Component {
   }
 
   render() {
-    const price = 0 +
-      (this.state.ethernet ? this.props.prices.ethernet : 0) +
-      (this.state.ethernet7 ? this.props.prices.ethernet7 : 0) +
-      (this.state.shirt ? this.props.prices.shirt : 0) +
-      (this.state.kaliento ? this.props.prices.kaliento : 0) +
-      (this.state.mouse ? this.props.prices.mouse : 0) +
-      (this.state.keyboard ? this.props.prices.keyboard : 0) +
-      (this.state.headset ? this.props.prices.headset : 0) +
-      (this.state.screen24 ? this.props.prices.screen24 : 0) +
-      (this.state.screen27 ? this.props.prices.screen27 : 0) +
-      (this.state.chair ? this.props.prices.chair : 0) +
-      (this.state.gamingPC ? this.props.prices.gamingPC : 0) +
-      (this.state.streamingPC ? this.props.prices.streamingPC : 0) +
-      (this.state.laptop ? this.props.prices.laptop : 0) +
-      (this.state.tombola > 0 ? this.state.tombola : 0)
+    const price = this.getPrice();
 
     const gearPrice = 0 + (this.state.kaliento ? this.props.prices.kaliento : 0) +
     (this.state.mouse ? this.props.prices.mouse : 0) +
@@ -151,6 +159,7 @@ class Cart extends React.Component {
     (this.state.gamingPC ? this.props.prices.gamingPC : 0) +
     (this.state.streamingPC ? this.props.prices.streamingPC : 0) +
     (this.state.laptop ? this.props.prices.laptop : 0)
+
     return (
       <React.Fragment>
         <ScoupModal
@@ -162,6 +171,7 @@ class Cart extends React.Component {
           <h2>Achats supplémentaires</h2>
           <p>
             Vous pouvez acheter et louer des objets ici, en plus de ce que vous avez déjà précommandé lorsque vous avez payé votre place.<br />
+            Vous pouvez voir le matériel que vous avez déjà commandé dans <Link to="/dashboard/items">votre inventaire</Link>.<br />
             Le paiement se déroule sur un site sécurisé.
           </p>
           <ListItem
