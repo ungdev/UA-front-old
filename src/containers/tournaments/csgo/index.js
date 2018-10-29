@@ -1,6 +1,5 @@
 import React from 'react'
 import Category from '../../components/category'
-import Arrow from '../arrow'
 import ScrollToTopOnMount from '../../../components/scrollToTopOnMount'
 
 const CSGO = () => {
@@ -98,7 +97,6 @@ const CSGO = () => {
       <p>Pensez à préparer sur une clef usb votre configuration client. La configuration du poste est inclus dans le 
       temps d'installation. Tout retard pourra être sanctionné.</p>
     </div>
-    <Arrow/>
   </React.Fragment>)
 }
 
