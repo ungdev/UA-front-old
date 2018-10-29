@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 import SmoothScroll from 'smooth-scroll'
 
-import hamburger from '../../../assets/hamburger.png'
 import Button from '../../../components/button'
 
 import './header.css'
@@ -74,10 +73,16 @@ class Header extends React.Component {
         
         <nav className="a-intro-header__nav__mobile">
           <div className="a-intro-header__nav__mobile__topbar">
-            <div>
-              <Button onClick={this.toggleMobileMenu}><img className="a-intro-header__hamburger" alt="Menu" src={hamburger} height="25" /></Button>
+            <div style={{ paddingBottom: '3px' }}>
+              <Button onClick={this.toggleMobileMenu}>
+                <div className={"a-intro-header__hamburger" + (this.state.mobileMenu ? " active" : "")}>
+                  <div className="a-intro-header__hamburger__segment"></div>
+                  <div className="a-intro-header__hamburger__segment"></div>
+                  <div className="a-intro-header__hamburger__segment"></div>
+                </div>
+              </Button>
             </div>
-            <div className="a-intro-header__mainButton">
+            <div className="a-intro-header__mainButton" style={{ paddingBottom: '3px' }}>
               <Button onClick={this.mainButton} raised>{mainButtonText}</Button>
             </div>
           </div>
