@@ -157,6 +157,28 @@ class FAQ extends React.Component {
             answer: "Non, chacun doit payer sa place."
           }
         ]
+      },
+      {
+        title: "Déroulement des tournois",
+        entries: [
+          {
+            question: "Puis-je jouer à Fortnite sur PS4 ?",
+            answer: "Non, seuls les PCs sont autorisés."
+          }
+        ]
+      },
+      {
+        title: "Tournoi Super Smash Bros Ultimate",
+        entries: [
+          {
+            question: "Dois-je ramener ma console ?",
+            answer: "Non, nous fournissons tout le matériel."
+          },
+          {
+            question: "Puis-je ramener mon PC ?",
+            answer: "Non, vous n'aurez pas de place attribuée."
+          }
+        ]
       }
     ]
 
@@ -172,8 +194,7 @@ class FAQ extends React.Component {
         faqContent.push(
           <div className={"faq-container" + (this.state.faqEntriesOpened[id] ? " active" : "")} key={id}>
             <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, id)}>
-              <span className="arrow-segment"></span>
-              <span className="arrow-segment"></span>
+              <span className="faq-arrow"></span>
               {faqData[i].entries[j].question}
             </span>
             <span className="faq-answer">
@@ -204,150 +225,9 @@ class FAQ extends React.Component {
         <main className="a-faq">
           <div className="a-faq__content">
             <div>
-              <h2>Voici des questions souvent posées, en espérant que cela pourra t'aider dans ta recherche jeune padawan !</h2>
+              <h2 style={{ fontWeight: 'normal' }}>Voici des questions souvent posées, en espérant que cela pourra t'aider dans ta recherche jeune padawan !</h2>
 
-              <h3 className="a-infos__title">Inscription</h3>
-
-              <div className={"faq-container" + (this.state.faqEntriesOpened[0] ? " active" : "")} key={0}>
-                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 0)}>
-                  <span className="arrow-segment"></span>
-                  <span className="arrow-segment"></span>
-                  Combien coûte la LAN pour les joueurs et les accompagnateurs ?
-                </span>
-                <span className="faq-answer">
-                  La LAN coûte 15€ pour tous les joueurs, avec une réduction de 5€ pour les écoles partenaires. La place accompagnateur/visiteur est à 6€.
-                </span>
-              </div>
-
-              <div className={"faq-container" + (this.state.faqEntriesOpened[1] ? " active" : "")} key={1}>
-                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 1)}>
-                  <span className="arrow-segment"></span>
-                  <span className="arrow-segment"></span>
-                  Je me suis inscrit et je n'ai pas reçu mon mail de confirmation
-                </span>
-                <span className="faq-answer">
-                  Si lors de votre inscription votre adresse e-mail est rejetée, cela peut être dû à trois choses :
-                  <ul>
-                    <li>On ne peut pas avoir plus d'un compte par mail</li>
-                    <li>Cet e-mail a été banni. Contactez les organisateurs afin d'en savoir plus.</li>
-                    <li>Vous vous êtes trompé lors de la saisie de votre adresse mail. Contactez les organisateurs grâce au formulaire de contact.</li>
-                  </ul>
-                </span>
-              </div>
-
-              <div className={"faq-container" + (this.state.faqEntriesOpened[2] ? " active" : "")} key={2}>
-                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 2)}>
-                  <span className="arrow-segment"></span>
-                  <span className="arrow-segment"></span>
-                  Quel est l'âge minimum pour la LAN ?
-                </span>
-                <span className="faq-answer">
-                  15 ans. Pour les mineurs, une autorisation parentale sera demandée le jour de la LAN.
-                </span>
-              </div>
-
-              <div className={"faq-container" + (this.state.faqEntriesOpened[3] ? " active" : "")} key={3}>
-                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 3)}>
-                  <span className="arrow-segment"></span>
-                  <span className="arrow-segment"></span>
-                  Quand commencent les tournois ?
-                </span>
-                <span className="faq-answer">
-                  Tous les tournois commencent le samedi à 10h.
-                </span>
-              </div>
-
-              <div className={"faq-container" + (this.state.faqEntriesOpened[4] ? " active" : "")} key={4}>
-                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 4)}>
-                  <span className="arrow-segment"></span>
-                  <span className="arrow-segment"></span>
-                  Est ce que je peux jouer à la manette ?
-                </span>
-                <span className="faq-answer">
-                  Oui.
-                </span>
-              </div>
-
-              <div className={"faq-container" + (this.state.faqEntriesOpened[5] ? " active" : "")} key={5}>
-                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 5)}>
-                  <span className="arrow-segment"></span>
-                  <span className="arrow-segment"></span>
-                  Est ce que je peux streamer pendant la LAN ?
-                </span>
-                <span className="faq-answer">
-                  Peut être. Il faudra dans un premier temps se déclarer auprès des organisateurs, et ensuite en fonction de l'état du réseau tu pourras streamer ou non.
-                </span>
-              </div>
-
-              <h3 className="a-infos__title">Paiement</h3>
-              
-              <div className={"faq-container" + (this.state.faqEntriesOpened[10] ? " active" : "")} key={10}>
-                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 10)}>
-                  <span className="arrow-segment"></span>
-                  <span className="arrow-segment"></span>
-                  Puis-je payer en espèces ?
-                </span>
-                <span className="faq-answer">
-                  Il sera possible de payer en espèce uniquement sur place, mais à tes risques et périls, car il y a de fortes chances que les places soient déjà toutes parties.
-                </span>
-              </div>
-
-              <div className={"faq-container" + (this.state.faqEntriesOpened[11] ? " active" : "")} key={11}>
-                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 11)}>
-                  <span className="arrow-segment"></span>
-                  <span className="arrow-segment"></span>
-                  Est ce que je peux payer par paypal ?
-                </span>
-                <span className="faq-answer">
-                  Non, sur le site, seul le paiement par carte bancaire est disponible.
-                </span>
-              </div>
-
-              <div className={"faq-container" + (this.state.faqEntriesOpened[12] ? " active" : "")} key={12}>
-                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 12)}>
-                  <span className="arrow-segment"></span>
-                  <span className="arrow-segment"></span>
-                  Est ce que je peux payer pour toute mon équipe ?
-                </span>
-                <span className="faq-answer">
-                  Non, chacun doit payer sa place.
-                </span>
-              </div>
-              <h3 className="a-infos__title">Déroulement des tournois</h3>
-
-              <div className={"faq-container" + (this.state.faqEntriesOpened[13] ? " active" : "")} key={13}>
-                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 13)}>
-                  <span className="arrow-segment"></span>
-                  <span className="arrow-segment"></span>
-                  Est-ce que je peux jouer sur PS4 à Fortnite
-                </span>
-                <span className="faq-answer">
-                  Non, seuls les PCs sont autorisés.
-                </span>
-              </div>
-              <h3 className="a-infos__title">Tournoi Super Smash Bros Ultimate</h3>
-              <div className={"faq-container" + (this.state.faqEntriesOpened[14] ? " active" : "")} key={14}>
-                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 14)}>
-                  <span className="arrow-segment"></span>
-                  <span className="arrow-segment"></span>
-                  Est-ce que je dois ramener ma console pour le tournoi à Smash Bros ?
-                </span>
-                <span className="faq-answer">
-                  Non, nous fournissons tout le matériel
-                </span>
-              </div>
-              <div className={"faq-container" + (this.state.faqEntriesOpened[15] ? " active" : "")} key={15}>
-                <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, 15)}>
-                  <span className="arrow-segment"></span>
-                  <span className="arrow-segment"></span>
-                  Est-ce que je peux ramener mon PC ?
-                </span>
-                <span className="faq-answer">
-                  Non, vous n'aurez pas de place attribuée
-                </span>
-              </div>
-
-
+              {faqContent}
             </div>
           </div>
 
