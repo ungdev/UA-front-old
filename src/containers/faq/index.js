@@ -105,6 +105,27 @@ class FAQ extends React.Component {
   render() {
     let faqData = [
       {
+        title: "Général",
+        entries: [
+          {
+            question: "Quand commencent les tournois ?",
+            answer: "Tous les tournois commencent le samedi à 10h."
+          },
+          {
+            question: "Puis-je jouer à la manette ?",
+            answer: "Oui."
+          },
+          {
+            question: "Puis-je streamer pendant la LAN ?",
+            answer: "Peut-être. Il faudra dans un premier temps se déclarer auprès des organisateurs. Ensuite, en fonction de l'état du réseau, tu pourras peut-être streamer."
+          },
+          {
+            question: "Où puis-je trouver des joueurs pour mon équipe ?",
+            answer: "Sur le discord de l'UTT Arena tu trouveras sûrement d'autres joueurs qui cherchent une équipe. Tu peux trouver le lien du discord en bas du site."
+          }
+        ]
+      },
+      {
         title: "Inscription",
         entries: [
           {
@@ -126,19 +147,7 @@ class FAQ extends React.Component {
           {
             question: "Quel est l'âge minimum pour la LAN ?",
             answer: "15 ans. Pour les mineurs, une autorisation parentale ou du responsable légal sera demandée le jour de la LAN."
-          },
-          {
-            question: "Quand commencent les tournois ?",
-            answer: "Tous les tournois commencent le samedi à 10h."
-          },
-          {
-            question: "Puis-je jouer à la manette ?",
-            answer: "Oui."
-          },
-          {
-            question: "Est ce que je peux streamer pendant la LAN ?",
-            answer: "Peut être. Il faudra dans un premier temps se déclarer auprès des organisateurs, et ensuite en fonction de l'état du réseau tu pourras streamer ou non."
-          },
+          }
         ]
       },
       {
