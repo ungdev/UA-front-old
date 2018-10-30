@@ -6,10 +6,19 @@ const Spotlights = () => (
   <div className="a-spotlights">
     <h2>LES CINQ JEUX À L’UTT ARENA 2018.</h2>
     <p>
-      <span>League of Legends</span>, <span>Counter-Strike: Global Offensive</span>, <span>Hearthstone
-      </span>, <span>Super Smash Bros Ultimate</span> et <span>Fortnite</span>. Les cinq jeux
-      seront présents pour cette édition 2018.
-      <br /><br /><br />
+      <div>
+        <span>League of Legends</span>, <span>Counter-Strike: Global Offensive</span>, <span>Hearthstone
+        </span>, <span>Super Smash Bros Ultimate</span> et <span>Fortnite</span>. Les cinq jeux
+        seront présents pour cette édition 2018.
+      </div>
+      <br /><br />
+
+      <span>Répartition des récompenses :</span>
+      <ul style={{ marginTop: '5px', marginBottom: '5px' }}>
+        <li>1<sup>ère</sup> place : cashprize et lots</li>
+        <li>2<sup>ème</sup> et 3<sup>ème</sup> places : lots</li>
+      </ul>
+      <br />
 
       <span>Répartition des cashprizes :</span>
       <ul style={{ marginTop: '5px', marginBottom: '5px' }}>
@@ -19,8 +28,7 @@ const Spotlights = () => (
         <li>SSBU : 150€</li>
         <li>Hearthstone : 150€</li>
       </ul>
-      <div>En plus des cashprizes, des lots seront offerts !</div>
-      <br /><br />
+      <br />
 
       <span>Nombre de places par tournoi :</span>
       <ul style={{ marginTop: '5px', marginBottom: '5px' }}>

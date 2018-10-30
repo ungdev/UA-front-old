@@ -1,6 +1,5 @@
 import React from 'react'
 import Category from '../../components/category'
-import Arrow from '../arrow'
 import ScrollToTopOnMount from '../../../components/scrollToTopOnMount'
 
 const Fortnite = () => {
@@ -97,7 +96,6 @@ const Fortnite = () => {
       <p>Un manquement à ces règles pourra entraîner <strong>un avertissement, la perte d'une partie ou d'un match ou encore la disqualification de l’équipe.</strong> </p>
       
     </div>
-    <Arrow/>
   </React.Fragment>)
 }
 

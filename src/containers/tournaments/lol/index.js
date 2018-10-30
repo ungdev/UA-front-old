@@ -1,6 +1,5 @@
 import React from 'react'
 import Category from '../../components/category'
-import Arrow from '../arrow'
 import ScrollToTopOnMount from '../../../components/scrollToTopOnMount'
 
 const LOL = () => {
@@ -112,7 +111,7 @@ const LOL = () => {
       <h3>Obligation</h3>
       <p>Jouer sur scène est <strong>obligatoire</strong>, tout refus entraînera la disqualification de l'équipe.</p>
       <h3>Matériel</h3>
-      <p>Il vous sera mis à disposition sur scène du matériel dernière génération par notre partenaire <strong>Scoup Esport</strong> (clavier, souris, casque, tour, écran, chaise). 
+      <p>Il vous sera mis à disposition sur scène du matériel dernière génération par notre partenaire <strong>Scoup eSport</strong> (clavier, souris, casque, tour, écran, chaise). 
       Seulement, nous sommes conscients que vous êtes habitués à utiliser votre matériel pour jouer.
       Ainsi, il vous sera possible d'emmener sur scène votre clavier et votre souris. Si vous souhaitez utiliser votre écran, pc ou tout autre matériel, il faudra que vous le fassiez 
       valider par le staff avant, et que cela ne mette pas le match en retard. N'hésitez pas à demander l'aide du staff <strong>à l'avance</strong>. Attention, <strong>
@@ -122,7 +121,6 @@ const LOL = () => {
       <p>La configuration du client League of Legends est stockée sur le serveur de Riot Games, vous n'aurez donc pas à reconfigurer le PC. En revanche, si vous aviez quand même 
       des changements à faire sur le PC, merci de le prendre en compte lors de l'installation, afin de ne pas mettre en retard votre équipe.</p>
     </div>
-    <Arrow />
   </React.Fragment>)
 }
 

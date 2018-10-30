@@ -45,7 +45,7 @@ class LoginModal extends React.Component {
     })
 
     this.props.register(user)
-      .then(() => this.setState({ loading: false, tabIndex: 0 }))
+      .then(() => this.setState({ loading: false, tabIndex: 0, accepted: false }))
   }
 
   render() {
