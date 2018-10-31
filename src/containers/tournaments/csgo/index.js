@@ -6,7 +6,7 @@ const CSGO = () => {
   return (<React.Fragment>
     <ScrollToTopOnMount/>
     <div style={{ marginTop: '40px', backgroundColor: '#202020' }}>
-      <Category>Counter Strike : Global Offensive</Category>
+      <Category>Counter Strike : Global Offensive(COMPLET)</Category>
     </div>
     <div className="a-tournament-content">
       <p>Vous retrouverez sur cette page toutes les informations relatives au tournoi Counter Strike : Global Offensive. <strong>Attention</strong>, ces informations pourront évoluer,
