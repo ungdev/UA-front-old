@@ -248,10 +248,10 @@ class MentionsLegales extends React.Component {
                         </p>
                         <h2>Article XI - Droit de rétractation</h2>
                         <p>
-                            Conformément aux disposition du code de la consommation, l’acheteur dispose d’un délai de 14 jours à compter de la date d’achat de sa commande, pour demander un remboursement de tout article ne lui convenant pas.
-                            Le droit de rétractation peut être effectué en ligne, en envoyant un mail à l’adresse de l’acheteur : arena@utt.fr. Tout autre mode de déclaration de rétractation est accepté. Il doit être dénué d’ambiguïté et exprimer la volonté de se rétracter.
-                            En cas d’exercice du droit de rétractation dans le délais susvisé, sont remboursés le prix du ou des produit(s) acheté(s).
-                            Le remboursement sera effectué dans un délai de 48H, et au plus tard, dans le délai de 14 jours à compter de la réception, par le vendeur, de la demande de rétractation.
+                            Conformément à l'article L. 121-20-4 du code de la consommation, les inscriptions ne font pas l'objet d'un droit de rétractation. Toute commande est ferme et définitive.<br/>
+                        Toutefois, l'organisateur autorise tout inscrit à demander un remboursement de son inscription, au plus tard 7 jours calendaires avant la date de l'évènement — soit le 30/11/22018 18:00 CET.<br/>
+                            Toute demande doit être formulée par courriel addressé à arena@utt.fr, précisant le nom d'utilisateur et l'adresse courriel utilisée pour l'inscription. Le remboursement sera exécuté sous quinzaine à dater de la fin de l'évènement, et interviendra sur la carte bleue ayant servi au paiement. <br/>
+                            Compte-tenu des frais bancaires endossés, tout remboursement fera l'objet d'une retenue d'un montant 1€ (un euro) sur le montant total à rembourser.
                         </p>
                         <h2>Article XII - Force majeure</h2>
                         <p>

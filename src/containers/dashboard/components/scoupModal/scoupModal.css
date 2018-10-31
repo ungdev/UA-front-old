@@ -1,5 +1,3 @@
-
-
 .a-react-scoup-modal {
   width: 95% !important;
   max-width: 880px;
@@ -24,7 +22,8 @@
   font-family: 'ua2018-font', Impact, sans-serif;
 }
 
-.a-scoup-form > div > .a-list-item{
+.a-scoup-form > div > .a-list-item {
+  cursor: pointer;
   padding: 10px 10px 10px 10px;
   margin-bottom: 5px;
   width: 49%;
@@ -46,6 +45,10 @@
   right: 5%;
   top: 75%;
   padding: 2px 0px 2px 1px;
+  transition: background .3s;
+}
+.a-info-button:hover {
+  background: #fff;
 }
 
 @media (max-width: 768px) {

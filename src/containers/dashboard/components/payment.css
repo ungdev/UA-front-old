@@ -1,3 +1,11 @@
+a {
+  color: #000;
+}
+
+.a-dashboard-payment .a-list-item {
+  cursor: pointer;
+}
+
 .a-dashboard-page.a-dashboard-payment {
   max-width: 660px;
 }

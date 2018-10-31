@@ -1,6 +1,5 @@
 import React from 'react'
 import Category from '../../components/category'
-import Arrow from '../arrow'
 import ScrollToTopOnMount from '../../../components/scrollToTopOnMount'
 
 const HS = () => {
@@ -84,14 +83,13 @@ const HS = () => {
       <h3>Obligation</h3>
       <p>Jouer sur scène est <strong>obligatoire</strong>, tout refus entraînera la disqualification du joueur.</p>
       <h3>Matériel</h3>
-      <p>Il vous sera mis à disposition sur scène du matériel dernière génération par notre partenaire <strong>Scoup Esport</strong> (clavier, souris, casque, tour, écran, chaise). 
+      <p>Il vous sera mis à disposition sur scène du matériel dernière génération par notre partenaire <strong>Scoup eSport</strong> (clavier, souris, casque, tour, écran, chaise). 
       Seulement, nous sommes conscients que vous êtes habitués à utiliser votre matériel pour jouer.
       Ainsi, il vous sera possible d'emmener sur scène votre clavier et votre souris. Si vous souhaitez utiliser votre écran, pc ou tout autre matériel, il faudra que vous le fassiez 
       valider par le staff avant, et que cela ne mette pas le début du match en retard. N'hésitez pas à demander l'aide du staff <strong>à l'avance</strong>. Attention, <strong>
       pour le casque, il faudra qu'il soit anti-bruit et que le micro soit directionnel</strong>. Sinon vous devrez utiliser le casque que nous fournirons.</p>
       <p><strong>Tout retard de plus de 20 minutes dû à un joueur qui prendra trop de temps à s'installer entraînera le forfait automatique d'une partie.</strong></p>
     </div>
-    <Arrow/>
   </React.Fragment>)
 }
 

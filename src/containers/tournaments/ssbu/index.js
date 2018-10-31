@@ -1,6 +1,5 @@
 import React from 'react'
 import Category from '../../components/category'
-import Arrow from '../arrow'
 import ScrollToTopOnMount from '../../../components/scrollToTopOnMount'
 
 const SSBU = () => {
@@ -89,11 +88,6 @@ const SSBU = () => {
       <h3>2ème phase : ARBRE DOUBLE ÉLIMINATION :</h3>
       <p>32 joueurs répartis sur un arbre double élimination. Tous les joueurs qualifiées à cette phase commencent en Winners Bracket.</p>
 
-      <p>32ème (Winners) : </p>
-      <ul>
-        <li>Match en une partie (BO1)</li>
-        <li>Le choix des stages s'effectue comme en poules.</li>
-      </ul>
       <p>16èmes et 8èmes (Winners) :</p>
       <ul>
         <li>Match en 2 manches gagnantes (BO3)</li>
@@ -143,7 +137,6 @@ const SSBU = () => {
       <p>Jouer sur scène est <strong>obligatoire</strong>, tout refus entraînera la disqualification du joueur.</p>
       <p><strong>Tout retard de plus de 20 minutes dû à un joueur qui prendra trop de temps à s'installer entraînera le forfait automatique d'une partie.</strong></p>
     </div>
-    <Arrow/>
   </React.Fragment>)
 }
 

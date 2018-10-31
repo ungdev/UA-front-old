@@ -7,11 +7,11 @@ import { push } from 'react-router-redux'
 import ListItem from '../../../components/list-item'
 import Button from '../../../components/button'
 import selectStyles from '../../../components/select/styles'
-import ScoupModal from './scoupModal'
+import ScoupModal from '../components/scoupModal'
 
 import { payment } from '../../../modules/payment'
 
-import './payment.css'
+import '../components/payment.css'
 
 const shirtGenders = [{ label: 'Homme', value: 'M' }, { label: 'Femme', value: 'F' }]
 
@@ -183,8 +183,7 @@ class Cart extends React.Component {
           <p>
             Toutes les places vous donnent accès à l’ensemble du Festival des Jeux et de la LAN, et
             permettent de rester à l'UTT Arena même en dehors des horaires d'ouverture du Festival.
-            Vous êtes d'une école partenaire et le prix n'est pas réduit ? Vérifiez votre e-mail dans{' '}
-            <Link to="/dashboard/user">vos infos</Link>.
+            Vous êtes d'une école partenaire et le prix n'est pas réduit ? Vérifiez votre e-mail dans <Link to="/dashboard/user">vos infos</Link>.
             <br />
             <br />
             Le paiement se déroule sur un site sécurisé.
@@ -263,7 +262,7 @@ class Cart extends React.Component {
             price={`+${gearPrice}`}
             active={gearPrice > 0}
           >
-            <h3>Matériel Scoup Esport</h3>
+            <h3>Matériel Scoup eSport</h3>
             <span>Louer un PC, écran, clavier, ...</span>
           </ListItem>
           <div className="a-dashboard-payment__separator" />

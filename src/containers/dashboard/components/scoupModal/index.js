@@ -126,7 +126,7 @@ class ScoupModal extends React.Component {
         <Modal isOpen={this.props.isOpen} onClose={this.props.onClose} name="a-react-scoup-modal">
             <div className="a-scoup-modal">
               <form className="a-scoup-form">
-                <h2>Matériel Scoup Esport</h2>
+                <h2>Matériel Scoup eSport</h2>
                 <div>
                   <ListItem
                     price={`+${this.props.prices.kaliento}`}
@@ -247,7 +247,7 @@ class ScoupModal extends React.Component {
                   </ListItem>
                 </div>
                 <Button onClick={this.submit} raised>
-                  Ajouter le matériel au panier ({price}€)
+                  Enregistrer le matériel ({price}€)
                 </Button>
               </form>
             </div>
