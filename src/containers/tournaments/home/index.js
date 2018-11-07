@@ -46,9 +46,8 @@ const Home = props => {
   return (
     <React.Fragment>
       <ScrollToTopOnMount />
-      <div style={{ marginTop: '40px', backgroundColor: '#202020' }}>
-        <Category>Les tournois</Category>
-      </div>
+      <Category>Les tournois</Category>
+
       <div className="a-tournament-buttons">
         {tournaments.map(tournament => (
           <button

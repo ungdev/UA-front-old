@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 import './gallery.css'
 
@@ -10,28 +11,26 @@ import Social from '../components/social'
 import LoginModal from '../components/loginModal'
 import ContactModal from '../components/contactModal'
 import ForgotModal from '../components/forgotModal'
+import Category from '../components/category'
+import ImageView from './components/imageView'
 
 import { fetchCanLogin } from '../../modules/canLogin'
 import { autoLogin } from '../../modules/login'
 
-import { LazyLoadImage } from 'react-lazy-load-image-component'
-import 'react-lazy-load-image-component/src/effects/blur.css'
-
-function importAll(e) {
-  return e.keys().map(e)
-}
-
-var imagesUrl = [];
-var images = [];
 
 class Gallery extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
+    let context = require.context('../../assets/gallery', true, /\.(jpe?g)$/i)
+    let imagesUrl = context.keys().map(context)
+    
     this.state = {
       loginModalOpened: false,
       forgotModalOpened: false,
-      contactModalOpened: false
+      contactModalOpened: false,
+      imagesUrl: imagesUrl,
+      imageViewSrc: null
     }
 
     this.openLoginModal = this.openLoginModal.bind(this)
@@ -41,18 +40,6 @@ class Gallery extends React.Component {
     this.closeContactModal = this.closeContactModal.bind(this)
     this.closeForgotModal = this.closeForgotModal.bind(this)
     this.scrollCapture = this.scrollCapture.bind(this)
-
-    imagesUrl = importAll(require.context('../../assets/gallery', false, /\.(jpe?g)$/i))
-
-    for(let i = 0; i < imagesUrl.length; i++) {
-      images.push(
-        <div className="a-gallery__image__container">
-          <img
-            src={imagesUrl[i]}
-          />
-        </div>
-      )
-    }
   }
   
   componentWillMount() {
@@ -105,9 +92,8 @@ class Gallery extends React.Component {
   }
 
   scrollCapture() {
-    const scrollTop =
-      window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+    
     const bottom = window.innerHeight + 125 - 12 - 50
 
     document.body.className =
@@ -115,6 +101,19 @@ class Gallery extends React.Component {
   }
 
   render() {
+    let images = []
+
+    this.state.imagesUrl.forEach((url, i) => {
+      images.push(
+        <div className="a-gallery__image__container" key={i} onClick={() => this.setState({ imageViewSrc: url })}>
+          <img
+            src={url}
+            alt=""
+          />
+        </div>
+      )
+    })
+
     return (
       <div>
         <ScrollToTopOnMount />
@@ -131,8 +130,11 @@ class Gallery extends React.Component {
         <ForgotModal isOpen={this.state.forgotModalOpened} onClose={this.closeForgotModal} />
 
         <main className="a-gallery">
+          <Category>Photos</Category>
+
           <div className="a-gallery__content">
             {images}
+            <ImageView src={this.state.imageViewSrc} close={() => this.setState({ imageViewSrc: null })} />
           </div>
 
           <Footer openContactModal={this.openContactModal} />

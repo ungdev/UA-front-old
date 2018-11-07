@@ -10,6 +10,7 @@ import Social from '../components/social'
 import LoginModal from '../components/loginModal'
 import ContactModal from '../components/contactModal'
 import ForgotModal from '../components/forgotModal'
+import Category from '../components/category'
 
 import { fetchCanLogin } from '../../modules/canLogin'
 import { autoLogin } from '../../modules/login'
@@ -236,9 +237,10 @@ class FAQ extends React.Component {
         <ForgotModal isOpen={this.state.forgotModalOpened} onClose={this.closeForgotModal} />
 
         <main className="a-faq">
+          <Category>FAQ</Category>
           <div className="a-faq__content">
             <div>
-              <h2 style={{ fontWeight: 'normal' }}>Voici des questions souvent posées, en espérant que cela pourra t'aider dans ta recherche jeune padawan !</h2>
+              <h3 style={{ fontWeight: 'normal' }}>Voici des questions souvent posées, en espérant que cela pourra t'aider dans ta recherche jeune padawan !</h3>
 
               {faqContent}
             </div>
