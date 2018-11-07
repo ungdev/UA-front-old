@@ -23,6 +23,24 @@ export default (state = initialState, action) => {
   }
 }
 
+
+export const fetchTeams = () => {
+  return async (dispatch, getState) => {
+    const authToken = getState().login.token
+
+    if (!authToken || authToken.length === 0) {
+      return
+    }
+
+    try {
+      const res = await axios.get('teams', { headers: { 'X-Token': authToken } })
+      dispatch({ type: SET_TEAMS, payload: res.data })
+    } catch (err) {
+      console.log(err)
+    }
+  }
+}
+
 export const cancelRequest = id => {
   return async (dispatch, getState) => {
     const authToken = getState().login.token

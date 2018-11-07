@@ -16,8 +16,10 @@ import DashboardTeam from './teamManagement'
 import DashboardJoinTeam from './joinTeam'
 import DashboardViewParticipants from './viewParticipants'
 import DashboardSolo from './solo'
+import DashboardLoading from './loading'
 
 import { autoLogin } from '../../modules/login'
+import { fetchTeams } from '../../modules/teams'
 
 import './dashboard.css'
 
@@ -37,6 +39,7 @@ class Dashboard extends React.Component {
       this.setState({
         render: this.props.user && this.props.user.name
       })
+      this.props.fetchTeams()
     })
 
     this.arrow = this.arrow.bind(this)
@@ -157,6 +160,7 @@ class Dashboard extends React.Component {
             )}/>
           )}
           {this.state.render && <Redirect from="*" to="/dashboard" />}
+          {!this.state.render && <DashboardLoading />}
           </Switch>
         </main>
       </div>
@@ -170,7 +174,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  autoLogin: () => dispatch(autoLogin())
+  autoLogin: () => dispatch(autoLogin()),
+  fetchTeams: () => dispatch(fetchTeams()),
 })
 
 export default connect(
