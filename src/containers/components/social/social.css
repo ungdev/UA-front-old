@@ -20,6 +20,7 @@
   box-shadow: none;
   cursor: pointer;
   text-decoration: none;
+  background-repeat: no-repeat;
 }
 
 .a-social__icon:not(:first-child) {

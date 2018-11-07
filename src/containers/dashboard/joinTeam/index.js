@@ -50,7 +50,7 @@ class JoinTeam extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  teams: state.teams.teams.map(team => ({ label: team.name, value: team.id }))
+  teams: state.teams.teams ? state.teams.teams.filter(team => !team.soloTeam).map(team => ({ label: team.name, value: team.id })) : []
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -30,10 +30,11 @@ class ContactModal extends React.Component {
       { label: 'Tournoi Hearthstone', value: '5' },
       { label: 'Tournoi CS:GO', value: '6' },
       { label: 'Tournoi SSBU', value: '7' },
-      { label: 'Tournoi libre', value: '8' },
-      { label: 'Je rencontre un problème pour payer', value: '9' },
-      { label: 'J\'ai eu une erreur sur le site', value: '10' },
-      { label: 'Signaler un bug', value: '11' },
+      { label: 'Tournoi OSU', value: '8' },
+      { label: 'Tournoi libre', value: '9' },
+      { label: 'Je rencontre un problème pour payer', value: '10' },
+      { label: 'J\'ai eu une erreur sur le site', value: '11' },
+      { label: 'Signaler un bug', value: '12' },
       { label: 'Autre', value: 'other' }]
     return (
       <Modal isOpen={this.props.isOpen} onClose={this.props.onClose}>
@@ -48,7 +49,7 @@ class ContactModal extends React.Component {
                         field="firstname"
                         type="text"
                         placeholder="Prénom"
-                        pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěêçëùíňóřšťúůýž-]+"
+                        pattern="[ªµºÀÂÃÄÅÆÇÈÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÞßàâãäåæèìíîïðñòóôõöøùúûüþÿĄąĆćĘęıŁłŃńŒœŚśŸŹźŻżƒˆˇˉμﬁﬂ0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-z áčďéěêçëùíňóřšťúůýž-]+"
                         minLength="2"
                         maxLength="200"
                         autoFocus
@@ -58,7 +59,7 @@ class ContactModal extends React.Component {
                         field="lastname"
                         type="text"
                         placeholder="Nom"
-                        pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěêçëùíňóřšťúůýž-]+"
+                        pattern="[ªµºÀÂÃÄÅÆÇÈÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÞßàâãäåæèìíîïðñòóôõöøùúûüþÿĄąĆćĘęıŁłŃńŒœŚśŸŹźŻżƒˆˇˉμﬁﬂ0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-z áčďéěêçëùíňóřšťúůýž-]+"
                         minLength="2"
                         maxLength="200"
                       />

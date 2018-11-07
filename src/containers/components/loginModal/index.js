@@ -20,12 +20,14 @@ class LoginModal extends React.Component {
 
     this.state = {
       tabIndex: 0,
-      loading: false
+      loading: false,
+      accepted: false,
     }
 
     this.setTabIndex = this.setTabIndex.bind(this)
     this.submit = this.submit.bind(this)
   }
+
 
   setTabIndex(tabIndex) {
     this.setState({
@@ -34,6 +36,7 @@ class LoginModal extends React.Component {
   }
 
   submit(user) {
+    if(!this.state.accepted) return this.props.noAcceptation() 
     if(user.password !== user.password2) return this.props.passwordMismatch()
     if(!user.gender) user.gender = 'N/A'
     else user.gender = user.gender.value
@@ -42,7 +45,7 @@ class LoginModal extends React.Component {
     })
 
     this.props.register(user)
-      .then(() => this.setState({ loading: false, tabIndex: 0 }))
+      .then(() => this.setState({ loading: false, tabIndex: 0, accepted: false }))
   }
 
   render() {
@@ -84,7 +87,7 @@ class LoginModal extends React.Component {
                         field="name"
                         type="text"
                         placeholder="Nom d'utilisateur"
-                        pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěêçëùíňóřšťúůýž-]+"
+                        pattern="[ªµºÀÂÃÄÅÆÇÈÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÞßàâãäåæèìíîïðñòóôõöøùúûüþÿĄąĆćĘęıŁłŃńŒœŚśŸŹźŻżƒˆˇˉμﬁﬂ0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-z áčďéěêçëùíňóřšťúůýž-]+"
                         minLength="3"
                         maxLength="90"
                         autoFocus
@@ -102,7 +105,7 @@ class LoginModal extends React.Component {
                         field="firstname"
                         type="text"
                         placeholder="Prénom"
-                        pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěêçëùěíňóřšťúůýž-]+"
+                        pattern="[ªµºÀÂÃÄÅÆÇÈÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÞßàâãäåæèìíîïðñòóôõöøùúûüþÿĄąĆćĘęıŁłŃńŒœŚśŸŹźŻżƒˆˇˉμﬁﬂ0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-z áčďéěêçëùíňóřšťúůýž-]+"
                         minLength="2"
                         maxLength="200"
                       />
@@ -110,7 +113,7 @@ class LoginModal extends React.Component {
                         field="lastname"
                         type="text"
                         placeholder="Nom"
-                        pattern="[0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-záčďéěěêçëùíňóřšťúůýž-]+"
+                        pattern="[ªµºÀÂÃÄÅÆÇÈÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÞßàâãäåæèìíîïðñòóôõöøùúûüþÿĄąĆćĘęıŁłŃńŒœŚśŸŹźŻżƒˆˇˉμﬁﬂ0-9A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽa-z áčďéěêçëùíňóřšťúůýž-]+"
                         minLength="2"
                         maxLength="200"
                       />
@@ -127,6 +130,16 @@ class LoginModal extends React.Component {
                         placeholder="Confirmation"
                         minLength="6"
                       />
+                      <div style={{ marginBottom: '10px' }}>
+                        <input
+                          name="accept"
+                          type="checkbox"
+                          checked={this.state.accepted}
+                          onChange={() => this.setState({ accepted: !this.state.accepted })}
+                          style={{ marginBottom: '0px' }}
+                        />
+                        <span style={{ fontSize: '10px' }}>Je certifie avoir lu et accepté sans réserve les <a href='/mentions-legales'>conditions d'utilisation</a> du site</span>
+                      </div>
                       {this.state.loading && <div style={{ margin: '12px 0 0 0' }}>Envoi en cours...</div>}
                       <br />
                       <Button type="submit" raised>
@@ -161,6 +174,13 @@ const mapDispatchToProps = dispatch => ({
   passwordMismatch: () => dispatch(
     notifActions.notifSend({
       message: 'Les mots de passe ne correspondent pas',
+      kind: 'danger',
+      dismissAfter: 2000
+    })
+  ),
+  noAcceptation: () => dispatch(
+    notifActions.notifSend({
+      message: 'Vous devez accepter les conditions d\'utilisation',
       kind: 'danger',
       dismissAfter: 2000
     })

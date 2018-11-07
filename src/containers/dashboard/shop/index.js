@@ -2,14 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import Select from 'react-select'
-import { push } from 'react-router-redux'
 
 import ListItem from '../../../components/list-item'
 import Button from '../../../components/button'
 import selectStyles from '../../../components/select/styles'
 import ScoupModal from '../components/scoupModal'
 
-import { payment } from '../../../modules/payment'
+import { shop } from '../../../modules/shop'
 
 import '../components/payment.css'
 
@@ -26,10 +25,7 @@ const shirtSizes = [
 class Cart extends React.Component {
   constructor(props) {
     super()
-    const { user } = props
-    if(user.paid) this.props.redirectToDashboard()
     this.state = {
-      plusone: false,
       ethernet: false,
       ethernet7: false,
       shirt: false,
@@ -49,10 +45,6 @@ class Cart extends React.Component {
       isScoupModalOpen: false,
     }
 
-    this.isPartner = props.prices.partners.some(partner => user.email.endsWith(partner))
-
-    this.switchToPlayer = this.switchToPlayer.bind(this)
-    this.switchToPlusone = this.switchToPlusone.bind(this)
     this.toggleEthernet = this.toggleEthernet.bind(this)
     this.toggleEthernet7 = this.toggleEthernet7.bind(this)
     this.toggleShirt = this.toggleShirt.bind(this)
@@ -64,12 +56,21 @@ class Cart extends React.Component {
     this.closeScoupModal = this.closeScoupModal.bind(this)
   }
 
-  switchToPlayer() {
-    this.setState({ plusone: false })
-  }
-
-  switchToPlusone() {
-    this.setState({ plusone: true })
+  getPrice() {
+    return (this.state.ethernet ? this.props.prices.ethernet : 0) +
+      (this.state.ethernet7 ? this.props.prices.ethernet7 : 0) +
+      (this.state.shirt ? this.props.prices.shirt : 0) +
+      (this.state.kaliento ? this.props.prices.kaliento : 0) +
+      (this.state.mouse ? this.props.prices.mouse : 0) +
+      (this.state.keyboard ? this.props.prices.keyboard : 0) +
+      (this.state.headset ? this.props.prices.headset : 0) +
+      (this.state.screen24 ? this.props.prices.screen24 : 0) +
+      (this.state.screen27 ? this.props.prices.screen27 : 0) +
+      (this.state.chair ? this.props.prices.chair : 0) +
+      (this.state.gamingPC ? this.props.prices.gamingPC : 0) +
+      (this.state.streamingPC ? this.props.prices.streamingPC : 0) +
+      (this.state.laptop ? this.props.prices.laptop : 0) +
+      (this.state.tombola > 0 ? this.state.tombola : 0)
   }
 
   toggleEthernet() {
@@ -117,8 +118,11 @@ class Cart extends React.Component {
   }
 
   payment() {
+    if(this.getPrice() === 0) {
+      return
+    }
+
     const basket = {
-      plusone: this.state.plusone,
       ethernet: this.state.ethernet,
       ethernet7: this.state.ethernet7,
       kaliento: this.state.kaliento,
@@ -139,27 +143,11 @@ class Cart extends React.Component {
     }
     if (this.state.tombola > 0) basket.tombola = this.state.tombola
 
-    this.props.payment(basket) 
+    this.props.shop(basket) 
   }
 
   render() {
-    const playerPrice = this.isPartner ? this.props.prices.partner : this.props.prices.default
-    const price =
-      (this.state.plusone ? this.props.prices.plusone : playerPrice) +
-      (this.state.ethernet ? this.props.prices.ethernet : 0) +
-      (this.state.ethernet7 ? this.props.prices.ethernet7 : 0) +
-      (this.state.shirt ? this.props.prices.shirt : 0) +
-      (this.state.kaliento ? this.props.prices.kaliento : 0) +
-      (this.state.mouse ? this.props.prices.mouse : 0) +
-      (this.state.keyboard ? this.props.prices.keyboard : 0) +
-      (this.state.headset ? this.props.prices.headset : 0) +
-      (this.state.screen24 ? this.props.prices.screen24 : 0) +
-      (this.state.screen27 ? this.props.prices.screen27 : 0) +
-      (this.state.chair ? this.props.prices.chair : 0) +
-      (this.state.gamingPC ? this.props.prices.gamingPC : 0) +
-      (this.state.streamingPC ? this.props.prices.streamingPC : 0) +
-      (this.state.laptop ? this.props.prices.laptop : 0) +
-      (this.state.tombola > 0 ? this.state.tombola : 0)
+    const price = this.getPrice();
 
     const gearPrice = 0 + (this.state.kaliento ? this.props.prices.kaliento : 0) +
     (this.state.mouse ? this.props.prices.mouse : 0) +
@@ -171,6 +159,7 @@ class Cart extends React.Component {
     (this.state.gamingPC ? this.props.prices.gamingPC : 0) +
     (this.state.streamingPC ? this.props.prices.streamingPC : 0) +
     (this.state.laptop ? this.props.prices.laptop : 0)
+
     return (
       <React.Fragment>
         <ScoupModal
@@ -179,28 +168,12 @@ class Cart extends React.Component {
           prices={this.props.prices}
         />
         <form className="a-dashboard-page a-dashboard-payment">
-          <h2>Paiement de la place</h2>
+          <h2>Achats supplémentaires</h2>
           <p>
-            Toutes les places vous donnent accès à l’ensemble du Festival des Jeux et de la LAN, et
-            permettent de rester à l'UTT Arena même en dehors des horaires d'ouverture du Festival.
-            Vous êtes d'une école partenaire et le prix n'est pas réduit ? Vérifiez votre e-mail dans <Link to="/dashboard/user">vos infos</Link>.
-            <br />
-            <br />
+            Vous pouvez acheter et louer des objets ici, en plus de ce que vous avez déjà précommandé lorsque vous avez payé votre place.<br />
+            Vous pouvez voir le matériel que vous avez déjà commandé dans <Link to="/dashboard/items">votre inventaire</Link>.<br />
             Le paiement se déroule sur un site sécurisé.
           </p>
-          <ListItem price={playerPrice} active={!this.state.plusone} onClick={this.switchToPlayer}>
-            <h3>Place joueur</h3>
-            <span>Place joueur.euse (tournoi spotlight ou libre). Permet d'avoir une place assise attitrée (sauf Super Smash Bros Ultimate)</span>
-          </ListItem>
-          <ListItem
-            price={this.props.prices.plusone}
-            active={this.state.plusone}
-            onClick={this.switchToPlusone}
-          >
-            <h3>Place visiteur</h3>
-            <span>Réservé aux accompagnateurs.rices</span>
-          </ListItem>
-          <div className="a-dashboard-payment__separator" />
           <ListItem
             price={`+${this.props.prices.ethernet}`}
             active={this.state.ethernet}
@@ -276,13 +249,11 @@ class Cart extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  user: state.user.user,
   prices: state.user.prices
 })
 
 const mapDispatchToProps = dispatch => ({
-  payment: body => dispatch(payment(body)),
-  redirectToDashboard : () => dispatch(push('/dashboard'))
+  shop: body => dispatch(shop(body))
 })
 
 export default connect(

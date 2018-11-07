@@ -10,24 +10,22 @@ import Button from '../../../../components/button'
 class ScoupModal extends React.Component {
   constructor(props) {
     super(props)
-    this.submit = this.submit.bind(this)
-    const { user } = props
     this.state = {
-      kaliento: user? user.kaliento : true,
-      mouse: user? user.mouse : false,
-      keyboard: user? user.keyboard : false,
-      headset: user? user.headset : false,
-      screen24: user? user.screen24 : false,
-      screen27: user? user.screen27 : false,
-      chair: user? user.chair : false,
-      gamingPC: user? user.gamingPC : false,
-      streamingPC: user? user.streamingPC : false,
-      laptop: user? user.laptop : false,
+      kaliento: false,
+      mouse: false,
+      keyboard: false,
+      headset: false,
+      screen24: false,
+      screen27: false,
+      chair: false,
+      gamingPC: false,
+      streamingPC: false,
+      laptop: false,
       isStreamingModalOpen: false,
       isGamingModalOpen: false,
       isLaptopModalOpen: false,
-      item: 'PC Streaming'
     }
+    this.submit = this.submit.bind(this)
     this.toggleKaliento = this.toggleKaliento.bind(this)
     this.toggleMouse = this.toggleMouse.bind(this)
     this.toggleKeyboard = this.toggleKeyboard.bind(this)
@@ -128,7 +126,7 @@ class ScoupModal extends React.Component {
         <Modal isOpen={this.props.isOpen} onClose={this.props.onClose} name="a-react-scoup-modal">
             <div className="a-scoup-modal">
               <form className="a-scoup-form">
-                <h2>Matériel Scoup Esport</h2>
+                <h2>Matériel Scoup eSport</h2>
                 <div>
                   <ListItem
                     price={`+${this.props.prices.kaliento}`}
@@ -249,7 +247,7 @@ class ScoupModal extends React.Component {
                   </ListItem>
                 </div>
                 <Button onClick={this.submit} raised>
-                  Ajouter le matériel au panier ({price}€)
+                  Enregistrer le matériel ({price}€)
                 </Button>
               </form>
             </div>

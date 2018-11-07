@@ -269,6 +269,45 @@ class Informations extends React.Component {
               <p><strong>Début des tournois :</strong> samedi 8 décembre à 10h</p>
             </div>
 
+            <Category id="players">Infos joueurs</Category>
+            <div>
+              <p><strong>Rappel : l'âge minimum pour participer au tournoi est de 15 ans.</strong></p>
+
+              <h3 className="a-infos__title">Cashprize et lots</h3>
+              <p>La répartition des récompenses entre les 3 premières places est la suivante :</p>
+              <ul>
+                <li>1<sup>ère</sup> place : Cashprize et lots</li>
+                <li>2<sup>ème</sup> et 3<sup>ème</sup> places : Lots</li>
+              </ul>
+              <br />
+              <span>Répartition des cashprizes :</span>
+              <ul>
+                <li>LoL (pro) : 1250€</li>
+                <li>Fortnite : 1000€</li>
+                <li>CS:GO : 450€</li>
+                <li>SSBU : 150€</li>
+                <li>Hearthstone : 150€</li>
+              </ul>
+              <p>
+                En plus des cashprizes, des lots seront offerts !<br />
+                Cette année l'UTT Arena s'est associée avec de nombreux partenaires pour vous offrir des lots de qualité !
+              </p>
+
+              <h3 className="a-infos__title">Ce qu'il faut apporter</h3>
+              <ul>
+                <li>Ton PC avec tous ces magnifiques périphériques</li>
+                <li>Une multiprise si besoin (chaque joueur dispose d'une prise)</li>
+                <li>Un câble RJ45</li>
+              </ul>
+              <p>Si tu ne souhaites pas ramener tout ça, nous te proposons de louer un PC avec notre partenaire Scoup eSport. De plus nous vendons des multiprises et des câbles RJ45 de 5 et 7m.</p>
+              <h3 className="a-infos__title">Ce qui est fourni</h3>
+              <p>Une prise électrique et un port RJ45.</p>
+              <p>Et vu qu'on t'aime bien, on t'offre aussi une place sur une table avec une chaise et l'accès aux loges, mais ça c'est juste pour toi !</p>
+              <h3 className="a-infos__title">Streaming</h3>
+              <p>Pour les joueurs souhaitant streamer pendant la LAN, il faudra en faire la demande au moins 2 semaines avant l'UA, et nous vous autoriserons peut-être à streamer.
+              Nous nous réservons le droit d'empêcher le stream si le réseau ne le permet pas.</p>
+            </div>
+
             <Category id="services">Services</Category>
             <div>
               <h3 className="a-infos__title">Nourriture</h3>
@@ -381,37 +420,7 @@ class Informations extends React.Component {
                   </tbody>
                 </table>
               </div>
-              <p>Pour louer du matériel, il faudra choisir les objets lors de l'inscription et les ajouter à votre panier. Attention, l'offre n'est valable que jusqu'au 6 décembre à 18h. Pensez bien à ajouter les objets lors de votre inscription, il ne sera plus possible après coup d'en commander.</p>
-            </div>
-
-            <Category id="players">Infos joueurs</Category>
-            <div>
-              <p><strong>Rappel : l'âge minimum pour participer au tournoi est de 15 ans.</strong></p>
-
-              <h3 className="a-infos__title">Cashprize et lots</h3>
-              <p>La répartition des récompenses entre les 3 premières places est la suivante :
-              </p>
-              <ul>
-                <li>1<sup>ère</sup> place : Cashprize et lots</li>
-                <li>2<sup>ème</sup> et 3<sup>ème</sup> places : Lots</li>
-              </ul>
-              <p>
-                Cette année l'<span>UTT Arena</span> s'est associée avec de nombreux partenaires pour vous offrir des lots de qualité !
-              </p>
-
-              <h3 className="a-infos__title">Ce qu'il faut apporter</h3>
-              <ul>
-                <li>Ton PC avec tous ces magnifiques périphériques</li>
-                <li>Une multiprise si besoin (chaque joueur dispose d'une prise)</li>
-                <li>Un câble RJ45</li>
-              </ul>
-              <p>Si tu ne souhaites pas ramener tout ça, nous te proposons de louer un PC avec notre partenaire Scoup eSport. De plus nous vendons des multiprises et des câbles RJ45 de 5 et 7m.</p>
-              <h3 className="a-infos__title">Ce qui est fourni</h3>
-              <p>Une prise électrique et un port RJ45.</p>
-              <p>Et vu qu'on t'aime bien, on t'offre aussi une place sur une table avec une chaise et l'accès aux loges, mais ça c'est juste pour toi !</p>
-              <h3 className="a-infos__title">Streaming</h3>
-              <p>Pour les joueurs souhaitant streamer pendant la LAN, il faudra en faire la demande au moins 2 semaines avant l'UA, et nous vous autoriserons peut-être à streamer.
-              Nous nous réserverons le droit d'empêcher le stream si le réseau ne le permet pas.</p>
+              <p>Vous pouvez louer du matériel lorsque vous achetez votre place ou en ajouter par la suite. Attention, l'offre n'est valable que jusqu'au 6 décembre à 18h.</p>
             </div>
           </div>
 

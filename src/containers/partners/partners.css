@@ -1,5 +1,5 @@
 
-.a-partners-main{
+.a-partners-main {
   background-color: #222222;
 }
 .a-partners-list {
@@ -10,7 +10,7 @@
   align-items: center;
   padding-bottom: 40px;
 }
-.a-partners-list > .a-partners-item{
+.a-partners-list > .a-partners-item {
   width: 80%;
   background-color: #ffffff;
   margin-top: 20px;
@@ -22,21 +22,44 @@
   flex-wrap: wrap;
 }
 
-.a-partners-list > .a-partners-item > div{
+.a-partners-list > .a-partners-item > div {
   padding: 20px 20px 20px 20px;
 }
 
-.a-partners-list > .a-partners-item > div > img{
+.a-partners-list > .a-partners-item > .a-partners-image > img {
   max-width: 200px;
   max-height: 200px;
 }
-.a-partners-list > .a-partners-item > .a-partners-text{
-  width: 60%;
+.a-partners-list > .a-partners-item > .a-partners-text {
+  width: calc(100% - 240px);
   min-width: 250px;
+  padding: 0;
 }
 
-.a-partners-list > .a-partners-item > .a-partners-text > p{
+.a-partners-list > .a-partners-item > .a-partners-text > p {
   text-align: justify;
-  padding: 10px 10px 10px 10px;
-  margin: 0px 0px 0px 0px;
+  padding: 0;
+  margin: 30px;
+}
+
+@media screen and (max-width: 818px) {
+  .a-partners-list > .a-partners-item > .a-partners-text {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .a-partners-list > .a-partners-item {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .a-partners-list > .a-partners-item > .a-partners-text > p {
+    margin: 0 0 20px 0;
+  }
+  
+  .a-partners-list > .a-partners-item > .a-partners-text {
+    min-width: 0;
+  }
 }

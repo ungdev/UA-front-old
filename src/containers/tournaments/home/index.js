@@ -26,7 +26,7 @@ const Home = props => {
     },
     {
       id: 3,
-      name: 'Counter Strike : Global Offensive',
+      name: 'Counter Strike : Global Offensive(COMPLET)',
       img: csgo,
       link: props.goToCSGO
     },

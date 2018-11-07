@@ -54,10 +54,18 @@ const Home = props => {
       <h3>Payer ma place</h3>
       <span>Paye ta place et récupère ton billet d'entrée ! Obligatoire pour les tournois</span>
     </ListItem> : 
-  <ListItem clickable={false}>
-    <h3>Payer ma place</h3>
-    <span>Tu as déjà payé ta place ;)</span>
-  </ListItem>}
+    <ListItem clickable={false}>
+      <h3>Payer ma place</h3>
+      <span>Tu as déjà payé ta place ;)</span>
+    </ListItem>}
+    {props.user && props.user.paid ? <ListItem clickable={true} onClick={props.shop}>
+      <h3>Magasin</h3>
+      <span>Vous souhaitez précommander du matériel ? C'est ici !</span>
+    </ListItem> : null}
+    {props.user && props.user.paid ? <ListItem clickable={true} onClick={props.items}>
+      <h3>Inventaire</h3>
+      <span>Tu ne te souviens pas de ce que tu as acheté ? Tu trouveras la liste ici.</span>
+    </ListItem> : null}
     <ListItem clickable={true} onClick={props.editUser}>
       <h3>Éditer mes infos</h3>
       <span>Accède à ton profil et modifie tes informations si besoin</span>
@@ -75,6 +83,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   editUser: () => dispatch(push('/dashboard/user')),
   payment: () => dispatch(push('/dashboard/payment')),
+  shop: () => dispatch(push('/dashboard/shop')),
+  items: () => dispatch(push('/dashboard/items')),
   requests: () => dispatch(push('/dashboard/requests')),
   solo: () => dispatch(push('/dashboard/solo')),
   createTeam: () => dispatch(push('/dashboard/createTeam')),
