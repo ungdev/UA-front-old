@@ -129,6 +129,10 @@ class FAQ extends React.Component {
         title: "Inscription",
         entries: [
           {
+            question: "Quelle place doivent acheter les coachs/managers de mon équipe ?",
+            answer: "Les coachs et managers d'équipes doivent acheter une place visiteur."
+          },
+          {
             question: "Combien coûte la LAN pour les joueurs et les accompagnateurs ?",
             answer: "La LAN coûte 15€ pour tous les joueurs, avec une réduction de 5€ pour les écoles partenaires. La place accompagnateur/visiteur est à 6€."
           },
@@ -155,7 +159,7 @@ class FAQ extends React.Component {
         entries: [
           {
             question: "Puis-je payer en espèces ?",
-            answer: "Il sera possible de payer en espèce uniquement sur place, mais à tes risques et périls, car il y a de fortes chances que les places soient déjà toutes parties."
+            answer: "Il sera possible de payer en espèces sur place, mais à tes risques et périls, car il y a de fortes chances que toutes les places soient déjà parties."
           },
           {
             question: "Puis-je payer par PayPal ?",
@@ -194,27 +198,27 @@ class FAQ extends React.Component {
     let id = 0
     let faqContent = []
 
-    for(let i = 0; i < faqData.length; i++) {
+    faqData.forEach(data => {
       faqContent.push(
-        <h3 className="a-faq__title">{faqData[i].title}</h3>
+        <h3 className="a-faq__title">{data.title}</h3>
       )
 
-      for(let j = 0; j < faqData[i].entries.length; j++) {
+      data.entries.forEach(entry => {
         faqContent.push(
           <div className={"faq-container" + (this.state.faqEntriesOpened[id] ? " active" : "")} key={id}>
             <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, id)}>
               <span className="faq-arrow"></span>
-              {faqData[i].entries[j].question}
+              {entry.question}
             </span>
             <span className="faq-answer">
-              {faqData[i].entries[j].answer}
+              {entry.answer}
             </span>
           </div>
         )
 
         id++
-      }
-    }
+      })
+    })
 
     return (
       <div>
