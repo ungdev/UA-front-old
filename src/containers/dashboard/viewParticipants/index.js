@@ -65,7 +65,7 @@ class Participants extends React.Component {
 
 const mapStateToProps = state => ({
   spotlights: state.spotlights.spotlights,
-  teams: state.teams.teams
+  teams: state.teams.teams || [],
 })
 
 export default connect(mapStateToProps)(Participants)
