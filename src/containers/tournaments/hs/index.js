@@ -36,7 +36,7 @@ const HS = () => {
       decklists, de 4 classes différentes. Une fois cette liste envoyée, aucun changement ne sera possible. Les decks 
       listes seront à envoyer sur un site internet, dont nous communiquerons l'adresse prochainement.</p>
 
-      <p><strong>ATTENTION :</strong> les extensions sortis 2 semaines avant le tournoi ne seront pas acceptés lors des matchs.</p>
+      <p><strong>ATTENTION :</strong> Toutes les extensions seront autorisées pour le tournoi, cela inclus donc <strong>les jeux de Rastakhan</strong>.</p>
 
       <h2>Déroulement d'un match</h2>
 
