@@ -197,28 +197,29 @@ class FAQ extends React.Component {
     ]
 
     let id = 0
-    let faqContent = []
+    let titleId = 0
+    let faqContent = faqData.map(data => {
+      let result = [<h3 className="a-faq__title" key={titleId++}>{data.title}</h3>]
 
-    faqData.forEach(data => {
-      faqContent.push(
-        <h3 className="a-faq__title">{data.title}</h3>
+      result.push(
+        data.entries.map(entry => {
+          id++
+
+          return (
+            <div className={"faq-container" + (this.state.faqEntriesOpened[id] ? " active" : "")} key={id}>
+              <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, id)}>
+                <span className="faq-arrow"></span>
+                {entry.question}
+              </span>
+              <span className="faq-answer">
+                {entry.answer}
+              </span>
+            </div>
+          )
+        })
       )
 
-      data.entries.forEach(entry => {
-        faqContent.push(
-          <div className={"faq-container" + (this.state.faqEntriesOpened[id] ? " active" : "")} key={id}>
-            <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, id)}>
-              <span className="faq-arrow"></span>
-              {entry.question}
-            </span>
-            <span className="faq-answer">
-              {entry.answer}
-            </span>
-          </div>
-        )
-
-        id++
-      })
+      return result
     })
 
     return (

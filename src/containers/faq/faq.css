@@ -4,6 +4,10 @@
   background-size: 100% 100%;
 }
 
+.a-category {
+  margin-top: 60px;
+}
+
 .a-faq__content {
   margin: 0 auto;
   padding: 0 20px 40px 20px;
