@@ -119,9 +119,7 @@ class Partners extends React.Component {
         <ForgotModal isOpen={this.state.forgotModalOpened} onClose={this.closeForgotModal} />
 
         <main className="a-partners-main">
-          <div style={{ marginTop: '40px', backgroundColor: '#202020' }}>
-            <Category>Nos partenaires</Category>
-          </div>
+          <Category>Nos partenaires</Category>
           <div className="a-partners-list">
             {partners.map((partner, i) =>
               <a

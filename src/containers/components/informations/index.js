@@ -62,6 +62,9 @@ const Informations = () => (
       <Link to={'/informations'}>
         <Button raised={true}>Plus d'infos</Button>
       </Link>
+      <Link to={'/gallery'}>
+        <Button raised={true}>Photos</Button>
+      </Link>
     </div>
   </div>
 )

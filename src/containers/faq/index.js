@@ -10,6 +10,7 @@ import Social from '../components/social'
 import LoginModal from '../components/loginModal'
 import ContactModal from '../components/contactModal'
 import ForgotModal from '../components/forgotModal'
+import Category from '../components/category'
 
 import { fetchCanLogin } from '../../modules/canLogin'
 import { autoLogin } from '../../modules/login'
@@ -129,6 +130,10 @@ class FAQ extends React.Component {
         title: "Inscription",
         entries: [
           {
+            question: "Quelle place doivent acheter les coachs/managers de mon équipe ?",
+            answer: "Les coachs et managers d'équipes doivent acheter une place visiteur."
+          },
+          {
             question: "Combien coûte la LAN pour les joueurs et les accompagnateurs ?",
             answer: "La LAN coûte 15€ pour tous les joueurs, avec une réduction de 5€ pour les écoles partenaires. La place accompagnateur/visiteur est à 6€."
           },
@@ -155,7 +160,7 @@ class FAQ extends React.Component {
         entries: [
           {
             question: "Puis-je payer en espèces ?",
-            answer: "Il sera possible de payer en espèce uniquement sur place, mais à tes risques et périls, car il y a de fortes chances que les places soient déjà toutes parties."
+            answer: "Il sera possible de payer en espèces sur place, mais à tes risques et périls, car il y a de fortes chances que toutes les places soient déjà parties."
           },
           {
             question: "Puis-je payer par PayPal ?",
@@ -192,29 +197,30 @@ class FAQ extends React.Component {
     ]
 
     let id = 0
-    let faqContent = []
+    let titleId = 0
+    let faqContent = faqData.map(data => {
+      let result = [<h3 className="a-faq__title" key={titleId++}>{data.title}</h3>]
 
-    for(let i = 0; i < faqData.length; i++) {
-      faqContent.push(
-        <h3 className="a-faq__title">{faqData[i].title}</h3>
+      result.push(
+        data.entries.map(entry => {
+          id++
+
+          return (
+            <div className={"faq-container" + (this.state.faqEntriesOpened[id] ? " active" : "")} key={id}>
+              <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, id)}>
+                <span className="faq-arrow"></span>
+                {entry.question}
+              </span>
+              <span className="faq-answer">
+                {entry.answer}
+              </span>
+            </div>
+          )
+        })
       )
 
-      for(let j = 0; j < faqData[i].entries.length; j++) {
-        faqContent.push(
-          <div className={"faq-container" + (this.state.faqEntriesOpened[id] ? " active" : "")} key={id}>
-            <span className="faq-question" onClick={this.toggleFaqEntry.bind(this, id)}>
-              <span className="faq-arrow"></span>
-              {faqData[i].entries[j].question}
-            </span>
-            <span className="faq-answer">
-              {faqData[i].entries[j].answer}
-            </span>
-          </div>
-        )
-
-        id++
-      }
-    }
+      return result
+    })
 
     return (
       <div>
@@ -232,9 +238,10 @@ class FAQ extends React.Component {
         <ForgotModal isOpen={this.state.forgotModalOpened} onClose={this.closeForgotModal} />
 
         <main className="a-faq">
+          <Category>FAQ</Category>
           <div className="a-faq__content">
             <div>
-              <h2 style={{ fontWeight: 'normal' }}>Voici des questions souvent posées, en espérant que cela pourra t'aider dans ta recherche jeune padawan !</h2>
+              <h3 style={{ fontWeight: 'normal' }}>Voici des questions souvent posées, en espérant que cela pourra t'aider dans ta recherche jeune padawan !</h3>
 
               {faqContent}
             </div>

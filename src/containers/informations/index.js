@@ -1,5 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import Button from '../../components/button'
+import { Link } from 'react-router-dom'
 
 import './informations.css'
 
@@ -125,7 +127,13 @@ class Informations extends React.Component {
                 2015 arriva, une opportunité unique nous a été offerte par la ville avec la création du Festival des Jeux. Nous avons donc déménagé au Cube et nous sommes depuis dans le format que vous connaissez !<br />
                 &Agrave; présent l’UTT Arena c’est <span className="a-infos__important">460 joueurs</span>, <span className="a-infos__important">5 tournois spotlights</span>, une scène de 70 m² et une centaine de bénévoles.<br />
               </p>
-              <p style={{ textAlign: 'justify'}}>Et tout cela, c’est grâce à vous, les joueurs, qui nous font confiance chaque année pour vous organiser un événement de folie, et à nos partenaires qui nous soutiennent chaque année dans l'organisation de la LAN !</p>
+              <p style={{ textAlign: 'justify'}}>Et tout cela, c’est grâce à vous, les joueurs, qui nous faites confiance chaque année pour vous organiser un événement de folie, et à nos partenaires qui nous soutiennent chaque année dans l'organisation de la LAN !</p>
+            
+              <div style={{ marginTop: '40px', textAlign: 'center' }}>
+                <Link to={"/gallery"}>
+                  <Button raised>Voir les photos</Button>
+                </Link>
+              </div>
             </div>
 
             <Category id="schedule">Horaires</Category>
