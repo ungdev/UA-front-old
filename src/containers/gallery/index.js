@@ -30,7 +30,7 @@ class Gallery extends React.Component {
       forgotModalOpened: false,
       contactModalOpened: false,
       imagesUrl: imagesUrl,
-      imageViewSrc: null
+      imageViewIndex: null
     }
 
     this.openLoginModal = this.openLoginModal.bind(this)
@@ -105,7 +105,7 @@ class Gallery extends React.Component {
 
     this.state.imagesUrl.forEach((url, i) => {
       images.push(
-        <div className="a-gallery__image__container" key={i} onClick={() => this.setState({ imageViewSrc: url })}>
+        <div className="a-gallery__image__container" key={i} onClick={() => { this.setState({ imageViewIndex: i })}}>
           <img
             src={url}
             alt=""
@@ -134,7 +134,7 @@ class Gallery extends React.Component {
 
           <div className="a-gallery__content">
             {images}
-            <ImageView src={this.state.imageViewSrc} close={() => this.setState({ imageViewSrc: null })} />
+            <ImageView src={this.state.imagesUrl} index={this.state.imageViewIndex} />
           </div>
 
           <Footer openContactModal={this.openContactModal} />

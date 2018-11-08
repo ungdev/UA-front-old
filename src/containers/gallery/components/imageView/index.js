@@ -6,27 +6,63 @@ class ImageView extends React.Component {
   constructor(props) {
     super(props)
 
-    this.imageClickVal = false
+    this.state = {
+      index: this.props.index
+    }
 
+    this.preventClose = false
+
+    this.leftArrowClick = this.leftArrowClick.bind(this)
+    this.rightArrowClick = this.rightArrowClick.bind(this)
     this.imageClick = this.imageClick.bind(this)
     this.containerClick = this.containerClick.bind(this)
   }
 
-  async imageClick() {
-    this.imageClickVal = true
+  leftArrowClick() {
+    if(this.state.index > 0) {
+      this.setState({
+        index: this.state.index - 1
+      })
+    }
+    
+    this.preventClose = true
+  }
+
+  rightArrowClick() {
+    if(this.state.index < this.props.src.length - 1) {
+      this.setState({
+        index: this.state.index + 1
+      })
+    }
+
+    this.preventClose = true
+  }
+
+  componentDidUpdate(prevProps) {
+    if(prevProps !== this.props) {
+      this.setState({
+        index: this.props.index
+      })
+    }
+  }
+
+  imageClick() {
+    this.preventClose = true
   }
 
   containerClick() {
-    if(!this.imageClickVal) {
-      this.props.close()
+    if(!this.preventClose) {
+      this.setState({
+        index: null
+      })
     }
     else {
-      this.imageClickVal = false
+      this.preventClose = false
     }
   }
 
   render() {
-    if(this.props.src === null) {
+    if(this.props.src === null || this.state.index === null) {
       return null
     }
     
@@ -35,7 +71,9 @@ class ImageView extends React.Component {
         <div className="imageview__container" onClick={this.containerClick}>
           <div className="imageview__close" onClick={this.props.close}>&times;</div>
           <div className="imageview__content">
-            <img src={this.props.src} alt="" onClick={this.imageClick} />
+            {this.state.index > 0 && <div className="imageview__arrow__left" onClick={this.leftArrowClick}>&lsaquo;</div>}
+            <img src={this.props.src[this.state.index]} alt="" onClick={this.imageClick} />
+            {(this.state.index < this.props.src.length - 1) && <div className="imageview__arrow__right" onClick={this.rightArrowClick}>&rsaquo;</div>}
           </div>
         </div>
       </React.Fragment>
