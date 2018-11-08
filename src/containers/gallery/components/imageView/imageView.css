@@ -45,7 +45,6 @@
 .imageview__arrow__left, .imageview__arrow__right {
   position: absolute;
   line-height: 10000px;
-  background: rgba(255,255,255,0.1);
   font-size: 80px;
   width: 100px;
   text-align: center;
