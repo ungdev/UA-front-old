@@ -43,7 +43,8 @@
 }
 
 .a-informations__more > * {
-  margin: 0 10px;
+  display: inline-block;
+  margin: 6px 10px;
 }
 
 @media (min-width: 768px) {

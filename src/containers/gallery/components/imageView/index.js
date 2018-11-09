@@ -17,6 +17,7 @@ class ImageView extends React.Component {
     this.rightArrowClick = this.rightArrowClick.bind(this)
     this.imageClick = this.imageClick.bind(this)
     this.containerClick = this.containerClick.bind(this)
+    this.close = this.close.bind(this)
   }
 
   componentDidMount() {
@@ -93,6 +94,14 @@ class ImageView extends React.Component {
     }
   }
 
+  close() {
+    this.setState({
+      index: null
+    })
+
+    this.preventClose = false
+  }
+
   render() {
     if(this.props.src === null || this.state.index === null) {
       return null
@@ -101,7 +110,7 @@ class ImageView extends React.Component {
     return (
       <React.Fragment>
         <div className="imageview__container" onClick={this.containerClick}>
-          <div className="imageview__close" onClick={this.props.close}>&times;</div>
+          <div className="imageview__close" onClick={this.close}>&times;</div>
           <div className="imageview__content">
             <div className={'imageview__arrow__left' + (this.state.index > 0 ? '' : ' disabled')} onClick={this.leftArrowClick} title="Photo précédente">
               <div className="imageview__arrow">
