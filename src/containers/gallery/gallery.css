@@ -37,6 +37,7 @@
   object-fit: cover;
   object-position: center;
   cursor: pointer;
+  user-select: none;
 }
 
 @media (max-width: 768px) {

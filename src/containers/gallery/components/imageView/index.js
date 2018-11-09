@@ -23,6 +23,10 @@ class ImageView extends React.Component {
     window.addEventListener('keydown', this.keydownHandle)
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.keydownHandle)
+  }
+
   componentDidUpdate(prevProps) {
     if(prevProps !== this.props) {
       this.setState({
