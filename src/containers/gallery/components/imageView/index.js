@@ -99,9 +99,19 @@ class ImageView extends React.Component {
         <div className="imageview__container" onClick={this.containerClick}>
           <div className="imageview__close" onClick={this.props.close}>&times;</div>
           <div className="imageview__content">
-            <div className={'imageview__arrow__left' + (this.state.index > 0 ? '' : ' disabled')} onClick={this.leftArrowClick} title="Photo précédente">&lsaquo;</div>
+            <div className={'imageview__arrow__left' + (this.state.index > 0 ? '' : ' disabled')} onClick={this.leftArrowClick} title="Photo précédente">
+              <div className="imageview__arrow">
+                &lsaquo;
+              </div>
+            </div>
+
             <img src={this.props.src[this.state.index]} alt="" onClick={this.imageClick} />
-            <div className={'imageview__arrow__right' + (this.state.index < this.props.src.length - 1 ? '' : ' disabled')} onClick={this.rightArrowClick} title="Photo suivante">&rsaquo;</div>
+
+            <div className={'imageview__arrow__right' + (this.state.index < this.props.src.length - 1 ? '' : ' disabled')} onClick={this.rightArrowClick} title="Photo suivante">
+              <div className="imageview__arrow">
+                &rsaquo;
+              </div>
+            </div>
           </div>
         </div>
       </React.Fragment>

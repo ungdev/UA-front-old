@@ -81,5 +81,42 @@
   
   .imageview__close {
     right: 8px;
+    top: 8px;
+  }
+
+  .imageview__arrow__left, .imageview__arrow__right {
+    overflow: hidden;
+    top: 8px;
+    width: 37px;
+    height: 37px;
+    font-size: 37px;
+    line-height: 37px;
+    padding: 0;
+    border: none;
+    background: #202020;
+    border: 2px solid #fff;
+    border-radius: 4px;
+  }
+
+  .imageview__arrow__left {
+    left: 8px;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .imageview__arrow__right {
+    left: 45px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  
+  .imageview__arrow__right.disabled {
+    border-left-color: #fff;
+  }
+
+  .imageview__arrow {
+    position: relative;
+    top: -5px;
   }
 }
