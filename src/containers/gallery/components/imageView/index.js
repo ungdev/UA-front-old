@@ -23,6 +23,10 @@ class ImageView extends React.Component {
     window.addEventListener('keydown', this.keydownHandle)
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.keydownHandle)
+  }
+
   componentDidUpdate(prevProps) {
     if(prevProps !== this.props) {
       this.setState({
@@ -39,15 +43,17 @@ class ImageView extends React.Component {
           this.setState({
             index: null
           })
-          return
+          break
         // Left arrow key
         case 37:
           this.leftArrowClick()
-          return
+          break
         // Right arrow key
         case 39:
           this.rightArrowClick()
-          return
+          break
+        default:
+          break
       }
     }
   }
@@ -97,9 +103,19 @@ class ImageView extends React.Component {
         <div className="imageview__container" onClick={this.containerClick}>
           <div className="imageview__close" onClick={this.props.close}>&times;</div>
           <div className="imageview__content">
-            {this.state.index > 0 && <div className="imageview__arrow__left" onClick={this.leftArrowClick} title="Photo précédente">&lsaquo;</div>}
+            <div className={'imageview__arrow__left' + (this.state.index > 0 ? '' : ' disabled')} onClick={this.leftArrowClick} title="Photo précédente">
+              <div className="imageview__arrow">
+                &lsaquo;
+              </div>
+            </div>
+
             <img src={this.props.src[this.state.index]} alt="" onClick={this.imageClick} />
-            {(this.state.index < this.props.src.length - 1) && <div className="imageview__arrow__right" onClick={this.rightArrowClick} title="Photo suivante">&rsaquo;</div>}
+
+            <div className={'imageview__arrow__right' + (this.state.index < this.props.src.length - 1 ? '' : ' disabled')} onClick={this.rightArrowClick} title="Photo suivante">
+              <div className="imageview__arrow">
+                &rsaquo;
+              </div>
+            </div>
           </div>
         </div>
       </React.Fragment>

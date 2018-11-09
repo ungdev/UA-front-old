@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
+// eslint-disable-next-line
+import lazysizes from 'lazysizes' // this can appear as useless on your text editor but it's not
 
 import './gallery.css'
 
@@ -16,7 +17,6 @@ import ImageView from './components/imageView'
 
 import { fetchCanLogin } from '../../modules/canLogin'
 import { autoLogin } from '../../modules/login'
-
 
 class Gallery extends React.Component {
   constructor(props) {
@@ -107,7 +107,8 @@ class Gallery extends React.Component {
       images.push(
         <div className="a-gallery__image__container" key={i} onClick={() => { this.setState({ imageViewIndex: i })}}>
           <img
-            src={url}
+            data-src={url}
+            className="lazyload"
             alt=""
           />
         </div>
@@ -134,8 +135,9 @@ class Gallery extends React.Component {
 
           <div className="a-gallery__content">
             {images}
-            <ImageView src={this.state.imagesUrl} index={this.state.imageViewIndex} />
           </div>
+          
+          <ImageView src={this.state.imagesUrl} index={this.state.imageViewIndex} />
 
           <Footer openContactModal={this.openContactModal} />
         </main>
