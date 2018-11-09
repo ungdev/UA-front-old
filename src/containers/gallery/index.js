@@ -134,8 +134,9 @@ class Gallery extends React.Component {
 
           <div className="a-gallery__content">
             {images}
-            <ImageView src={this.state.imagesUrl} index={this.state.imageViewIndex} />
           </div>
+          
+          <ImageView src={this.state.imagesUrl} index={this.state.imageViewIndex} />
 
           <Footer openContactModal={this.openContactModal} />
         </main>

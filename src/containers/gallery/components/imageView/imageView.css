@@ -6,7 +6,8 @@
   width: 100vw;
   height: calc(100vh - 60px);
   z-index: 6;
-  background: rgba(20,20,20,0.8);
+  background: rgba(32,32,32,0.9);
+  color: #fff;
 }
 
 .imageview__close {
@@ -44,19 +45,32 @@
 
 .imageview__arrow__left, .imageview__arrow__right {
   position: absolute;
-  line-height: 10000px;
+  line-height: 160px;
   font-size: 80px;
-  width: 100px;
+  width: 80px;
+  padding-bottom: 18px;
   text-align: center;
   cursor: pointer;
   user-select: none;
 }
 
+.imageview__arrow__left.disabled {
+  color: #5f5f5f;
+  border-right-color: #5f5f5f;
+}
+
+.imageview__arrow__right.disabled {
+  color: #5f5f5f;
+  border-left-color: #5f5f5f;
+}
+
 .imageview__arrow__left {
+  border-right: 2px solid #b8b8b8;
   left: 0;
 }
 
 .imageview__arrow__right {
+  border-left: 2px solid #b8b8b8;
   right: 20px;
 }
 
