@@ -53,6 +53,7 @@
   text-align: center;
   cursor: pointer;
   user-select: none;
+  z-index: 1;
 }
 
 .imageview__arrow__left.disabled {
@@ -75,7 +76,7 @@
   right: 20px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .imageview__content {
     padding: 10px;
   }
@@ -93,7 +94,6 @@
     font-size: 37px;
     line-height: 37px;
     padding: 0;
-    border: none;
     background: #202020;
     border: 2px solid #fff;
     border-radius: 4px;
