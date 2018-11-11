@@ -142,9 +142,9 @@ class Informations extends React.Component {
                 <thead>
                   <tr>
                     <th className="a-infos__table__void"></th>
-                    <th>Vendredi 7</th>
-                    <th>Samedi 8</th>
-                    <th>Dimanche 9</th>
+                    <th>Vendredi&nbsp;7</th>
+                    <th>Samedi&nbsp;8</th>
+                    <th>Dimanche&nbsp;9</th>
                   </tr>
                 </thead>
                 <tbody>

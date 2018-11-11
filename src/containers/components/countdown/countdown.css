@@ -1,20 +1,13 @@
 .a-countdown {
+  display: flex;
+  justify-content: space-around;
   position: relative;
   text-align: center;
   width: 100%;
 }
 
 .a-countdown > div {
-  display: inline-block;
-  margin: 0 25px;
-}
-
-.a-countdown > div:first-child {
-  margin-left: 0;
-}
-
-.a-countdown > div:last-child {
-  margin-right: 0;
+  display: block;
 }
 
 .a-countdown h1, .a-countdown h2 {
@@ -42,15 +35,20 @@
   .a-countdown h2 {
     font-size: 15px;
   }
-  
-  .a-countdown > div {
-    margin: 0 10px;
+}
+
+@media screen and (max-width: 400px) {
+  .a-countdown h1 {
+    font-size: 50px;
+  }
+
+  .a-countdown h2 {
+    font-size: 13px;
   }
 }
 
-@media screen and (max-width: 400px) { 
-  .a-countdown > div {
-    display: block;
-    margin: 0 0 10px 0;
+@media screen and (max-width: 340px) {
+  .a-countdown {
+    flex-direction: column;
   }
 }
