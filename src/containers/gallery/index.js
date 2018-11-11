@@ -33,6 +33,7 @@ class Gallery extends React.Component {
       imageViewIndex: null
     }
 
+    this.setImageViewIndex = this.setImageViewIndex.bind(this)
     this.openLoginModal = this.openLoginModal.bind(this)
     this.openForgotModal = this.openForgotModal.bind(this)
     this.openContactModal = this.openContactModal.bind(this)
@@ -51,6 +52,12 @@ class Gallery extends React.Component {
 
   componentWillUnmount() {
     document.removeEventListener('scroll', this.scrollCapture)
+  }
+
+  setImageViewIndex(i) {
+    this.setState({
+      imageViewIndex: i
+    })
   }
 
   openLoginModal() {
@@ -105,7 +112,7 @@ class Gallery extends React.Component {
 
     this.state.imagesUrl.forEach((url, i) => {
       images.push(
-        <div className="a-gallery__image__container" key={i} onClick={() => { this.setState({ imageViewIndex: i })}}>
+        <div className="a-gallery__image__container" key={i} onClick={() => { this.setImageViewIndex(i) }}>
           <img
             data-src={url}
             className="lazyload"
@@ -137,7 +144,7 @@ class Gallery extends React.Component {
             {images}
           </div>
           
-          <ImageView src={this.state.imagesUrl} index={this.state.imageViewIndex} />
+          <ImageView src={this.state.imagesUrl} index={this.state.imageViewIndex} setIndex={this.setImageViewIndex}/>
 
           <Footer openContactModal={this.openContactModal} />
         </main>
