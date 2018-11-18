@@ -145,7 +145,8 @@ const mapStateToProps = state => ({
   isCaptain: state.user.user.team.captainId === state.user.user.id,
   spotlightFull: (state.spotlights.spotlights.find(s => s.id === state.user.user.team.spotlightId) || {}).isFull,
   // allow refuse and kick error
-  askingPlayers: state.teams.teams.find(team => team.id === state.user.user.team.id).askingUsers,
+  askingPlayers: state.teams.teams.find(team => team.id === state.user.user.team.id) ?
+    state.teams.teams.find(team => team.id === state.user.user.team.id).askingUsers : [],
   kickablePlayers: state.user.user.team.users
     .filter(user => user.id !== state.user.user.id)
     .map(user => ({ label: `${user.firstname} ${user.lastname} (${user.name})`, value: user.id }))
