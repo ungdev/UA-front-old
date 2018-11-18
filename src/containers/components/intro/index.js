@@ -28,7 +28,7 @@ const Intro = props => {
         <div className="a-intro__images__image" style={imgs[4]} />
       </div>
       <div className="a-intro__logo">
-        <img src={logo} height="515" width="370" alt="UTT ARENA 2018" />
+        <img src={logo} alt="" />
       </div>
     </div>
   )
