@@ -83,7 +83,7 @@ export const createTeam = ({ name, spotlight }) => {
     } catch (err) {
       dispatch(
         notifActions.notifSend({
-          message: errorToString(err.response.data.error),
+          message: errorToString(err && err.response && err.response.data ? err.response.data.error : 'Une erreur est survenue'),
           kind: 'danger',
           dismissAfter: 2000
         })

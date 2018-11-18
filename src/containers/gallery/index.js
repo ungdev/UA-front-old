@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 // eslint-disable-next-line
 import lazysizes from 'lazysizes' // this can appear as useless on your text editor but it's not
+import 'lazysizes/plugins/attrchange/ls.attrchange'
 
 import './gallery.css'
 
@@ -22,17 +23,19 @@ class Gallery extends React.Component {
   constructor(props) {
     super(props)
 
-    let context = require.context('../../assets/gallery', true, /\.(jpe?g)$/i)
+    let context = require.context('../../assets/gallery', false, /\.(jpe?g)$/i)
     let imagesUrl = context.keys().map(context)
-    
+
     this.state = {
       loginModalOpened: false,
       forgotModalOpened: false,
       contactModalOpened: false,
+      imagesYear: 2017,
       imagesUrl: imagesUrl,
       imageViewIndex: null
     }
 
+    this.setImagesYear = this.setImagesYear.bind(this)
     this.setImageViewIndex = this.setImageViewIndex.bind(this)
     this.openLoginModal = this.openLoginModal.bind(this)
     this.openForgotModal = this.openForgotModal.bind(this)
@@ -52,6 +55,14 @@ class Gallery extends React.Component {
 
   componentWillUnmount() {
     document.removeEventListener('scroll', this.scrollCapture)
+  }
+
+  setImagesYear(i) {
+    if(this.state.imagesYear !== i) {
+      this.setState({
+        imagesYear: i
+      })
+    }
   }
 
   setImageViewIndex(i) {
@@ -108,19 +119,30 @@ class Gallery extends React.Component {
   }
 
   render() {
-    let images = []
+    let filteredImages = []
+    let filteredImagesUrl = []
 
-    this.state.imagesUrl.forEach((url, i) => {
-      images.push(
-        <div className="a-gallery__image__container" key={i} onClick={() => { this.setImageViewIndex(i) }}>
-          <img
-            data-src={url}
-            className="lazyload"
-            alt=""
-          />
-        </div>
-      )
-    })
+    if(this.state.imagesUrl && this.state.imagesYear) {
+      let i = -1
+
+      this.state.imagesUrl.forEach(url => {
+        if(url.substring(0, 19) === '/static/media/' + this.state.imagesYear + '-') {
+          i++
+
+          filteredImages.push(
+            <div className="a-gallery__image__container" key={i} onClick={this.setImageViewIndex.bind(this, i)}>
+              <img
+                data-src={url}
+                className="lazyload"
+                alt=""
+              />
+            </div>
+          )
+
+          filteredImagesUrl.push(url)
+        }
+      })
+    }
 
     return (
       <div>
@@ -140,11 +162,16 @@ class Gallery extends React.Component {
         <main className="a-gallery">
           <Category>Photos</Category>
 
+          <div className="a-gallery__year__buttons">
+            <div className={"a-gallery__year__button" + (this.state.imagesYear === 2016 ? " active" : "")} onClick={() => this.setImagesYear(2016)}>2016</div>
+            <div className={"a-gallery__year__button" + (this.state.imagesYear === 2017 ? " active" : "")} onClick={() => this.setImagesYear(2017)}>2017</div>
+          </div>
+
           <div className="a-gallery__content">
-            {images}
+            {filteredImages}
           </div>
           
-          <ImageView src={this.state.imagesUrl} index={this.state.imageViewIndex} setIndex={this.setImageViewIndex}/>
+          <ImageView src={filteredImagesUrl} index={this.state.imageViewIndex} setIndex={this.setImageViewIndex} />
 
           <Footer openContactModal={this.openContactModal} />
         </main>

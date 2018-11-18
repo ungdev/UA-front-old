@@ -7,6 +7,44 @@
   margin-top: 60px;
 }
 
+.a-gallery__year__buttons {
+  width: 80%;
+  margin: 0 auto 15px auto;
+  text-align: center;
+}
+
+.a-gallery__year__button {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  background: #444;
+  border: 1px solid #666;
+  padding: 14px 20px;
+  margin: 0 6px;
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+}
+
+.a-gallery__year__button.active {
+  background: none;
+  border-bottom: 2px solid #14d9fa;
+  color: #14d9fa;
+}
+
+.a-gallery__year__button.active:after {
+  content: '';
+  position: absolute;
+  display: block;
+  border: 10px solid transparent;
+  border-top-color: #14d9fa;
+  width: 0;
+  height: 0;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .a-gallery__content {
   display: flex;
   flex-wrap: wrap;
