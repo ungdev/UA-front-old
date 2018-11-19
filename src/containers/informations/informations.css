@@ -23,7 +23,7 @@
   text-align: center;
 }
 
-.a-infos__content iframe {
+.a-infos__map .a-infos__content iframe {
   display: inline-block;
   margin-top: 40px;
   width: 100%;
