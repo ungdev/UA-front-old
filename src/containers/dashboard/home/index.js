@@ -74,7 +74,7 @@ const Home = props => {
     {props.user && props.user.paid &&
     <ListItem clickable={true} onClick={props.sendTicket}>
       <h3>Renvoyer ma place</h3>
-      <span>Vous souhaitez que l'on vous renvoit votre place par mail ? C'est ici !</span>
+      <span>Vous souhaitez que l'on vous renvoie votre place par mail ? C'est ici !</span>
     </ListItem>}
     <ListItem clickable={true} onClick={props.logout}>
       <h3>Déconnexion</h3>
