@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 
 import { logout } from '../../../modules/login'
+import { sendTicket } from '../../../modules/user'
 
 import List from '../../../components/list'
 import ListItem from '../../../components/list-item'
@@ -70,6 +71,11 @@ const Home = props => {
       <h3>Éditer mes infos</h3>
       <span>Accède à ton profil et modifie tes informations si besoin</span>
     </ListItem>
+    {props.user && props.user.paid &&
+    <ListItem clickable={true} onClick={props.sendTicket}>
+      <h3>Renvoyer ma place</h3>
+      <span>Vous souhaitez que l'on vous renvoie votre place par mail ? C'est ici !</span>
+    </ListItem>}
     <ListItem clickable={true} onClick={props.logout}>
       <h3>Déconnexion</h3>
     </ListItem>
@@ -91,7 +97,8 @@ const mapDispatchToProps = dispatch => ({
   teamManagement: () => dispatch(push('/dashboard/team')),
   joinTeam: () => dispatch(push('/dashboard/joinTeam')),
   viewParticipants: () => dispatch(push('/dashboard/participants')),
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  sendTicket: () => dispatch(sendTicket())
 })
 
 export default connect(
