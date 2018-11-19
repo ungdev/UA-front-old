@@ -20,6 +20,18 @@
   font-weight: bold;
 }
 
+.a-informations__trailer {
+  margin: 30px 0 30px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.a-informations__trailer iframe {
+  width: 560px;
+  height: 315px;
+  max-width: 100%;
+}
+
 .a-informations__table {
   margin-top: 24px;
 }

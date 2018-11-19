@@ -18,7 +18,7 @@ const Informations = () => (
       ton équipe dans le Cube</span>.
     </p>
 
-    <div className="a-home__trailer">
+    <div className="a-informations__trailer">
       <iframe
         src="https://www.youtube.com/embed/YZKiylJWSCM"
         frameBorder="0"
