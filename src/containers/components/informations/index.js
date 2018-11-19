@@ -21,9 +21,9 @@ const Informations = () => (
     <div className="a-home__trailer">
       <iframe
         src="https://www.youtube.com/embed/YZKiylJWSCM"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        allowFullScreen
         title="Trailer UTT ARENA 2018"
       ></iframe>
     </div>
