@@ -24,6 +24,7 @@ const Informations = () => (
         frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
+        title="Trailer UTT ARENA 2018"
       ></iframe>
     </div>
 
