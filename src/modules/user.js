@@ -62,6 +62,41 @@ export const fetchUser = () => {
   }
 }
 
+export const sendTicket = () => {
+  return async (dispatch, getState) => {
+    const authToken = getState().login.token
+
+    if (!authToken || authToken.length === 0) {
+      return
+    }
+
+    try {
+      dispatch(
+        notifActions.notifSend({
+          message: 'Envoi en cours...',
+          dismissAfter: 2000
+        })
+      )
+      await axios.get('user/ticket', { headers: { 'X-Token': authToken } })
+      dispatch(
+        notifActions.notifSend({
+          message: 'Le mail a été envoyé !',
+          dismissAfter: 2000
+        })
+      )
+    } catch (err) {
+      console.log(err)
+      return dispatch(
+        notifActions.notifSend({
+          message: errorToString(err.response.data.error),
+          kind: 'danger',
+          dismissAfter: 2000
+        })
+      )
+    }
+  }
+}
+
 export const editUser = newUserData => {
   return async (dispatch, getState) => {
     const authToken = getState().login.token
