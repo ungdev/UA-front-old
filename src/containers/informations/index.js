@@ -115,7 +115,6 @@ class Informations extends React.Component {
         <main className="a-infos">
           <div className="a-infos__content">
             <img className="a-infos__logo" src={logo} alt="UTT Arena" />
-
             <p style={{ textAlign: 'justify'}}>Retrouvez toutes les informations de l'<span>UTT Arena</span> sur cette page : rendez-vous du 7 au 9 décembre pour 48 heures de folie et d'évasion au parc des expositions de Troyes !</p>
 
             <Category id="presentation">Présentation</Category>
