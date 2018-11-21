@@ -32,7 +32,7 @@ const Spotlights = () => (
 
     <span>Nombre de places par tournoi :</span>
     <ul style={{ marginTop: '5px', marginBottom: '20px' }}>
-      <li>LoL : 8 slots Pros et 24 slots Amateurs (équipes de 5)</li>
+      <li>LoL : 16 slots Pros et 16 slots Amateurs (équipes de 5)</li>
       <li>Fortnite : 24 slots (équipes de 4)</li>
       <li>CS:GO : 8 slots (équipes de 5)</li>
       <li>SSBU : 64 slots (en solo)</li>
