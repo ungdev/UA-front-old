@@ -34,7 +34,8 @@ const HS = () => {
       <p>Les joueurs doivent envoyer la liste des decks qu’ils ont l'intention de jouer (avec la liste des cartes) 
       aux organisateurs avant le vendredi 7 décembre, premier jour de l'événement. Les joueurs doivent soumettre obligatoirement 4 
       decklists, de 4 classes différentes. Une fois cette liste envoyée, aucun changement ne sera possible. Les decks 
-      listes seront à envoyer sur un site internet, dont nous communiquerons l'adresse prochainement.</p>
+      listes seront à envoyer sur <a href="https://uttarena.app">l'application de l'UTT arena </a>
+      dans l'onglet "Les Tournoi/Heartsone/Mes Decks/Ajouter un Deck". L'ajout se fait </p> 
 
       <p><strong>ATTENTION :</strong> Toutes les extensions seront autorisées pour le tournoi, cela inclus donc <strong>les jeux de Rastakhan</strong>.</p>
 
