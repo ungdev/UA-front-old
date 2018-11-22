@@ -40,9 +40,9 @@ const LOL = () => {
       <p><strong>Sélection des champions :</strong> avant le début du match, une équipe sera tirée au sort. L’équipe en question se retrouvera à gauche lors de la constitution du match. Les Bans et les picks devront respecter la procédure de draft habituelle.</p>
       <p><strong>ATTENTION :</strong> les champions sortis 2 semaines avant le tournoi ne seront pas acceptés lors des matchs. Les équipes n’auront pas besoin de ban le ou les champions récemment sortis mais ne pourront pas le/les jouer.</p>
 
-      <p>Cette année, deux tournois seront organisés séparément, un <strong>tournoi amateur</strong> qui comportera 24 équipes et 
+      <p>Cette année, deux tournois seront organisés séparément, un <strong>tournoi amateur</strong> qui comportera 16 équipes et 
       un tournoi <strong>professionnel </strong>
-      de 8 équipes. Lors de l’inscription, vous décidez dans quel tournoi vous participerez. Toutefois, les organisateurs se réservent le 
+      de 16 équipes. Lors de l’inscription, vous décidez dans quel tournoi vous participerez. Toutefois, les organisateurs se réservent le 
       droit de vous affecter à l’autre tournoi s’ils jugent un écart de niveau trop important par rapport aux autres participants. Les pseudos
        indiqués lors de l’inscription devront être identiques aux pseudos en jeu. Si des joueurs sont suspectés d’être des smurfs, leur équipe
         peut se faire disqualifier par les organisateurs. De plus, seuls les joueurs ayant atteint le<strong> niveau 30</strong> peuvent participer.</p>
@@ -73,11 +73,11 @@ const LOL = () => {
         <li>Les arbitres décideront des rencontres.</li>
       </ul>
       
-      <p>Jusqu’au 6ème tour inclus : Le principe reste le même. Une équipe qui a N victoires jouera contre une équipe à N victoires.</p>
+      <p>Jusqu’au 7ème tour inclus : Le principe reste le même. Une équipe qui a N victoires jouera contre une équipe à N victoires.</p>
       
       <p><strong>Remarque</strong> : Deux équipes ne peuvent pas se rencontrer plusieurs fois lors de la phase Suisse.</p>
       
-      <p>7ème tour : Les 4 équipes cumulant le plus de victoires s’affronteront en demie finale. Les rencontres seront tirés aléatoirement. 
+      <p>8ème tour : Les 4 équipes cumulant le plus de victoires s’affronteront en demie finale. Les rencontres seront tirés aléatoirement. 
       Si deux équipes ont le même nombre de victoires, les arbitres trancheront.</p>
       
       <p>Finale et petite finale  : Les perdants de chaque demie-finale s’affrontent en petite finale, et les gagnants, en finale. Ces deux rencontres se dérouleront en 2 matchs gagnants (BO3).</p>
@@ -86,11 +86,10 @@ const LOL = () => {
       
       <h3>Tournoi Pro</h3>
       
-      <p>Les huit équipes du tournoi professionnel seront réparties aléatoirement en deux poules. Les matchs de poules se feront en BO1.</p>
-      <p>Toutes les équipes seront réparties dans un arbre à double élimination (avec loser bracket). </p>
-      <p>Tous les matchs se feront en BO1 exceptées
-       la finale du winner bracket et la grande finale qui se joueront en BO3. Le gagnant du winner bracket se voit accorder une victoire
-        d’avance dans le BO3 de la grande finale.
+      <p>Les seize équipes du tournoi professionnel seront réparties en quatres poules. Les matchs de poules se feront en BO1.</p>
+      <p>Les deux premières équipes de chaque poule seront placées en winner bracket et les 2 suivantes en looser bracket</p>
+      <p>Tous les matchs se feront en BO1 sauf les demis finales du winner bracket ainsi que toutes les finales qui se joueront en BO3. 
+      Le gagnant du winner bracket se voit accorder une victoire d’avance dans le BO3 de la grande finale.
       </p>
 
       <p>Les joueurs peuvent accéder à l'arbre du tournoi à tout moment sur une télévision pendant l'événement
