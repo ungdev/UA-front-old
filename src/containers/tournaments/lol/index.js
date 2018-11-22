@@ -87,7 +87,7 @@ const LOL = () => {
       <h3>Tournoi Pro</h3>
       
       <p>Les seize équipes du tournoi professionnel seront réparties en quatres poules. Les matchs de poules se feront en BO1.</p>
-      <p>Les deux premières équipes de chaque poule seront placées en winner bracket et les 2 suivantes en looser bracket</p>
+      <p>Les deux premières équipes de chaque poule seront placées en winner bracket et les 2 suivantes en loser bracket</p>
       <p>Tous les matchs se feront en BO1 sauf les demis finales du winner bracket ainsi que toutes les finales qui se joueront en BO3. 
       Le gagnant du winner bracket se voit accorder une victoire d’avance dans le BO3 de la grande finale.
       </p>
