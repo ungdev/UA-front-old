@@ -47,6 +47,10 @@
   position: relative;
 }
 
+.faq-container a {
+  color: #14d9fa;
+}
+
 .faq-question {
   display: block;
   cursor: pointer;

@@ -19,11 +19,24 @@
   margin-top: 0;
 }
 
+.a-infos__content a {
+  color: #14d9fa;
+}
+
+.a-infos__content .a-infos__program iframe {
+  display: block;
+  margin: 0 auto 50px auto;
+  border: none;
+  height: 480px;
+  width: 312px;
+  max-width: 100%;
+}
+
 .a-infos__content .a-infos__map {
   text-align: center;
 }
 
-.a-infos__map .a-infos__content iframe {
+.a-infos__content .a-infos__map iframe {
   display: inline-block;
   margin-top: 40px;
   width: 100%;
@@ -80,11 +93,6 @@
   background: rgba(50, 50, 50, 0.2);
 }
 
-.a-infos__services__infos {
-  font-size: 0.9em;
-  color: #ccc;
-}
-
 .a-infos__services__table {
   width: 100%;
 }
@@ -97,7 +105,23 @@
   padding: 5px;
 }
 
-@media (min-width: 768px) {
+.a-infos__tickets > ul > li > strong, .a-infos__registration > ul > li > strong {
+  color: #14d9fa;
+}
+
+@media screen and (min-width: 1200px) {
+  .a-infos__content {
+    width: 970px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .a-infos__content {
+    width: 750px;
+  }
+}
+
+@media screen and (min-width: 768px) {
   .a-infos__content {
     width: 600px;
   }
@@ -107,18 +131,8 @@
   }
 }
 
-@media (min-width: 992px) {
-  .a-infos__content {
-    width: 750px;
+@media screen and (max-width: 356px) {
+  .a-infos__content .a-infos__program iframe {
+    height: 356px;
   }
-}
-
-@media (min-width: 1200px) {
-  .a-infos__content {
-    width: 970px;
-  }
-}
-
-.a-infos__tickets > ul > li > strong, .a-infos__registration > ul > li > strong {
-  color: #14d9fa;
 }

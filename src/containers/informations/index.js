@@ -185,7 +185,8 @@ class Informations extends React.Component {
             
             <Category id="registration">Déroulement des inscriptions</Category>
             <div className="a-infos__registration">
-              <p>Les inscriptions à l'UTT Arena ouvrent le mercredi 17 octobre (l'heure exacte sera annoncée dans la journée).</p>
+              <p>Les inscriptions à l'UTT Arena ouvrent le mercredi 17 octobre.</p>
+              <br />
               <p>Pour les tournois multijoueurs :</p>
               <ul>
                 <li>Il faudra créer un compte sur ce site en cliquant sur le bouton <strong>connexion</strong>.</li>
@@ -196,6 +197,7 @@ class Informations extends React.Component {
                 Sinon, elle sera mise sur <strong>liste d'attente</strong>.</li>
                 <li>Une équipe sur liste d'attente est considérée comme membre du tournoi libre, sauf si une équipe se désiste.</li>
               </ul>
+              <br />
               <p>Pour les tournois solo :</p>
               <ul>
                 <li>Il faudra créer un compte sur ce site en cliquant sur le bouton <strong>connexion</strong>.</li>
@@ -262,8 +264,8 @@ class Informations extends React.Component {
             </div>
 
             <Category id="program">Programme</Category>
-            <div>
-              <p>(Programme des animations et de la scène prochainement)</p>
+            <div className="a-infos__program">
+              <iframe src="https://drive.google.com/file/d/1wxcysIhQl_O2a-aKTJGgKOVvz9WnLqzs/preview"></iframe>
               <p><strong>Accueil des équipes :</strong> vendredi 7 décembre à partir de 17h</p>
               <p><strong>Début des tournois :</strong> samedi 8 décembre à 10h</p>
             </div>
@@ -271,6 +273,7 @@ class Informations extends React.Component {
             <Category id="players">Infos joueurs</Category>
             <div>
               <p><strong>Rappel : l'âge minimum pour participer au tournoi est de 15 ans.</strong></p>
+              <p>Pour les mineurs, une autorisation parentale sera demandée lors de l'événement. <a href="https://drive.google.com/file/d/1w15X9dXEaqkEQjqLNkXL_OZhDC7SIs2V/view">Vous pouvez la télécharger ici.</a></p>
 
               <h3 className="a-infos__title">Cashprize et lots</h3>
               <p>La répartition des récompenses entre les 3 premières places est la suivante :</p>
@@ -319,7 +322,8 @@ class Informations extends React.Component {
 
               <h3 className="a-infos__title">Location de matériel</h3>
               <p style={{ textAlign: 'justify' }}>Pas envie de ramener tout ton matériel ? Notre partenaire Scoup eSport te propose de louer PC, chaise gaming, casque, souris et tout ce dont tu as besoin !</p>
-              <p className="a-infos__services__infos">(Les prix vous permettent de bénéficier du matériel pendant toute la durée de l'événement.)</p>
+              <p>Vous pouvez louer du matériel lorsque vous achetez votre place ou en ajouter par la suite. Attention, l'offre n'est valable que jusqu'au 6 décembre à 18h.</p>
+              <p>Les prix vous permettent de bénéficier du matériel pendant toute la durée de l'événement.</p>
 
               <div className="a-infos__table__container">
                 <table className="a-infos__services__table">
@@ -419,7 +423,6 @@ class Informations extends React.Component {
                   </tbody>
                 </table>
               </div>
-              <p>Vous pouvez louer du matériel lorsque vous achetez votre place ou en ajouter par la suite. Attention, l'offre n'est valable que jusqu'au 6 décembre à 18h.</p>
             </div>
           </div>
 
