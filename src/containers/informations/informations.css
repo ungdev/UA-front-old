@@ -109,9 +109,13 @@
   color: #14d9fa;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
   .a-infos__content {
-    width: 970px;
+    width: 600px;
+  }
+  
+  .a-infos__logo {
+    height: 400px;
   }
 }
 
@@ -121,13 +125,9 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   .a-infos__content {
-    width: 600px;
-  }
-
-  .a-infos__logo {
-    height: 400px;
+    width: 970px;
   }
 }
 
