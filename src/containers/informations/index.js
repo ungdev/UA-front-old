@@ -265,7 +265,7 @@ class Informations extends React.Component {
 
             <Category id="program">Programme</Category>
             <div className="a-infos__program">
-              <iframe src="https://drive.google.com/file/d/1wxcysIhQl_O2a-aKTJGgKOVvz9WnLqzs/preview"></iframe>
+              <iframe title="Programme des animations" src="https://drive.google.com/file/d/1wxcysIhQl_O2a-aKTJGgKOVvz9WnLqzs/preview"></iframe>
               <p><strong>Accueil des équipes :</strong> vendredi 7 décembre à partir de 17h</p>
               <p><strong>Début des tournois :</strong> samedi 8 décembre à 10h</p>
             </div>
