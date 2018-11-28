@@ -36,9 +36,6 @@ class Participants extends React.Component {
       <div className="a-participants a-dashboard-page">
         <h2>Participants</h2>
         <Form
-          defaultValues={{
-            spotlight: options[0]
-          }}
           render={({ submitForm }) => (
             <form onSubmit={submitForm}>
               <Select
