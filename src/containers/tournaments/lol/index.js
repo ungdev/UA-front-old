@@ -6,7 +6,7 @@ const LOL = () => {
   return (<React.Fragment>
     <ScrollToTopOnMount/>
     <div style={{ marginTop: '40px', backgroundColor: '#202020' }}>
-      <Category>League of Legends</Category>
+      <Category>League of Legends (COMPLET)</Category>
     </div>
     <div className="a-tournament-content">
       <p>Vous retrouverez sur cette page toutes les informations relatives aux tournois League of Legends (pro et amateur). <strong>Attention</strong>, ces informations pourront évoluer jusqu'au début du tournoi,

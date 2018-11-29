@@ -7,7 +7,7 @@ const Spotlights = () => (
     <h2>LES CINQ JEUX À L’UTT ARENA 2018.</h2>
 
     <div style={{ marginTop: '26px', textAlign: 'justify' }}>
-      <span>League of Legends</span>, <span>Counter-Strike: Global Offensive (COMPLET)</span>, <span>Hearthstone
+      <span>League of Legends (COMPLET)</span>, <span>Counter-Strike: Global Offensive (COMPLET)</span>, <span>Hearthstone
       </span>, <span>Super Smash Bros Ultimate</span> et <span>Fortnite (COMPLET)</span>. Les cinq jeux
       seront présents pour cette édition 2018.
     </div>
