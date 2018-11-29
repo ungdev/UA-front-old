@@ -14,7 +14,7 @@ const Home = props => {
   const tournaments = [
     {
       id: 1,
-      name: 'League of Legends',
+      name: 'League of Legends (COMPLET)',
       img: lol,
       link: props.goToLOL
     },
