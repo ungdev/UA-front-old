@@ -81,7 +81,7 @@ const CSGO = () => {
 
       <p>Un manquement à ces règles pourra entraîner <strong>un avertissement, la perte d'une partie ou d'un match ou encore la disqualification de l’équipe.</strong> </p>
       
-      <h2>Finales sur scène</h2>
+      <h2>Finale sur scène</h2>
       <p>Cette année, les finalistes auront l'occasion de pouvoir jouer les finales sur la scène de l'événement, devant le public du festival.
       C'est une occasion unique de pouvoir montrer son skill devant tout le monde, mais quelques règles s'imposent.</p>
       <h3>Obligation</h3>

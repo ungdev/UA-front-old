@@ -20,7 +20,7 @@ const Home = props => {
     },
     {
       id: 2,
-      name: 'Fortnite',
+      name: 'Fortnite (COMPLET)',
       img: fortnite,
       link: props.goToFortnite
     },
