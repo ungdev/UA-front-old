@@ -134,14 +134,25 @@ export const joinTeam = ({ team, message }) => {
 export const allowPlayer = user => {
   return async (dispatch, getState) => {
     const authToken = getState().login.token
-    const team = getState().user.user.team.id
+    const team = getState().user.user.team
 
     if (!authToken || authToken.length === 0) {
       return
     }
 
+    //test if team is full
+    if (team.users.length >= team.spotlight.perTeam) {
+      dispatch(
+        notifActions.notifSend({
+          message: 'L\'équipe est déjà complète',
+          kind: 'danger',
+          dismissAfter: 2000
+        })
+      )
+      return
+    }
     try {
-      await axios.post(`/team/${team}/accept`, { user }, { headers: { 'X-Token': authToken } })
+      await axios.post(`/team/${team.id}/accept`, { user }, { headers: { 'X-Token': authToken } })
 
       dispatch(fetchUser())
     } catch (err) {
