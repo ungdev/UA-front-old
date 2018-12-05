@@ -128,7 +128,7 @@ const TeamManagement = props => {
     <h3>Partir</h3>
     <div className="a-teammanagement__leave">
       {props.isCaptain && (
-        <strong className="error">Quitter l'équipe en tant que capitaine la dissoudrera</strong>
+        <strong className="error">Quitter l'équipe en tant que capitaine la dissoudra</strong>
       )}
       <Button raised={true} onClick={props.selfKick} theme="error">
         Quitter l'équipe
