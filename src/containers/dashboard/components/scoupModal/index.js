@@ -25,64 +25,49 @@ class ScoupModal extends React.Component {
       isGamingModalOpen: false,
       isLaptopModalOpen: false,
     }
-    this.submit = this.submit.bind(this)
-    this.toggleKaliento = this.toggleKaliento.bind(this)
-    this.toggleMouse = this.toggleMouse.bind(this)
-    this.toggleKeyboard = this.toggleKeyboard.bind(this)
-    this.toggleHeadset = this.toggleHeadset.bind(this)
-    this.toggleScreen24 = this.toggleScreen24.bind(this)
-    this.toggleScreen27 = this.toggleScreen27.bind(this)
-    this.toggleChair = this.toggleChair.bind(this)
-    this.toggleGamingPC = this.toggleGamingPC.bind(this)
-    this.toggleStreamingPC = this.toggleStreamingPC.bind(this)
-    this.toggleLaptop = this.toggleLaptop.bind(this)
-    this.moreInfoStreaming = this.moreInfoStreaming.bind(this)
-    this.moreInfoGaming = this.moreInfoGaming.bind(this)
-    this.moreInfoLaptop = this.moreInfoLaptop.bind(this)
-    this.closeMoreInfo = this.closeMoreInfo.bind(this)
   }
 
-  submit() {
+  submit = () => {
     this.props.onClose(this.state)
   }
 
-  toggleKaliento() {
+  toggleKaliento = () => {
     this.setState({ kaliento: !this.state.kaliento })
   }
 
-  toggleMouse() {
+  toggleMouse = () => {
     this.setState({ mouse: !this.state.mouse })
   }
 
-  toggleKeyboard() {
+  toggleKeyboard = () => {
     this.setState({ keyboard: !this.state.keyboard })
   }
 
-  toggleHeadset() {
+  toggleHeadset = () => {
     this.setState({ headset: !this.state.headset })
   }
 
-  toggleScreen24() {
+  toggleScreen24 = () => {
     this.setState({ screen24: !this.state.screen24 })
   }
 
-  toggleScreen27() {
+  toggleScreen27 = () => {
     this.setState({ screen27: !this.state.screen27 })
   }
 
-  toggleChair() {
+  toggleChair = () => {
     this.setState({ chair: !this.state.chair })
   }
 
-  toggleGamingPC() {
+  toggleGamingPC = () => {
     this.setState({ gamingPC: !this.state.gamingPC })
   }
 
-  toggleStreamingPC() {
+  toggleStreamingPC = () => {
     this.setState({ streamingPC: !this.state.streamingPC })
   }
 
-  toggleLaptop() {
+  toggleLaptop = () => {
     this.setState({ laptop: !this.state.laptop })
   }
   

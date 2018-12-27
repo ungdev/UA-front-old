@@ -34,18 +34,16 @@ class Dashboard extends React.Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.autoLogin().then(() => {
       this.setState({
         render: this.props.user && this.props.user.name
       })
       this.props.fetchTeams()
     })
-
-    this.arrow = this.arrow.bind(this)
   }
 
-  arrow() {
+  arrow = () => {
     return this.props.location &&
       this.props.location.indexOf('/dashboard') > -1 &&
       this.props.location !== '/dashboard'

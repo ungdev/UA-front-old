@@ -16,11 +16,9 @@ class ForgotModal extends React.Component {
     this.state = {
       loading: false
     }
-
-    this.submit = this.submit.bind(this)
   }
 
-  submit(user) {
+  submit = (user) => {
     this.setState({ loading: true })
 
     this.props.sendMail(user)

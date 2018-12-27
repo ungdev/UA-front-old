@@ -11,12 +11,7 @@ import Select from '../../../components/select'
 import { sendMessage } from '../../../modules/message'
 
 class ContactModal extends React.Component {
-  constructor() {
-    super()
-    this.submit = this.submit.bind(this)
-  }
-
-  submit(user) {
+  submit = (user) => {
     this.props.sendMessage(user)
     this.props.onClose()
   }
@@ -30,12 +25,14 @@ class ContactModal extends React.Component {
       { label: 'Tournoi Hearthstone', value: '5' },
       { label: 'Tournoi CS:GO', value: '6' },
       { label: 'Tournoi SSBU', value: '7' },
-      { label: 'Tournoi OSU', value: '8' },
+      { label: 'Tournoi osu!', value: '8' },
       { label: 'Tournoi libre', value: '9' },
       { label: 'Je rencontre un problème pour payer', value: '10' },
       { label: 'J\'ai eu une erreur sur le site', value: '11' },
       { label: 'Signaler un bug', value: '12' },
-      { label: 'Autre', value: 'other' }]
+      { label: 'Autre', value: 'other' }
+    ]
+
     return (
       <Modal isOpen={this.props.isOpen} onClose={this.props.onClose}>
           <div className="a-contact-modal">
@@ -43,7 +40,7 @@ class ContactModal extends React.Component {
                 onSubmit={this.submit}
                 render={({ submitForm }) => (
                   <React.Fragment>
-                    <div><h1>Formulaire</h1></div>
+                    <div><h1>Contact</h1></div>
                     <form onSubmit={submitForm} className="a-contact-form">
                       <Text
                         field="firstname"
@@ -73,9 +70,19 @@ class ContactModal extends React.Component {
                         style={{ maxWidth: '400px' }}
                         placeholder="Sujet"
                       />
-                      <Text field="email" type="email" placeholder="Mail" />
-                      <Text field="phone" type="tel" placeholder="Téléphone" />
-                      <TextArea field="message" style={{ height: '200px' }} placeholder="Tapez votre message ici... Pensez à décrire très précisément votre problème, nous vous répondrons par mail. (50 caractères minimum)" />
+                      <Text
+                        field="email"
+                        type="email"
+                        placeholder="Mail" />
+                      <Text
+                        field="phone"
+                        type="tel"
+                        placeholder="Téléphone" />
+                      <TextArea
+                        field="message"
+                        placeholder="Tapez votre message ici... Pensez à décrire très précisément votre problème, nous vous répondrons par mail. (50 caractères minimum)"
+                        style={{ height: '200px' }}
+                      />
                       <br />
                       <Button type="submit" raised>Envoyer</Button>
                     </form>

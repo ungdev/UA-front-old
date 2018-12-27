@@ -43,14 +43,14 @@ class Tournaments extends React.Component {
     this.scrollCapture = this.scrollCapture.bind(this)
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchCanLogin()
     this.props.autoLogin(this.props.location)
 
     document.addEventListener('scroll', this.scrollCapture, { passive: true })
   }
 
-  componentWillUnmount() {
+  componentDidUnmount() {
     document.removeEventListener('scroll', this.scrollCapture)
   }
 
