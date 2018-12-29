@@ -1,4 +1,5 @@
 .a-button {
+  position: relative;
   border: 0;
   background-color: transparent;
   color: #fff;
@@ -8,13 +9,36 @@
   text-transform: uppercase;
   font-family: 'ua2018-font', Impact, sans-serif;
   letter-spacing: .5px;
+  overflow: hidden;
+  outline: 0;
+  transition: all .3s;
 }
 
-.a-button:focus {
-  outline: 0;
+.a-button:not(.raised) {
+  border-bottom: 4px solid transparent;
+}
+
+.a-button:not(.raised):not(.no-animation):hover {
+  border-bottom: 4px solid #fff;
 }
 
 .a-button.raised {
   color: #202020;
   background-color: #14d9fa;
+}
+
+.a-button.raised:not(.no-animation)::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: calc(-30% - 20px);
+  background: rgba(0, 0, 0, 0.2);
+  clip-path: polygon(0 0, 30% 0, calc(30% + 20px) 100%, 0% 100%);
+  transition: all .3s;
+}
+
+.a-button.raised:not(.no-animation):hover::before {
+  left: 0;
 }

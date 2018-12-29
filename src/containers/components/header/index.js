@@ -70,7 +70,7 @@ class Header extends React.Component {
         <nav className="a-intro-header__nav__mobile">
           <div className="a-intro-header__nav__mobile__topbar">
             <div style={{ paddingBottom: '3px' }}>
-              <Button onClick={this.toggleMobileMenu}>
+              <Button onClick={this.toggleMobileMenu} className="no-animation">
                 <div className={"a-intro-header__hamburger" + (this.state.mobileMenu ? " active" : "")}>
                   <div className="a-intro-header__hamburger__segment"></div>
                   <div className="a-intro-header__hamburger__segment"></div>
