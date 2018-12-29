@@ -1,6 +1,6 @@
-module.exports = {
+export default {
   option: (base, { isSelected, isDisabled }) => {
-    const styles = Object.assign({}, base)
+    const styles = base
 
     styles.fontSize = '14px'
     styles.color = isSelected ? '#fff'
@@ -13,20 +13,20 @@ module.exports = {
 
     return styles
   },
-  indicatorSeparator: base => ({
+  indicatorSeparator: () => ({
     display: 'none'
   }),
-  menu: base => ({
+  menu: (base) => ({
     ...base,
     maxWidth: '200px',
     fontSize: '14px'
   }),
-  control: base => ({
+  control: (base) => ({
     ...base,
     maxWidth: '200px',
     fontSize: '14px'
   }),
-  container: base => ({
+  container: (base) => ({
     ...base,
     margin: '12px 0'
   })

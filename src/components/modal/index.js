@@ -33,7 +33,12 @@ const styles = {
 }
 
 const Modal = props => (
-  <ReactModal isOpen={props.isOpen} onRequestClose={props.onClose} style={styles} className={props.name ? props.name : 'a-react-modal'}>
+  <ReactModal
+    isOpen={props.isOpen}
+    onRequestClose={props.onClose}
+    style={styles}
+    className={props.name ? props.name : 'a-react-modal'}
+  >
     {props.children}
   </ReactModal>
 )

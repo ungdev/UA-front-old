@@ -8,8 +8,8 @@ const Select_ = props => (
   <Field field={props.field}>
     {fieldApi => {
       const { onChange, onBlur, field, ...rest } = props
-
       const { value, setValue, setTouched } = fieldApi
+      
       return (
         <Select
           {...rest}
