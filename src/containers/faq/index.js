@@ -42,7 +42,7 @@ class FAQ extends React.Component {
     document.addEventListener('scroll', this.scrollCapture, { passive: true })
   }
 
-  componentDidUnmount() {
+  componentWillUnmount() {
     document.removeEventListener('scroll', this.scrollCapture)
   }
 
