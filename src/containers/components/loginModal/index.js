@@ -23,16 +23,19 @@ class LoginModal extends React.Component {
       loading: false,
       accepted: false,
     }
+
+    this.setTabIndex = this.setTabIndex.bind(this)
+    this.submit = this.submit.bind(this)
   }
 
 
-  setTabIndex = (tabIndex) => {
+  setTabIndex(tabIndex) {
     this.setState({
       tabIndex
     })
   }
 
-  submit = (user) => {
+  submit(user) {
     if(!this.state.accepted) return this.props.noAcceptation() 
     if(user.password !== user.password2) return this.props.passwordMismatch()
     if(!user.gender) user.gender = 'N/A'
@@ -47,7 +50,6 @@ class LoginModal extends React.Component {
 
   render() {
     const genderOptions = [{ label: 'Homme', value: 'M' }, { label: 'Femme', value: 'F' }]
-
     return (
       <Modal isOpen={this.props.isOpen} onClose={this.props.onClose}>
         {this.props.canLogin && (
@@ -129,16 +131,14 @@ class LoginModal extends React.Component {
                         minLength="6"
                       />
                       <div style={{ marginBottom: '10px' }}>
-                        <label>
-                          <input
-                            name="accept"
-                            type="checkbox"
-                            checked={this.state.accepted}
-                            onChange={() => this.setState({ accepted: !this.state.accepted })}
-                            style={{ marginBottom: '0px' }}
-                          />
-                          <span style={{ fontSize: '10px' }}>Je certifie avoir lu et accepté sans réserve les <a href='/mentions-legales'>conditions d'utilisation</a> du site</span>
-                        </label>
+                        <input
+                          name="accept"
+                          type="checkbox"
+                          checked={this.state.accepted}
+                          onChange={() => this.setState({ accepted: !this.state.accepted })}
+                          style={{ marginBottom: '0px' }}
+                        />
+                        <span style={{ fontSize: '10px' }}>Je certifie avoir lu et accepté sans réserve les <a href='/mentions-legales'>conditions d'utilisation</a> du site</span>
                       </div>
                       {this.state.loading && <div style={{ margin: '12px 0 0 0' }}>Envoi en cours...</div>}
                       <br />

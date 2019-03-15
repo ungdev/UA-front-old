@@ -26,11 +26,8 @@ const shirtSizes = [
 class Cart extends React.Component {
   constructor(props) {
     super()
-
     const { user } = props
-
     if(user.paid) this.props.redirectToDashboard()
-    
     this.state = {
       plusone: false,
       ethernet: false,
@@ -53,25 +50,37 @@ class Cart extends React.Component {
     }
 
     this.isPartner = props.prices.partners.some(partner => user.email.endsWith(partner))
+
+    this.switchToPlayer = this.switchToPlayer.bind(this)
+    this.switchToPlusone = this.switchToPlusone.bind(this)
+    this.toggleEthernet = this.toggleEthernet.bind(this)
+    this.toggleEthernet7 = this.toggleEthernet7.bind(this)
+    this.toggleShirt = this.toggleShirt.bind(this)
+    this.onTombolaChange = this.onTombolaChange.bind(this)
+    this.changeGender = this.changeGender.bind(this)
+    this.changeSize = this.changeSize.bind(this)
+    this.payment = this.payment.bind(this)
+    this.openScoupModal = this.openScoupModal.bind(this)
+    this.closeScoupModal = this.closeScoupModal.bind(this)
   }
 
-  switchToPlayer = () => {
+  switchToPlayer() {
     this.setState({ plusone: false })
   }
 
-  switchToPlusone = () => {
+  switchToPlusone() {
     this.setState({ plusone: true })
   }
 
-  toggleEthernet = () => {
+  toggleEthernet() {
     this.setState({ ethernet: !this.state.ethernet })
   }
 
-  toggleEthernet7 = () => {
+  toggleEthernet7() {
     this.setState({ ethernet7: !this.state.ethernet7 })
   }
 
-  toggleShirt = () => {
+  toggleShirt() {
     this.setState({ shirt: !this.state.shirt })
   }
 
@@ -88,7 +97,7 @@ class Cart extends React.Component {
     if(e.target.value >= 0) this.setState({ tombola: parseInt(e.target.value, 10) > 100 ? 100 : parseInt(e.target.value, 10) })
   }
 
-  openScoupModal = () => {
+  openScoupModal() {
     this.setState({ isScoupModalOpen: true })
   }
   closeScoupModal(state) {
@@ -107,7 +116,7 @@ class Cart extends React.Component {
      })
   }
 
-  payment = () => {
+  payment() {
     const basket = {
       plusone: this.state.plusone,
       ethernet: this.state.ethernet,

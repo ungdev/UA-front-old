@@ -11,9 +11,11 @@ class Participants extends React.Component {
     this.state = {
       spotlight: 1
     }
+
+    this.changeSpotlight = this.changeSpotlight.bind(this)
   }
 
-  changeSpotlight = (spotlight) => {
+  changeSpotlight(spotlight) {
     this.setState({
       spotlight: spotlight.value
     })

@@ -35,7 +35,7 @@ class FAQ extends React.Component {
     this.scrollCapture = this.scrollCapture.bind(this)
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchCanLogin()
     this.props.autoLogin()
 

@@ -16,21 +16,25 @@ class Header extends React.Component {
     this.state = {
       mobileMenu: false
     }
+
+    this.toggleMobileMenu = this.toggleMobileMenu.bind(this)
+    this.closeMobileMenu = this.closeMobileMenu.bind(this)
+    this.mainButton = this.mainButton.bind(this)
   }
 
-  toggleMobileMenu = () => {
+  toggleMobileMenu() {
     this.setState({
       mobileMenu: !this.state.mobileMenu
     })
   }
 
-  closeMobileMenu = () => {
+  closeMobileMenu() {
     this.setState({
       mobileMenu: false
     })
   }
 
-  mainButton = () => {
+  mainButton() {
     if (this.props.isLoggedIn) {
       this.props.gotoDashboard()
     } else {

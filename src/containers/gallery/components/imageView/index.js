@@ -7,6 +7,13 @@ class ImageView extends React.Component {
     super(props)
 
     this.preventClose = false
+
+    this.keydownHandle = this.keydownHandle.bind(this)
+    this.leftArrowClick = this.leftArrowClick.bind(this)
+    this.rightArrowClick = this.rightArrowClick.bind(this)
+    this.imageClick = this.imageClick.bind(this)
+    this.containerClick = this.containerClick.bind(this)
+    this.close = this.close.bind(this)
   }
 
   componentDidMount() {
@@ -17,7 +24,7 @@ class ImageView extends React.Component {
     window.removeEventListener('keydown', this.keydownHandle)
   }
 
-  keydownHandle = (e) => {
+  keydownHandle(e) {
     if(this.props.index !== null) {
       switch(e.keyCode) {
         // Escape key
@@ -38,7 +45,7 @@ class ImageView extends React.Component {
     }
   }
 
-  leftArrowClick = () => {
+  leftArrowClick() {
     if(this.props.index > 0) {
       this.props.setIndex(this.props.index - 1)
     }
@@ -46,7 +53,7 @@ class ImageView extends React.Component {
     this.preventClose = true
   }
 
-  rightArrowClick = () => {
+  rightArrowClick() {
     if(this.props.index < this.props.src.length - 1) {
       this.props.setIndex(this.props.index + 1)
     }
@@ -54,11 +61,11 @@ class ImageView extends React.Component {
     this.preventClose = true
   }
 
-  imageClick = () => {
+  imageClick() {
     this.preventClose = true
   }
 
-  containerClick = () => {
+  containerClick() {
     if(!this.preventClose) {
       this.props.setIndex(null)
     }
@@ -67,7 +74,7 @@ class ImageView extends React.Component {
     }
   }
 
-  close = () => {
+  close() {
     this.props.setIndex(null)
 
     this.preventClose = false
