@@ -19,6 +19,12 @@
   padding: 0 15px;
   line-height: 57px;
   height: 57px;
+  border-bottom: 4px solid transparent;
+  transition: border-bottom .3s;
+}
+
+.a-intro-header__nav__desktop div:not(.a-intro-header__mainButton) > .a-button:hover {
+  border-bottom: 4px solid #fff;
 }
 
 .a-intro-header__nav__desktop div.a-intro-header__mainButton > .a-button {
