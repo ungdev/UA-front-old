@@ -22,6 +22,13 @@
   cursor: pointer;
   text-decoration: none;
   background-repeat: no-repeat;
+  opacity: 0.8;
+  transition: all .2s ease-in;
+}
+
+.a-social__icon:hover {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 .a-social__icon:not(:first-child) {

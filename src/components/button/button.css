@@ -17,4 +17,11 @@
 .a-button.raised {
   color: #202020;
   background-color: #14d9fa;
+  border: 3px solid #14d9fa;
+  transition: color .2s ease-in, background-color .2s ease-in;
+}
+
+.a-button.raised:hover {
+  background-color: transparent;
+  color: #ffffff;
 }
