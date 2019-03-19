@@ -20,9 +20,14 @@
   padding: 2px 10px;
   border: 2px solid #fff;
   border-radius: 4px;
-  background: #202020;
+  background-color: #202020;
   font-size: 1.6em;
   user-select: none;
+  transition: color .2s ease-in;
+}
+
+.imageview__close:hover {
+  background-color: #4c4c4c;
 }
 
 .imageview__content {
@@ -54,6 +59,11 @@
   cursor: pointer;
   user-select: none;
   z-index: 1;
+  transition: all .1s ease-in;
+}
+
+.imageview__arrow__left:hover, .imageview__arrow__right:hover {
+  transform: scale(1.05);
 }
 
 .imageview__arrow__left.disabled {

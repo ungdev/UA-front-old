@@ -17,19 +17,29 @@
   position: relative;
   display: inline-block;
   color: #fff;
-  background: #444;
+  background-color: #444;
   border: 1px solid #666;
   padding: 14px 20px;
   margin: 0 6px;
   cursor: pointer;
   font-weight: bold;
   user-select: none;
+  transition: background-color .2s ease-in;
+}
+
+.a-gallery__year__button:hover {
+  background-color: #363636;
 }
 
 .a-gallery__year__button.active {
   background: none;
   border-bottom: 2px solid #14d9fa;
   color: #14d9fa;
+}
+
+.a-gallery__year__button.active:hover {
+  background-color: #191919;
+
 }
 
 .a-gallery__year__button.active:after {
@@ -63,6 +73,11 @@
   height: 266.66px;
   margin: 5px;
   overflow: hidden;
+  transition: all .2s ease-in;
+}
+
+.a-gallery__image__container:hover {
+  transform: scale(1.02);
 }
 
 .a-gallery__image__container img {

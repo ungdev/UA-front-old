@@ -54,6 +54,10 @@
   text-decoration: none;
 }
 
+.a-home__footer a:hover {
+  text-decoration: underline;
+}
+
 @media (min-width: 768px) {
   .a-home__content {
     width: 600px;

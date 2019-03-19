@@ -58,6 +58,10 @@
   margin: 0;
 }
 
+.faq-question:hover {
+  text-decoration: underline;
+}
+
 .faq-container.active .faq-question {
   border-bottom: 1px solid #fff;
 }
