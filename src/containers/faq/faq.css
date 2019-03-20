@@ -56,10 +56,11 @@
   cursor: pointer;
   padding: 15px 20px 13px 35px;
   margin: 0;
+  transition: all .2s ease-in;
 }
 
 .faq-question:hover {
-  text-decoration: underline;
+  filter: brightness(0.9);
 }
 
 .faq-container.active .faq-question {
@@ -70,10 +71,15 @@
   display: block;
   margin: 0;
   padding: 15px 20px;
+  transition: opacity .15s ease-in, height .5s ease-in, padding-top .5s ease-in, padding-bottom .5s ease-in;
+  overflow: hidden;
 }
 
 .faq-container:not(.active) .faq-answer {
-  display: none;
+  height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .faq-container .faq-arrow {
