@@ -2,7 +2,7 @@ import React from 'react'
 
 import './intro.css'
 
-import logo from '../../../assets/ua2018.png'
+import logo from '../../../assets/ua2019.png'
 import csgo from '../../../assets/csgo.jpg'
 import hearthstone from '../../../assets/hs.jpg'
 import lol from '../../../assets/lol.jpg'

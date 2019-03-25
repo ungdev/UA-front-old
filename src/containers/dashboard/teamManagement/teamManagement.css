@@ -42,7 +42,7 @@
 }
 
 .a-teammanagement__asking-link {
-  color: #14d9fa;
+  color: var(--accent);
   margin-top: 10px;
 }
 

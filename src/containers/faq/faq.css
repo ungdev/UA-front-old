@@ -16,7 +16,7 @@
 
 .a-faq__title {
   font-size: 1.3em;
-  color: #14d9fa;
+  color: var(--accent);
   font-weight: normal;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .faq-container a {
-  color: #14d9fa;
+  color: var(--accent);
 }
 
 .faq-question {

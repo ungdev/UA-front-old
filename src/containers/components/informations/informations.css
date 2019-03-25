@@ -16,7 +16,7 @@
 .a-informations span {
   text-align: justify;
   margin: 24px 0;
-  color: #14d9fa;
+  color: var(--accent);
   font-weight: bold;
 }
 
