@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 import './informations.css'
 
-import logo from '../../assets/ua2018.png'
+import logo from '../../assets/ua2019.png'
 
 import ScrollToTopOnMount from '../../components/scrollToTopOnMount'
 import Header from '../components/header'

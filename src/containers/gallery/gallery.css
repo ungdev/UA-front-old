@@ -33,8 +33,8 @@
 
 .a-gallery__year__button.active {
   background: none;
-  border-bottom: 2px solid #14d9fa;
-  color: #14d9fa;
+  border-bottom: 2px solid var(--accent);
+  color: var(--accent);
 }
 
 .a-gallery__year__button.active:hover {
@@ -47,7 +47,7 @@
   position: absolute;
   display: block;
   border: 10px solid transparent;
-  border-top-color: #14d9fa;
+  border-top-color: var(--accent);
   width: 0;
   height: 0;
   top: 100%;

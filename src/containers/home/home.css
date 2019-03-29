@@ -50,7 +50,7 @@
 
 .a-home__footer a {
   margin: 0 12px;
-  color: #14d9fa;
+  color: var(--accent);
   text-decoration: none;
 }
 

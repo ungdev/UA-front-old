@@ -20,7 +20,7 @@
 }
 
 .a-infos__content a {
-  color: #14d9fa;
+  color: var(--accent);
 }
 
 .a-infos__content .a-infos__program iframe {
@@ -49,13 +49,13 @@
 
 .a-infos__title {
   font-size: 1.5em;
-  color: #14d9fa;
+  color: var(--accent);
   font-weight: bold;
 }
 
 .a-infos__important {
   font-weight: bold;
-  color: #14d9fa;
+  color: var(--accent);
 }
 
 .a-infos__logo {
@@ -106,7 +106,7 @@
 }
 
 .a-infos__tickets > ul > li > strong, .a-infos__registration > ul > li > strong {
-  color: #14d9fa;
+  color: var(--accent);
 }
 
 @media screen and (min-width: 768px) {

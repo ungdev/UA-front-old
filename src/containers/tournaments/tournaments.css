@@ -40,7 +40,7 @@
   margin: 0px 0px 0px 0px;
   color: #fff;
   font-size: 50px;
-  font-family: 'ua2018-font';
+  font-family: 'ua2019-font';
   position: absolute;
 }
 .a-tournament-buttons > button > .a-tournament-shadow {
@@ -73,14 +73,14 @@
   text-align: justify;
 }
 .a-tournament-content > p > strong {
-  color: #14d9fa;
+  color: var(--accent);
 }
 .a-tournament-content > .a-category {
   margin-top: 20px;
 }
 .a-tournament-content a {
   text-decoration: none;
-  color: #14d9fa;
+  color: var(--accent);
 }
 .a-tournament-content a:hover {
   text-decoration: underline;

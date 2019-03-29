@@ -7,7 +7,7 @@
 }
 
 .a-info-modal-title{
-  color: #14d9fa;
+  color: var(--accent);
   text-align: center;
   font-size: 25px;
   padding: 10px 10px 10px 10px;
