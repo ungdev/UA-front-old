@@ -2,7 +2,7 @@ import React from 'react'
 
 import './intro.css'
 
-import logo from '../../../assets/ua2019.png'
+import logo from '../../../assets/ua2019.nologo.png'
 import csgo from '../../../assets/csgo.jpg'
 import hearthstone from '../../../assets/hs.jpg'
 import lol from '../../../assets/lol.jpg'
@@ -28,7 +28,8 @@ const Intro = props => {
         <div className="a-intro__images__image" style={imgs[4]} />
       </div>
       <div className="a-intro__logo">
-        <img src={logo} alt="" />
+        <img src={logo} alt="UTT Arena Logo" />
+        <h1>UTT ARENA<br/>2019</h1>
       </div>
     </div>
   )
