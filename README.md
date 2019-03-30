@@ -1,4 +1,7 @@
-# UTT Arena 2018
+# UA-front
+Site web de l'UTT Arena, permettant aux joueurs de se renseigner sur l'événement, de payer leur place et de gérer leur compte.
+
+[https://arena.utt.fr](https://arena.utt.fr)
 
 ## Requirements
 
