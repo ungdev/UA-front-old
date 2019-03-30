@@ -6,7 +6,7 @@
   font-size: 24px;
   padding: 4px 32px;
   text-transform: uppercase;
-  font-family: 'ua2018-font', Impact, sans-serif;
+  font-family: 'ua2019-font', Impact, sans-serif;
   letter-spacing: .5px;
 }
 
@@ -15,6 +15,11 @@
 }
 
 .a-button.raised {
-  color: #202020;
-  background-color: #14d9fa;
+  color: #eeeeee;
+  background-color: var(--accent);
+  transition: all .2s ease-in;
+}
+
+.a-button.raised:hover {
+  background-color: var(--accent-hover);
 }

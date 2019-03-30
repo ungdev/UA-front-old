@@ -24,6 +24,11 @@
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
+  transition: background-color .1s ease-in;
+}
+
+.a-partners-list > .a-partners-item:hover {
+  background-color: #e5e5e5;
 }
 
 .a-partners-list > .a-partners-item > div {

@@ -15,7 +15,13 @@
   justify-content: space-evenly;
 }
 
-.a-intro-header__nav__desktop div:not(.a-intro-header__mainButton) > .a-button {
+.a-intro-header__nav__desktop a{
+
+  font-family: 'ua2019-font', Impact, sans-serif;
+  text-transform: uppercase;
+  font-size: 24px;
+  text-decoration: none;
+  color: #fff;
   padding: 0 15px;
   line-height: 57px;
   height: 57px;
@@ -23,11 +29,12 @@
   transition: border-bottom .3s;
 }
 
-.a-intro-header__nav__desktop div:not(.a-intro-header__mainButton) > .a-button:hover {
+.a-intro-header__nav__desktop a:hover {
   border-bottom: 4px solid #fff;
 }
 
-.a-intro-header__nav__desktop div.a-intro-header__mainButton > .a-button {
+.a-intro-header__nav__desktop div.a-intro-header__mainButton a,
+.a-intro-header__nav__desktop div.a-intro-header__mainButton .a-button{
   margin: 10px 0;
 }
 
@@ -35,10 +42,12 @@
   display: none;
 }
 
-@media screen and (max-width: 995px) {
+@media screen and (max-width: 1000px) {
   .a-intro-header__nav__desktop {
     display: none;
+    
   }
+  
 
   .a-intro-header__nav__mobile {
     display: block;
@@ -49,10 +58,6 @@
     display: flex;
     align-items: center;
     height: 100%;
-  }
-
-  .a-intro-header__nav__mobile__topbar > div:nth-child(1) > .a-button {
-    padding: 10px 20px;
   }
 
   .a-intro-header__nav__mobile .a-intro-header__hamburger {
@@ -114,9 +119,18 @@
     box-shadow: 0 3px 0 #fff;
   }
 
-  .a-intro-header__nav__mobile__content > div > .a-button {
+  .a-intro-header__nav__mobile__content a {
+    font-family: 'ua2019-font', Impact, sans-serif;
+    text-transform: uppercase;
+    font-size: 24px;
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 4px solid transparent;
+    transition: border-bottom .3s;
     display: block;
     padding: 8px 100% 8px 20px;
+
+ 
   }
 
   .a-intro-header__nav__mobile__overlay {

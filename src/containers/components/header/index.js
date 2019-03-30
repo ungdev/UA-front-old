@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 import SmoothScroll from 'smooth-scroll'
+import {Link} from 'react-router-dom'
 
 import Button from '../../../components/button'
 
@@ -42,30 +43,26 @@ class Header extends React.Component {
     }
   }
 
+  drawMenuItems() {
+    return (
+      <React.Fragment>
+        <Link to="/">Accueil</Link>
+        <Link to="/informations">Informations</Link>
+        <Link to="/faq">FAQ</Link>  
+        <Link to="/tournaments">Tournois</Link>  
+        <Link to="/partners">Partenaires</Link>
+        <Link to="/gallery">Galerie</Link>
+      </React.Fragment>
+    )
+  }
+
   render() {
     let mainButtonText = this.props.isLoggedIn ? 'Dashboard' : 'Connexion'
 
     return (
       <header className="a-intro-header">
         <nav className="a-intro-header__nav__desktop">
-          <div>
-            <Button onClick={this.props.gotoHome}>Accueil</Button>
-          </div>
-          <div>
-            <Button onClick={this.props.gotoInformations}>Informations</Button>
-          </div>
-          <div>
-            <Button onClick={this.props.gotoFAQ}>FAQ</Button>
-          </div>
-          <div>
-            <Button onClick={this.props.gotoTournaments}>Tournois</Button>
-          </div>
-          <div>
-            <Button onClick={this.props.gotoPartners}>Partenaires</Button>
-          </div>
-          <div>
-            <Button onClick={this.props.openContactModal}>Contact</Button>
-          </div>
+          {this.drawMenuItems()}
           <div className="a-intro-header__mainButton">
             <Button onClick={this.mainButton} raised>{mainButtonText}</Button>
           </div>
@@ -82,30 +79,14 @@ class Header extends React.Component {
                 </div>
               </Button>
             </div>
+
             <div className="a-intro-header__mainButton" style={{ paddingBottom: '3px' }}>
               <Button onClick={this.mainButton} raised>{mainButtonText}</Button>
             </div>
           </div>
 
           <div className={"a-intro-header__nav__mobile__content" + (this.state.mobileMenu ? " active" : "")}>
-            <div>
-              <Button onClick={this.props.gotoHome}>Accueil</Button>
-            </div>
-            <div>
-              <Button onClick={this.props.gotoInformations}>Informations</Button>
-            </div>
-            <div>
-              <Button onClick={this.props.gotoFAQ}>FAQ</Button>
-            </div>
-            <div>
-              <Button onClick={this.props.gotoTournaments}>Tournois</Button>
-            </div>
-            <div>
-              <Button onClick={this.props.gotoPartners}>Partenaires</Button>
-            </div>
-            <div>
-              <Button onClick={this.props.openContactModal}>Contact</Button>
-            </div>
+            { this.drawMenuItems() }
           </div>
 
           <div onClick={this.closeMobileMenu} className={"a-intro-header__nav__mobile__overlay" + (this.state.mobileMenu ? " active" : "")}></div>
@@ -125,7 +106,8 @@ const mapDispatchToProps = dispatch => ({
   gotoFAQ: () => dispatch(push('/faq')),
   gotoTournaments: () => dispatch(push('/tournaments')),
   gotoPartners: () => dispatch(push('/partners')),
-  gotoDashboard: () => dispatch(push('/dashboard'))
+  gotoDashboard: () => dispatch(push('/dashboard')),
+  gotoGallery: () => dispatch(push('/gallery'))
 })
 
 export default connect(

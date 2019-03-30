@@ -12,6 +12,11 @@
   text-transform: uppercase;
   background-color: #d0d0d0;
   cursor: pointer;
+  transition: background-color .2s ease-in;
+}
+
+.react-tabs__tab:hover:not(.react-tabs__tab--selected) {
+  background-color: #bbbbbb;
 }
 
 .react-tabs__tab:focus {
@@ -50,6 +55,10 @@
   display: table;
 }
 
+.a-login-form .forgot:hover {
+  text-decoration: underline;
+}
+
 .a-cantlogin-modal {
   padding: 32px;
   font-size: 18px;
@@ -64,4 +73,14 @@
   color: #222;
   text-transform: uppercase;
   text-align: center;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity .3s ease-in;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+
 }

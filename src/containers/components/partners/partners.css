@@ -14,7 +14,12 @@
 .a-partners__images {
   overflow-x: overlay;
   padding: 0 12px;
-  margin-bottom: 5px
+  margin-bottom: 5px;
+  transition: all .2s ease-in;
+}
+
+.a-partners__images:hover {
+  transform: scale(1.05);
 }
 
 .a-partners_logos {
@@ -43,8 +48,12 @@
   text-align: center;
   margin-top: 24px;
   text-decoration: none;
-  color: #14d9fa;
+  color: var(--accent);
   font-weight: bold;
+}
+
+.a-partners__link:hover {
+  text-decoration: underline;
 }
 
 @media (min-width: 768px) {

@@ -16,10 +16,10 @@
 }
 
 .a-contact-modal > div > h1 {
-  color: aqua;
+  color: var(--accent);
   text-align: center;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .contact-select > div {

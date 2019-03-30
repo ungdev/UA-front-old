@@ -4,7 +4,7 @@ import { push, goBack } from 'react-router-redux'
 
 import './header.css'
 
-import logo from '../../assets/ua2018.small.png'
+import logo from '../../assets/ua2019.nologo.png'
 
 const Header = props => {
   const click = props.arrow === 'back' ? props.back : props.to.bind(null, props.arrow)

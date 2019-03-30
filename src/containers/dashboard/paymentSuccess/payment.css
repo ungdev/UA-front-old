@@ -3,7 +3,7 @@
   text-align: center;
 }
 .successframe > h1 {
-  color: #14d9fa;
+  color: var(--accent);
 }
 .successframe {
   text-align: center;
