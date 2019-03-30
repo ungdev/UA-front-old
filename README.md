@@ -11,11 +11,11 @@ Site web de l'UTT Arena, permettant aux joueurs de se renseigner sur l'événeme
 ## Installation
 
 ```
-git clone git@github.com:ungdev/arena.utt.fr-2018.git
+git clone git@github.com:ungdev/UA-front.git
 # or
-git clone https://github.com/ungdev/arena.utt.fr-2018.git
+git clone https://github.com/ungdev/UA-front.git
 
-cd arena.utt.fr-2018
+cd UA-front
 yarn
 ```
 
@@ -47,7 +47,7 @@ yarn lint   # prettier lint
 ## Structure
 
 ```
-arena.utt.fr-2018/
+UA-front/
 ├── public/                       # public assets that will be served directly (should not be used for fonts, images nor css)
 ├── src/                          # base directory
 │   ├── assets/                      # assets (eg. fonts, images, css)
