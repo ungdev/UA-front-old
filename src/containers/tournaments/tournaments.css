@@ -9,8 +9,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
-.a-tournament-buttons > button {
+.a-tournament-buttons > a {
   width: 80%;
   height: 150px;
   background-position: center 20%;
@@ -20,13 +21,13 @@
   margin-top: 10px;
   cursor: pointer;
 }
-.a-tournament-buttons > button:nth-child(4) {
+.a-tournament-buttons > a:nth-child(4) {
   background-position: center center;
 }
-.a-tournament-buttons > button:last-child {
+.a-tournament-buttons > a:last-child {
   margin-bottom: 20px;
 }
-.a-tournament-buttons > button > .a-tournament-title {
+.a-tournament-buttons > a > .a-tournament-title {
   position: relative;
   top: -150px;
   width: 100%;
@@ -36,14 +37,14 @@
   align-items: center;
   padding: 40px;
 }
-.a-tournament-buttons > button > .a-tournament-title > h1 {
+.a-tournament-buttons > a > .a-tournament-title > h1 {
   margin: 0px 0px 0px 0px;
   color: #fff;
   font-size: 50px;
   font-family: 'ua2019-font';
   position: absolute;
 }
-.a-tournament-buttons > button > .a-tournament-shadow {
+.a-tournament-buttons > a > .a-tournament-shadow {
   width: 100%;
   height: 100%;
   background-color: #000;
@@ -51,7 +52,7 @@
   transition: all 0.2s ease-in;
 }
 
-.a-tournament-buttons > button:hover > .a-tournament-shadow {
+.a-tournament-buttons > a:hover > .a-tournament-shadow {
   opacity: 0;
 }
 
@@ -87,19 +88,19 @@
 }
 
 @media screen and (max-width: 1000px){
-  .a-tournament-buttons > button > .a-tournament-title > h1 {
+  .a-tournament-buttons > a > .a-tournament-title > h1 {
     font-size: 40px;
   }
 }
 
 @media screen and (max-width: 600px){
-  .a-tournament-buttons > button {
+  .a-tournament-buttons > a {
     width: 95%;
   }
 }
 
 @media screen and (max-width: 450px) {
-  .a-tournament-buttons > button > .a-tournament-title > h1 {
+  .a-tournament-buttons > a > .a-tournament-title > h1 {
     font-size: 30px;
   }
   

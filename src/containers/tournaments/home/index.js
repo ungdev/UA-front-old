@@ -9,6 +9,7 @@ import fortnite from '../../../assets/fortnite.jpg'
 import ssbu from '../../../assets/smbu.jpg'
 import Category from '../../components/category'
 import ScrollToTopOnMount from '../../../components/scrollToTopOnMount'
+import { Link } from "react-router-dom";
 
 const Home = props => {
   const tournaments = [
@@ -16,31 +17,31 @@ const Home = props => {
       id: 1,
       name: 'League of Legends (COMPLET)',
       img: lol,
-      link: props.goToLOL
+      link: '/tournaments/lol'
     },
     {
       id: 2,
       name: 'Fortnite (COMPLET)',
       img: fortnite,
-      link: props.goToFortnite
+      link: '/tournaments/fortnite'
     },
     {
       id: 3,
       name: 'Counter Strike : Global Offensive (COMPLET)',
       img: csgo,
-      link: props.goToCSGO
+      link: '/tournaments/csgo'
     },
     {
       id: 4,
       name: 'Hearthstone',
       img: hearthstone,
-      link: props.goToHS
+      link: '/tournaments/hs'
     },
     {
       id: 5,
       name: 'Super Smash Bros Ultimate',
       img: ssbu,
-      link: props.goToSSBU
+      link: '/tournaments/ssbu'
     },
   ]
   return (
@@ -50,30 +51,20 @@ const Home = props => {
 
       <div className="a-tournament-buttons">
         {tournaments.map(tournament => (
-          <button
+          <Link
             key={tournament.id}
-            onClick={tournament.link}
-            style={{ backgroundImage: `url(${tournament.img})`}}
-          >
+            to={tournament.link}
+            style={{ backgroundImage: `url(${tournament.img})`}}>
             <div className="a-tournament-shadow"/>
             <div className="a-tournament-title"><h1>{tournament.name}</h1></div>
-          </button>
+          </Link>
           ))}
       </div>
     </React.Fragment>
   )
 }
 
-
-const mapDispatchToProps = dispatch => ({
-  goToLOL: () => dispatch(push('/tournaments/lol')),
-  goToFortnite: () => dispatch(push('/tournaments/fortnite')),
-  goToCSGO: () => dispatch(push('/tournaments/csgo')),
-  goToHS: () => dispatch(push('/tournaments/hs')),
-  goToSSBU: () => dispatch(push('/tournaments/ssbu'))
-})
-
 export default connect(
   null,
-  mapDispatchToProps
+  null
 )(Home)
