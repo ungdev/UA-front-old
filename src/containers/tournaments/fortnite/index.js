@@ -1,9 +1,11 @@
 import React from 'react'
 import Category from '../../components/category'
 import ScrollToTopOnMount from '../../../components/scrollToTopOnMount'
+import Meta from "../../../components/meta";
 
 const Fortnite = () => {
   return (<React.Fragment>
+    <Meta title="Tournoi Fortnite" description="Vous retrouverez sur cette page toutes les informations relatives au tournoi Fortnite de l'UTT Arena. L'inscription à l'UTT Arena est fixée à 15€ par joueur. La LAN se déroulera du Vendredi 6 Décembre 18h au Dimanche 8 Décembre à 18h"/>
     <ScrollToTopOnMount/>
     <div style={{ marginTop: '40px', backgroundColor: '#202020' }}>
       <Category>Fortnite (COMPLET)</Category>
@@ -12,7 +14,7 @@ const Fortnite = () => {
       <p>Vous retrouverez sur cette page toutes les informations relatives au tournoi Fortnite. <strong>Attention</strong>, ces informations pourront évoluer,
       tenez vous informé via nos réseaux (<a href="https://www.facebook.com/UTTArena/">Facebook</a>/<a href="https://twitter.com/UTTArena">Twitter</a>).</p>
       <Category>Informations générales</Category>
-      <p>L'inscription à l'UTT Arena est fixée à 15€ par joueur. La LAN se déroulera du Vendredi 7 Décembre 18h au Dimanche 9 Décembre à 18h <strong>sans interruption</strong>. 
+      <p>L'inscription à l'UTT Arena est fixée à 15€ par joueur. La LAN se déroulera du Vendredi 6 Décembre 18h au Dimanche 8 Décembre à 18h <strong>sans interruption</strong>.
       Les tournois commenceront le samedi à 10h. Sera mise à disposition une buvette, avec de la nourriture en continu et à prix réduit.</p>
       <Category>Tournoi Libre</Category>
       <p>En parallèle des tournois "Spotlights" (Lol, HS, CS:GO, Fortnite, SSBU) se déroulera un tournoi libre. Celui-ci sera composé de différents mini-tournois, sur des jeux divers et variés.

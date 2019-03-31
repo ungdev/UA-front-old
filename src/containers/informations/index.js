@@ -18,6 +18,7 @@ import ForgotModal from '../components/forgotModal'
 
 import { fetchCanLogin } from '../../modules/canLogin'
 import { autoLogin } from '../../modules/login'
+import Meta from "../../components/meta";
 
 class Informations extends React.Component {
   constructor() {
@@ -99,6 +100,7 @@ class Informations extends React.Component {
   render() {
     return (
       <div>
+        <Meta title="Informations" description="Retrouvez toutes les informations de l'UTT Arena sur cette page : rendez-vous du 6 au 8 décembre pour 48 heures de folie et d'évasion au parc des expositions de Troyes !"/>
         <ScrollToTopOnMount />
         <Header openLoginModal={this.openLoginModal} openContactModal={this.openContactModal} />
         <LoginModal
@@ -115,7 +117,7 @@ class Informations extends React.Component {
         <main className="a-infos">
           <div className="a-infos__content">
             <img className="a-infos__logo" src={logo} alt="UTT Arena" />
-            <p style={{ textAlign: 'justify'}}>Retrouvez toutes les informations de l'<span>UTT Arena</span> sur cette page : rendez-vous du 7 au 9 décembre pour 48 heures de folie et d'évasion au parc des expositions de Troyes !</p>
+            <p style={{ textAlign: 'justify'}}>Retrouvez toutes les informations de l'<span>UTT Arena</span> sur cette page : rendez-vous du 6 au 8 décembre pour 48 heures de folie et d'évasion au parc des expositions de Troyes !</p>
 
             <Category id="presentation">Présentation</Category>
             <div>

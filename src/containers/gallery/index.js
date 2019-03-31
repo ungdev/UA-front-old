@@ -18,6 +18,7 @@ import ImageView from './components/imageView'
 
 import { fetchCanLogin } from '../../modules/canLogin'
 import { autoLogin } from '../../modules/login'
+import Meta from "../../components/meta";
 
 class Gallery extends React.Component {
   constructor(props) {
@@ -146,6 +147,7 @@ class Gallery extends React.Component {
 
     return (
       <div>
+        <Meta title="Galerie" description="Voici la liste des photos des éditions de l'UTT Arena des années précédentes." />
         <ScrollToTopOnMount />
         <Header openLoginModal={this.openLoginModal} openContactModal={this.openContactModal} />
         <LoginModal
@@ -160,7 +162,7 @@ class Gallery extends React.Component {
         <ForgotModal isOpen={this.state.forgotModalOpened} onClose={this.closeForgotModal} />
 
         <main className="a-gallery">
-          <Category>Photos</Category>
+          <Category>Galerie</Category>
 
           <div className="a-gallery__year__buttons">
             <div className={"a-gallery__year__button" + (this.state.imagesYear === 2016 ? " active" : "")} onClick={() => this.setImagesYear(2016)}>2016</div>

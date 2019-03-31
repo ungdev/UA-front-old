@@ -1,9 +1,11 @@
 import React from 'react'
 import Category from '../../components/category'
 import ScrollToTopOnMount from '../../../components/scrollToTopOnMount'
+import Meta from "../../../components/meta";
 
 const LOL = () => {
   return (<React.Fragment>
+    <Meta title="Tournoi League of Legends" description="Vous retrouverez sur cette page toutes les informations relatives au tournoi League of Legends de l'UTT Arena. L'inscription à l'UTT Arena est fixée à 15€ par joueur. La LAN se déroulera du Vendredi 6 Décembre 18h au Dimanche 8 Décembre à 18h"/>
     <ScrollToTopOnMount/>
     <div style={{ marginTop: '40px', backgroundColor: '#202020' }}>
       <Category>League of Legends (COMPLET)</Category>

@@ -15,6 +15,7 @@ import ForgotModal from '../components/forgotModal'
 
 import { fetchCanLogin } from '../../modules/canLogin'
 import { autoLogin } from '../../modules/login'
+import Meta from "../../components/meta";
 
 class MentionsLegales extends React.Component {
     constructor() {
@@ -107,6 +108,7 @@ class MentionsLegales extends React.Component {
     render() {
         return (
             <div>
+                <Meta title="Mentions Légales" descriptions="Consultez les mentions légales de l'UTT Arena"/>
                 <ScrollToTopOnMount />
                 <Header openLoginModal={this.openLoginModal} openContactModal={this.openContactModal} />
                 <LoginModal

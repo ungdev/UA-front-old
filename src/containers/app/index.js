@@ -4,6 +4,8 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 import { Notifs as Notifications } from 'redux-notifications'
 import Home from '../home'
 import asyncComponent from '../../components/async'
+import { Helmet } from "react-helmet";
+
 
 const AsyncInformations = asyncComponent(() => import('../informations'))
 const AsyncFAQ = asyncComponent(() => import('../faq'))
@@ -18,6 +20,12 @@ const Validate = asyncComponent(() => import('../validate'))
 
 const App = props => (
   <div>
+    <Helmet>
+      <title>{process.env.REACT_APP_WEBSITE_NAME}</title>
+      <meta name="description" content={process.env.REACT_APP_WEBSITE_DESCRIPTION}/>
+      <meta property="og:url" content={props.metadatas.url} />
+      <link rel="canonical" href={props.metadatas.url} />
+    </Helmet>
     <AsyncPizza />
     <Notifications />
     <Switch>
@@ -37,7 +45,8 @@ const App = props => (
 )
 
 const mapStateToProps = state => ({
-  auth: state.user.user
+  auth: state.user.user,
+  metadatas: state.metadatas.metadatas
 })
 
 export default connect(mapStateToProps)(App)

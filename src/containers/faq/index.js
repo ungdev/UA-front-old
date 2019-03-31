@@ -14,6 +14,7 @@ import Category from '../components/category'
 
 import { fetchCanLogin } from '../../modules/canLogin'
 import { autoLogin } from '../../modules/login'
+import Meta from "../../components/meta";
 
 class FAQ extends React.Component {
   constructor() {
@@ -228,6 +229,7 @@ class FAQ extends React.Component {
 
     return (
       <div>
+        <Meta title="FAQ" description="Quand commencent les tournois ? Puis-je payer en espèces ? Quel est l'âge minimum pour la LAN ? Voici des questions de l'UTT Arena souvent posées, en espérant que cela pourra t'aider dans ta recherche jeune padawan !"/>
         <ScrollToTopOnMount />
         <Header openLoginModal={this.openLoginModal} openContactModal={this.openContactModal} />
         <LoginModal

@@ -21,6 +21,7 @@ import LibreTournaments from './libre'
 
 import { fetchCanLogin } from '../../modules/canLogin'
 import { autoLogin } from '../../modules/login'
+import Meta from "../../components/meta";
 
 const baseUrl = process.env.REACT_APP_BASEURL
 
@@ -105,6 +106,7 @@ class Tournaments extends React.Component {
   render() {
     return (
       <div>
+        <Meta title="Les tournois" description="Voici la liste des tournois auquel tu pourras jouer à l'UTT Arena"/> {/* todo: faire plus long ?*/}/>
         <Header openLoginModal={this.openLoginModal} openContactModal={this.openContactModal} />
         <LoginModal
           isOpen={this.state.loginModalOpened}

@@ -15,6 +15,7 @@ import Category from '../components/category'
 
 import { fetchCanLogin } from '../../modules/canLogin'
 import { autoLogin } from '../../modules/login'
+import Meta from "../../components/meta";
 
 class Partners extends React.Component {
   constructor() {
@@ -105,6 +106,7 @@ class Partners extends React.Component {
     }))
     return (
       <div>
+        <Meta title="Nos partenaires" description="Voici la présentation de nos partenaires qui nous soutiennent pour cette édition de l'UTT Arena"/>
         <ScrollToTopOnMount />
         <Header openLoginModal={this.openLoginModal} openContactModal={this.openContactModal} />
         <LoginModal
