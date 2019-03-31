@@ -147,7 +147,7 @@ class Gallery extends React.Component {
 
     return (
       <div>
-        <Meta title="Galerie" description="Voici la liste des photos des éditions de l'UTT Arena des années précédentes." />
+        <Meta title="Galerie" description="Voici les photos des éditions de l'UTT Arena des années précédentes." />
         <ScrollToTopOnMount />
         <Header openLoginModal={this.openLoginModal} openContactModal={this.openContactModal} />
         <LoginModal

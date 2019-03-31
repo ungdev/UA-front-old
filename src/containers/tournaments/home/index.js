@@ -64,7 +64,4 @@ const Home = props => {
   )
 }
 
-export default connect(
-  null,
-  null
-)(Home)
+export default Home
