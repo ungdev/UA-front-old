@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from '../button'
+import Link from "next/link";
 
 class Footer extends React.Component {
   render() {
@@ -7,7 +8,9 @@ class Footer extends React.Component {
       <div className="a-home__content a-home__footer">
         <div>
           © UTT Net Group
-          <a href="/mentions-legales">Mentions légales</a>
+          <Link href="/mentions-legales">
+            <a>Mentions légales</a>
+          </Link>
         </div>
         <div>
           <a href={`mailto:UTT%20Arena<${process.env.REACT_APP_CONTACT_MAIL}>`}>
