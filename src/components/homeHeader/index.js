@@ -59,7 +59,7 @@ class Header extends React.Component {
         <Link href="/partners">
           <a>Partenaires</a>
         </Link>
-        <Link href="/">
+        <Link href="/gallery">
           <a>Galerie</a>
         </Link>
       </React.Fragment>
