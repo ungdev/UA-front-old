@@ -20,7 +20,6 @@ export default (state = initialState, action) => {
 export const fetchCanLogin = () => {
   return async dispatch => {
     const canLogin = await axios.get('user/canLogin')
-
     dispatch({
       type: SET_CANLOGIN,
       payload: canLogin.data.canLogin

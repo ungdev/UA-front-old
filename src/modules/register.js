@@ -1,8 +1,9 @@
 import axios from '../lib/axios'
 import fail from '../lib/store.fail'
 import errorToString from '../lib/errorToString'
-import { actions as notifActions } from 'redux-notifications'
+
 import { saveToken } from './login'
+import { toast } from 'react-toastify'
 
 const initialState = {}
 
@@ -21,22 +22,10 @@ export const register = user => {
 
     try {
       await axios.post('user', user)
-
-      dispatch(
-        notifActions.notifSend({
-          message: 'Inscription réussie',
-          dismissAfter: 2000
-        })
-      )
+      toast.success('Inscription réussie')
     } catch (err) {
       console.log(err.response.data)
-      dispatch(
-        notifActions.notifSend({
-          message: errorToString(err.response.data.error),
-          kind: 'danger',
-          dismissAfter: 2000
-        })
-      )
+      toast.error(errorToString(err.response.data.error))
     }
   }
 }
@@ -47,22 +36,10 @@ export const validate = token => {
       const res = await axios.post('user/validate', { token })
 
       await dispatch(saveToken(res.data.token))
-
-      dispatch(
-        notifActions.notifSend({
-          message: 'Inscription validée',
-          dismissAfter: 2000
-        })
-      )
+      toast.success('Inscription validée')
     } catch (err) {
       console.log(err.response.data)
-      dispatch(
-        notifActions.notifSend({
-          message: errorToString(err.response.data.error),
-          kind: 'danger',
-          dismissAfter: 2000
-        })
-      )
+      toast.error(errorToString(err.response.data.error))
     }
   }
 }

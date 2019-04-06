@@ -1,5 +1,4 @@
 export default opts => {
-
   if (opts.mutationSuccess) {
     opts.dispatch({
       type: opts.mutationSuccess,

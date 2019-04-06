@@ -1,10 +1,10 @@
 import axios from '../lib/axios'
 import errorToString from '../lib/errorToString'
-import { fetchUser } from './user';
-import { actions as notifActions } from 'redux-notifications'
-import { push } from 'react-router-redux'
+import { fetchUser } from './user'
 
+import { toast } from 'react-toastify'
 export const SET_SPOTLIGHTS = 'spotlights/SET_SPOTLIGHTS'
+import { push } from './router'
 
 const initialState = {
   spotlights: []
@@ -47,18 +47,13 @@ export const joinSolo = spotlight => {
     }
 
     try {
-      await axios.post(`/spotlight/${spotlight}/join`, { }, { headers: { 'X-Token': authToken } })
+      await axios.post(`/spotlight/${spotlight}/join`, {}, { headers: { 'X-Token': authToken } })
 
       await dispatch(fetchUser())
       dispatch(push('/dashboard'))
     } catch (err) {
-      dispatch(
-        notifActions.notifSend({
-          message: errorToString(err.response.data.error),
-          kind: 'danger',
-          dismissAfter: 2000
-        })
-      )
+      console.log(err)
+      toast.error(errorToString(err.response.data.error))
     }
   }
 }

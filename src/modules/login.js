@@ -1,10 +1,11 @@
 import axios from '../lib/axios'
 import errorToString from '../lib/errorToString'
-import { push } from 'react-router-redux'
-import { actions as notifActions } from 'redux-notifications'
 import { fetchUser, SET_USER, SET_PRICES } from './user'
 import { SET_TEAMS } from './teams'
 import { SET_SPOTLIGHTS } from './spotlights'
+
+import { push } from './router'
+import { toast } from 'react-toastify'
 
 export const SET_TOKEN = 'login/SET_TOKEN'
 
@@ -46,21 +47,10 @@ export const tryLogin = user => {
 
       dispatch(saveToken(res.data.token))
       dispatch(push('/dashboard'))
-      dispatch(
-        notifActions.notifSend({
-          message: 'Connexion validée',
-          dismissAfter: 2000
-        })
-      )
+      toast.success('Connexion validée')
     } catch (err) {
       console.log(err.response.data)
-      dispatch(
-        notifActions.notifSend({
-          message: errorToString(err.response.data.error),
-          kind: 'danger',
-          dismissAfter: 2000
-        })
-      )
+      toast.error(errorToString(err.response.data.error))
     }
   }
 }

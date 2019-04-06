@@ -25,11 +25,11 @@ export default error => {
     case 'DUPLICATE_ENTRY':
       return 'Le pseudo ou le mail est déjà utilisé.'
     case 'VISITOR_FULL':
-      return 'Il n\'y a plus de places visiteur.'
+      return "Il n'y a plus de places visiteur."
     case 'UNKNOWN':
       return 'Une erreur est survenue'
     case 'LAN_FULL':
-      return 'Il n\'y a plus de place pour l\'UTT Arena sauf pour SSBU et Hearthstone, envoyez un mail à arena@utt.fr si vous souhaitez rejoindre ce tournoi'
+      return "Il n'y a plus de place pour l'UTT Arena sauf pour SSBU et Hearthstone, envoyez un mail à arena@utt.fr si vous souhaitez rejoindre ce tournoi"
     case 'PAYMENT_DISABLED':
       return 'Les paiements en ligne ont été désactivés'
     default:
