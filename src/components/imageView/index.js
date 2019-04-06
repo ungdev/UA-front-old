@@ -25,7 +25,7 @@ class ImageView extends React.Component {
   }
 
   keydownHandle(e) {
-    if (this.props.homeLayout !== null) {
+    if (this.props.index !== null) {
       switch (e.keyCode) {
         // Escape key
         case 27:
@@ -46,16 +46,16 @@ class ImageView extends React.Component {
   }
 
   leftArrowClick() {
-    if (this.props.homeLayout > 0) {
-      this.props.setIndex(this.props.homeLayout - 1)
+    if (this.props.index > 0) {
+      this.props.setIndex(this.props.index - 1)
     }
 
     this.preventClose = true
   }
 
   rightArrowClick() {
-    if (this.props.homeLayout < this.props.src.length - 1) {
-      this.props.setIndex(this.props.homeLayout + 1)
+    if (this.props.index < this.props.src.length - 1) {
+      this.props.setIndex(this.props.index + 1)
     }
 
     this.preventClose = true
@@ -80,7 +80,7 @@ class ImageView extends React.Component {
   }
 
   render() {
-    if (this.props.src === null || this.props.homeLayout === null) {
+    if (this.props.src === null || this.props.index === null) {
       return null
     }
 
@@ -92,19 +92,19 @@ class ImageView extends React.Component {
           </div>
           <div className="imageview__content">
             <div
-              className={'imageview__arrow__left' + (this.props.homeLayout > 0 ? '' : ' disabled')}
+              className={'imageview__arrow__left' + (this.props.index > 0 ? '' : ' disabled')}
               onClick={this.leftArrowClick}
               title="Photo précédente"
             >
               <div className="imageview__arrow">&lsaquo;</div>
             </div>
 
-            <img src={this.props.src[this.props.homeLayout]} alt="" onClick={this.imageClick} />
+            <img src={this.props.src[this.props.index]} alt="" onClick={this.imageClick} />
 
             <div
               className={
                 'imageview__arrow__right' +
-                (this.props.homeLayout < this.props.src.length - 1 ? '' : ' disabled')
+                (this.props.index < this.props.src.length - 1 ? '' : ' disabled')
               }
               onClick={this.rightArrowClick}
               title="Photo suivante"
