@@ -9,6 +9,8 @@ import selectStyles from '../../../src/components/select/styles'
 import { joinSolo } from '../../../src/modules/spotlights'
 import DashboardLayout from '../../../src/layouts/dashboardLayout'
 
+import ConfirmModal from '../../../src/components/confirmModal'
+
 // remove maxWidth
 Object.assign(selectStyles, {
   menu: base => base,
@@ -19,11 +21,40 @@ Object.assign(selectStyles, {
 })
 
 class Solo extends React.Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      confirmOpen: false,
+      confirmMessage: null,
+      onConfirm: null
+    }
+
+    this.openConfirm = this.openConfirm.bind(this)
+    this.closeConfirm = this.closeConfirm.bind(this)
+  }
+
+  openConfirm({ spotlight }) {
+    this.setState({
+      confirmOpen: true,
+      confirmMessage: `Êtes-vous sûr de rejoindre le tournoi ${spotlight.label} ?`,
+      onConfirm: () => this.props.joinSolo(spotlight)
+    })
+  }
+
+  closeConfirm() {
+    this.setState({
+      confirmOpen: false
+    })
+  }
+
   render() {
     return (
       <DashboardLayout>
+        <ConfirmModal isOpen={this.state.confirmOpen} message={this.state.confirmMessage} onClose={this.closeConfirm} onConfirm={this.state.onConfirm}/>
         <Form
-          onSubmit={this.props.joinSolo}
+          onSubmit={this.openConfirm}
           defaultValues={{
             spotlight: this.props.spotlights[0]
           }}
@@ -62,9 +93,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  joinSolo: ({ spotlight }) =>
-    window.confirm(`Rejoindre le tournoi ${spotlight.label} ?`) &&
-    dispatch(joinSolo(spotlight.value))
+  joinSolo: (spotlight) => dispatch(joinSolo(spotlight.value))
 })
 
 export default connect(
