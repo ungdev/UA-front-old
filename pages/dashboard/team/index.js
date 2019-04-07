@@ -79,7 +79,13 @@ class TeamManagement extends React.Component {
   }
 
   render() {
+    return this.props.user === null ? <DashboardLayout/> : this.renderClient()
+  }
+
+  renderClient() {
     const spotlight = this.props.spotlights.find(s => s.id === this.props.user.team.spotlightId)
+
+
     return (
       <DashboardLayout>
         <ConfirmModal isOpen={this.state.confirmOpen} message={this.state.confirmMessage} onClose={this.closeConfirm} onConfirm={this.state.onConfirm}/>
@@ -213,7 +219,8 @@ class TeamManagement extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = state => (
+  state.user.user === null ? {user: state.user.user} : {
   user: state.user.user,
   teamStatus: teamStatus(state),
   spotlights: state.spotlights.spotlights,

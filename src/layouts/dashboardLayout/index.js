@@ -40,6 +40,9 @@ class DashboardLayout extends React.Component {
   }
 
   render() {
+    console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+    console.log(this.state.render)
+    console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
     return (
       <div>
         <DashboardHeader arrow={this.arrow()} />

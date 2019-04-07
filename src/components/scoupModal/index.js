@@ -2,10 +2,10 @@ import React from 'react'
 
 import './scoupModal.css'
 
-import Modal from '../../../../src/components/modal'
+import Modal from '../modal'
 import { StreamingPCModal, GamingPCModal, LaptopModal } from '../moreInfoModal'
-import ListItem from '../../../../src/components/list-item'
-import Button from '../../../../src/components/button'
+import ListItem from '../list-item'
+import Button from '../button'
 
 class ScoupModal extends React.Component {
   constructor(props) {

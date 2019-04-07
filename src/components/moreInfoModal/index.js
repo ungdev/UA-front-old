@@ -2,7 +2,7 @@ import React from 'react'
 
 import './moreInfoModal.css'
 
-import Modal from '../../../../src/components/modal'
+import Modal from '../modal'
 
 export const StreamingPCModal = props => (
   <Modal isOpen={props.isOpen} onClose={props.onClose}>

@@ -7,11 +7,11 @@ import { push } from "../../../src/modules/router";
 import ListItem from '../../../src/components/list-item'
 import Button from '../../../src/components/button'
 import selectStyles from '../../../src/components/select/styles'
-import ScoupModal from '../components/scoupModal'
+import ScoupModal from '../../../src/components/scoupModal'
 
 import { payment } from '../../../src/modules/payment'
 
-import '../components/payment.css'
+import '../../../src/payment.css'
 import DashboardLayout from "../../../src/layouts/dashboardLayout";
 
 const shirtGenders = [{ label: 'Homme', value: 'M' }, { label: 'Femme', value: 'F' }]

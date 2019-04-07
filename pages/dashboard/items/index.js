@@ -14,8 +14,8 @@ class Cart extends React.Component {
   }
 
   render() {
-    if (!this.props.user) {
-      return null
+    if (this.props.user === null) {
+      return <DashboardLayout/>
     }
 
     const { user } = this.props
@@ -97,9 +97,8 @@ const mapStateToProps = state => ({
   user: state.user.user
 })
 
-const mapDispatchToProps = dispatch => ({})
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  null
 )(Cart)
