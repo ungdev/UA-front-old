@@ -6,9 +6,9 @@ import { initStore } from '../src/store'
 import Router from 'next/router'
 import Head from '../src/components/head'
 
-import 'react-toastify/dist/ReactToastify.css'
 import './app.css'
-import './forms.css'
+import '../src/forms.css'
+import '../src/toasts.css'
 import { ToastContainer } from 'react-toastify'
 
 export default withRedux(initStore)(
