@@ -41,28 +41,22 @@ class TeamManagement extends React.Component {
       confirmMessage: null,
       onConfirm: null
     }
-
-    this.openConfirm = this.openConfirm.bind(this)
-    this.closeConfirm = this.closeConfirm.bind(this)
-    this.confirmKickPlayer = this.confirmKickPlayer.bind(this)
-    this.confirmQuitTeam = this.confirmQuitTeam.bind(this)
-
   }
 
-  openConfirm(message) {
+  openConfirm = (message) => {
     this.setState({
       confirmOpen: true,
       confirmMessage: message
     })
   }
 
-  closeConfirm() {
+  closeConfirm = () => {
     this.setState({
       confirmOpen: false
     })
   }
 
-  confirmKickPlayer(form) {
+  confirmKickPlayer = (form) => {
     this.setState({
       confirmOpen: true,
       confirmMessage: `Êtes-vous sûr de virer le joueur de l'équipe ?`,
@@ -70,7 +64,7 @@ class TeamManagement extends React.Component {
     })
   }
 
-  confirmQuitTeam() {
+  confirmQuitTeam = () => {
     this.setState({
       confirmOpen: true,
       confirmMessage: `Êtes-vous sûr de quitter l'équipe ?`,
@@ -93,11 +87,7 @@ class TeamManagement extends React.Component {
           <h2>{this.props.user.team.name}</h2>
           <h4>{this.props.user.team.spotlight.name}</h4>
           {this.props.user.team.soloTeam && (
-            <div style={{ width: '100%', textAlign: 'center' }}>
-            <span className="a-teammanagement__solo" style={{ textAlign: 'center' }}>
-              (Équipe Solo)
-            </span>
-            </div>
+            <div className="a-teammanagement__solo">(Équipe Solo)</div>
           )}
           <div className="a-teammanagement__badge">
             <StatusBadge theme={this.props.teamStatus.theme}>{this.props.teamStatus.status}</StatusBadge>

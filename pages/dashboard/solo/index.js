@@ -30,12 +30,9 @@ class Solo extends React.Component {
       confirmMessage: null,
       onConfirm: null
     }
-
-    this.openConfirm = this.openConfirm.bind(this)
-    this.closeConfirm = this.closeConfirm.bind(this)
   }
 
-  openConfirm({ spotlight }) {
+  openConfirm = ({ spotlight }) => {
     this.setState({
       confirmOpen: true,
       confirmMessage: `Êtes-vous sûr de rejoindre le tournoi ${spotlight.label} ?`,
@@ -43,7 +40,7 @@ class Solo extends React.Component {
     })
   }
 
-  closeConfirm() {
+  closeConfirm = () => {
     this.setState({
       confirmOpen: false
     })

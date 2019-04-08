@@ -14,6 +14,11 @@
   text-align: center;
 }
 
+.a-teammanagement__solo {
+  width: 100%;
+  text-align: center;
+}
+
 .a-teammanagement__badge {
   margin: 24px 0;
   text-align: center;
