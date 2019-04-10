@@ -9,11 +9,14 @@ import { sendTicket } from '../../src/modules/user'
 import { logout } from '../../src/modules/login'
 import { push } from '../../src/modules/router'
 import DashboardLayout from '../../src/layouts/dashboardLayout'
+import DashboardWarnings from '../../src/components/dashboardWarnings'
+
 
 const Home = props => {
   return (
     <DashboardLayout>
-      <h2 key="0">Équipes</h2>,
+      <h2 key="0">Équipes</h2>
+      <DashboardWarnings user={props.user}/>
       <List key="1">
         {props.user && !props.user.team && !props.user.plusone && (
           <ListItem clickable={true} onClick={props.createTeam}>
