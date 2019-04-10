@@ -52,9 +52,6 @@ class Solo extends React.Component {
         <ConfirmModal isOpen={this.state.confirmOpen} message={this.state.confirmMessage} onClose={this.closeConfirm} onConfirm={this.state.onConfirm}/>
         <Form
           onSubmit={this.openConfirm}
-          defaultValues={{
-            spotlight: this.props.spotlights[0]
-          }}
           render={({ submitForm }) => (
             <form onSubmit={submitForm} className="a-dashboard-page">
               <h2>Rejoindre un tournoi solo</h2>
@@ -67,7 +64,7 @@ class Solo extends React.Component {
                 placeholder="Tournoi"
                 options={this.props.spotlights}
                 searchable={false}
-                autoFocus
+                autofocus
               />
               <Button type="submit" raised>
                 Rejoindre ce tournoi
@@ -84,8 +81,9 @@ const mapStateToProps = state => ({
   spotlights: state.spotlights.spotlights
     .filter(spotlight => spotlight.perTeam === 1)
     .map(spotlight => ({
-      label: spotlight.name,
-      value: spotlight.id
+      label: spotlight.isFull ? `${spotlight.name} (tournoi plein)` : spotlight.name,
+      value: spotlight.id,
+      isDisabled: spotlight.isFull
     }))
 })
 
