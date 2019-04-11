@@ -22,10 +22,11 @@ class DashboardLayout extends React.Component {
     this.location = Router.asPath
 
     this.props.autoLogin().then(() => {
-      this.setState({
-        render: this.props.user && this.props.user.name
-      })
-      this.props.fetchTeams()
+      this.props.fetchTeams().then(() =>
+        this.setState({
+          render: this.props.user && this.props.user.name
+        })
+      )
     })
 
     this.arrow = this.arrow.bind(this)
