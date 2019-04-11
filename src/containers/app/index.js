@@ -29,16 +29,16 @@ const App = props => (
     <AsyncPizza />
     <Notifications />
     <Switch>
-      <Route path={process.env.REACT_APP_BASEURL} exact component={Home} />
-      <Route path={process.env.REACT_APP_BASEURL + 'informations'} exact component={AsyncInformations} />
-      <Route path={process.env.REACT_APP_BASEURL + 'faq'} exact component={AsyncFAQ} />
-      <Route path={process.env.REACT_APP_BASEURL + 'mentions-legales'} exact component={AsyncMentionsLegales} />
-      <Route path={process.env.REACT_APP_BASEURL + 'partners'} exact component={AsyncPartners} />
-      <Route path={process.env.REACT_APP_BASEURL + 'tournaments'} component={AsyncTournaments} />
-      <Route path={process.env.REACT_APP_BASEURL + 'gallery'} component={AsyncGallery} />
-      <Route path={process.env.REACT_APP_BASEURL + 'dashboard'} component={AsyncDashboard} />
-      <Route path={process.env.REACT_APP_BASEURL + 'reset/:token'} component={Reset} />
-      <Route path={process.env.REACT_APP_BASEURL + 'valid/:token'} component={Validate} />
+      <Route path="/" exact component={Home} />
+      <Route path="/informations" exact component={AsyncInformations} />
+      <Route path="/faq" exact component={AsyncFAQ} />
+      <Route path="/mentions-legales" exact component={AsyncMentionsLegales} />
+      <Route path="/partners" exact component={AsyncPartners} />
+      <Route path="/tournaments" component={AsyncTournaments} />
+      <Route path="/gallery" component={AsyncGallery} />
+      <Route path="/dashboard" component={AsyncDashboard} />
+      <Route path="/reset/:token" component={Reset} />
+      <Route path="/valid/:token" component={Validate} />
       <Redirect from="*" to="/" />
     </Switch>
   </div>
