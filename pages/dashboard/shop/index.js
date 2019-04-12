@@ -11,7 +11,7 @@ import ScoupModal from '../../../src/components/scoupModal'
 import { shop } from '../../../src/modules/shop'
 
 import '../../../src/payment.css'
-import DashboardLayout from '../../../src/layouts/dashboardLayout'
+import withDashboardLayout from '../../../src/layouts/dashboardLayout'
 
 const shirtGenders = [{ label: 'Homme', value: 'M' }, { label: 'Femme', value: 'F' }]
 
@@ -169,109 +169,100 @@ class Cart extends React.Component {
       (this.state.streamingPC ? this.props.prices.streamingPC : 0) +
       (this.state.laptop ? this.props.prices.laptop : 0)
 
-    if (this.props.prices !== null) {
-      return (
-        <DashboardLayout>
-          <ScoupModal
-            isOpen={this.state.isScoupModalOpen}
-            onClose={this.closeScoupModal}
-            prices={this.props.prices}
-          />
-          <form className="a-dashboard-page a-dashboard-payment">
-            <h2>Achats supplémentaires</h2>
-            <p>
-              Vous pouvez acheter et louer des objets ici, en plus de ce que vous avez déjà
-              précommandé lorsque vous avez payé votre place.
-              <br />
-              Vous pouvez voir le matériel que vous avez déjà commandé dans{' '}
-              <Link href="/dashboard/items">
-                <a>votre inventaire</a>
-              </Link>
-              .<br />
-              Le paiement se déroule sur un site sécurisé.
-            </p>
-            <ListItem
-              price={`+${this.props.prices.ethernet}`}
-              active={this.state.ethernet}
-              onClick={this.toggleEthernet}
-            >
-              <h3>Câble ethernet (5m)</h3>
-              <span>
-                Un câble (<strong>5m</strong>) est requis pour se brancher aux switchs des tables
-              </span>
-            </ListItem>
-            <ListItem
-              price={`+${this.props.prices.ethernet7}`}
-              active={this.state.ethernet7}
-              onClick={this.toggleEthernet7}
-            >
-              <h3>Câble ethernet (7m)</h3>
-              <span>
-                Un câble (<strong>7m</strong>) plus long pour les joueurs situés en bout de table
-              </span>
-            </ListItem>
-            <ListItem
-              price={`+${this.props.prices.shirt}`}
-              active={this.state.shirt}
-              onClick={this.toggleShirt}
-            >
-              <h3>T-Shirt UA 2018</h3>
-              <span>Un t-shirt souvenir de cette LAN de folie</span>
-              <div onClick={e => e.stopPropagation()}>
-                <Select
-                  options={shirtGenders}
-                  defaultValue={this.state.shirtGender}
-                  onChange={this.changeGender}
-                  isSearchable={false}
-                  styles={selectStyles}
-                />
-                <Select
-                  options={shirtSizes}
-                  defaultValue={this.state.shirtSize}
-                  onChange={this.changeSize}
-                  isSearchable={false}
-                  styles={selectStyles}
-                />
-              </div>
-            </ListItem>
-            <ListItem
-              price={`+${parseInt(this.state.tombola, 10)}`}
-              active={this.state.tombola > 0}
-              onClick={() =>
-                this.state.tombola > 0
-                  ? this.setState({ tombola: 0 })
-                  : this.setState({ tombola: 1 })
-              }
-            >
-              <h3>Tombola</h3>
-              <span>Acheter des tickets de tombola à 1€ par ticket</span>
-              <div style={{ marginTop: '10px' }} onClick={e => e.stopPropagation()}>
-                <input
-                  type="number"
-                  name="tombola"
-                  value={`${this.state.tombola}`}
-                  onChange={this.onTombolaChange}
-                />
-              </div>
-            </ListItem>
-            <div className="a-dashboard-payment__separator" />
-            <ListItem onClick={this.openScoupModal} price={`+${gearPrice}`} active={gearPrice > 0}>
-              <h3>Matériel Scoup eSport</h3>
-              <span>Louer un PC, écran, clavier, ...</span>
-            </ListItem>
-            <div className="a-dashboard-payment__separator" />
-            <Button onClick={this.payment} raised>
-              Payer {price}€
-            </Button>
-          </form>
-        </DashboardLayout>
-      )
-    } else
-      return (
-        <DashboardLayout>
-          <div>Chargement...</div>
-        </DashboardLayout>
-      )
+    return (
+      <React.Fragment>
+        <ScoupModal
+          isOpen={this.state.isScoupModalOpen}
+          onClose={this.closeScoupModal}
+          prices={this.props.prices}
+        />
+        <form className="a-dashboard-page a-dashboard-payment">
+          <h2>Achats supplémentaires</h2>
+          <p>
+            Vous pouvez acheter et louer des objets ici, en plus de ce que vous avez déjà
+            précommandé lorsque vous avez payé votre place.
+            <br />
+            Vous pouvez voir le matériel que vous avez déjà commandé dans{' '}
+            <Link href="/dashboard/items">
+              <a>votre inventaire</a>
+            </Link>
+            .<br />
+            Le paiement se déroule sur un site sécurisé.
+          </p>
+          <ListItem
+            price={`+${this.props.prices.ethernet}`}
+            active={this.state.ethernet}
+            onClick={this.toggleEthernet}
+          >
+            <h3>Câble ethernet (5m)</h3>
+            <span>
+              Un câble (<strong>5m</strong>) est requis pour se brancher aux switchs des tables
+            </span>
+          </ListItem>
+          <ListItem
+            price={`+${this.props.prices.ethernet7}`}
+            active={this.state.ethernet7}
+            onClick={this.toggleEthernet7}
+          >
+            <h3>Câble ethernet (7m)</h3>
+            <span>
+              Un câble (<strong>7m</strong>) plus long pour les joueurs situés en bout de table
+            </span>
+          </ListItem>
+          <ListItem
+            price={`+${this.props.prices.shirt}`}
+            active={this.state.shirt}
+            onClick={this.toggleShirt}
+          >
+            <h3>T-Shirt UA 2018</h3>
+            <span>Un t-shirt souvenir de cette LAN de folie</span>
+            <div onClick={e => e.stopPropagation()}>
+              <Select
+                options={shirtGenders}
+                defaultValue={this.state.shirtGender}
+                onChange={this.changeGender}
+                isSearchable={false}
+                styles={selectStyles}
+              />
+              <Select
+                options={shirtSizes}
+                defaultValue={this.state.shirtSize}
+                onChange={this.changeSize}
+                isSearchable={false}
+                styles={selectStyles}
+              />
+            </div>
+          </ListItem>
+          <ListItem
+            price={`+${parseInt(this.state.tombola, 10)}`}
+            active={this.state.tombola > 0}
+            onClick={() =>
+              this.state.tombola > 0 ? this.setState({ tombola: 0 }) : this.setState({ tombola: 1 })
+            }
+          >
+            <h3>Tombola</h3>
+            <span>Acheter des tickets de tombola à 1€ par ticket</span>
+            <div style={{ marginTop: '10px' }} onClick={e => e.stopPropagation()}>
+              <input
+                type="number"
+                name="tombola"
+                value={`${this.state.tombola}`}
+                onChange={this.onTombolaChange}
+              />
+            </div>
+          </ListItem>
+          <div className="a-dashboard-payment__separator" />
+          <ListItem onClick={this.openScoupModal} price={`+${gearPrice}`} active={gearPrice > 0}>
+            <h3>Matériel Scoup eSport</h3>
+            <span>Louer un PC, écran, clavier, ...</span>
+          </ListItem>
+          <div className="a-dashboard-payment__separator" />
+          <Button onClick={this.payment} raised>
+            Payer {price}€
+          </Button>
+        </form>
+      </React.Fragment>
+    )
   }
 }
 
@@ -283,7 +274,9 @@ const mapDispatchToProps = dispatch => ({
   shop: body => dispatch(shop(body))
 })
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Cart)
+export default withDashboardLayout(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Cart)
+)

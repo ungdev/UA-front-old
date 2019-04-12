@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import './items.css'
-import DashboardLayout from '../../../src/layouts/dashboardLayout'
+import withDashboardLayout from '../../../src/layouts/dashboardLayout'
 
 class Cart extends React.Component {
   getGender(shirt) {
@@ -15,7 +15,7 @@ class Cart extends React.Component {
 
   render() {
     if (this.props.user === null) {
-      return <DashboardLayout/>
+      return null
     }
 
     const { user } = this.props
@@ -58,37 +58,35 @@ class Cart extends React.Component {
     })
 
     return (
-      <DashboardLayout>
-        <div className="a-dashboard-items">
-          <h2>Listes des achats</h2>
-          <div className="a-dashboard-items-content">
-            <ul>
-              {items.place && <li>Place {items.plusone ? 'Visiteur' : 'Joueur'}</li>}
-              {items.shirts.length > 0 &&
-                items.shirts.map(shirt => (
-                  <li>
-                    T-shirt {this.getGender(shirt)} {this.getSize(shirt)}
-                  </li>
-                ))}
-              {items.ethernet > 0 && <li>Câble ethernet de 5m (x{items.ethernet})</li>}
-              {items.ethernet7 > 0 && <li>Câble ethernet de 7m (x{items.ethernet7})</li>}
-              {items.kaliento > 0 && (
-                <li>Location chauffeur de main électrique Kaliento (x{items.kaliento})</li>
-              )}
-              {items.mouse > 0 && <li>Location Souris Gaming (x{items.mouse})</li>}
-              {items.keyboard > 0 && <li>Location Clavier Gaming (x{items.keyboard})</li>}
-              {items.headset > 0 && <li>Location Casque Gaming (x{items.headset})</li>}
-              {items.screen24 > 0 && <li>Location Écran 24" (x{items.screen24})</li>}
-              {items.screen27 > 0 && <li>Location Écran 27" (x{items.screen27})</li>}
-              {items.chair > 0 && <li>Location Chaise Gaming (x{items.chair})</li>}
-              {items.gamingPC > 0 && <li>Location PC Gaming (x{items.gamingPC})</li>}
-              {items.streamingPC > 0 && <li>Location PC Streaming (x{items.streamingPC})</li>}
-              {items.laptop > 0 && <li>Location PC Portable Gaming (x{items.laptop})</li>}
-              {items.tombola > 0 && <li>Ticket de tombola (x{items.tombola})</li>}
-            </ul>
-          </div>
+      <div className="a-dashboard-items">
+        <h2>Listes des achats</h2>
+        <div className="a-dashboard-items-content">
+          <ul>
+            {items.place && <li>Place {items.plusone ? 'Visiteur' : 'Joueur'}</li>}
+            {items.shirts.length > 0 &&
+              items.shirts.map(shirt => (
+                <li>
+                  T-shirt {this.getGender(shirt)} {this.getSize(shirt)}
+                </li>
+              ))}
+            {items.ethernet > 0 && <li>Câble ethernet de 5m (x{items.ethernet})</li>}
+            {items.ethernet7 > 0 && <li>Câble ethernet de 7m (x{items.ethernet7})</li>}
+            {items.kaliento > 0 && (
+              <li>Location chauffeur de main électrique Kaliento (x{items.kaliento})</li>
+            )}
+            {items.mouse > 0 && <li>Location Souris Gaming (x{items.mouse})</li>}
+            {items.keyboard > 0 && <li>Location Clavier Gaming (x{items.keyboard})</li>}
+            {items.headset > 0 && <li>Location Casque Gaming (x{items.headset})</li>}
+            {items.screen24 > 0 && <li>Location Écran 24" (x{items.screen24})</li>}
+            {items.screen27 > 0 && <li>Location Écran 27" (x{items.screen27})</li>}
+            {items.chair > 0 && <li>Location Chaise Gaming (x{items.chair})</li>}
+            {items.gamingPC > 0 && <li>Location PC Gaming (x{items.gamingPC})</li>}
+            {items.streamingPC > 0 && <li>Location PC Streaming (x{items.streamingPC})</li>}
+            {items.laptop > 0 && <li>Location PC Portable Gaming (x{items.laptop})</li>}
+            {items.tombola > 0 && <li>Ticket de tombola (x{items.tombola})</li>}
+          </ul>
         </div>
-      </DashboardLayout>
+      </div>
     )
   }
 }
@@ -97,8 +95,9 @@ const mapStateToProps = state => ({
   user: state.user.user
 })
 
-
-export default connect(
-  mapStateToProps,
-  null
-)(Cart)
+export default withDashboardLayout(
+  connect(
+    mapStateToProps,
+    null
+  )(Cart)
+)

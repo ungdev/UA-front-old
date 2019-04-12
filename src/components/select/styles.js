@@ -16,12 +16,10 @@ module.exports = {
   }),
   menu: base => ({
     ...base,
-    maxWidth: '200px',
     fontSize: '14px'
   }),
   control: base => ({
     ...base,
-    maxWidth: '200px',
     fontSize: '14px'
   }),
   container: base => ({

@@ -66,7 +66,8 @@ export default class Gallery extends React.Component {
       <HomeLayout
         title="Galerie"
         url="/gallery"
-        description="Voici les photos des éditions de l'UTT Arena des années précédentes.">
+        description="Voici les photos des éditions de l'UTT Arena des années précédentes."
+      >
         <main className="a-gallery">
           <Category>Galerie</Category>
 

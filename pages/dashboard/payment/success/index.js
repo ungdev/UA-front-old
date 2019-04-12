@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { fetchUser } from '../../../../src/modules/user'
 
 import './success.css'
-import DashboardLayout from '../../../../src/layouts/dashboardLayout'
+import withDashboardLayout from '../../../../src/layouts/dashboardLayout'
 
 class PayementFail extends React.Component {
   constructor(props) {
@@ -13,12 +13,10 @@ class PayementFail extends React.Component {
 
   render() {
     return (
-      <DashboardLayout>
-        <div className="errorframe">
-          <h1>Paiement refusé :/</h1>
-          <p>Vous n'avez pas été débité, veuillez réessayer.</p>
-        </div>
-      </DashboardLayout>
+      <div className="errorframe">
+        <h1>Paiement refusé :/</h1>
+        <p>Vous n'avez pas été débité, veuillez réessayer.</p>
+      </div>
     )
   }
 }
@@ -27,7 +25,9 @@ const mapDispatchToProps = dispatch => ({
   fetchUser: () => dispatch(fetchUser())
 })
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(PayementFail)
+export default withDashboardLayout(
+  connect(
+    null,
+    mapDispatchToProps
+  )(PayementFail)
+)

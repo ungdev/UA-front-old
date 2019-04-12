@@ -7,7 +7,7 @@ import Select from '../../../src/components/select'
 import selectStyles from '../../../src/components/select/styles'
 
 import { joinSolo } from '../../../src/modules/spotlights'
-import DashboardLayout from '../../../src/layouts/dashboardLayout'
+import withDashboardLayout from '../../../src/layouts/dashboardLayout'
 
 import ConfirmModal from '../../../src/components/confirmModal'
 
@@ -21,7 +21,6 @@ Object.assign(selectStyles, {
 })
 
 class Solo extends React.Component {
-
   constructor(props) {
     super(props)
 
@@ -48,8 +47,13 @@ class Solo extends React.Component {
 
   render() {
     return (
-      <DashboardLayout>
-        <ConfirmModal isOpen={this.state.confirmOpen} message={this.state.confirmMessage} onClose={this.closeConfirm} onConfirm={this.state.onConfirm}/>
+      <React.Fragment>
+        <ConfirmModal
+          isOpen={this.state.confirmOpen}
+          message={this.state.confirmMessage}
+          onClose={this.closeConfirm}
+          onConfirm={this.state.onConfirm}
+        />
         <Form
           onSubmit={this.openConfirm}
           render={({ submitForm }) => (
@@ -72,7 +76,7 @@ class Solo extends React.Component {
             </form>
           )}
         />
-      </DashboardLayout>
+      </React.Fragment>
     )
   }
 }
@@ -88,10 +92,12 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  joinSolo: (spotlight) => dispatch(joinSolo(spotlight.value))
+  joinSolo: spotlight => dispatch(joinSolo(spotlight.value))
 })
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Solo)
+export default withDashboardLayout(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Solo)
+)

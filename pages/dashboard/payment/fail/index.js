@@ -4,7 +4,7 @@ import { fetchUser } from '../../../../src/modules/user'
 
 import './fail.css'
 import { push } from '../../../../src/modules/router'
-import DashboardLayout from '../../../../src/layouts/dashboardLayout'
+import withDashboardLayout from '../../../../src/layouts/dashboardLayout'
 
 class PayementSuccess extends React.Component {
   constructor(props) {
@@ -15,12 +15,10 @@ class PayementSuccess extends React.Component {
   render() {
     if (this.props.user && !this.props.user.paid) this.props.redirect()
     return (
-      <DashboardLayout>
-        <div className="successframe">
-          <h1>Paiement validé !</h1>
-          <p>Vous devriez recevoir sous peu un mail confirmant le paiement.</p>
-        </div>
-      </DashboardLayout>
+      <div className="successframe">
+        <h1>Paiement validé !</h1>
+        <p>Vous devriez recevoir sous peu un mail confirmant le paiement.</p>
+      </div>
     )
   }
 }
@@ -34,7 +32,9 @@ const mapDispatchToProps = dispatch => ({
   fetchUser: () => dispatch(fetchUser())
 })
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(PayementSuccess)
+export default withDashboardLayout(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(PayementSuccess)
+)

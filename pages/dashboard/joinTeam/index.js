@@ -8,7 +8,7 @@ import selectStyles from '../../../src/components/select/styles'
 
 import { joinTeam } from '../../../src/modules/teams'
 
-import DashboardLayout from '../../../src/layouts/dashboardLayout'
+import withDashboardLayout from '../../../src/layouts/dashboardLayout'
 
 // remove maxWidth
 Object.assign(selectStyles, {
@@ -22,38 +22,36 @@ Object.assign(selectStyles, {
 class JoinTeam extends React.Component {
   render() {
     return (
-      <DashboardLayout>
-        <Form
-          onSubmit={this.props.joinTeam}
-          render={({ submitForm }) => (
-            <form onSubmit={submitForm} className="a-dashboard-page">
-              <h2>Rejoindre une équipe</h2>
-              <p>
-                Demandez à rejoindre une équipe ci-dessous.
-                <br />
-              </p>
-              <Select
-                field="team"
-                placeholder="Nom de l'équipe"
-                options={this.props.teams}
-                autoFocus
-                searchable
-              />
-              <Text
-                field="message"
-                placeholder="Votre message"
-                minLength="3"
-                maxLength="255"
-                style={{ marginBottom: '15px' }}
-              />
+      <Form
+        onSubmit={this.props.joinTeam}
+        render={({ submitForm }) => (
+          <form onSubmit={submitForm} className="a-dashboard-page">
+            <h2>Rejoindre une équipe</h2>
+            <p>
+              Demandez à rejoindre une équipe ci-dessous.
               <br />
-              <Button type="submit" raised>
-                Rejoindre cette équipe
-              </Button>
-            </form>
-          )}
-        />
-      </DashboardLayout>
+            </p>
+            <Select
+              field="team"
+              placeholder="Nom de l'équipe"
+              options={this.props.teams}
+              autoFocus
+              searchable
+            />
+            <Text
+              field="message"
+              placeholder="Votre message"
+              minLength="3"
+              maxLength="255"
+              style={{ marginBottom: '15px' }}
+            />
+            <br />
+            <Button type="submit" raised>
+              Rejoindre cette équipe
+            </Button>
+          </form>
+        )}
+      />
     )
   }
 }
@@ -73,7 +71,9 @@ const mapDispatchToProps = dispatch => ({
   joinTeam: newUser => dispatch(joinTeam(newUser))
 })
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(JoinTeam)
+export default withDashboardLayout(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(JoinTeam)
+)

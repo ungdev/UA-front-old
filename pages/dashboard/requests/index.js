@@ -4,28 +4,26 @@ import { connect } from 'react-redux'
 import { cancelRequest } from '../../../src/modules/teams'
 
 import './requests.css'
-import DashboardLayout from '../../../src/layouts/dashboardLayout'
+import withDashboardLayout from '../../../src/layouts/dashboardLayout'
 
 const Requests = props => (
-  <DashboardLayout>
-    <div className="a-dashboard-page a-dashboard-requests">
-      <h2>Mes demandes</h2>
-      <div className="a-requests">
-        {props.requests.length === 0 && <p>Aucune demande en cours.</p>}
-        {props.requests.map((request, i) => (
-          <div className="a-request" key={i}>
-            <div className="a-request__content">
-              <strong>{request.name}</strong>
-              <em>{request.message}</em>
-            </div>
-            <span className="a-request__cancel" href="#" onClick={props.cancelRequest(request.id)}>
-              Annuler
-            </span>
+  <div className="a-dashboard-page a-dashboard-requests">
+    <h2>Mes demandes</h2>
+    <div className="a-requests">
+      {props.requests.length === 0 && <p>Aucune demande en cours.</p>}
+      {props.requests.map((request, i) => (
+        <div className="a-request" key={i}>
+          <div className="a-request__content">
+            <strong>{request.name}</strong>
+            <em>{request.message}</em>
           </div>
-        ))}
-      </div>
+          <span className="a-request__cancel" href="#" onClick={props.cancelRequest(request.id)}>
+            Annuler
+          </span>
+        </div>
+      ))}
     </div>
-  </DashboardLayout>
+  </div>
 )
 
 const mapStateToProps = state => ({
@@ -52,7 +50,9 @@ const mapDispatchToProps = dispatch => ({
   }
 })
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Requests)
+export default withDashboardLayout(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Requests)
+)

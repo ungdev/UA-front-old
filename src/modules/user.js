@@ -98,12 +98,16 @@ export const editUser = newUserData => {
     }
 
     try {
-      if (!newUserData.gender) newUserData.gender = newUserData.gender.value
+      if (newUserData.gender) newUserData.gender = newUserData.gender.value
       else newUserData.gender = 'N/A'
+
       const res = await axios.put('user', newUserData, { headers: { 'X-Token': authToken } })
       dispatch({
         type: SET_USER,
-        payload: res.data.user
+        payload: {
+          ...getState().user.user,
+          ...res.data.user
+        }
       })
       toast.success('Compte édité avec succès')
       dispatch(push('/dashboard'))

@@ -39,7 +39,8 @@ const Modal = props => (
     onRequestClose={props.onClose}
     style={styles}
     className={props.name ? props.name : 'a-react-modal'}
-    closeTimeoutMS={200}>
+    closeTimeoutMS={200}
+  >
     {props.children}
   </ReactModal>
 )
