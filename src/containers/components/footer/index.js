@@ -1,10 +1,10 @@
 import React from 'react'
 import Button from '../../../components/button'
-
+import './footer.css'
 class Footer extends React.Component {
   render() {
     return (
-        <div className="a-home__content a-home__footer">
+        <div className="a_footer">
             <div>
               © UTT Net Group
               <a href="/mentions-legales">Mentions légales</a>
@@ -19,7 +19,7 @@ class Footer extends React.Component {
                 {process.env.REACT_APP_CONTACT_PHONE}
               </a>
             </div>
-            <div style={{ marginTop: '5px' }}>
+            <div style={{ marginTop: '5px' }} className="button">
               <Button raised={true} onClick={this.props.openContactModal}>Nous contacter</Button>
             </div>
           </div>

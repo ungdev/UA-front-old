@@ -1,9 +1,6 @@
 .a-category {
   margin-top: 60px;
 }
-.a-tournaments-main {
-  background-color: #202020;
-}
 .a-tournament-buttons {
   display: flex;
   flex-direction: column;
