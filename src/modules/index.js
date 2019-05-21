@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux'
-import { routerReducer } from 'react-router-redux'
-import { reducer as notificationsReducer } from 'redux-notifications'
+import router from './router'
 import canLogin from './canLogin'
 import login from './login'
 import register from './register'
@@ -12,8 +11,7 @@ import forgot from './forgot'
 import metadatas from './metadatas'
 
 export default combineReducers({
-  routing: routerReducer,
-  notifs: notificationsReducer,
+  router,
   canLogin,
   login,
   register,

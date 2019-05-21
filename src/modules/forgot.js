@@ -1,7 +1,8 @@
 import axios from '../lib/axios'
 import fail from '../lib/store.fail'
 import errorToString from '../lib/errorToString'
-import { actions as notifActions } from 'redux-notifications'
+
+import { toast } from 'react-toastify'
 
 const initialState = {}
 
@@ -16,22 +17,10 @@ export const sendResetMail = ({ email }) => {
   return async dispatch => {
     try {
       await axios.post('user/reset', { email })
-
-      dispatch(
-        notifActions.notifSend({
-          message: 'Mail envoyé avec succès',
-          dismissAfter: 2000
-        })
-      )
+      toast.success('Mail envoyé avec succès')
     } catch (err) {
       console.log(err.response.data)
-      dispatch(
-        notifActions.notifSend({
-          message: errorToString(err.response.data.error),
-          kind: 'danger',
-          dismissAfter: 2000
-        })
-      )
+      toast.error(errorToString(err.response.data.error))
     }
   }
 }
@@ -44,22 +33,10 @@ export const resetPassword = resetInfos => {
 
     try {
       await axios.put('user/reset', resetInfos)
-
-      dispatch(
-        notifActions.notifSend({
-          message: 'Mot de passe changé',
-          dismissAfter: 2000
-        })
-      )
+      toast.success('Mot de passe changé')
     } catch (err) {
       console.log(err.response.data)
-      dispatch(
-        notifActions.notifSend({
-          message: errorToString(err.response.data.error),
-          kind: 'danger',
-          dismissAfter: 2000
-        })
-      )
+      toast.error(errorToString(err.response.data.error))
     }
   }
 }

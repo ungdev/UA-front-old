@@ -1,9 +1,10 @@
-
 export const LOCATION_CHANGE = '@@router/LOCATION_CHANGE'
 
 const initialState = {
   metadatas: {
-    url: null
+    url: null,
+    title: null,
+    description: null
   }
 }
 

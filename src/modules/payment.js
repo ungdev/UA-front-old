@@ -1,6 +1,6 @@
 import axios from '../lib/axios'
 import errorToString from '../lib/errorToString'
-import { actions as notifActions } from 'redux-notifications'
+import { toast } from 'react-toastify'
 
 const initialState = {}
 
@@ -25,13 +25,7 @@ export const payment = basket => {
       }
     } catch (err) {
       console.log(err.response)
-      dispatch(
-        notifActions.notifSend({
-          message: errorToString(err.response.data.error),
-          kind: 'danger',
-          dismissAfter: 10000
-        })
-      )
+      toast.error(errorToString(err.response.data.error))
     }
   }
 }

@@ -1,0 +1,28 @@
+.a-confirm-modal {
+  padding: 10px;
+}
+
+.a-confirm-modal > h1 {
+  color: var(--accent);
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.a-confirm-content {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.a-confirm-button-group {
+  margin-top: 20px;
+}
+
+.a-confirm-button-group > .a-button:not(.raised) {
+  color: #000000;
+  transition: all .2s ease-in;
+}
+
+.a-confirm-button-group > .a-button:not(.raised):hover {
+  color: #323232;
+}

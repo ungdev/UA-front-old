@@ -3,9 +3,7 @@ module.exports = {
     const styles = Object.assign({}, base)
 
     styles.fontSize = '14px'
-    styles.color = isSelected ? '#fff'
-      : isDisabled ? '#666'
-      : '#222'
+    styles.color = isSelected ? '#fff' : isDisabled ? '#666' : '#222'
 
     if (isDisabled) {
       styles.backgroundColor = '#f0f0f0'
@@ -18,12 +16,10 @@ module.exports = {
   }),
   menu: base => ({
     ...base,
-    maxWidth: '200px',
     fontSize: '14px'
   }),
   control: base => ({
     ...base,
-    maxWidth: '200px',
     fontSize: '14px'
   }),
   container: base => ({

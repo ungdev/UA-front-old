@@ -4,8 +4,8 @@ import Konami from 'react-konami'
 import './pizza.css'
 
 class Pizza extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     this.state = {
       show: false

@@ -1,0 +1,17 @@
+.a-dashboard-warning {
+  margin: 0 auto 20px auto;
+  max-width: 600px;
+  background-color: #ffc107;
+  color: #000000;
+  padding: 15px 25px;
+  border-radius: 2px;
+}
+
+.a-dashboard-warning a {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.a-dashboard-warning a:hover {
+  text-decoration: underline;
+}

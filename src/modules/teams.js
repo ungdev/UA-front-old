@@ -1,9 +1,10 @@
 import axios from '../lib/axios'
 import errorToString from '../lib/errorToString'
-import { actions as notifActions } from 'redux-notifications'
-import { push } from 'react-router-redux'
+
+import { toast } from 'react-toastify'
 
 import { fetchUser } from './user'
+import { push } from './router'
 
 export const SET_TEAMS = 'teams/SET_TEAMS'
 
@@ -22,7 +23,6 @@ export default (state = initialState, action) => {
       return state
   }
 }
-
 
 export const fetchTeams = () => {
   return async (dispatch, getState) => {
@@ -54,13 +54,7 @@ export const cancelRequest = id => {
 
       dispatch(fetchUser())
     } catch (err) {
-      dispatch(
-        notifActions.notifSend({
-          message: errorToString(err.response.data.error),
-          kind: 'danger',
-          dismissAfter: 2000
-        })
-      )
+      toast.error(errorToString(err.response.data.error))
     }
   }
 }
@@ -81,12 +75,10 @@ export const createTeam = ({ name, spotlight }) => {
       await dispatch(fetchUser())
       dispatch(push('/dashboard/team'))
     } catch (err) {
-      dispatch(
-        notifActions.notifSend({
-          message: errorToString(err && err.response && err.response.data ? err.response.data.error : 'Une erreur est survenue'),
-          kind: 'danger',
-          dismissAfter: 2000
-        })
+      toast.error(
+        err && err.response && err.response.data
+          ? err.response.data.error
+          : 'Une erreur est survenue'
       )
     }
   }
@@ -101,13 +93,7 @@ export const joinTeam = ({ team, message }) => {
     }
 
     if (!team || !team.value) {
-      return dispatch(
-        notifActions.notifSend({
-          message: errorToString('INVALID_FORM'),
-          kind: 'danger',
-          dismissAfter: 2000
-        })
-      )
+      return toast.error(errorToString('INVALID_FORM'))
     }
 
     try {
@@ -120,13 +106,7 @@ export const joinTeam = ({ team, message }) => {
       await dispatch(fetchUser())
       dispatch(push('/dashboard/requests'))
     } catch (err) {
-      dispatch(
-        notifActions.notifSend({
-          message: errorToString(err.response.data.error),
-          kind: 'danger',
-          dismissAfter: 2000
-        })
-      )
+      toast.error(errorToString(err.response.data.error))
     }
   }
 }
@@ -142,13 +122,7 @@ export const allowPlayer = user => {
 
     //test if team is full
     if (team.users.length >= team.spotlight.perTeam) {
-      dispatch(
-        notifActions.notifSend({
-          message: 'L\'équipe est déjà complète',
-          kind: 'danger',
-          dismissAfter: 2000
-        })
-      )
+      toast.error("L'équipe est déjà complète")
       return
     }
     try {
@@ -156,13 +130,7 @@ export const allowPlayer = user => {
 
       dispatch(fetchUser())
     } catch (err) {
-      dispatch(
-        notifActions.notifSend({
-          message: errorToString(err.response.data.error),
-          kind: 'danger',
-          dismissAfter: 2000
-        })
-      )
+      toast.error(errorToString(err.response.data.error))
     }
   }
 }
@@ -181,13 +149,7 @@ export const refusePlayer = user => {
 
       dispatch(fetchUser())
     } catch (err) {
-      dispatch(
-        notifActions.notifSend({
-          message: errorToString(err.response.data.error),
-          kind: 'danger',
-          dismissAfter: 2000
-        })
-      )
+      toast.error(errorToString(err.response.data.error))
     }
   }
 }
@@ -210,13 +172,8 @@ export const kickPlayer = user => {
       dispatch(push('/dashboard'))
       await dispatch(fetchUser())
     } catch (err) {
-      dispatch(
-        notifActions.notifSend({
-          message: errorToString(err.response.data.error),
-          kind: 'danger',
-          dismissAfter: 2000
-        })
-      )
+      console.log(err)
+      toast.error(errorToString(err.response.data.error))
     }
   }
 }

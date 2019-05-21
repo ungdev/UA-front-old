@@ -1,8 +1,12 @@
 import axios from '../lib/axios'
 import errorToString from '../lib/errorToString'
-import { actions as notifActions } from 'redux-notifications'
+
 import { logout, SET_TOKEN } from './login'
 import { SET_SPOTLIGHTS } from './spotlights'
+
+import { toast } from 'react-toastify'
+
+import { push } from './router'
 
 export const SET_USER = 'user/SET_USER'
 export const SET_PRICES = 'user/SET_PRICES'
@@ -71,28 +75,12 @@ export const sendTicket = () => {
     }
 
     try {
-      dispatch(
-        notifActions.notifSend({
-          message: 'Envoi en cours...',
-          dismissAfter: 2000
-        })
-      )
+      toast.success('Envoi en cours...')
       await axios.get('user/ticket', { headers: { 'X-Token': authToken } })
-      dispatch(
-        notifActions.notifSend({
-          message: 'Le mail a été envoyé !',
-          dismissAfter: 2000
-        })
-      )
+      toast.success('Le mail a été envoyé !')
     } catch (err) {
       console.log(err)
-      return dispatch(
-        notifActions.notifSend({
-          message: errorToString(err.response.data.error),
-          kind: 'danger',
-          dismissAfter: 2000
-        })
-      )
+      return toast.error(errorToString(err.response.data.error))
     }
   }
 }
@@ -106,39 +94,26 @@ export const editUser = newUserData => {
     }
 
     if (newUserData.password !== newUserData.password2) {
-      return dispatch(
-        notifActions.notifSend({
-          message: errorToString('PASSWORD_MISMATCH'),
-          kind: 'danger',
-          dismissAfter: 2000
-        })
-      )
+      toast.error(errorToString('PASSWORD_MISMATCH'))
     }
 
     try {
-      if(!newUserData.gender) newUserData.gender = newUserData.gender.value
+      if (newUserData.gender) newUserData.gender = newUserData.gender.value
       else newUserData.gender = 'N/A'
+
       const res = await axios.put('user', newUserData, { headers: { 'X-Token': authToken } })
       dispatch({
         type: SET_USER,
-        payload: res.data.user
+        payload: {
+          ...getState().user.user,
+          ...res.data.user
+        }
       })
-
-      dispatch(
-        notifActions.notifSend({
-          message: 'Compte édité avec succès',
-          dismissAfter: 2000
-        })
-      )
+      toast.success('Compte édité avec succès')
+      dispatch(push('/dashboard'))
     } catch (err) {
       console.log(err.response.data)
-      dispatch(
-        notifActions.notifSend({
-          message: errorToString(err.response.data.error),
-          kind: 'danger',
-          dismissAfter: 2000
-        })
-      )
+      toast.error(errorToString(err.response.data.error))
     }
   }
 }

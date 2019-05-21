@@ -28,7 +28,9 @@ const Select_ = props => (
               onBlur(e)
             }
           }}
-          noOptionsMessage={() => { return "Aucune option" }}
+          noOptionsMessage={() => {
+            return 'Aucune option'
+          }}
         />
       )
     }}

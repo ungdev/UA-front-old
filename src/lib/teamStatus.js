@@ -11,9 +11,11 @@ export default state => {
   if (team && !spotlight) {
     return { status: 'Équipe non inscrite — Libre', theme: 'error', complete: -1 }
   }
-  if(team && team.isInSpotlight) return { status: 'Équipe inscrite', theme: 'success', complete: 1 }
+  if (team && team.isInSpotlight)
+    return { status: 'Équipe inscrite', theme: 'success', complete: 1 }
 
-  const { isFull } = (state.spotlights.spotlights.find(s => s.id === state.user.user.team.spotlightId) || {})
+  const { isFull } =
+    state.spotlights.spotlights.find(s => s.id === state.user.user.team.spotlightId) || {}
 
   const playerCount = teamUsers.size
   const playerPaidCount = teamUsers.filter(player => player.paid).length
@@ -32,5 +34,4 @@ export default state => {
       return { status: 'Équipe complète', theme: 'success', complete: 1 }
     }
   }
-
 }
