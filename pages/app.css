@@ -1,7 +1,9 @@
 html {
-  background-color: #222222;
+  background-color: #000000;
   --accent: #bb0000;
   --accent-hover: #950000;
+  --lightcolor: #ffff;
+  --lightcolor2: #ccc;
 }
 
 *, *:after, *:before {

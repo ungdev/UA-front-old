@@ -19,7 +19,7 @@
   margin: 0 auto;
   padding: 40px 20px;
   color: var(--accent);
-  background-color: #202020;
+  background-color: var(--lightcolor);
   text-align: center;
   text-transform: uppercase;
   font-family: 'ua2019-font', Impact, sans-serif;
