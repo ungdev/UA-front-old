@@ -10,21 +10,8 @@ import ForgotModal from '../../components/forgotModal'
 import Footer from '../../components/footer'
 import Social from '../../components/social'
 
-import './home.css'
-
-import ScrollToTopOnMount from '../../components/scrollToTopOnMount'
-import Header from '../components/header'
-import Intro from '../components/intro'
-//import Countdown from '../components/countdown'
-import Informations from '../components/informations'
-import Category from '../components/category'
-import Footer from '../components/footer'
-import Social from '../components/social'
-import Spotlights from '../components/spotlights'
-import Partners from '../components/partners'
-import LoginModal from '../components/loginModal'
-import ContactModal from '../components/contactModal'
-import ForgotModal from '../components/forgotModal'
+import Informations from '../../components/informations'
+import Partners from '../../components/partners'
 
 import './homeLayout.css'
 
@@ -119,10 +106,8 @@ class HomeLayout extends React.Component {
         <ForgotModal isOpen={this.state.forgotModalOpened} onClose={this.closeForgotModal} />
 
         <main className="a-home">
-          
-            <Informations />
-            
-         
+          <Informations />
+
           <Partners />
           <Footer openContactModal={this.openContactModal} />
         </main>

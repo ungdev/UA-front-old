@@ -23,7 +23,7 @@ export default Component => {
       if (process.browser) {
         if (this.props.user === null) {
           this.props.autoLogin().then(() => {
-            if(this.props.user) {
+            if (this.props.user) {
               this.props.fetchTeams().then(() => {
                 this.setState({ render: true })
               })

@@ -23,15 +23,16 @@ class UA extends App {
     return (
       <Container>
         <Provider store={store}>
-          <Head />
-          <ToastContainer
-            autoClose={2000}
-            hideProgressBar
-            pauseOnHover={false}
-            draggable={false}
-            closeButton={false}
-          />
-          <Component {...pageProps} />
+            <Head />
+            <ToastContainer
+              position="top-center"
+              autoClose={4000}
+              hideProgressBar
+              pauseOnHover={false}
+              draggable={false}
+              closeButton={false}
+            />
+            <Component {...pageProps} />
         </Provider>
       </Container>
     )
