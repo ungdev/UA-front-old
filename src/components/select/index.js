@@ -1,15 +1,15 @@
-import React from 'react'
-import Select from 'react-select'
-import { Field } from 'react-form'
+import React from 'react';
+import Select from 'react-select';
+import { Field } from 'react-form';
 
-import styles from './styles'
+import styles from './styles';
 
 const Select_ = props => (
   <Field field={props.field}>
     {fieldApi => {
-      const { onChange, onBlur, field, ...rest } = props
+      const { onChange, onBlur, field, ...rest } = props;
 
-      const { value, setValue, setTouched } = fieldApi
+      const { value, setValue, setTouched } = fieldApi;
       return (
         <Select
           {...rest}
@@ -17,24 +17,24 @@ const Select_ = props => (
           value={value || null}
           isSearchable={typeof props.searchable === 'boolean' ? props.searchable : false}
           onChange={e => {
-            setValue(e)
+            setValue(e);
             if (onChange) {
-              onChange(e)
+              onChange(e);
             }
           }}
           onBlur={e => {
-            setTouched()
+            setTouched();
             if (onBlur) {
-              onBlur(e)
+              onBlur(e);
             }
           }}
           noOptionsMessage={() => {
-            return 'Aucune option'
+            return 'Aucune option';
           }}
         />
-      )
+      );
     }}
   </Field>
-)
+);
 
-export default Select_
+export default Select_;

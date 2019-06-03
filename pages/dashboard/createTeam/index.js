@@ -1,13 +1,13 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Form, Text } from 'react-form'
-import Select from '../../../src/components/select'
+import React from 'react';
+import { connect } from 'react-redux';
+import { Form, Text } from 'react-form';
+import Select from '../../../src/components/select';
 
-import Button from '../../../src/components/button'
+import Button from '../../../src/components/button';
 
-import { createTeam } from '../../../src/modules/teams'
+import { createTeam } from '../../../src/modules/teams';
 
-import withDashboardLayout from '../../../src/layouts/dashboardLayout'
+import withDashboardLayout from '../../../src/layouts/dashboardLayout';
 
 const CreateTeam = props => (
   <Form
@@ -40,7 +40,7 @@ const CreateTeam = props => (
       </form>
     )}
   />
-)
+);
 
 const mapStateToProps = state => ({
   spotlights: state.spotlights.spotlights
@@ -48,17 +48,17 @@ const mapStateToProps = state => ({
     .map(spotlight => ({
       label: spotlight.isFull ? `${spotlight.name} (tournoi plein)` : spotlight.name,
       value: spotlight.id,
-      isDisabled: spotlight.isFull
-    }))
-})
+      isDisabled: spotlight.isFull,
+    })),
+});
 
 const mapDispatchToProps = dispatch => ({
-  createTeam: newTeam => dispatch(createTeam(newTeam))
-})
+  createTeam: newTeam => dispatch(createTeam(newTeam)),
+});
 
 export default withDashboardLayout(
   connect(
     mapStateToProps,
     mapDispatchToProps
   )(CreateTeam)
-)
+);

@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-import partners from '../../variables/partners'
-import './partners.css'
+import partners from '../../variables/partners';
+import './partners.css';
 
 class Partners extends React.Component {
   render() {
@@ -22,8 +22,8 @@ class Partners extends React.Component {
           Devenir partenaire
         </a>
       </div>
-    )
+    );
   }
 }
 
-export default Partners
+export default Partners;

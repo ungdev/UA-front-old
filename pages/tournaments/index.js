@@ -1,16 +1,15 @@
-import React from 'react'
-import Category from '../../src/components/category'
+import React from 'react';
+import Link from 'next/link';
+import Category from '../../src/components/category';
 
-import Link from 'next/link'
+import './tournaments.css';
+import HomeLayout from '../../src/layouts/homeLayout';
 
-import './tournaments.css'
-import HomeLayout from '../../src/layouts/homeLayout'
-
-const csgo = '/static/assets/csgo.jpg'
-const hearthstone = '/static/assets/hs.jpg'
-const lol = '/static/assets/lol.jpg'
-const fortnite = '/static/assets/fortnite.jpg'
-const ssbu = '/static/assets/smbu.jpg'
+const csgo = '/static/assets/csgo.jpg';
+const hearthstone = '/static/assets/hs.jpg';
+const lol = '/static/assets/lol.jpg';
+const fortnite = '/static/assets/fortnite.jpg';
+const ssbu = '/static/assets/smbu.jpg';
 
 const Home = props => {
   const tournaments = [
@@ -18,33 +17,33 @@ const Home = props => {
       id: 1,
       name: 'League of Legends (COMPLET)',
       img: lol,
-      link: '/tournaments/lol'
+      link: '/tournaments/lol',
     },
     {
       id: 2,
       name: 'Fortnite (COMPLET)',
       img: fortnite,
-      link: '/tournaments/fortnite'
+      link: '/tournaments/fortnite',
     },
     {
       id: 3,
       name: 'Counter Strike : Global Offensive (COMPLET)',
       img: csgo,
-      link: '/tournaments/csgo'
+      link: '/tournaments/csgo',
     },
     {
       id: 4,
       name: 'Hearthstone',
       img: hearthstone,
-      link: '/tournaments/hs'
+      link: '/tournaments/hs',
     },
     {
       id: 5,
       name: 'Super Smash Bros Ultimate',
       img: ssbu,
-      link: '/tournaments/ssbu'
-    }
-  ]
+      link: '/tournaments/ssbu',
+    },
+  ];
   return (
     <HomeLayout
       title="Tournois"
@@ -68,7 +67,7 @@ const Home = props => {
         </div>
       </main>
     </HomeLayout>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

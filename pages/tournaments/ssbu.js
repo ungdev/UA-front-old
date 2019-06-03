@@ -1,9 +1,9 @@
-import React from 'react'
-import Meta from '../../src/components/meta'
-import Category from '../../src/components/category'
+import React from 'react';
+import Meta from '../../src/components/meta';
+import Category from '../../src/components/category';
 
-import './tournaments.css'
-import HomeLayout from '../../src/layouts/homeLayout'
+import './tournaments.css';
+import HomeLayout from '../../src/layouts/homeLayout';
 
 const SSBU = () => {
   return (
@@ -290,7 +290,7 @@ const SSBU = () => {
         </div>
       </main>
     </HomeLayout>
-  )
-}
+  );
+};
 
-export default SSBU
+export default SSBU;

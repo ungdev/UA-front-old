@@ -1,8 +1,8 @@
-import React from 'react'
-import ReactModal from 'react-modal'
-import './modal.css'
+import React from 'react';
+import ReactModal from 'react-modal';
+import './modal.css';
 
-ReactModal.setAppElement('#__next')
+ReactModal.setAppElement('#__next');
 
 const styles = {
   overlay: {
@@ -13,7 +13,7 @@ const styles = {
     bottom: 0,
     backgroundColor: 'rgba(0,0,0,.75)',
     zIndex: '999',
-    overflow: 'auto'
+    overflow: 'auto',
   },
   content: {
     position: 'absolute',
@@ -29,9 +29,9 @@ const styles = {
     borderRadius: '3px',
     outline: 'none',
     padding: '0',
-    zIndex: '1000'
-  }
-}
+    zIndex: '1000',
+  },
+};
 
 const Modal = props => (
   <ReactModal
@@ -43,6 +43,6 @@ const Modal = props => (
   >
     {props.children}
   </ReactModal>
-)
+);
 
-export default Modal
+export default Modal;

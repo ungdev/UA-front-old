@@ -1,9 +1,9 @@
-import React from 'react'
-import Meta from '../../src/components/meta'
-import Category from '../../src/components/category'
+import React from 'react';
+import Meta from '../../src/components/meta';
+import Category from '../../src/components/category';
 
-import './tournaments.css'
-import HomeLayout from '../../src/layouts/homeLayout'
+import './tournaments.css';
+import HomeLayout from '../../src/layouts/homeLayout';
 
 const CSGO = () => {
   return (
@@ -194,7 +194,7 @@ const CSGO = () => {
         </div>
       </main>
     </HomeLayout>
-  )
-}
+  );
+};
 
-export default CSGO
+export default CSGO;

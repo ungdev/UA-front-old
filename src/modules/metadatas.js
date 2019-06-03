@@ -1,12 +1,12 @@
-export const LOCATION_CHANGE = '@@router/LOCATION_CHANGE'
+export const LOCATION_CHANGE = '@@router/LOCATION_CHANGE';
 
 const initialState = {
   metadatas: {
     url: null,
     title: null,
-    description: null
-  }
-}
+    description: null,
+  },
+};
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -14,10 +14,10 @@ export default (state = initialState, action) => {
       return {
         ...state,
         metadatas: {
-          url: process.env.REACT_APP_CANONICAL_URL + action.payload.pathname
-        }
-      }
+          url: process.env.REACT_APP_CANONICAL_URL + action.payload.pathname,
+        },
+      };
     default:
-      return state
+      return state;
   }
-}
+};

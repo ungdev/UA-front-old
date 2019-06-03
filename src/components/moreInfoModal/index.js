@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-import './moreInfoModal.css'
+import './moreInfoModal.css';
 
-import Modal from '../modal'
+import Modal from '../modal';
 
 export const StreamingPCModal = props => (
   <Modal isOpen={props.isOpen} onClose={props.onClose}>
@@ -28,7 +28,7 @@ export const StreamingPCModal = props => (
       </div>
     </div>
   </Modal>
-)
+);
 
 export const GamingPCModal = props => (
   <Modal isOpen={props.isOpen} onClose={props.onClose}>
@@ -55,7 +55,7 @@ export const GamingPCModal = props => (
       </div>
     </div>
   </Modal>
-)
+);
 
 export const LaptopModal = props => (
   <Modal isOpen={props.isOpen} onClose={props.onClose}>
@@ -73,4 +73,4 @@ export const LaptopModal = props => (
       </div>
     </div>
   </Modal>
-)
+);

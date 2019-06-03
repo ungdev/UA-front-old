@@ -1,23 +1,23 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Form, Text } from 'react-form'
+import React from 'react';
+import { connect } from 'react-redux';
+import { Form, Text } from 'react-form';
 
-import Button from '../../../src/components/button'
-import Select from '../../../src/components/select'
-import selectStyles from '../../../src/components/select/styles'
+import Button from '../../../src/components/button';
+import Select from '../../../src/components/select';
+import selectStyles from '../../../src/components/select/styles';
 
-import { joinTeam } from '../../../src/modules/teams'
+import { joinTeam } from '../../../src/modules/teams';
 
-import withDashboardLayout from '../../../src/layouts/dashboardLayout'
+import withDashboardLayout from '../../../src/layouts/dashboardLayout';
 
 // remove maxWidth
 Object.assign(selectStyles, {
   menu: base => base,
   control: base => ({
     ...base,
-    fontSize: '16px'
-  })
-})
+    fontSize: '16px',
+  }),
+});
 
 class JoinTeam extends React.Component {
   render() {
@@ -52,7 +52,7 @@ class JoinTeam extends React.Component {
           </form>
         )}
       />
-    )
+    );
   }
 }
 
@@ -62,18 +62,18 @@ const mapStateToProps = state => ({
         .filter(team => !team.soloTeam)
         .map(team => ({
           label: team.name,
-          value: team.id
+          value: team.id,
         }))
-    : []
-})
+    : [],
+});
 
 const mapDispatchToProps = dispatch => ({
-  joinTeam: newUser => dispatch(joinTeam(newUser))
-})
+  joinTeam: newUser => dispatch(joinTeam(newUser)),
+});
 
 export default withDashboardLayout(
   connect(
     mapStateToProps,
     mapDispatchToProps
   )(JoinTeam)
-)
+);

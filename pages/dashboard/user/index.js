@@ -1,35 +1,35 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Form, Text } from 'react-form'
+import React from 'react';
+import { connect } from 'react-redux';
+import { Form, Text } from 'react-form';
 
-import Button from '../../../src/components/button'
+import Button from '../../../src/components/button';
 
-import { editUser } from '../../../src/modules/user'
-import Select from '../../../src/components/select'
+import { editUser } from '../../../src/modules/user';
+import Select from '../../../src/components/select';
 
-import withDashboardLayout from '../../../src/layouts/dashboardLayout'
+import withDashboardLayout from '../../../src/layouts/dashboardLayout';
 
-import './user.css'
+import './user.css';
 
 const genderOptions = [
   { label: '', value: 'N/A' },
   { label: 'Homme', value: 'M' },
-  { label: 'Femme', value: 'F' }
-]
+  { label: 'Femme', value: 'F' },
+];
 
 class EditInfos extends React.Component {
   render() {
-    let gender = 'N/A'
+    let gender = 'N/A';
     if (this.props.user.gender) {
-      if (this.props.user.gender === 'M') gender = { label: 'Homme', value: 'M' }
-      if (this.props.user.gender === 'F') gender = { label: 'Femme', value: 'F' }
+      if (this.props.user.gender === 'M') gender = { label: 'Homme', value: 'M' };
+      if (this.props.user.gender === 'F') gender = { label: 'Femme', value: 'F' };
     }
     return (
       <Form
         onSubmit={this.props.editUser}
         defaultValues={{
           ...this.props.user,
-          gender
+          gender,
         }}
         render={({ submitForm }) => (
           <form onSubmit={submitForm} className="a-dashboard-page a-dashboard-edit">
@@ -84,18 +84,18 @@ class EditInfos extends React.Component {
           </form>
         )}
       />
-    )
+    );
   }
 }
 const mapStateToProps = state => ({
-  user: state.user.user
-})
+  user: state.user.user,
+});
 const mapDispatchToProps = dispatch => ({
-  editUser: newUser => dispatch(editUser(newUser))
-})
+  editUser: newUser => dispatch(editUser(newUser)),
+});
 export default withDashboardLayout(
   connect(
     mapStateToProps,
     mapDispatchToProps
   )(EditInfos)
-)
+);

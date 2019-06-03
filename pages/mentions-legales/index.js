@@ -1,8 +1,8 @@
-import React from 'react'
-import HomeLayout from '../../src/layouts/homeLayout'
-import Category from '../../src/components/category'
+import React from 'react';
+import HomeLayout from '../../src/layouts/homeLayout';
+import Category from '../../src/components/category';
 
-import './mentions-legales.css'
+import './mentions-legales.css';
 
 export default class MentionsLegales extends React.Component {
   render() {
@@ -255,6 +255,6 @@ export default class MentionsLegales extends React.Component {
           </div>
         </main>
       </HomeLayout>
-    )
+    );
   }
 }

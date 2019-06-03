@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-import './social.css'
+import './social.css';
 
-const discord = '/static/assets/discord.svg'
-const facebook = '/static/assets/facebook.svg'
-const youtube = '/static/assets/youtube.svg'
-const twitch = '/static/assets/twitch.svg'
-const twitter = '/static/assets/twitter.svg'
+const discord = '/static/assets/discord.svg';
+const facebook = '/static/assets/facebook.svg';
+const youtube = '/static/assets/youtube.svg';
+const twitch = '/static/assets/twitch.svg';
+const twitter = '/static/assets/twitter.svg';
 
 const Social = () => {
   return (
@@ -52,7 +52,7 @@ const Social = () => {
         &nbsp;
       </a>
     </div>
-  )
-}
+  );
+};
 
-export default Social
+export default Social;

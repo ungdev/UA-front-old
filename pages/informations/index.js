@@ -1,14 +1,14 @@
-import React from 'react'
-import Button from '../../src/components/button'
+import React from 'react';
+import Button from '../../src/components/button';
 
-import './informations.css'
+import './informations.css';
 
-const logo = '/static/assets/ua2019.png'
+import Category from '../../src/components/category';
 
-import Category from '../../src/components/category'
+import Link from 'next/link';
+import HomeLayout from '../../src/layouts/homeLayout';
 
-import Link from 'next/link'
-import HomeLayout from '../../src/layouts/homeLayout'
+const logo = '/static/assets/ua2019.png';
 
 export default class Informations extends React.Component {
   render() {
@@ -442,6 +442,6 @@ export default class Informations extends React.Component {
           </div>
         </main>
       </HomeLayout>
-    )
+    );
   }
 }

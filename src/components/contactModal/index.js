@@ -1,24 +1,24 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Form, Text, TextArea } from 'react-form'
+import React from 'react';
+import { connect } from 'react-redux';
+import { Form, Text, TextArea } from 'react-form';
 
-import './contactModal.css'
+import './contactModal.css';
 
-import Modal from '../modal'
-import Button from '../button'
-import Select from '../select'
+import Modal from '../modal';
+import Button from '../button';
+import Select from '../select';
 
-import { sendMessage } from '../../modules/message'
+import { sendMessage } from '../../modules/message';
 
 class ContactModal extends React.Component {
   constructor(props) {
-    super(props)
-    this.submit = this.submit.bind(this)
+    super(props);
+    this.submit = this.submit.bind(this);
   }
 
   submit(user) {
-    this.props.sendMessage(user)
-    this.props.onClose()
+    this.props.sendMessage(user);
+    this.props.onClose();
   }
 
   render() {
@@ -35,8 +35,8 @@ class ContactModal extends React.Component {
       { label: 'Je rencontre un problème pour payer', value: '10' },
       { label: "J'ai eu une erreur sur le site", value: '11' },
       { label: 'Signaler un bug', value: '12' },
-      { label: 'Autre', value: 'other' }
-    ]
+      { label: 'Autre', value: 'other' },
+    ];
     return (
       <Modal isOpen={this.props.isOpen} onClose={this.props.onClose}>
         <div className="a-contact-modal">
@@ -71,7 +71,7 @@ class ContactModal extends React.Component {
                     field="topic"
                     isClearable={false}
                     backspaceRemovesValue={false}
-                    searchable={true}
+                    searchable
                     options={typeOptions}
                     style={{ maxWidth: '400px' }}
                     placeholder="Sujet"
@@ -93,15 +93,15 @@ class ContactModal extends React.Component {
           />
         </div>
       </Modal>
-    )
+    );
   }
 }
 
 const mapDispatchToProps = dispatch => ({
-  sendMessage: user => dispatch(sendMessage(user))
-})
+  sendMessage: user => dispatch(sendMessage(user)),
+});
 
 export default connect(
   null,
   mapDispatchToProps
-)(ContactModal)
+)(ContactModal);

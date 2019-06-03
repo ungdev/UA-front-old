@@ -1,9 +1,9 @@
-import React from 'react'
-import Meta from '../../src/components/meta'
-import Category from '../../src/components/category'
+import React from 'react';
+import Meta from '../../src/components/meta';
+import Category from '../../src/components/category';
 
-import './tournaments.css'
-import HomeLayout from '../../src/layouts/homeLayout'
+import './tournaments.css';
+import HomeLayout from '../../src/layouts/homeLayout';
 
 const hs = () => {
   return (
@@ -195,7 +195,7 @@ const hs = () => {
         </div>
       </main>
     </HomeLayout>
-  )
-}
+  );
+};
 
-export default hs
+export default hs;

@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-import './loading.css'
+import './loading.css';
 
 const Loading = () => (
   <div className="a-dashboard-page">
@@ -11,6 +11,6 @@ const Loading = () => (
       <div />
     </div>
   </div>
-)
+);
 
-export default Loading
+export default Loading;

@@ -1,55 +1,55 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Form, Text } from 'react-form'
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
+import React from 'react';
+import { connect } from 'react-redux';
+import { Form, Text } from 'react-form';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-import './loginModal.css'
+import './loginModal.css';
 
-import Modal from '../modal'
-import Button from '../button'
+import { toast } from 'react-toastify';
+import Modal from '../modal';
+import Button from '../button';
 
-import { register } from '../../modules/register'
-import { tryLogin } from '../../modules/login'
-import { fetchUser } from '../../modules/user'
-import Select from '../select'
-import { toast } from 'react-toastify'
+import { register } from '../../modules/register';
+import { tryLogin } from '../../modules/login';
+import { fetchUser } from '../../modules/user';
+import Select from '../select';
 
 class LoginModal extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       tabIndex: 0,
       loading: false,
-      accepted: false
-    }
+      accepted: false,
+    };
 
-    this.setTabIndex = this.setTabIndex.bind(this)
-    this.submit = this.submit.bind(this)
+    this.setTabIndex = this.setTabIndex.bind(this);
+    this.submit = this.submit.bind(this);
   }
 
   setTabIndex(tabIndex) {
     this.setState({
-      tabIndex
-    })
+      tabIndex,
+    });
   }
 
   submit(user) {
-    if (!this.state.accepted) return this.props.noAcceptation()
-    if (user.password !== user.password2) return this.props.passwordMismatch()
-    if (!user.gender) user.gender = 'N/A'
-    else user.gender = user.gender.value
+    if (!this.state.accepted) return this.props.noAcceptation();
+    if (user.password !== user.password2) return this.props.passwordMismatch();
+    if (!user.gender) user.gender = 'N/A';
+    else user.gender = user.gender.value;
     this.setState({
-      loading: true
-    })
+      loading: true,
+    });
 
     this.props
       .register(user)
-      .then(() => this.setState({ loading: false, tabIndex: 0, accepted: false }))
+      .then(() => this.setState({ loading: false, tabIndex: 0, accepted: false }));
   }
 
   render() {
-    const genderOptions = [{ label: 'Homme', value: 'M' }, { label: 'Femme', value: 'F' }]
+    const genderOptions = [{ label: 'Homme', value: 'M' }, { label: 'Femme', value: 'F' }];
     return (
       <Modal isOpen={this.props.isOpen} onClose={this.props.onClose}>
         {this.props.canLogin && (
@@ -97,7 +97,7 @@ class LoginModal extends React.Component {
                           marginTop: 0,
                           marginBottom: 0,
                           color: '#888888',
-                          fontSize: '0.9em'
+                          fontSize: '0.9em',
                         }}
                       >
                         Pour LoL le nom d'utilisateur doit être le nom d'invocateur
@@ -170,26 +170,26 @@ class LoginModal extends React.Component {
           <div className="a-cantlogin-modal">Connexion désactivée pour le moment.</div>
         )}
       </Modal>
-    )
+    );
   }
 }
 
 const mapStateToProps = state => ({
-  canLogin: state.canLogin.canLogin
-})
+  canLogin: state.canLogin.canLogin,
+});
 
 const mapDispatchToProps = dispatch => ({
   login: user => {
     dispatch(tryLogin(user)).then(() => {
-      dispatch(fetchUser())
-    })
+      dispatch(fetchUser());
+    });
   },
   register: user => dispatch(register(user)),
   passwordMismatch: () => toast.error('Les mots de passe ne correspondent pas'),
-  noAcceptation: () => toast.error("Vous devez accepter les conditions d'utilisation")
-})
+  noAcceptation: () => toast.error("Vous devez accepter les conditions d'utilisation"),
+});
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(LoginModal)
+)(LoginModal);

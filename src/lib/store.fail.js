@@ -2,25 +2,25 @@ export default opts => {
   if (opts.mutationSuccess) {
     opts.dispatch({
       type: opts.mutationSuccess,
-      payload: false
-    })
+      payload: false,
+    });
   }
 
   if (opts.mutationError) {
     opts.dispatch({
       type: opts.mutationError,
-      payload: opts.err
-    })
+      payload: opts.err,
+    });
   }
 
   setTimeout(() => {
     if (opts.mutationError) {
       opts.dispatch({
         type: opts.mutationError,
-        payload: null
-      })
+        payload: null,
+      });
     }
-  }, 2000)
+  }, 2000);
 
-  return Promise.reject(opts.err)
-}
+  return Promise.reject(opts.err);
+};

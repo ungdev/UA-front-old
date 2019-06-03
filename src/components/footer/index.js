@@ -1,6 +1,6 @@
-import React from 'react'
-import Button from '../button'
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
+import Button from '../button';
 
 class Footer extends React.Component {
   render() {
@@ -23,13 +23,13 @@ class Footer extends React.Component {
           </a>
         </div>
         <div style={{ marginTop: '5px' }}>
-          <Button raised={true} onClick={this.props.openContactModal}>
+          <Button raised onClick={this.props.openContactModal}>
             Nous contacter
           </Button>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default Footer
+export default Footer;

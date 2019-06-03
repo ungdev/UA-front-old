@@ -1,29 +1,29 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Form, Text } from 'react-form'
+import React from 'react';
+import { connect } from 'react-redux';
+import { Form, Text } from 'react-form';
 
-import './forgotModal.css'
+import './forgotModal.css';
 
-import Modal from '../modal'
-import Button from '../button'
+import Modal from '../modal';
+import Button from '../button';
 
-import { sendResetMail } from '../../modules/forgot'
+import { sendResetMail } from '../../modules/forgot';
 
 class ForgotModal extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      loading: false
-    }
+      loading: false,
+    };
 
-    this.submit = this.submit.bind(this)
+    this.submit = this.submit.bind(this);
   }
 
   submit(user) {
-    this.setState({ loading: true })
+    this.setState({ loading: true });
 
-    this.props.sendMail(user).then(() => this.setState({ loading: false }))
+    this.props.sendMail(user).then(() => this.setState({ loading: false }));
   }
 
   render() {
@@ -52,15 +52,15 @@ class ForgotModal extends React.Component {
           />
         </div>
       </Modal>
-    )
+    );
   }
 }
 
 const mapDispatchToProps = dispatch => ({
-  sendMail: user => dispatch(sendResetMail(user))
-})
+  sendMail: user => dispatch(sendResetMail(user)),
+});
 
 export default connect(
   null,
   mapDispatchToProps
-)(ForgotModal)
+)(ForgotModal);

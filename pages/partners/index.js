@@ -1,10 +1,10 @@
-import React from 'react'
-import HomeLayout from '../../src/layouts/homeLayout'
-import Category from '../../src/components/category'
+import React from 'react';
+import HomeLayout from '../../src/layouts/homeLayout';
+import Category from '../../src/components/category';
 
-import partners from '../../src/variables/partners'
+import partners from '../../src/variables/partners';
 
-import './partners.css'
+import './partners.css';
 
 export default class Partners extends React.Component {
   render() {
@@ -32,6 +32,6 @@ export default class Partners extends React.Component {
           </div>
         </main>
       </HomeLayout>
-    )
+    );
   }
 }

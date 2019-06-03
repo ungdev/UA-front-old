@@ -1,12 +1,11 @@
-import React from 'react'
-import Category from '../src/components/category'
-
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
+import Category from '../src/components/category';
 
 class Error extends React.Component {
   static getInitialProps({ res, err }) {
-    const statusCode = res ? res.statusCode : err ? err.statusCode : ''
-    return { statusCode }
+    const statusCode = res ? res.statusCode : err ? err.statusCode : '';
+    return { statusCode };
   }
 
   render() {
@@ -22,8 +21,8 @@ class Error extends React.Component {
           </div>
         </div>
       </main>
-    )
+    );
   }
 }
 
-export default Error
+export default Error;

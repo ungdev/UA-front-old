@@ -1,31 +1,31 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import Select from 'react-select'
-import Link from 'next/link'
+import React from 'react';
+import { connect } from 'react-redux';
+import Select from 'react-select';
+import Link from 'next/link';
 
-import ListItem from '../../../src/components/list-item'
-import Button from '../../../src/components/button'
-import selectStyles from '../../../src/components/select/styles'
-import ScoupModal from '../../../src/components/scoupModal'
+import ListItem from '../../../src/components/list-item';
+import Button from '../../../src/components/button';
+import selectStyles from '../../../src/components/select/styles';
+import ScoupModal from '../../../src/components/scoupModal';
 
-import { shop } from '../../../src/modules/shop'
+import { shop } from '../../../src/modules/shop';
 
-import '../../../src/payment.css'
-import withDashboardLayout from '../../../src/layouts/dashboardLayout'
+import '../../../src/payment.css';
+import withDashboardLayout from '../../../src/layouts/dashboardLayout';
 
-const shirtGenders = [{ label: 'Homme', value: 'M' }, { label: 'Femme', value: 'F' }]
+const shirtGenders = [{ label: 'Homme', value: 'M' }, { label: 'Femme', value: 'F' }];
 
 const shirtSizes = [
   { label: 'XS', value: 'XS' },
   { label: 'S', value: 'S' },
   { label: 'M', value: 'M' },
   { label: 'L', value: 'L' },
-  { label: 'XL', value: 'XL' }
-]
+  { label: 'XL', value: 'XL' },
+];
 
 class Cart extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       ethernet: false,
       ethernet7: false,
@@ -43,18 +43,18 @@ class Cart extends React.Component {
       gamingPC: false,
       streamingPC: false,
       laptop: false,
-      isScoupModalOpen: false
-    }
+      isScoupModalOpen: false,
+    };
 
-    this.toggleEthernet = this.toggleEthernet.bind(this)
-    this.toggleEthernet7 = this.toggleEthernet7.bind(this)
-    this.toggleShirt = this.toggleShirt.bind(this)
-    this.onTombolaChange = this.onTombolaChange.bind(this)
-    this.changeGender = this.changeGender.bind(this)
-    this.changeSize = this.changeSize.bind(this)
-    this.payment = this.payment.bind(this)
-    this.openScoupModal = this.openScoupModal.bind(this)
-    this.closeScoupModal = this.closeScoupModal.bind(this)
+    this.toggleEthernet = this.toggleEthernet.bind(this);
+    this.toggleEthernet7 = this.toggleEthernet7.bind(this);
+    this.toggleShirt = this.toggleShirt.bind(this);
+    this.onTombolaChange = this.onTombolaChange.bind(this);
+    this.changeGender = this.changeGender.bind(this);
+    this.changeSize = this.changeSize.bind(this);
+    this.payment = this.payment.bind(this);
+    this.openScoupModal = this.openScoupModal.bind(this);
+    this.closeScoupModal = this.closeScoupModal.bind(this);
   }
 
   getPrice() {
@@ -73,39 +73,39 @@ class Cart extends React.Component {
       (this.state.streamingPC ? this.props.prices.streamingPC : 0) +
       (this.state.laptop ? this.props.prices.laptop : 0) +
       (this.state.tombola > 0 ? this.state.tombola : 0)
-    )
+    );
   }
 
   toggleEthernet() {
-    this.setState({ ethernet: !this.state.ethernet })
+    this.setState({ ethernet: !this.state.ethernet });
   }
 
   toggleEthernet7() {
-    this.setState({ ethernet7: !this.state.ethernet7 })
+    this.setState({ ethernet7: !this.state.ethernet7 });
   }
 
   toggleShirt() {
-    this.setState({ shirt: !this.state.shirt })
+    this.setState({ shirt: !this.state.shirt });
   }
 
   changeGender(option) {
-    this.setState({ shirtGender: option, shirt: true })
+    this.setState({ shirtGender: option, shirt: true });
   }
 
   changeSize(option) {
-    this.setState({ shirtSize: option, shirt: true })
+    this.setState({ shirtSize: option, shirt: true });
   }
 
   onTombolaChange(e) {
-    if (e.target.value === '') return this.setState({ tombola: 0 })
+    if (e.target.value === '') return this.setState({ tombola: 0 });
     if (e.target.value >= 0)
       this.setState({
-        tombola: parseInt(e.target.value, 10) > 100 ? 100 : parseInt(e.target.value, 10)
-      })
+        tombola: parseInt(e.target.value, 10) > 100 ? 100 : parseInt(e.target.value, 10),
+      });
   }
 
   openScoupModal() {
-    this.setState({ isScoupModalOpen: true })
+    this.setState({ isScoupModalOpen: true });
   }
 
   closeScoupModal(state) {
@@ -120,13 +120,13 @@ class Cart extends React.Component {
       chair: state.chair,
       gamingPC: state.gamingPC,
       streamingPC: state.streamingPC,
-      laptop: state.laptop
-    })
+      laptop: state.laptop,
+    });
   }
 
   payment() {
     if (this.getPrice() === 0) {
-      return
+      return;
     }
 
     const basket = {
@@ -141,20 +141,20 @@ class Cart extends React.Component {
       chair: this.state.chair,
       gamingPC: this.state.gamingPC,
       streamingPC: this.state.streamingPC,
-      laptop: this.state.laptop
-    }
+      laptop: this.state.laptop,
+    };
 
     if (this.state.shirt) {
-      basket.shirtGender = this.state.shirtGender.value
-      basket.shirtSize = this.state.shirtSize.value
+      basket.shirtGender = this.state.shirtGender.value;
+      basket.shirtSize = this.state.shirtSize.value;
     }
-    if (this.state.tombola > 0) basket.tombola = this.state.tombola
+    if (this.state.tombola > 0) basket.tombola = this.state.tombola;
 
-    this.props.shop(basket)
+    this.props.shop(basket);
   }
 
   render() {
-    const price = this.getPrice()
+    const price = this.getPrice();
 
     const gearPrice =
       0 +
@@ -167,7 +167,7 @@ class Cart extends React.Component {
       (this.state.chair ? this.props.prices.chair : 0) +
       (this.state.gamingPC ? this.props.prices.gamingPC : 0) +
       (this.state.streamingPC ? this.props.prices.streamingPC : 0) +
-      (this.state.laptop ? this.props.prices.laptop : 0)
+      (this.state.laptop ? this.props.prices.laptop : 0);
 
     return (
       <React.Fragment>
@@ -262,21 +262,21 @@ class Cart extends React.Component {
           </Button>
         </form>
       </React.Fragment>
-    )
+    );
   }
 }
 
 const mapStateToProps = state => ({
-  prices: state.user.prices
-})
+  prices: state.user.prices,
+});
 
 const mapDispatchToProps = dispatch => ({
-  shop: body => dispatch(shop(body))
-})
+  shop: body => dispatch(shop(body)),
+});
 
 export default withDashboardLayout(
   connect(
     mapStateToProps,
     mapDispatchToProps
   )(Cart)
-)
+);

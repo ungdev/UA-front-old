@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-import './teamTable.css'
+import './teamTable.css';
 
 const teamTableRow = (player, i, captain) => (
   <div className="a-team-table__body__row" key={i}>
@@ -18,11 +18,11 @@ const teamTableRow = (player, i, captain) => (
       </div>
     )}
   </div>
-)
+);
 
 const TeamTable = props => {
-  const playerCount = props.players.length
-  const playerPaidCount = props.players.filter(player => player.paid).length
+  const playerCount = props.players.length;
+  const playerPaidCount = props.players.filter(player => player.paid).length;
 
   return (
     <div className="a-team-table">
@@ -40,7 +40,7 @@ const TeamTable = props => {
         <div>Places payées : {playerPaidCount}</div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TeamTable
+export default TeamTable;

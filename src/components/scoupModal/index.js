@@ -1,15 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-import './scoupModal.css'
+import './scoupModal.css';
 
-import Modal from '../modal'
-import { StreamingPCModal, GamingPCModal, LaptopModal } from '../moreInfoModal'
-import ListItem from '../list-item'
-import Button from '../button'
+import Modal from '../modal';
+import { StreamingPCModal, GamingPCModal, LaptopModal } from '../moreInfoModal';
+import ListItem from '../list-item';
+import Button from '../button';
 
 class ScoupModal extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       kaliento: false,
       mouse: false,
@@ -23,88 +23,90 @@ class ScoupModal extends React.Component {
       laptop: false,
       isStreamingModalOpen: false,
       isGamingModalOpen: false,
-      isLaptopModalOpen: false
-    }
-    this.submit = this.submit.bind(this)
-    this.toggleKaliento = this.toggleKaliento.bind(this)
-    this.toggleMouse = this.toggleMouse.bind(this)
-    this.toggleKeyboard = this.toggleKeyboard.bind(this)
-    this.toggleHeadset = this.toggleHeadset.bind(this)
-    this.toggleScreen24 = this.toggleScreen24.bind(this)
-    this.toggleScreen27 = this.toggleScreen27.bind(this)
-    this.toggleChair = this.toggleChair.bind(this)
-    this.toggleGamingPC = this.toggleGamingPC.bind(this)
-    this.toggleStreamingPC = this.toggleStreamingPC.bind(this)
-    this.toggleLaptop = this.toggleLaptop.bind(this)
-    this.moreInfoStreaming = this.moreInfoStreaming.bind(this)
-    this.moreInfoGaming = this.moreInfoGaming.bind(this)
-    this.moreInfoLaptop = this.moreInfoLaptop.bind(this)
-    this.closeMoreInfo = this.closeMoreInfo.bind(this)
+      isLaptopModalOpen: false,
+    };
+    this.submit = this.submit.bind(this);
+    this.toggleKaliento = this.toggleKaliento.bind(this);
+    this.toggleMouse = this.toggleMouse.bind(this);
+    this.toggleKeyboard = this.toggleKeyboard.bind(this);
+    this.toggleHeadset = this.toggleHeadset.bind(this);
+    this.toggleScreen24 = this.toggleScreen24.bind(this);
+    this.toggleScreen27 = this.toggleScreen27.bind(this);
+    this.toggleChair = this.toggleChair.bind(this);
+    this.toggleGamingPC = this.toggleGamingPC.bind(this);
+    this.toggleStreamingPC = this.toggleStreamingPC.bind(this);
+    this.toggleLaptop = this.toggleLaptop.bind(this);
+    this.moreInfoStreaming = this.moreInfoStreaming.bind(this);
+    this.moreInfoGaming = this.moreInfoGaming.bind(this);
+    this.moreInfoLaptop = this.moreInfoLaptop.bind(this);
+    this.closeMoreInfo = this.closeMoreInfo.bind(this);
   }
 
   submit() {
-    this.props.onClose(this.state)
+    this.props.onClose(this.state);
   }
 
   toggleKaliento() {
-    this.setState({ kaliento: !this.state.kaliento })
+    this.setState({ kaliento: !this.state.kaliento });
   }
 
   toggleMouse() {
-    this.setState({ mouse: !this.state.mouse })
+    this.setState({ mouse: !this.state.mouse });
   }
 
   toggleKeyboard() {
-    this.setState({ keyboard: !this.state.keyboard })
+    this.setState({ keyboard: !this.state.keyboard });
   }
 
   toggleHeadset() {
-    this.setState({ headset: !this.state.headset })
+    this.setState({ headset: !this.state.headset });
   }
 
   toggleScreen24() {
-    this.setState({ screen24: !this.state.screen24 })
+    this.setState({ screen24: !this.state.screen24 });
   }
 
   toggleScreen27() {
-    this.setState({ screen27: !this.state.screen27 })
+    this.setState({ screen27: !this.state.screen27 });
   }
 
   toggleChair() {
-    this.setState({ chair: !this.state.chair })
+    this.setState({ chair: !this.state.chair });
   }
 
   toggleGamingPC() {
-    this.setState({ gamingPC: !this.state.gamingPC })
+    this.setState({ gamingPC: !this.state.gamingPC });
   }
 
   toggleStreamingPC() {
-    this.setState({ streamingPC: !this.state.streamingPC })
+    this.setState({ streamingPC: !this.state.streamingPC });
   }
 
   toggleLaptop() {
-    this.setState({ laptop: !this.state.laptop })
+    this.setState({ laptop: !this.state.laptop });
   }
 
   moreInfoStreaming(e) {
-    e.stopPropagation()
-    this.setState({ isStreamingModalOpen: true })
+    e.stopPropagation();
+    this.setState({ isStreamingModalOpen: true });
   }
+
   moreInfoGaming(e) {
-    e.stopPropagation()
-    this.setState({ isGamingModalOpen: true })
+    e.stopPropagation();
+    this.setState({ isGamingModalOpen: true });
   }
+
   moreInfoLaptop(e) {
-    e.stopPropagation()
-    this.setState({ isLaptopModalOpen: true })
+    e.stopPropagation();
+    this.setState({ isLaptopModalOpen: true });
   }
 
   closeMoreInfo() {
     this.setState({
       isStreamingModalOpen: false,
       isGamingModalOpen: false,
-      isLaptopModalOpen: false
-    })
+      isLaptopModalOpen: false,
+    });
   }
 
   render() {
@@ -118,7 +120,7 @@ class ScoupModal extends React.Component {
       (this.state.chair ? this.props.prices.chair : 0) +
       (this.state.gamingPC ? this.props.prices.gamingPC : 0) +
       (this.state.streamingPC ? this.props.prices.streamingPC : 0) +
-      (this.state.laptop ? this.props.prices.laptop : 0)
+      (this.state.laptop ? this.props.prices.laptop : 0);
 
     return (
       <React.Fragment>
@@ -235,8 +237,8 @@ class ScoupModal extends React.Component {
         <GamingPCModal isOpen={this.state.isGamingModalOpen} onClose={this.closeMoreInfo} />
         <LaptopModal isOpen={this.state.isLaptopModalOpen} onClose={this.closeMoreInfo} />
       </React.Fragment>
-    )
+    );
   }
 }
 
-export default ScoupModal
+export default ScoupModal;

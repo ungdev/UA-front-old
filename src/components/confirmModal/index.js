@@ -1,8 +1,8 @@
-import React from 'react'
-import Modal from '../modal'
+import React from 'react';
+import Modal from '../modal';
 
-import './confirmModal.css'
-import Button from '../button'
+import './confirmModal.css';
+import Button from '../button';
 
 export default props => (
   <Modal isOpen={props.isOpen} onClose={props.onClose}>
@@ -17,4 +17,4 @@ export default props => (
       </div>
     </div>
   </Modal>
-)
+);

@@ -1,10 +1,10 @@
-import React from 'react'
-import { connect } from 'react-redux'
+import React from 'react';
+import { connect } from 'react-redux';
 
-import { cancelRequest } from '../../../src/modules/teams'
+import { cancelRequest } from '../../../src/modules/teams';
 
-import './requests.css'
-import withDashboardLayout from '../../../src/layouts/dashboardLayout'
+import './requests.css';
+import withDashboardLayout from '../../../src/layouts/dashboardLayout';
 
 const Requests = props => (
   <div className="a-dashboard-page a-dashboard-requests">
@@ -24,35 +24,35 @@ const Requests = props => (
       ))}
     </div>
   </div>
-)
+);
 
 const mapStateToProps = state => ({
   requests: state.teams.teams
     .map(team => {
-      const asking = team.askingUsers.find(askingUser => askingUser.id === state.user.user.id)
+      const asking = team.askingUsers.find(askingUser => askingUser.id === state.user.user.id);
 
       if (!asking) {
-        return null
+        return null;
       }
 
       return {
         id: team.id,
         name: team.name,
-        message: asking.askingMessage
-      }
+        message: asking.askingMessage,
+      };
     })
-    .filter(request => !!request)
-})
+    .filter(request => !!request),
+});
 
 const mapDispatchToProps = dispatch => ({
   cancelRequest: teamId => () => {
-    dispatch(cancelRequest(teamId))
-  }
-})
+    dispatch(cancelRequest(teamId));
+  },
+});
 
 export default withDashboardLayout(
   connect(
     mapStateToProps,
     mapDispatchToProps
   )(Requests)
-)
+);

@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import React from 'react'
+import Head from 'next/head';
+import React from 'react';
 
 export default () => (
   <Head>
@@ -14,4 +14,4 @@ export default () => (
 
     <link rel="shortcut icon" href="/static/favicon.ico" />
   </Head>
-)
+);

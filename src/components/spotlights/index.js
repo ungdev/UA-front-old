@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-import './spotlights.css'
+import './spotlights.css';
 
 const Spotlights = () => (
   <div className="a-spotlights">
@@ -45,6 +45,6 @@ const Spotlights = () => (
       <li>Hearthstone : 32 slots (en solo)</li>
     </ul>
   </div>
-)
+);
 
-export default Spotlights
+export default Spotlights;

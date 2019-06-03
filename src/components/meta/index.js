@@ -1,18 +1,18 @@
-import React from 'react'
-import Head from 'next/head'
+import React from 'react';
+import Head from 'next/head';
 
-const logo = 'static/assets/ua2019.nologo.png'
+const logo = 'static/assets/ua2019.nologo.png';
 
 const Meta = props => {
   const title = props.title
     ? `${props.title} | ${process.env.REACT_APP_WEBSITE_SUBPAGE_NAME}`
-    : process.env.REACT_APP_WEBSITE_NAME
+    : process.env.REACT_APP_WEBSITE_NAME;
   const description = props.description
     ? props.description
-    : process.env.REACT_APP_WEBSITE_DESCRIPTION
+    : process.env.REACT_APP_WEBSITE_DESCRIPTION;
   const canonical = props.url
     ? process.env.REACT_APP_CANONICAL_URL + props.url
-    : process.env.REACT_APP_CANONICAL_URL
+    : process.env.REACT_APP_CANONICAL_URL;
 
   return (
     <Head>
@@ -26,7 +26,7 @@ const Meta = props => {
 
       <link rel="canonical" href={canonical} />
     </Head>
-  )
-}
+  );
+};
 
-export default Meta
+export default Meta;

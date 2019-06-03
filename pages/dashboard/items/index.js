@@ -1,28 +1,28 @@
-import React from 'react'
-import { connect } from 'react-redux'
+import React from 'react';
+import { connect } from 'react-redux';
 
-import './items.css'
-import withDashboardLayout from '../../../src/layouts/dashboardLayout'
+import './items.css';
+import withDashboardLayout from '../../../src/layouts/dashboardLayout';
 
 class Cart extends React.Component {
   getGender(shirt) {
-    return shirt.charAt(0) === 'h' ? 'Homme' : 'Femme'
+    return shirt.charAt(0) === 'h' ? 'Homme' : 'Femme';
   }
 
   getSize(shirt) {
-    return shirt.substr(1, shirt.length - 1).toUpperCase()
+    return shirt.substr(1, shirt.length - 1).toUpperCase();
   }
 
   render() {
     if (this.props.user === null) {
-      return null
+      return null;
     }
 
-    const { user } = this.props
+    const { user } = this.props;
 
-    let orders = user.orders.filter(order => order.paid)
+    const orders = user.orders.filter(order => order.paid);
 
-    let items = {
+    const items = {
       shirts: [],
       ethernet: 0,
       ethernet7: 0,
@@ -36,26 +36,26 @@ class Cart extends React.Component {
       gamingPC: 0,
       streamingPC: 0,
       laptop: 0,
-      tombola: 0
-    }
+      tombola: 0,
+    };
 
     orders.forEach(order => {
-      if (order.plusone) items.plusone = true
-      if (order.place) items.place = true
-      if (order.shirt !== 'none') items.shirts.push(order.shirt)
-      if (order.ethernet) items.ethernet++
-      if (order.ethernet7) items.ethernet7++
-      if (order.kaliento) items.kaliento++
-      if (order.mouse) items.mouse++
-      if (order.keyboard) items.keyboard++
-      if (order.headset) items.headset++
-      if (order.screen24) items.screen24++
-      if (order.screen27) items.screen27++
-      if (order.chair) items.chair++
-      if (order.gamingPC) items.gamingPC++
-      if (order.streamingPC) items.streamingPC++
-      if (order.tombola) items.tombola += order.tombola
-    })
+      if (order.plusone) items.plusone = true;
+      if (order.place) items.place = true;
+      if (order.shirt !== 'none') items.shirts.push(order.shirt);
+      if (order.ethernet) items.ethernet++;
+      if (order.ethernet7) items.ethernet7++;
+      if (order.kaliento) items.kaliento++;
+      if (order.mouse) items.mouse++;
+      if (order.keyboard) items.keyboard++;
+      if (order.headset) items.headset++;
+      if (order.screen24) items.screen24++;
+      if (order.screen27) items.screen27++;
+      if (order.chair) items.chair++;
+      if (order.gamingPC) items.gamingPC++;
+      if (order.streamingPC) items.streamingPC++;
+      if (order.tombola) items.tombola += order.tombola;
+    });
 
     return (
       <div className="a-dashboard-items">
@@ -87,17 +87,17 @@ class Cart extends React.Component {
           </ul>
         </div>
       </div>
-    )
+    );
   }
 }
 
 const mapStateToProps = state => ({
-  user: state.user.user
-})
+  user: state.user.user,
+});
 
 export default withDashboardLayout(
   connect(
     mapStateToProps,
     null
   )(Cart)
-)
+);

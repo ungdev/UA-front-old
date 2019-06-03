@@ -1,36 +1,36 @@
-import Router from 'next/router'
+import Router from 'next/router';
 
-export const ROUTER_PUSH = 'router/ROUTER_PUSH'
-export const ROUTER_BACK = 'router/ROUTER_BACK'
-export const LOCATION_CHANGED = 'router/LOCATION_CHANGED'
+export const ROUTER_PUSH = 'router/ROUTER_PUSH';
+export const ROUTER_BACK = 'router/ROUTER_BACK';
+export const LOCATION_CHANGED = 'router/LOCATION_CHANGED';
 
-const initialState = {}
+const initialState = {};
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case ROUTER_PUSH:
-      Router.push(action.payload)
-      return state
+      Router.push(action.payload);
+      return state;
 
     case ROUTER_BACK:
-      Router.back()
-      return state
+      Router.back();
+      return state;
 
     default:
-      return state
+      return state;
   }
-}
+};
 
 export const push = url => {
   return {
     type: ROUTER_PUSH,
-    payload: url
-  }
-}
+    payload: url,
+  };
+};
 
 export const goBack = url => {
   return {
     type: ROUTER_BACK,
-    payload: url
-  }
-}
+    payload: url,
+  };
+};

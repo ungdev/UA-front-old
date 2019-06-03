@@ -1,12 +1,12 @@
-import './dashboardWarnings.css'
-import React from 'react'
-import Link from 'next/link'
+import './dashboardWarnings.css';
+import React from 'react';
+import Link from 'next/link';
 
 export default class DashboardWarning extends React.Component {
   render() {
-    if (this.props.user === null) return null
+    if (this.props.user === null) return null;
 
-    const team = this.props.user.team
+    const { team } = this.props.user;
 
     // noinspection HtmlUnknownTarget
     return (
@@ -33,6 +33,6 @@ export default class DashboardWarning extends React.Component {
           </div>
         ) : null}
       </React.Fragment>
-    )
+    );
   }
 }

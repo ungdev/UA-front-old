@@ -1,42 +1,42 @@
-import React from 'react'
-import { connect } from 'react-redux'
+import React from 'react';
+import { connect } from 'react-redux';
 
-import Button from '../button'
-import { push } from '../../modules/router'
+import Button from '../button';
+import { push } from '../../modules/router';
 
-import './homeHeader.css'
-import Link from 'next/link'
+import './homeHeader.css';
+import Link from 'next/link';
 
 class Header extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      mobileMenu: false
-    }
+      mobileMenu: false,
+    };
 
-    this.toggleMobileMenu = this.toggleMobileMenu.bind(this)
-    this.closeMobileMenu = this.closeMobileMenu.bind(this)
-    this.mainButton = this.mainButton.bind(this)
+    this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
+    this.closeMobileMenu = this.closeMobileMenu.bind(this);
+    this.mainButton = this.mainButton.bind(this);
   }
 
   toggleMobileMenu() {
     this.setState({
-      mobileMenu: !this.state.mobileMenu
-    })
+      mobileMenu: !this.state.mobileMenu,
+    });
   }
 
   closeMobileMenu() {
     this.setState({
-      mobileMenu: false
-    })
+      mobileMenu: false,
+    });
   }
 
   mainButton() {
     if (this.props.isLoggedIn) {
-      this.props.gotoDashboard()
+      this.props.gotoDashboard();
     } else {
-      this.props.openLoginModal()
+      this.props.openLoginModal();
     }
   }
 
@@ -63,11 +63,11 @@ class Header extends React.Component {
           <a>Galerie</a>
         </Link>
       </React.Fragment>
-    )
+    );
   }
 
   render() {
-    let mainButtonText = this.props.isLoggedIn ? 'Dashboard' : 'Connexion'
+    const mainButtonText = this.props.isLoggedIn ? 'Dashboard' : 'Connexion';
 
     return (
       <header className="a-intro-header">
@@ -85,7 +85,7 @@ class Header extends React.Component {
             <div style={{ paddingBottom: '3px' }}>
               <Button onClick={this.toggleMobileMenu}>
                 <div
-                  className={'a-intro-header__hamburger' + (this.state.mobileMenu ? ' active' : '')}
+                  className={`a-intro-header__hamburger${this.state.mobileMenu ? ' active' : ''}`}
                 >
                   <div className="a-intro-header__hamburger__segment" />
                   <div className="a-intro-header__hamburger__segment" />
@@ -102,34 +102,34 @@ class Header extends React.Component {
           </div>
 
           <div
-            className={
-              'a-intro-header__nav__mobile__content' + (this.state.mobileMenu ? ' active' : '')
-            }
+            className={`a-intro-header__nav__mobile__content${
+              this.state.mobileMenu ? ' active' : ''
+            }`}
           >
             {this.drawMenuItems()}
           </div>
 
           <div
             onClick={this.closeMobileMenu}
-            className={
-              'a-intro-header__nav__mobile__overlay' + (this.state.mobileMenu ? ' active' : '')
-            }
+            className={`a-intro-header__nav__mobile__overlay${
+              this.state.mobileMenu ? ' active' : ''
+            }`}
           />
         </nav>
       </header>
-    )
+    );
   }
 }
 
 const mapStateToProps = state => ({
-  isLoggedIn: state.login.token && state.login.token.length > 0
-})
+  isLoggedIn: state.login.token && state.login.token.length > 0,
+});
 
 const mapDispatchToProps = dispatch => ({
-  gotoDashboard: () => dispatch(push('/dashboard'))
-})
+  gotoDashboard: () => dispatch(push('/dashboard')),
+});
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Header)
+)(Header);
