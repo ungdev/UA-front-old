@@ -1,5 +1,6 @@
 import Header from '../../components/homeHeader'
 import React from 'react'
+import Router from 'next/router'
 import { fetchCanLogin } from '../../modules/canLogin'
 import { autoLogin } from '../../modules/login'
 import { connect } from 'react-redux'
@@ -106,9 +107,7 @@ class HomeLayout extends React.Component {
         <ForgotModal isOpen={this.state.forgotModalOpened} onClose={this.closeForgotModal} />
 
         <main className="a-home">
-          <Informations />
-
-          <Partners />
+          {this.props.children}
           <Footer openContactModal={this.openContactModal} />
         </main>
 

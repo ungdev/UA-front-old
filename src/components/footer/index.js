@@ -2,10 +2,12 @@ import React from 'react'
 import Button from '../button'
 import Link from 'next/link'
 
+import './footer.css'
+
 class Footer extends React.Component {
   render() {
     return (
-      <div className="a-home__content a-home__footer">
+      <div className="a_footer">
         <div>
           © UTT Net Group
           <Link href="/mentions-legales">

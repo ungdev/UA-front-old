@@ -46,6 +46,7 @@ const Informations = () => (
     <div className="colorback2">
       <div className="a-informations">
         <table>
+          <tbody>
           <tr>
             <th scope="row">Format</th>
             <td>Bring Your Own Computer (casque, multiprise et RJ45 à amener)</td>
@@ -82,6 +83,7 @@ const Informations = () => (
             <th scope="row">Tournois</th>
             <td>5 (les tournois commencent le samedi à 10h précises)</td>
           </tr>
+          </tbody>
         </table>
 
         <div className="a-informations__more">
