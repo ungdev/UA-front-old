@@ -20,16 +20,25 @@ export default Component => {
     }
 
     componentWillMount() {
-      if (process.browser) {
         if (this.props.user === null) {
           this.props.autoLogin().then(() => {
             if (this.props.user) {
-              this.props.fetchTeams().then(() => {
-                this.setState({ render: true })
-              })
+              this.fetchTeamsIfNotExists()
             }
           })
-        } else this.setState({ render: true })
+        } else
+          this.fetchTeamsIfNotExists()
+    }
+
+    fetchTeamsIfNotExists() {
+      if(this.props.teams === null) {
+        this.props.fetchTeams().then(() => {
+          this.setState({render: true})
+        })
+      }
+
+      else {
+        this.setState({render: true})
       }
     }
 
@@ -54,7 +63,8 @@ export default Component => {
   }
 
   const mapStateToProps = state => ({
-    user: state.user.user
+    user: state.user.user,
+    teams: state.teams.teams
   })
 
   const mapDispatchToProps = dispatch => ({

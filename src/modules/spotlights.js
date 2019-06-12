@@ -20,24 +20,6 @@ export default (state = initialState, action) => {
       return state
   }
 }
-
-export const fetchSpotlights = () => {
-  return async (dispatch, getState) => {
-    const authToken = getState().login.token
-
-    if (!authToken || authToken.length === 0) {
-      return
-    }
-
-    const spotlights = await axios.get('spotlights', { headers: { 'X-Token': authToken } })
-
-    dispatch({
-      type: SET_SPOTLIGHTS,
-      payload: spotlights.data
-    })
-  }
-}
-
 export const joinSolo = spotlight => {
   return async (dispatch, getState) => {
     const authToken = getState().login.token
